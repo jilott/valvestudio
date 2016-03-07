@@ -1,0 +1,2 @@
+jupyter nbconvert triode-modeling.ipynb --to slides
+
