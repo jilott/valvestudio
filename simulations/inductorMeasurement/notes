@@ -1,0 +1,5 @@
+you can run in your browser without any software install, use
+http://mybinder.org/
+    url https://github.com/holla2040/valvestudio.git
+    add no additional option
+    make binder
