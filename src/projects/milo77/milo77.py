@@ -5,15 +5,14 @@ from StringIO import StringIO
 from mpmath import isnan
 import collections
 
-from sympy import Symbol,nsolve,init_printing,Eq
+from sympy import *
 from IPython.display import display
 init_printing(use_latex='mathjax')
-import sympy
 import mpmath
 mpmath.mp.dps = 15
 
 def solve(key,debug=False,showcode=False,showequations=False):
-    code = "from sympy import *\nfrom mpmath import *\n\n"
+    code = "from sympy import *\n\n"
 
     url = "https://docs.google.com/spreadsheets/d/%s/export?format=csv"%(key) # don't put the gid id in, then always returned the first sheet in tabs
 
@@ -111,9 +110,12 @@ def solve(key,debug=False,showcode=False,showequations=False):
     code += "\n\n# answers\n"
 
     i = 0
-    for k in outputs.keys():
-        code += "print \"%-5s = %%14.6f\"%%ans[%d]\n"%(k,i)
-        i += 1
+    if len(outputs.keys()) == 1:
+        code += "print ans\n" 
+    else:
+        for k in outputs.keys():
+            code += "print \"%-5s = %%14.6f\"%%ans[%d]\n"%(k,i)
+            i += 1
         
     if debug or showcode:
         print code
