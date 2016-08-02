@@ -1,3 +1,12 @@
 go through https://www.ampbooks.com/
 
-put more notes here
+
+upcoming topics
+    pre-amp noise
+    cascodes for pre-amp
+    miller effect for cascaded triode sections, see Jurich p68
+    power supply capacitor value selection, see 5y3 GE datasheet for example plots
+    low-mu, medium-mu, high-mu gain stages
+        see example on P124 Jurich
+    plate to plate feedback, P129 Jurich
+    types of phase inverters

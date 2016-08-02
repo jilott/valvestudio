@@ -12,25 +12,55 @@ features
             triode/pentode operation
             adjustable feedback, soul control
 
-    Inputs each with gain, bass, treble
+    pre-amp Inputs each with gain, bass, treble
         instrument 1 
         instrument 2
         microphone
+            pre-amp RDH Chapter 18
+            low-noise, RDH4-CH18.2D, p824
+            http://www.tubecad.com/2011/08/blog0211.htm
+            phantom power
+                http://www.eetimes.com/document.asp?doc_id=1272487
+            http://www.pmillett.com/micpre.htm
+            http://www.valvewizard.co.uk/SRPP_Blencowe.pdf
+            http://www.tubecad.com/2012/10/blog0248.htm
+            add high-pass filter at 80hz
+            http://www.gyraf.dk/schematics/tubetech_mp1a.gif
+            1:10 preamp 1.5K input impedance
 
-    pre-amp/mixer
+    mixer
+        mixer RDH Chapter 18
         input has L/R balance
         line out
+        add inputs and outputs to run multiple effects chains
+        http://www.tubecad.com/april_may2001/page22.html
+        http://www.tubecad.com/2012/10/blog0248.htm
         
     effects
         loop
         reverb via tank
+            http://www.valvewizard.co.uk/reverbdriver.html, see srpp driver 
+            complete design here, https://www.tubesandmore.com/products/effects-kit-mod-kits-wave-spring-reverb
         vibe, tube univibe
         chorus that uses both amps
+            Magnatone Super 59
+            patent 2988706
+            magnatone varistor transfer curve
+                http://dalmura.com.au/projects/Varistor%20measurement%20DC.pdf
+            look at http://www.magnatoneamps.com/schematics/magnatone_260a.pdf
+
+    footswitch to switch L or R amp
+    
+    led light acrylitic front panel  
 
 parts from 
     Wurlitzer 4100B - 650172
     Bendix 
 
+
+small amp
+    similar to fender vibrolux 5E11, but 6g11 tremolo has source driver
+    also negative feed directly off HT tap
 
 
 
@@ -43,3 +73,30 @@ Look at bass amp 2019, almost indentical to 2061
     http://marstran.com/2022.gif
 
 
+
+tone stack
+    http://www.duncanamps.com/technical/tonestack.html
+    Baxandall tone stack 
+        in TSC called James
+        http://amps.zugster.net/articles/tone-stacks
+        see orange 120 MKII schematic
+            http://www.orangefieldguide.com/OFG_SCHEM/orangeotrschem.gif
+    http://electronbunker.ca/eb/TubeAudio_01a.html
+    http://electronicdesign.com/analog/simple-circuit-offers-single-adjustment-tone-control
+
+phase inverter
+    long tail pair 
+        http://www.aikenamps.com/index.php/the-long-tail-pair
+        http://www.valvewizard.co.uk/acltp.html
+
+
+low notes
+    opt LH265061-1 from bendix
+        16H Lp
+        n = 63:1 3ohms -> 12000
+    alternate opt, OT20PP
+
+
+panels
+    http://www.gyraf.dk/gy_pd/g9/g9pd.htm
+        see section "The Mechanics"

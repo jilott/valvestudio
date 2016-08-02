@@ -1,0 +1,9 @@
+from Vacuum Tube Amplifier Basics, Jurich
+    drop the filament voltage with series R in case to high, 
+    p65, don't connect xlr cable shield to pre-amp ground
+    p73, kill oscillation by adding pole below 30khz via Cplatetogrid
+    tubecad/valvewizard mentions ferrite bead in cathode current
+    p115, ac switch the neutral run low level AC voltage to front panel
+    p191 6l6GC monoblock amp uses a DC coupled phase inverter
+    see also tubes/excellent/notes for construction information
+    
