@@ -27,6 +27,9 @@ features
             add high-pass filter at 80hz
             http://www.gyraf.dk/schematics/tubetech_mp1a.gif
             1:10 preamp 1.5K input impedance
+            shure A95UF should work
+            JT-115K-E cascode tube microphone input stage
+                http://www.triodeel.com/as054.pdf
 
     mixer
         mixer RDH Chapter 18
@@ -42,12 +45,21 @@ features
             http://www.valvewizard.co.uk/reverbdriver.html, see srpp driver 
             complete design here, https://www.tubesandmore.com/products/effects-kit-mod-kits-wave-spring-reverb
         vibe, tube univibe
+            fender 6g12a, also uncle doug
+            http://ricktone.rickcampbell.org/cgi-bin/getimg.cgi/Schematic_TubePhaser_1.pdf
+            wurlitzer 44 phase modulation
+                http://www.thermionic.info/dorf/Dorf_TheWurlitzerVibrato.pdf
+                think about using 6be6 for mixer, as http://www.ozvalveamps.org/playmaster/pm103cctamp_2joe.jpg
         chorus that uses both amps
             Magnatone Super 59
             patent 2988706
             magnatone varistor transfer curve
                 http://dalmura.com.au/projects/Varistor%20measurement%20DC.pdf
             look at http://www.magnatoneamps.com/schematics/magnatone_260a.pdf
+        tremolo
+            use 6be6, see playmaster 102.pdf
+        overdrive
+            6bj8 dual diode with triode
 
     footswitch to switch L or R amp
     
@@ -81,6 +93,7 @@ tone stack
         http://amps.zugster.net/articles/tone-stacks
         see orange 120 MKII schematic
             http://www.orangefieldguide.com/OFG_SCHEM/orangeotrschem.gif
+        http://www.tubebooks.org/file_downloads/Baxandall.pdf
     http://electronbunker.ca/eb/TubeAudio_01a.html
     http://electronicdesign.com/analog/simple-circuit-offers-single-adjustment-tone-control
 

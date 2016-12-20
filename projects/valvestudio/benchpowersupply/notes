@@ -1,0 +1,26 @@
+STM VIPER
+
+
+https://en.wikipedia.org/wiki/Current_mirror
+https://en.wikipedia.org/wiki/Widlar_current_source
+LT3092 - 200mA 2-Terminal Programmable Current Source
+
+
+power mosfet linear mode
+https://www.youtube.com/watch?v=1qRWBkrcnAM
+    http://www.nxp.com/products/discretes-and-logic/mosfets/standard-mosfets/nextpower-live:GRP_11730
+
+
+HV IRF740 follower
+http://www.eleccircuit.com/the-variable-high-voltage-power-supply-0-300v/
+
+DC 1000V@30mA@75C
+IXTY08N100D2
+
+AOT10N60    300V@800mA,     600V@400mA to-220
+AOT12N65    300V@800mA,     650V@400mA  D2PAK
+AOT27S60    300V@1000mA,    600V@600mA  to-220 $3       357W <<<<< use this one
+STP33N65M2  300V@2000mA,    650V@1000mA to-220 $2.78    190W, no dc on SOA
+AOT42S60    300V@1500mA,    600V@700mA to-220
+FCP104N60   300V@1250mA,    600V@600ma to-220
+

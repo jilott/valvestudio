@@ -74,9 +74,9 @@ def solve(key,debug=False,showcode=False,showequations=False):
 
     for v in variables:
         if len(v['name']) == 1:
-            code += "%-5s = Symbol('%s')\n"%(v['name'],v['name'])
+            code += "%-10s = Symbol('%s')\n"%(v['name'],v['name'])
         else:
-            code += "%-5s = Symbol('%c_%s')\n"%(v['name'],v['name'][0],v['name'][1:])
+            code += "%-10s = Symbol('%c_%s')\n"%(v['name'],v['name'][0],v['name'][1:])
 
         if v['st'] =='g':
             outputs[v['name']] = float(v['input'])
@@ -84,7 +84,7 @@ def solve(key,debug=False,showcode=False,showequations=False):
             if isnan(v['input']):
                 outputs[v['name']] = initialGuess
             else:
-                code += "%-5s = %f\n"%(v['name'],float(v['input']))
+                code += "%-10s = %f\n"%(v['name'],float(v['input']))
     code += "\n"
 
     if debug:
@@ -114,7 +114,7 @@ def solve(key,debug=False,showcode=False,showequations=False):
         code += "print ans\n" 
     else:
         for k in outputs.keys():
-            code += "print \"%-5s = %%14.6f\"%%ans[%d]\n"%(k,i)
+            code += "print \"%-10s = %%14.6f\"%%ans[%d]\n"%(k,i)
             i += 1
         
     if debug or showcode:
