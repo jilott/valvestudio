@@ -8,6 +8,7 @@ class Winding():
         self.va = voltage*current
         self.turns = 0.0
         self.layers = 0.0
+        self.turnsPerLayer = 0.0
         self.meanPathLength=0.00
         self.wireLength=0.00        # feet
         self.wireDiameter = 0.0

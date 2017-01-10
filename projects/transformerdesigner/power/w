@@ -1,0 +1,2 @@
+#!/bin/bash
+column -s, -t < wire\ table.csv

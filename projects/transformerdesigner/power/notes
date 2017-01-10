@@ -1,0 +1,6 @@
+from foster-transformer
+    15772 is most likely 26M50
+    2kG saturation
+    loss around 5W/lb at 13kG
+    check loss curves at tempel or AK
+

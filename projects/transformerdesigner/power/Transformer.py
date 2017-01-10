@@ -2,6 +2,10 @@ import pprint,math,csv
 
 INCHTOMM=25.4
 
+# references
+#    Transformer Desing and Manufacturing Manual - Wolpert
+#    Electronic Transformers and Circuits - Lee
+
 class Transformer():
     def compute(self):
         primary = self.primary
@@ -38,6 +42,8 @@ class Transformer():
 
         self.weight = primary.weight
         self.loss = primary.voltageDrop*primary.current 
+
+        primary.turnsPerLayer = math.floor(self.bobbin.windingLength/primary.wireDiameter)
     
 
         for secondary in self.secondaries:
@@ -79,6 +85,8 @@ class Transformer():
             secondary.voutNoLoad = primary.voltage*secondary.turns/primary.turns
             secondary.voutRegulation = 100*(secondary.voutNoLoad-secondary.vout)/secondary.vout
 
+            secondary.turnsPerLayer = math.floor(self.bobbin.windingLength/secondary.wireDiameter)
+
             self.weight += secondary.weight
             self.loss += secondary.voltageDrop*secondary.current 
 
@@ -88,10 +96,10 @@ class Transformer():
                 desc = "Primary"
             if winding.type == 's':
                 desc = "Secondary"
-            self.bobbin.stack.append({'type':'wire','height':winding.wireDiameter,'layers':winding.layers,'description':'%s %dAWG'%(desc,winding.wire['size']),'turns':winding.turns})
-            self.bobbin.stack.append({'type':'insulation','height':self.isolationThickness,'layers':3,'description':'Insulation','turns':1})
+            self.bobbin.stack.append({'type':'wire','height':winding.wireDiameter,'layers':winding.layers,'description':'%s %dAWG'%(desc,winding.wire['size']),'turns':winding.turns,'turnsPerLayer':winding.turnsPerLayer})
+            self.bobbin.stack.append({'type':'insulation','height':self.isolationThickness,'layers':self.insulationLayers,'description':'Insulation','turns':1,'turnsPerLayer':1})
         del(self.bobbin.stack[-1])
-        self.bobbin.stack.append({'type':'insulation','height':self.wrappingThickness,'layers':2,'description':'Wrapping','turns':1})
+        self.bobbin.stack.append({'type':'insulation','height':self.wrappingThickness,'layers':self.insulationLayers,'description':'Wrapping','turns':1,'turnsPerLayer':1})
 
         self.weight += self.lamination['weight']*self.stackingFactor
 
@@ -104,6 +112,8 @@ class Transformer():
         self.loss += self.weight * self.coreLoss
 
         self.temperatureRise = self.loss/(0.1*math.pow((self.weight/1.073),2.0/3.0))
+
+        self.weight = self.weight * self.weightExtra
 
     def report(self):
         print "Requirements"
@@ -140,9 +150,9 @@ class Transformer():
 
         print "Bobbin"
         print "  Winding Stack"
-        print "    Description          Layers Turns Height"
+        print "    Description          Layers Turns T/L  Height"
         for s in self.bobbin.stack:
-            print "    %-20s %-6d %-5d %-6.3f"%(s['description'],s['layers'],s['turns'],s['height'])
+            print "    %-20s %-6d %-5d %-5d %-6.3f"%(s['description'],s['layers'],s['turns'],s['turnsPerLayer'],s['height'])
         print "  %-20s = %0.4f in"%("Stack Height",self.bobbin.stackHeight)
         print "  %-20s = %0.4f in"%("Window Height",self.lamination['windowHeight'])
         print "  %-20s = %0.1f %%"%("Fill",self.bobbin.fill)
@@ -154,7 +164,7 @@ class Transformer():
         print "  %-20s = %d"%("AWG",int(self.primary.wire['size']))
         print "  %-20s = %d"%("Turns",self.primary.turns)
         print "  %-20s = %d"%("Layers",self.primary.layers)
-        print "  %-20s = %d"%("Turns/layer",math.floor(self.bobbin.windingLength/self.primary.wireDiameter))
+        print "  %-20s = %d"%("Turns/layer",self.primary.turnsPerLayer)
         print "  %-20s = %.1f in"%("Mean Path Length",self.primary.meanPathLength)
         print "  %-20s = %0.1f ft"%("Wire Length",self.primary.wireLength)
         print "  %-20s = %s"%("Wire Diameter",self.primary.wireDiameter)
@@ -169,7 +179,7 @@ class Transformer():
             print "  %-20s = %d"%("AWG",int(secondary.wire['size']))
             print "  %-20s = %d"%("Turns",secondary.turns)
             print "  %-20s = %d"%("Layers",secondary.layers)
-            print "  %-20s = %d"%("Turns/layer",math.floor(self.bobbin.windingLength/secondary.wireDiameter))
+            print "  %-20s = %d"%("Turns/layer",secondary.turnsPerLayer)
             print "  %-20s = %.1f in"%("Mean Path Length",secondary.meanPathLength)
             print "  %-20s = %0.1f ft"%("Wire Length",secondary.wireLength)
             print "  %-20s = %s"%("Wire Diameter",secondary.wireDiameter)
@@ -227,16 +237,17 @@ class Transformer():
         self.laminationVA = lamva
         self.bobbin = bobbin
         
-        self.fluxDensity=0.00
-        self.circularMilsPerAmp=1.00
-        self.coreLoss=0.00
-        self.efficiency=0.00
-        self.lineFrequency=0.00
-        self.isolationThickness=0.00
-        self.stackingFactor=0.00
-        self.lossFactor=0.00
-        self.wrappingThickness=0.00
-        self.weightExtra=0.00
+        self.fluxDensity            = 0.00
+        self.circularMilsPerAmp     = 800.0
+        self.coreLoss               = 0.66 # watts/lbs
+        self.efficiency             = 0.90 # 1/1.11 in wolpert p10
+        self.lineFrequency          = 60.0
+        self.stackingFactor         = 0.92 # stacking factor wolpert p11 0.92 1x1 interleave, 0.95 butt stack
+        self.lossFactor             = 0.95 # 1/1.05 in wolpert p11
+        self.isolationThickness     = 0.003
+        self.wrappingThickness      = 0.015
+        self.weightExtra            = 1.15
+        self.insulationLayers       = 3
 
         self.lamination = None
         self.coreArea=0.00
@@ -272,53 +283,9 @@ class Transformer():
                 self.lamination[k] = float(self.lamination[k])
             except:
                 pass
-
-            
-    def stackold(self):
-        # this computes and formats output at the same time in reverse:bobbin to edge
-        out = ""
-        self.bobbin.stackHeight = 0.0
-        out = "%-20s = %.4f\n"%("Bobbin Thickness",self.BobbinBorder) + out
-        self.stackHeight += self.BobbinBorder
-
-        turns = self.Np
-        lturns = math.floor(self.BobbinWindowLength * float(self.NpWire['turnsPerInch']))
-        layerHeight = float(self.NpWire['diameter'])
-        while turns > lturns:
-            out = "%-20s = %.4f %d #%sAWG\n"%("Primary Layer",layerHeight,lturns,self.NpWire['size']) + out
-            self.stackHeight += layerHeight
-            turns -= lturns
-        out = "%-20s = %.4f %2d #%sAWG\n"%("Primary Layer",layerHeight,turns,self.NpWire['size']) + out
-        self.stackHeight += layerHeight
-
-        out = "%-20s = %.4f\n"%("Winding Insulation",self.IsolationThickness) + out
-        self.stackHeight += self.IsolationThickness
-
-        turns = self.Ns
-        lturns = math.floor(self.BobbinWindowLength * float(self.NsWire['turnsPerInch']))
-        layerHeight = float(self.NsWire['diameter'])
-        while turns > lturns:
-            out = "%-20s = %.4f %d #%sAWG\n"%("Secondary Layer",layerHeight,lturns,self.NsWire['size']) + out
-            self.stackHeight += layerHeight
-            turns -= lturns
-        out = "%-20s = %.4f %2d #%sAWG\n"%("Secondary Layer",layerHeight,turns,self.NsWire['size']) + out
-        self.stackHeight += layerHeight
-
-        out = "%-20s = %.4f\n"%("Winding Insulation",self.IsolationThickness) + out
-        self.stackHeight += self.IsolationThickness
-
-        out = "%-20s = %.4f\n"%("Wrapping",self.WrappingThickness) + out
-        self.stackHeight += self.WrappingThickness
-        out = "Stack Up\n" + out
-
-        #fill = 100 * (BobbinBorder + NpLayers*float(NpWire['diameter']) + IsolationThickness + NsLayers*float(NsWire['diameter'])) / float(lamination['windowHeight'])    
-
-        self.WindowHeight = float(self.Lamination['windowHeight'])
-        self.Fill = 100 * self.stackHeight / self.WindowHeight
-        return out
     
     def gcode(self):
-        #gcode generation here
+        # gcode generation here
         print "(load #%sAWG wire)"%self.NpWire['size']
         print "(set bobbin zero)"
         print "(winding %d turns)"%self.Np
@@ -410,21 +377,23 @@ class Transformer():
             t.compute(va=va,npawg=npawg,nsawg=nsawg)
             print "%-6d %-6d %-5d %-5d %-8.2f %-5.1f %-.1f"%(b,b/6.45,t.Np,t.Ns,t.Vout,t.Fill,t.Loss)
 
-    def fluxFind(self,bmax= 104000):
+    def fluxFind(self,bmin=20000,bmax=104000,inc=500):
         # 1.6T = 103225.6 flux lines
         errormin = 1000.00
-        bmin = 0.0
-        for b in range(20000,bmax,500): 
+        bminimal = 0.0
+        for b in range(bmin,bmax,inc): 
             self.fluxDensity = b
             self.compute()
+            if self.bobbin.fill > 95.0:
+                continue
             error = 0.0
             for secondary in self.secondaries: 
                 error += math.fabs((secondary.voltage - secondary.vout)/secondary.vout) + math.fabs((secondary.voutNoLoad - secondary.vout)/secondary.vout)
             if error < errormin:
-                bmin = b
+                bminimal = b
                 errormin = error
             # print b,error
-        self.fluxDensity = bmin
+        self.fluxDensity = bminimal
         self.compute()
-        return bmin
+        return bminimal
          
