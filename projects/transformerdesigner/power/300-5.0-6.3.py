@@ -1,14 +1,13 @@
 #!/usr/bin/env python
 import math
-import Winding, Bobbin, Transformer
+import Winding, Transformer
 
-bobbin = Bobbin.Bobbin(1.47,0.05,0.02)
 primary   = Winding.Winding('p',115.0,0.0,None)
-secondary6 = Winding.Winding('s',6.3,2.0,[50])
-secondary200 = Winding.Winding('s',200.0,0.02,None)
+secondary5 = Winding.Winding('s',5.0,2.0,None)
+secondary6 = Winding.Winding('s',6.3,1.6,[50])
 secondary300 = Winding.Winding('s',300.0,0.100,[50])
 
-t = Transformer.Transformer([secondary6,primary,secondary300,secondary200],50,bobbin)
+t = Transformer.Transformer([secondary5,secondary6,primary,secondary300],50)
 t.circularMilsPerAmp = 800.0
 t.coreLoss           = 0.66 # watts/lbs
 t.efficiency         = 0.90 # 1/1.11 in wolpert p10
@@ -21,7 +20,7 @@ t.WeightExtra        = 1.15
 
 # t.laminationTable()
 
-t.fluxDensity = t.fluxFind()
+t.fluxDensity = t.fluxFind(bmax=130000)
 t.compute()
 t.report()
 

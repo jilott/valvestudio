@@ -4,3 +4,6 @@ from foster-transformer
     loss around 5W/lb at 13kG
     check loss curves at tempel or AK
 
+
+todo
+    don't think the weight calculation (then loss) is correct

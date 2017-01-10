@@ -1,6 +1,14 @@
 import pprint,math,csv
 
 INCHTOMM=25.4
+BOBBINMARGIN=0.02    # estimate by looking at edcor bobbin lengths/2
+BOBBINTHICKNESS=0.04 # majority of edcor bobbins are 0.04 thick
+BOBBINPADDING=0.02   # a little play
+
+# winding length
+# windowlength = margin + thickness + padding + windinglength + padding + thickness + margin 
+
+import Bobbin
 
 # references
 #    Transformer Desing and Manufacturing Manual - Wolpert
@@ -91,6 +99,7 @@ class Transformer():
             self.loss += secondary.voltageDrop*secondary.current 
 
         self.bobbin.stack = []
+        self.bobbin.stack.append({'type':'insulation','height':BOBBINTHICKNESS,'layers':1,'description':'Bobbin Base','turns':1,'turnsPerLayer':1})
         for winding in self.windings:
             if winding.type == 'p':
                 desc = "Primary"
@@ -129,10 +138,11 @@ class Transformer():
         for w in self.wires:
             avail += "%d "%int(w['size'])
         print "  %-20s = %s"%("AWG Selection",avail)
+        print "  %-20s = %.1f VA"%("VA Selection",self.laminationVA)
         print
 
         print "Transformer"
-        print "  %-20s = %.1f VA"%("VA",self.va)
+        print "  %-20s = %.1f VA"%("VA Computed",self.va)
         print "  %-20s = %d lines, %d gauss"%("Flux Density",self.fluxDensity, float(self.fluxDensity) / 6.4516)
         print "  %-20s = %.1flbs"%("Weight",self.weight)
         print "  %-20s = %.1fW"%("Loss",self.loss)
@@ -145,16 +155,23 @@ class Transformer():
         print "  %-20s = %.3f"%("Stacking Factor",self.stackingFactor)
         print "  %-20s = %.3f in*in"%("Core Area",self.coreArea)
         print "  %-20s = %.3f in*in"%("Core Area Effective",self.coreAreaEffective)
-        print "  %-20s = %.3f in"%("Bobbin Window Length",self.bobbin.windingLength)
+        print "  %-20s = %s"%("Window Height",self.lamination['windowHeight'])
+        print "  %-20s = %s"%("Window Length",self.lamination['windowLength'])
         print
 
         print "Bobbin"
+        print "  %-20s = %.3f in"%("Winding Length",self.bobbin.windingLength)
         print "  Winding Stack"
-        print "    Description          Layers Turns T/L  Height"
+        print "    Description          Layers Turns T/L   Height LHeight"
         for s in self.bobbin.stack:
-            print "    %-20s %-6d %-5d %-5d %-6.3f"%(s['description'],s['layers'],s['turns'],s['turnsPerLayer'],s['height'])
-        print "  %-20s = %0.4f in"%("Stack Height",self.bobbin.stackHeight)
-        print "  %-20s = %0.4f in"%("Window Height",self.lamination['windowHeight'])
+            per = int(100*s['turns']/s['turnsPerLayer'])
+            if per < 100:
+                extra = str(per)+"% layer filled"
+            else:
+                extra = ""
+            print "    %-20s %-6d %-5d %-5d %-6.3f %-6.3f %s"%(s['description'],s['layers'],s['turns'],s['turnsPerLayer'],s['layers']*s['height'],s['height'],extra)
+        print "  %-20s = %0.2f in"%("Stack Height",self.bobbin.stackHeight)
+        print "  %-20s = %0.2f in"%("Window Height",self.lamination['windowHeight'])
         print "  %-20s = %0.1f %%"%("Fill",self.bobbin.fill)
         print
 
@@ -190,8 +207,6 @@ class Transformer():
             print "  %-20s = %.3f V"%("VoutNoLoad",secondary.voutNoLoad)
             print "  %-20s = %0.1f %%"%("Regulation",secondary.voutRegulation)
             print
-
-
         
     def wireTable(self):
         l = "Wire Table\nsize diameter turns/\" cmArea  ohms/1000ft ohms/lb   amps\n"
@@ -225,7 +240,7 @@ class Transformer():
         from pprint import pformat
         return pformat(vars(self), indent=2, width=1)
     
-    def __init__(self,windings,lamva,bobbin,have=1):
+    def __init__(self,windings,lamva,have=1):
         self.windings = windings
         self.secondaries = []
         for winding in windings:
@@ -234,9 +249,8 @@ class Transformer():
             if winding.type == 's':
                 self.secondaries.append(winding)
             
-        self.laminationVA = lamva
-        self.bobbin = bobbin
-        
+        # change these for your designs
+        self.laminationVA           = lamva
         self.fluxDensity            = 0.00
         self.circularMilsPerAmp     = 800.0
         self.coreLoss               = 0.66 # watts/lbs
@@ -246,15 +260,16 @@ class Transformer():
         self.lossFactor             = 0.95 # 1/1.05 in wolpert p11
         self.isolationThickness     = 0.003
         self.wrappingThickness      = 0.015
-        self.weightExtra            = 1.15
+        self.weightExtra            = 1.15 # percentage of extra stuff like bells, brackets, screws
         self.insulationLayers       = 3
 
-        self.lamination = None
-        self.coreArea=0.00
-        self.coreAreaEffective=0.00
-        self.temperatureRise=0.00
-        self.loss=0.00
-        self.weight=0.00
+        # these are computed
+        self.lamination             = None
+        self.coreArea               = 0.00
+        self.coreAreaEffective      = 0.00
+        self.temperatureRise        = 0.00
+        self.loss                   = 0.00
+        self.weight                 = 0.00
     
         self.wires = []
         f = open('wire table.csv','rb')
@@ -276,6 +291,7 @@ class Transformer():
         for r in reader:
             if r['VA'] == str(lamva):
                 self.lamination = r
+                self.bobbin = Bobbin.Bobbin(float(r['windowLength'])-(2.0*BOBBINMARGIN),BOBBINTHICKNESS,BOBBINPADDING)
             self.laminations.append(r)
 
         for k in self.lamination:
