@@ -172,9 +172,62 @@ class Transformer():
             print "    %-20s %-6d %-5d %-5d %-6.3f %-6.3f %s"%(s['description'],s['layers'],s['turns'],s['turnsPerLayer'],s['layers']*s['height'],s['height'],extra)
         print "  %-20s = %0.2f in"%("Stack Height",self.bobbin.stackHeight)
         print "  %-20s = %0.2f in"%("Window Height",self.lamination['windowHeight'])
-        print "  %-20s = %0.1f %%"%("Fill",self.bobbin.fill)
+        if self.bobbin.fill > 93.0:
+            note = "<<<<<<<<<<<<<<<<<<<<<< 93% or greater, increase lamination VA"
+        else:
+            note = ""
+        print "  %-20s = %0.1f %% %s"%("Fill",self.bobbin.fill,note)
         print
 
+        print "Windings"
+        wdata = []
+        wdata.append("  Type                 ")
+        wdata.append("  Voltage V            ")
+        wdata.append("  Current A            ")
+        wdata.append("  Turns                ")
+        wdata.append("  Layers               ")
+        wdata.append("  Turns/layer          ")
+        wdata.append("  AWG                  ")
+        wdata.append("  Wire Diameter        ")
+        wdata.append("  Ohms/1000 feet       ")
+        wdata.append("  MPL inches           ")
+        wdata.append("  Wire Length feet     ")
+        wdata.append("  Resistance           ")
+        wdata.append("  Voltage Drop         ")
+        wdata.append("  Voltage Out          ")
+        wdata.append("  Voltage No Load      ")
+        wdata.append("  Voltage Regulation   ")
+
+        for winding in self.windings:
+            if winding.type == 'p':
+                wdata[0] += "%-12s"%"Primary"
+            if winding.type == 's':
+                wdata[0] += "%-12s"%"Secondary"
+            wdata[1] += "%-12.1f"%winding.voltage
+            wdata[2] += "%-12.1f"%winding.current
+            wdata[3] += "%-12d"%winding.turns
+            wdata[4] += "%-12d"%winding.layers
+            wdata[5] += "%-12d"%winding.turnsPerLayer
+            wdata[6] += "%-12d"%winding.wire['size']
+            wdata[7] += "%-12s"%winding.wireDiameter
+            wdata[8] += "%-12.4f"%winding.wire['ohmsPer1000ft']
+            wdata[9] += "%-12.1f"%winding.meanPathLength
+            wdata[10] += "%-12.1f"%winding.wireLength
+            wdata[11] += "%-12.4f"%winding.resistance
+            wdata[12] += "%-12.3f"%winding.voltageDrop
+            if winding.type == 's':
+                wdata[13] += "%-12.2f"%winding.vout
+                wdata[14] += "%-12.2f"%winding.voutNoLoad
+                wdata[15] += "%-12.2f"%winding.voutRegulation
+            else:
+                wdata[13] += "            "
+                wdata[14] += "            "
+                wdata[15] += "            "
+
+
+        print "\n".join(wdata)
+        
+        '''
         print "Winding Primary"
         print "  %-20s = %.1f V"%("Voltage",self.primary.voltage)
         print "  %-20s = %.3f A"%("Current",self.primary.current)
@@ -207,6 +260,7 @@ class Transformer():
             print "  %-20s = %.3f V"%("VoutNoLoad",secondary.voutNoLoad)
             print "  %-20s = %0.1f %%"%("Regulation",secondary.voutRegulation)
             print
+        '''
         
     def wireTable(self):
         l = "Wire Table\nsize diameter turns/\" cmArea  ohms/1000ft ohms/lb   amps\n"
@@ -393,15 +447,15 @@ class Transformer():
             t.compute(va=va,npawg=npawg,nsawg=nsawg)
             print "%-6d %-6d %-5d %-5d %-8.2f %-5.1f %-.1f"%(b,b/6.45,t.Np,t.Ns,t.Vout,t.Fill,t.Loss)
 
-    def fluxFind(self,bmin=20000,bmax=104000,inc=500):
+    def fluxFind(self,bmin=20000,bmax=103000,inc=500):
         # 1.6T = 103225.6 flux lines
         errormin = 1000.00
         bminimal = 0.0
         for b in range(bmin,bmax,inc): 
             self.fluxDensity = b
             self.compute()
-            if self.bobbin.fill > 95.0:
-                continue
+            #if self.bobbin.fill > 95.0:
+            #    continue
             error = 0.0
             for secondary in self.secondaries: 
                 error += math.fabs((secondary.voltage - secondary.vout)/secondary.vout) + math.fabs((secondary.voutNoLoad - secondary.vout)/secondary.vout)
