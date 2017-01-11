@@ -445,7 +445,7 @@ class Transformer():
         print "Core Size %s"%self.lamination['size']
         print "FluxDen  Gauss  Fill  Loss   ",
         for secondary in self.secondaries: 
-            print "%-8.2f "%secondary.voltage,
+            print "%-8.2f     "%secondary.voltage,
         print "   Error"
         print "-----------------------------------------------------------------------------------------"
 
@@ -459,7 +459,8 @@ class Transformer():
                 self.compute()
                 error = 0.0
                 for secondary in self.secondaries: 
-                    error += math.fabs((secondary.voltage - secondary.vout)/secondary.vout) + math.fabs((secondary.voutNoLoad - secondary.vout)/secondary.vout)
+                    error += 100.0*(math.fabs((secondary.voltage - secondary.vout)/secondary.vout) + math.fabs((secondary.voutNoLoad - secondary.vout)/secondary.vout))
+                error = error / len(self.secondaries)
                 fluxorder[b] = error
             fluxorder = sorted(fluxorder.items(), key=operator.itemgetter(1))
         else:
@@ -471,9 +472,10 @@ class Transformer():
             error = 0.0
             print "%-6d   %-6d %-5d %-.1f    "%(b,b/6.45,self.bobbin.fill,self.loss),
             for secondary in self.secondaries: 
-                error += math.fabs((secondary.voltage - secondary.vout)/secondary.vout) + math.fabs((secondary.voutNoLoad - secondary.vout)/secondary.vout)
-                print "%-8.2f "%secondary.vout,
-            print "   %-.3f"%error
+                error += 100.0*(math.fabs((secondary.voltage - secondary.vout)/secondary.vout) + math.fabs((secondary.voutNoLoad - secondary.vout)/secondary.vout))
+                print "%-6.2f %-6.2f"%(secondary.vout,secondary.voutNoLoad),
+            error = error / len(self.secondaries)
+            print "   %-.2f"%error
 
     def fluxFind(self,bmin=20000,bmax=103000,inc=1000,fillmax=150):
         # 1.6T = 103225.6 flux lines
