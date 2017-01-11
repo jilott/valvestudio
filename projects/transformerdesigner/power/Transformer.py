@@ -439,18 +439,18 @@ class Transformer():
             else:
                 print "G00 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(self.BobbinWindowLength*INCHTOMM,(count-1)*lturns+turns,turns,count)
 
-    def fluxTable(self,sort=None):
+    def fluxTable(self,sort=None,min=50000,max=103000):
         # this modifies transformer
         print 
         print "Core Size %s"%self.lamination['size']
-        print "FluxDen  Gauss  Fill  Loss   ",
+        print "FluxDen  Gauss  Fill  Loss    ",
         for secondary in self.secondaries: 
             print "%-8.2f     "%secondary.voltage,
         print "   Error"
         print "-----------------------------------------------------------------------------------------"
 
         fluxorder = {}
-        for b in range(50000,110000,1000):
+        for b in range(min,max,1000):
             fluxorder[b] = 0
 
         if sort=='error':
@@ -470,7 +470,7 @@ class Transformer():
             self.fluxDensity = b
             self.compute()
             error = 0.0
-            print "%-6d   %-6d %-5d %-.1f    "%(b,b/6.45,self.bobbin.fill,self.loss),
+            print "%-6d   %-6d %-5d %-4.1f    "%(b,b/6.45,self.bobbin.fill,self.loss),
             for secondary in self.secondaries: 
                 error += 100.0*(math.fabs((secondary.voltage - secondary.vout)/secondary.vout) + math.fabs((secondary.voutNoLoad - secondary.vout)/secondary.vout))
                 print "%-6.2f %-6.2f"%(secondary.vout,secondary.voutNoLoad),
