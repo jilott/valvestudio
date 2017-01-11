@@ -1,4 +1,5 @@
 import pprint,math,csv
+import operator
 
 INCHTOMM=25.4
 BOBBINMARGIN=0.02    # estimate by looking at edcor bobbin lengths/2
@@ -144,6 +145,7 @@ class Transformer():
         print "Transformer"
         print "  %-20s = %.1f VA"%("VA Computed",self.va)
         print "  %-20s = %d lines, %d gauss"%("Flux Density",self.fluxDensity, float(self.fluxDensity) / 6.4516)
+        print "  %-20s = %d"%("Circular Mils/Amp",self.circularMilsPerAmp)
         print "  %-20s = %.1flbs"%("Weight",self.weight)
         print "  %-20s = %.1fW"%("Loss",self.loss)
         print "  %-20s = %dC"%("Temp Rise",self.temperatureRise)
@@ -437,25 +439,51 @@ class Transformer():
             else:
                 print "G00 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(self.BobbinWindowLength*INCHTOMM,(count-1)*lturns+turns,turns,count)
 
-    def fluxTable(self,va,npawg,nsawg):
+    def fluxTable(self,sort=None):
         # this modifies transformer
-        print "Core Size %s"%t.Lamination['size']
-        print "  B    Gauss  Np    Ns    Vout     Fill  Loss"
-        print "---------------------------------------------------"
-        for b in range(70000,110000,1000):
-            t.B = b
-            t.compute(va=va,npawg=npawg,nsawg=nsawg)
-            print "%-6d %-6d %-5d %-5d %-8.2f %-5.1f %-.1f"%(b,b/6.45,t.Np,t.Ns,t.Vout,t.Fill,t.Loss)
+        print 
+        print "Core Size %s"%self.lamination['size']
+        print "FluxDen  Gauss  Fill  Loss   ",
+        for secondary in self.secondaries: 
+            print "%-8.2f "%secondary.voltage,
+        print "   Error"
+        print "-----------------------------------------------------------------------------------------"
 
-    def fluxFind(self,bmin=20000,bmax=103000,inc=500):
+        fluxorder = {}
+        for b in range(50000,110000,1000):
+            fluxorder[b] = 0
+
+        if sort=='error':
+            for b in fluxorder.keys():
+                self.fluxDensity = b
+                self.compute()
+                error = 0.0
+                for secondary in self.secondaries: 
+                    error += math.fabs((secondary.voltage - secondary.vout)/secondary.vout) + math.fabs((secondary.voutNoLoad - secondary.vout)/secondary.vout)
+                fluxorder[b] = error
+            fluxorder = sorted(fluxorder.items(), key=operator.itemgetter(1))
+        else:
+            fluxorder = sorted(fluxorder.items(), key=operator.itemgetter(0))
+
+        for b,e in fluxorder:
+            self.fluxDensity = b
+            self.compute()
+            error = 0.0
+            print "%-6d   %-6d %-5d %-.1f    "%(b,b/6.45,self.bobbin.fill,self.loss),
+            for secondary in self.secondaries: 
+                error += math.fabs((secondary.voltage - secondary.vout)/secondary.vout) + math.fabs((secondary.voutNoLoad - secondary.vout)/secondary.vout)
+                print "%-8.2f "%secondary.vout,
+            print "   %-.3f"%error
+
+    def fluxFind(self,bmin=20000,bmax=103000,inc=1000,fillmax=150):
         # 1.6T = 103225.6 flux lines
         errormin = 1000.00
         bminimal = 0.0
         for b in range(bmin,bmax,inc): 
             self.fluxDensity = b
             self.compute()
-            #if self.bobbin.fill > 95.0:
-            #    continue
+            if self.bobbin.fill > fillmax:
+                continue
             error = 0.0
             for secondary in self.secondaries: 
                 error += math.fabs((secondary.voltage - secondary.vout)/secondary.vout) + math.fabs((secondary.voutNoLoad - secondary.vout)/secondary.vout)

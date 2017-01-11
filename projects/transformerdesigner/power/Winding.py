@@ -1,5 +1,5 @@
 class Winding():
-    def __init__(self,type,voltage,current,taps):
+    def __init__(self,type,voltage,current,taps=None):
         self.type = type
         self.voltage = voltage
         self.current = current     
