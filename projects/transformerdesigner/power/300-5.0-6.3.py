@@ -8,7 +8,7 @@ secondary6 = Winding.Winding('s',6.3,1.6,taps=[50])
 secondary300 = Winding.Winding('s',300.0,0.100,[50])
 
 t = Transformer.Transformer([secondary5,secondary6,primary,secondary300],50)
-t.circularMilsPerAmp = 500.0
+t.circularMilsPerAmp = 700.0
 t.coreLoss           = 0.66 # watts/lbs
 t.efficiency         = 0.90 # 1/1.11 in wolpert p10
 t.lineFrequency      = 60.0
@@ -20,7 +20,7 @@ t.WeightExtra        = 1.15
 
 # t.laminationTable()
 
-t.fluxDensity = t.fluxFind(bmax=103000)
+t.fluxDensity = t.fluxFind(bmax=90000)
 t.compute()
 t.report()
 
