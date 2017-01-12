@@ -22,6 +22,118 @@ class Transformer():
 
         for secondary in self.secondaries:
             self.va += secondary.voltage * secondary.current
+
+
+        # find initial layer turns and wire diameter, then iterate from there, no voltage drops considered yet
+
+        primary.current = self.va * (1/self.efficiency) / primary.voltage
+        self.coreArea = self.lamination['area']
+        self.coreAreaEffective = self.coreArea * self.stackingFactor
+        primary.turns = float(math.floor((primary.voltage * 10**8)/(4.44 * self.fluxDensity * self.coreAreaEffective * self.lineFrequency)))
+        primary.wireDiameter = primary.current * self.circularMilsPerAmp
+        # scan for larger diameter
+        for w in self.wires:
+            if w['cmArea'] > primary.wireDiameter:
+                primary.wire = w
+                primary.wireDiameter = w['diameter']
+                break
+        primary.layers = math.ceil(primary.turns / (self.bobbin.windingLength / primary.wireDiameter))
+
+        for secondary in self.secondaries:
+            secondary.wireDiameter = secondary.current * self.circularMilsPerAmp
+            for w in self.wires:
+                if w['cmArea'] > secondary.wireDiameter:
+                    secondary.wire = w
+                    secondary.wireDiameter = w['diameter']
+                    break
+            secondary.turns = float(math.floor(primary.turns/primary.voltage * (1/self.lossFactor) * secondary.voltage)) # from wolpert, not very accurate
+            secondary.layers = math.ceil(secondary.turns / (self.bobbin.windingLength / secondary.wireDiameter))
+
+            
+        # with initial turns and layers, we can calculate winding MPL, resistance, vdrop etc
+        # doing this twice, first time through primary vdrop = 0 because didn't know MPL
+        for i in range(4):
+            # now calculate meanPathLength
+            # height and length here are from core center to where we are
+            height = self.lamination['stackHeight']/2.00 + self.bobbin.border   # at the surface of the bobbin
+            length = (self.lamination['area']/self.lamination['stackHeight'])/2.0 + self.bobbin.border
+            # print height,length
+            for winding in self.windings:
+                height += (winding.layers * winding.wireDiameter) / 2.0 # this puts in the center of the winding
+                length += (winding.layers * winding.wireDiameter) / 2.0
+                winding.meanPathLength = 4 * (height + length)
+
+                if winding.type == 's':
+                    tinitial = float(math.floor(primary.turns/primary.voltage * (1/self.lossFactor) * winding.voltage)) # from wolpert, not very accurate
+                    # so we're going to loop through turns and find the best one, based on resistance at this MPL
+                    errormin = 1000
+                    for t in range(int(0.75*tinitial),int(1.5*tinitial),1):
+                        winding.wireLength = winding.meanPathLength * t
+                        winding.resistance = winding.wireLength * (winding.wire['ohmsPer1000Inches']/1000.0)
+                        winding.voltageDrop = winding.resistance * winding.current
+                        winding.vout = (primary.voltage - primary.voltageDrop)*t/primary.turns - winding.voltageDrop
+                        error = math.fabs(winding.vout - winding.voltage)
+                        if error < errormin:
+                            terrormin = t
+                            errormin = error
+                    winding.turns = terrormin
+
+                # now have winding.turns with minimal error
+
+                winding.wireLength = winding.meanPathLength * winding.turns
+                winding.resistance = winding.wireLength * (winding.wire['ohmsPer1000Inches']/1000.0)
+                winding.voltageDrop = winding.resistance * winding.current
+                if winding.type == 's':
+                    winding.vout = (primary.voltage - primary.voltageDrop)*winding.turns/primary.turns - winding.voltageDrop
+                    winding.voutNoLoad = primary.voltage*winding.turns/primary.turns
+                    winding.voutRegulation = 100*(winding.voutNoLoad-winding.vout)/winding.vout
+                winding.layers = math.ceil(winding.turns / (self.bobbin.windingLength / winding.wireDiameter))
+
+
+                height += (winding.layers * winding.wireDiameter) / 2.0 # the other half so to speak
+                length += (winding.layers * winding.wireDiameter) / 2.0
+                height += self.isolationThickness
+                length += self.isolationThickness
+                winding.turnsPerLayer = math.floor(self.bobbin.windingLength/winding.wireDiameter)
+                winding.weight = winding.resistance / winding.wire['ohmsPerPound']
+
+        self.weight = 0
+        for winding in self.windings:
+            self.weight += winding.weight
+            self.loss = winding.voltageDrop*winding.current 
+
+        self.bobbin.stack = []
+        self.bobbin.stack.append({'type':'insulation','height':BOBBINTHICKNESS,'layers':1,'description':'Bobbin Base','turns':1,'turnsPerLayer':1})
+        for winding in self.windings:
+            if winding.type == 'p':
+                desc = "Primary"
+            if winding.type == 's':
+                desc = "Secondary"
+            self.bobbin.stack.append({'type':'wire','height':winding.wireDiameter,'layers':winding.layers,'description':'%s %dAWG'%(desc,winding.wire['size']),'turns':winding.turns,'turnsPerLayer':winding.turnsPerLayer})
+            self.bobbin.stack.append({'type':'insulation','height':self.isolationThickness,'layers':self.insulationLayers,'description':'Insulation','turns':1,'turnsPerLayer':1})
+        del(self.bobbin.stack[-1])
+        self.bobbin.stack.append({'type':'insulation','height':self.wrappingThickness,'layers':self.insulationLayers,'description':'Wrapping','turns':1,'turnsPerLayer':1})
+
+        self.weight += self.lamination['weight']*self.stackingFactor
+
+        self.bobbin.stackHeight = 0.0
+        for s in self.bobbin.stack:
+            self.bobbin.stackHeight += s['layers']*s['height']
+        self.bobbin.fill = self.bobbin.stackHeight / self.lamination['windowHeight'] * 100
+
+        # add in core loss
+        self.loss += self.weight * self.coreLoss
+
+        self.temperatureRise = self.loss/(0.1*math.pow((self.weight/1.073),2.0/3.0))
+
+        self.weight = self.weight * self.weightExtra
+
+    def computeold(self):
+        primary = self.primary
+        self.va = 0
+
+        for secondary in self.secondaries:
+            self.va += secondary.voltage * secondary.current
             
         primary.current = self.va * (1/self.efficiency) / primary.voltage
 
@@ -183,22 +295,22 @@ class Transformer():
 
         print "Windings"
         wdata = []
-        wdata.append("  Type                 ")
-        wdata.append("  Voltage V            ")
-        wdata.append("  Current A            ")
-        wdata.append("  Turns                ")
-        wdata.append("  Layers               ")
-        wdata.append("  Turns/layer          ")
-        wdata.append("  AWG                  ")
-        wdata.append("  Wire Diameter        ")
-        wdata.append("  Ohms/1000 feet       ")
-        wdata.append("  MPL inches           ")
-        wdata.append("  Wire Length feet     ")
-        wdata.append("  Resistance           ")
-        wdata.append("  Voltage Drop         ")
-        wdata.append("  Voltage Out          ")
-        wdata.append("  Voltage No Load      ")
-        wdata.append("  Voltage Regulation   ")
+        wdata.append("  Type                  ")
+        wdata.append("  Voltage V             ")
+        wdata.append("  Current A             ")
+        wdata.append("  Turns                 ")
+        wdata.append("  Layers                ")
+        wdata.append("  Turns/layer           ")
+        wdata.append("  AWG                   ")
+        wdata.append("  Wire Diameter         ")
+        wdata.append("  Ohms/1000 feet        ")
+        wdata.append("  Mean Path Length inch ")
+        wdata.append("  Wire Length feet      ")
+        wdata.append("  Resistance            ")
+        wdata.append("  Voltage Drop          ")
+        wdata.append("  Voltage Out           ")
+        wdata.append("  Voltage No Load       ")
+        wdata.append("  Voltage Regulation    ")
 
         for winding in self.windings:
             if winding.type == 'p':
@@ -213,8 +325,8 @@ class Transformer():
             wdata[6] += "%-12d"%winding.wire['size']
             wdata[7] += "%-12s"%winding.wireDiameter
             wdata[8] += "%-12.4f"%winding.wire['ohmsPer1000ft']
-            wdata[9] += "%-12.1f"%winding.meanPathLength
-            wdata[10] += "%-12.1f"%winding.wireLength
+            wdata[9] += "%-12.2f"%winding.meanPathLength
+            wdata[10] += "%-12.1f"%(winding.wireLength/12.0)
             wdata[11] += "%-12.4f"%winding.resistance
             wdata[12] += "%-12.3f"%winding.voltageDrop
             if winding.type == 's':
