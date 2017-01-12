@@ -5,7 +5,7 @@ import Winding, Transformer
 primary   = Winding.Winding('p',115.0,0.0)
 secondary5 = Winding.Winding('s',5.0,2.0)
 secondary6 = Winding.Winding('s',6.3,1.6,taps=[50])
-secondary300 = Winding.Winding('s',300.0,0.100,[50])
+secondary300 = Winding.Winding('s',300.0,0.100,[40,50,60])
 
 t = Transformer.Transformer([secondary5,secondary6,primary,secondary300],50)
 t.circularMilsPerAmp = 700.0
@@ -24,4 +24,5 @@ t.fluxDensity = t.fluxFind(bmax=90000)
 t.compute()
 t.report()
 
-t.fluxTable(sort='error')
+#t.fluxTable(sort='error')
+t.gcode()

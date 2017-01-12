@@ -105,11 +105,7 @@ class Transformer():
         self.bobbin.stack = []
         self.bobbin.stack.append({'type':'insulation','height':BOBBINTHICKNESS,'layers':1,'description':'Bobbin Base','turns':1,'turnsPerLayer':1})
         for winding in self.windings:
-            if winding.type == 'p':
-                desc = "Primary"
-            if winding.type == 's':
-                desc = "Secondary"
-            self.bobbin.stack.append({'type':'wire','height':winding.wireDiameter,'layers':winding.layers,'description':'%s %dAWG'%(desc,winding.wire['size']),'turns':winding.turns,'turnsPerLayer':winding.turnsPerLayer})
+            self.bobbin.stack.append({'type':'wire','height':winding.wireDiameter,'layers':winding.layers,'description':'%s %dAWG'%(winding.typeText,winding.wire['size']),'turns':winding.turns,'turnsPerLayer':winding.turnsPerLayer})
             self.bobbin.stack.append({'type':'insulation','height':self.isolationThickness,'layers':self.insulationLayers,'description':'Insulation','turns':1,'turnsPerLayer':1})
         del(self.bobbin.stack[-1])
         self.bobbin.stack.append({'type':'insulation','height':self.wrappingThickness,'layers':self.insulationLayers,'description':'Wrapping','turns':1,'turnsPerLayer':1})
@@ -121,120 +117,9 @@ class Transformer():
             self.bobbin.stackHeight += s['layers']*s['height']
         self.bobbin.fill = self.bobbin.stackHeight / self.lamination['windowHeight'] * 100
 
-        # add in core loss
+        # add in core loss and other stuff
         self.loss += self.weight * self.coreLoss
-
         self.temperatureRise = self.loss/(0.1*math.pow((self.weight/1.073),2.0/3.0))
-
-        self.weight = self.weight * self.weightExtra
-
-    def computeold(self):
-        primary = self.primary
-        self.va = 0
-
-        for secondary in self.secondaries:
-            self.va += secondary.voltage * secondary.current
-            
-        primary.current = self.va * (1/self.efficiency) / primary.voltage
-
-        self.coreArea = self.lamination['area']
-        self.coreAreaEffective = self.coreArea * self.stackingFactor
-
-        primary.turns = float(math.floor((primary.voltage * 10**8)/(4.44 * self.fluxDensity * self.coreAreaEffective * self.lineFrequency)))
-        primary.wireDiameter = primary.current * self.circularMilsPerAmp
-
-        # scan for larger diameter
-        for w in self.wires:
-            if w['cmArea'] > primary.wireDiameter:
-                primary.wire = w
-                primary.wireDiameter = w['diameter']
-                break
-
-        primary.layers = math.ceil(primary.turns / (self.bobbin.windingLength / primary.wireDiameter))
-
-        # assuming square core
-        crossSectionLength = math.sqrt(self.coreArea) + 2*self.bobbin.border + primary.layers*primary.wireDiameter # its really half the distance but there are 2 sides
-        primary.meanPathLength = 4 * crossSectionLength
-        primary.wireLength = primary.meanPathLength * primary.turns / 12.0
-        primary.resistance = primary.wireLength * (primary.wire['ohmsPer1000ft']/1000.0) 
-        primary.voltageDrop = primary.resistance * primary.current
-        
-        primary.weight = primary.resistance / primary.wire['ohmsPerPound']
-
-        self.weight = primary.weight
-        self.loss = primary.voltageDrop*primary.current 
-
-        primary.turnsPerLayer = math.floor(self.bobbin.windingLength/primary.wireDiameter)
-    
-
-        for secondary in self.secondaries:
-            secondary.wireDiameter = secondary.current * self.circularMilsPerAmp
-            for w in self.wires:
-                if w['cmArea'] > secondary.wireDiameter:
-                    secondary.wire = w
-                    secondary.wireDiameter = w['diameter']
-                    break
-
-            # this loop scans through secondary turns minimizing vout-voltage, a straight calc of turns isn't very accurate
-            tinitial = float(math.floor(primary.turns/primary.voltage * (1/self.lossFactor) * secondary.voltage)) # from wolpert, not very accurate
-            errormin = 1000
-            for t in range(int(0.75*tinitial),int(1.5*tinitial),1):
-                l = math.ceil(t / (self.bobbin.windingLength / secondary.wireDiameter))
-                cl = crossSectionLength + 2*self.isolationThickness + secondary.layers*secondary.wireDiameter
-                mpl = 4 * cl
-                wl = mpl * t / 12.0
-                r = wl * (secondary.wire['ohmsPer1000ft']/1000.0)
-                vdrop = r * secondary.current
-                vout = (primary.voltage - primary.voltageDrop)*t/primary.turns - vdrop
-                error = math.fabs(vout - secondary.voltage)
-                # print vout
-                if error < errormin:
-                    terrormin = t
-                    errormin = error
-
-            secondary.turns = terrormin
-            secondary.layers = math.ceil(secondary.turns / (self.bobbin.windingLength / secondary.wireDiameter))
-
-            crossSectionLength += 2*self.isolationThickness + secondary.layers*secondary.wireDiameter
-            secondary.meanPathLength = 4 * crossSectionLength
-            secondary.wireLength = secondary.meanPathLength * secondary.turns / 12.0
-            secondary.resistance = secondary.wireLength * (secondary.wire['ohmsPer1000ft']/1000.0)
-            secondary.voltageDrop = secondary.resistance * secondary.current
-            secondary.weight = secondary.resistance / secondary.wire['ohmsPerPound']
-            secondary.vout = (primary.voltage - primary.voltageDrop)*secondary.turns/primary.turns - secondary.voltageDrop
-            # secondary.voutRMS = secondary.voltage/2.0*0.7071
-            secondary.voutNoLoad = primary.voltage*secondary.turns/primary.turns
-            secondary.voutRegulation = 100*(secondary.voutNoLoad-secondary.vout)/secondary.vout
-
-            secondary.turnsPerLayer = math.floor(self.bobbin.windingLength/secondary.wireDiameter)
-
-            self.weight += secondary.weight
-            self.loss += secondary.voltageDrop*secondary.current 
-
-        self.bobbin.stack = []
-        self.bobbin.stack.append({'type':'insulation','height':BOBBINTHICKNESS,'layers':1,'description':'Bobbin Base','turns':1,'turnsPerLayer':1})
-        for winding in self.windings:
-            if winding.type == 'p':
-                desc = "Primary"
-            if winding.type == 's':
-                desc = "Secondary"
-            self.bobbin.stack.append({'type':'wire','height':winding.wireDiameter,'layers':winding.layers,'description':'%s %dAWG'%(desc,winding.wire['size']),'turns':winding.turns,'turnsPerLayer':winding.turnsPerLayer})
-            self.bobbin.stack.append({'type':'insulation','height':self.isolationThickness,'layers':self.insulationLayers,'description':'Insulation','turns':1,'turnsPerLayer':1})
-        del(self.bobbin.stack[-1])
-        self.bobbin.stack.append({'type':'insulation','height':self.wrappingThickness,'layers':self.insulationLayers,'description':'Wrapping','turns':1,'turnsPerLayer':1})
-
-        self.weight += self.lamination['weight']*self.stackingFactor
-
-        self.bobbin.stackHeight = 0.0
-        for s in self.bobbin.stack:
-            self.bobbin.stackHeight += s['layers']*s['height']
-        self.bobbin.fill = self.bobbin.stackHeight / self.lamination['windowHeight'] * 100
-
-        # add in core loss
-        self.loss += self.weight * self.coreLoss
-
-        self.temperatureRise = self.loss/(0.1*math.pow((self.weight/1.073),2.0/3.0))
-
         self.weight = self.weight * self.weightExtra
 
     def report(self):
@@ -242,7 +127,7 @@ class Transformer():
         print "  %-20s = %.1f V"%("Primary",self.primary.voltage)
         for secondary in self.secondaries:
             if secondary.taps:
-                taps = "CT"
+                taps = "Taps "+','.join(str(x) for x in secondary.taps)
             else:
                 taps = ""
             print "  %-20s = %5.1f V @ %5.3f A %s"%("Secondary",secondary.voltage,secondary.current,taps)
@@ -313,10 +198,7 @@ class Transformer():
         wdata.append("  Voltage Regulation    ")
 
         for winding in self.windings:
-            if winding.type == 'p':
-                wdata[0] += "%-12s"%"Primary"
-            if winding.type == 's':
-                wdata[0] += "%-12s"%"Secondary"
+            wdata[0] += "%-12s"%winding.typeText
             wdata[1] += "%-12.1f"%winding.voltage
             wdata[2] += "%-12.1f"%winding.current
             wdata[3] += "%-12d"%winding.turns
@@ -413,8 +295,10 @@ class Transformer():
         self.secondaries = []
         for winding in windings:
             if winding.type == 'p':
+                winding.typeText = 'Primary'
                 self.primary = winding
             if winding.type == 's':
+                winding.typeText = 'Secondary'
                 self.secondaries.append(winding)
             
         # change these for your designs
@@ -430,6 +314,7 @@ class Transformer():
         self.wrappingThickness      = 0.015
         self.weightExtra            = 1.15 # percentage of extra stuff like bells, brackets, screws
         self.insulationLayers       = 3
+        self.tapeSetback            = 10
 
         # these are computed
         self.lamination             = None
@@ -469,87 +354,51 @@ class Transformer():
                 pass
     
     def gcode(self):
-        # gcode generation here
-        print "(load #%sAWG wire)"%self.NpWire['size']
-        print "(set bobbin zero)"
-        print "(winding %d turns)"%self.Np
-        print "G21 G54 G90 F1000"
-        print "M0 (next move is 0,0)"
-        print "G0 X0 Y0"
-
-        turns = self.Np
-        lturns = math.floor(self.BobbinWindowLength * float(self.NpWire['turnsPerInch']))
-        layerHeight = float(self.NpWire['diameter'])
-        count = 1
-        while turns > lturns:
-            if count%2 == 0:
-                print "G01 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(0,count*lturns,lturns,count)
-            else:
-                print "G01 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(self.BobbinWindowLength*INCHTOMM,count*lturns,lturns,count)
-            turns -= lturns
-            count += 1
-        if count%2 == 0:
-            print "G00 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(0,(count-1)*lturns+turns,turns,count)
-        else:
-            print "G00 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(self.BobbinWindowLength*INCHTOMM,(count-1)*lturns+turns,turns,count)
-
         print
-        print "(load #%sAWG wire)"%self.NsWire['size']
-        print "(set bobbin zero)"
-        print "(winding %d turns)"%self.Ns
-        if (self.CenterTapped):
-            print "(center tap %d turns)"%(self.Ns/2)
-        print "G21 G54 G90 F1000"
-        print "M0 (next move is 0,0)"
-        print "G0 X0 Y0"
 
-        if self.CenterTapped:
-            turns = self.Ns / 2
-            lturns = math.floor(self.BobbinWindowLength * float(self.NsWire['turnsPerInch']))
-            layerHeight = float(self.NsWire['diameter'])
-            count = 1
-            while turns > lturns:
-                if count%2 == 0:
-                    print "G01 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(0,count*lturns,lturns,count)
+        for winding in self.windings:
+            winding.route = [(0,0,'left')]
+
+            for i in range(1,int(winding.layers+1)):
+                if i % 2 == 0:
+                    direction = 0.0
+                    label = 'left'
                 else:
-                    print "G01 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(self.BobbinWindowLength*INCHTOMM,count*lturns,lturns,count)
-                turns -= lturns
-                count += 1
-            if count%2 == 0:
-                print "G00 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(0,(count-1)*lturns+turns,turns,count)
-            else:
-                print "G00 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(self.BobbinWindowLength*INCHTOMM,(count-1)*lturns+turns,turns,count)
-            
-            print "M0 (center tapout)"
-            turns = self.Ns / 2
-            count = 1
-            while turns > lturns:
-                if count%2 == 0:
-                    print "G01 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(0,count*lturns,lturns,count)
+                    direction = 1
+                    label = 'right'
+                if i == winding.layers:
+                    winding.route.append((direction*self.bobbin.windingLength,float(winding.turns),label))
                 else:
-                    print "G01 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(self.BobbinWindowLength*INCHTOMM,count*lturns,lturns,count)
-                turns -= lturns
-                count += 1
-            if count%2 == 0:
-                print "G00 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(0,(count-1)*lturns+turns,turns,count)
-            else:
-                print "G00 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(self.BobbinWindowLength*INCHTOMM,(count-1)*lturns+turns,turns,count)
-        else:
-            turns = self.Ns
-            lturns = math.floor(self.BobbinWindowLength * float(self.NsWire['turnsPerInch']))
-            layerHeight = float(self.NsWire['diameter'])
-            count = 1
-            while turns > lturns:
-                if count%2 == 0:
-                    print "G01 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(0,count*lturns,lturns,count)
-                else:
-                    print "G01 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(self.BobbinWindowLength*INCHTOMM,count*lturns,lturns,count)
-                turns -= lturns
-                count += 1
-            if count%2 == 0:
-                print "G00 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(0,(count-1)*lturns+turns,turns,count)
-            else:
-                print "G00 X%-15.4f Y%-15.4f (%3d turns layer %d)"%(self.BobbinWindowLength*INCHTOMM,(count-1)*lturns+turns,turns,count)
+                    winding.route.append((direction*self.bobbin.windingLength,float(i*winding.turnsPerLayer),label))
+
+
+            if winding.taps:
+                for i in range(len(winding.taps)):
+                    tapturn = float(winding.taps[i])*float(winding.turns)/100.0
+                    for i in range(len(winding.route)):
+                        if winding.route[i-1][1] < tapturn and winding.route[i][1] > tapturn:
+                            m = (winding.route[i][0]-winding.route[i-1][0])/(winding.route[i][1] - winding.route[i-1][1])
+                            if i % 2 == 0:
+                                winding.route.insert(i,(self.bobbin.windingLength + m*(tapturn-winding.route[i-1][1]),tapturn,'tap'))
+                                winding.route.insert(i,(self.bobbin.windingLength + m*(tapturn-self.tapeSetback-winding.route[i-1][1]),tapturn-self.tapeSetback,'tape'))
+                            else:
+                                winding.route.insert(i,(m*(tapturn-winding.route[i-1][1]),tapturn,'tap'))
+                                winding.route.insert(i,(m*(tapturn-self.tapeSetback-winding.route[i-1][1]),tapturn-self.tapeSetback,'tape'))
+
+            print "(----------------------------------------------)"
+            print "( load #%2d AWG wire for %6.1fV %-10s     )"%(winding.wire['size'],winding.voltage,winding.typeText)
+            print "( set bobbin zero                              )"
+            print "( winding %4d turns                           )"%winding.turns
+            print "G21 G54 G90 F1000"
+            print "M0                          ( next move is 0,0 )"
+            for r in winding.route:
+                print "G01 X%-10.4f Y%-10.4f ( %-16s )"%r
+                if r[2] == 'tape' or r[2] == 'tap':
+                    print "M0                          ( %-16s )"%r[2]
+
+            print
+            for r in winding.route:
+                print "%10.4f %10.4f %s"%r
 
     def fluxTable(self,sort=None,min=50000,max=103000):
         # this modifies transformer
