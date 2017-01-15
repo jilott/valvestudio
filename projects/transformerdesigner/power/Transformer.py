@@ -323,6 +323,8 @@ class Transformer():
         self.temperatureRise        = 0.00
         self.loss                   = 0.00
         self.weight                 = 0.00
+
+        self.routed                 = False
     
         self.wires = []
         f = open('wire table.csv','rb')
@@ -353,9 +355,7 @@ class Transformer():
             except:
                 pass
     
-    def gcode(self):
-        print
-
+    def route(self):
         for winding in self.windings:
             winding.route = [(0,0,'left')]
 
@@ -371,7 +371,6 @@ class Transformer():
                 else:
                     winding.route.append((direction*self.bobbin.windingLength,float(i*winding.turnsPerLayer),label))
 
-
             if winding.taps:
                 for i in range(len(winding.taps)):
                     tapturn = float(winding.taps[i])*float(winding.turns)/100.0
@@ -384,21 +383,27 @@ class Transformer():
                             else:
                                 winding.route.insert(i,(m*(tapturn-winding.route[i-1][1]),tapturn,'tap'))
                                 winding.route.insert(i,(m*(tapturn-self.tapeSetback-winding.route[i-1][1]),tapturn-self.tapeSetback,'tape'))
+        self.routed = True
 
+    def gcode(self): 
+        for winding in self.windings:
+            if self.routed == False:
+                self.route()
             print "(----------------------------------------------)"
             print "( load #%2d AWG wire for %6.1fV %-10s     )"%(winding.wire['size'],winding.voltage,winding.typeText)
             print "( set bobbin zero                              )"
             print "( winding %4d turns                           )"%winding.turns
-            print "G21 G54 G90 F1000"
+            print "G20 G54 G90"
+            print "G1 F1000"
             print "M0                          ( next move is 0,0 )"
             for r in winding.route:
-                print "G01 X%-10.4f Y%-10.4f ( %-16s )"%r
+                print "X%-10.4f Y%-10.4f     ( %-16s )"%r
                 if r[2] == 'tape' or r[2] == 'tap':
                     print "M0                          ( %-16s )"%r[2]
 
             print
-            for r in winding.route:
-                print "%10.4f %10.4f %s"%r
+            # for r in winding.route:
+            #    print "%10.4f %10.4f %s"%r
 
     def fluxTable(self,sort=None,min=50000,max=103000):
         # this modifies transformer

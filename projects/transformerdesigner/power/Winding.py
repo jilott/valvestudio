@@ -22,3 +22,6 @@ class Winding():
         self.voutRMS=0.00
         self.voutNoLoad=0.00
         self.voutRegulation=0.00
+
+    def wind(self,port):
+        pass        
