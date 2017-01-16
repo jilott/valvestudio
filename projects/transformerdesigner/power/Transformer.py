@@ -354,32 +354,51 @@ class Transformer():
         self.routed = True
 
     def gcode(self): 
-        print "(----------------------------------------------)"
-        print "(-- design %-33s --)"%os.path.basename(__main__.__file__).replace(".py","")
-        print "(----------------------------------------------)"
-        print 
-        print "(-- setup -------------------------------------)"
-        print "( inches, work offset 54, absolute             )"
-        print "G20 G54 G90"
-        print "G1 F100"
-        print
+        nc = ""
+        nc += "(-----------------------------------------------------------)\n"
+        nc += "(-- design %-46s --)\n"%os.path.basename(__main__.__file__).replace(".py","")
+        nc += "(-----------------------------------------------------------)\n"
+        nc += "\n"
+        nc += "(-- Requirements -------------------------------------------)\n"
+        nc += "(  %-20s = %.1f V                           )\n"%("Primary",self.primary.voltage)
+        for secondary in self.secondaries:
+            if secondary.taps:
+                taps = "Taps "+','.join(str(x) for x in secondary.taps)
+            else:
+                taps = ""
+            nc += "(  %-20s = %5.1f V @ %5.3f A %-15s )\n"%("Secondary",secondary.voltage,secondary.current,taps)
+        nc += "(  %-20s = %-15s                   )\n"%("Size",self.lamination['size'])
+        avail = ""
+        for w in self.wires:
+            avail += "%d "%int(w['size'])
+        nc += "(  %-20s = %-20s )\n"%("AWG Selection",avail)
+        nc += "(  %-20s = %.1f VA                           )\n"%("VA Selection",self.laminationVA)
+
+        nc += "\n"
+        nc += "(-- setup -------------------------------------)\n"
+        nc += "( inches, work offset 54, absolute             )\n"
+        nc += "G20 G54 G90\n"
+        nc += "G1 F125\n"
+        nc += "\n"
         for winding in self.windings:
             if self.routed == False:
                 self.route()
-            print "(-- winding - %6.1fV %-10s --------------)"%(winding.voltage,winding.typeText)
-            print "( load #%2d AWG wire                            )"%winding.wire['size']
-            print "( winding %4d turns                           )"%winding.turns
-            print "( move to 0.0                                  )"
-            print "( wind leadin                                  )"
-            print "M0"
+            nc += "(-- winding - %6.1fV %-10s --------------)\n"%(winding.voltage,winding.typeText)
+            nc += "( load #%2d AWG wire                            )\n"%winding.wire['size']
+            nc += "( winding %4d turns                           )\n"%winding.turns
+            nc += "( move to 0.0                                  )\n"
+            nc += "( wind leadin                                  )\n"
+            nc += "M0\n"
             for r in winding.route:
-                print "X%-10.4f Y%-10.4f     ( %-16s )"%r
+                nc += "X%-10.4f Y%-10.4f     ( %-16s )\n"%r
                 if r[2] == 'tape' or r[2] == 'tap':
-                    print "M0                          ( %-16s )"%r[2]
+                    nc += "M0                          ( %-16s )\n"%r[2]
+            nc += "\n"
 
-            print
-            # for r in winding.route:
-            #    print "%10.4f %10.4f %s"%r
+        fn = os.path.basename(__main__.__file__).replace(".py",".nc")
+        open(fn,"w").write(nc)
+        print nc
+        return nc
 
     def fluxTable(self,sort=None,min=50000,max=103000):
         # this modifies transformer

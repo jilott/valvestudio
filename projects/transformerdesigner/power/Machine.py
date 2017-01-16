@@ -21,6 +21,7 @@ class Machine():
         self.wire = None
         self.debug=False
         self.direction = 1
+        self.leadin = True
 
         self.fd = sys.stdin.fileno()
         self.old = termios.tcgetattr(self.fd)
@@ -45,11 +46,22 @@ class Machine():
                 self.wire = r
 
     def help(self):
-        self.screenPos(1,5)
+        self.screenPos(1,7)
         self.screenClear("eos")
-        print "Operation"
-        print "%-15s %-10s"%("help","?")
-        print "%-15s %-10s"%("refresh screen","space")
+        print "Help"
+        print "%-20s %-10s"%("command","key")
+        print "%-20s %-10s"%("help","?")
+        print "%-20s %-10s"%("refresh screen","space")
+        print "%-20s %-10s"%("quit","q")
+        print "%-20s %-10s"%("zero","z")
+        print "%-20s %-10s"%("absolute, relative","a r")
+        print "%-20s %-10s"%("small move","i j k l")
+        print "%-20s %-10s"%("big move","I J K L")
+        print "%-20s %-10s"%("move X to zero","<")
+        print "%-20s %-10s"%("override speed","- +")
+        print "%-20s %-10s"%("debug","D")
+        print "%-20s %-10s"%("wire choice","W")
+        print "%-20s %-10s"%("speed leadin/wind","w")
 
     def getchar(self):
         return os.read(self.fd,7)
@@ -107,7 +119,10 @@ class Machine():
         if pn.count('Z') == 1 and lpn.count('Z') == 0: # buttonDown
             y = 6.0/self.wire['diameter']
             x = self.direction * 6.0
-            self.command("$J=G91X%0.5fY%0.4fF100"%(x,y))
+            if self.leadin:
+                self.command("$J=G91X%0.5fY%0.4fF25"%(x,y))
+            else:
+                self.command("$J=G91X%0.5fY%0.4fF100"%(x,y))
         if pn.count('Z') == 0 and lpn.count('Z') == 1: # buttonUp
             self._port.write('\x85') # jog cancel
 
@@ -147,6 +162,9 @@ class Machine():
                 self.screenClear('eol')
                 print self.buffer
             self.buffer = self.buffer.strip()
+            if self.buffer.count("Grbl"):
+                self.statusTimeout = 0
+                self.modalTimeout = 0
             if self.buffer[0] == '<' and self.buffer[-1] == '>':
                 fields = self.buffer[1:-1].split("|")
                 self.status['state'] = fields[0]
@@ -169,7 +187,11 @@ class Machine():
                     dir = ">>>"
                 if self.direction == -1:
                     dir = "<<<"
-                print "%-8s POS %-7.4f TURNS %-7.2f OVERRIDE %s%%   AWG %d/%0.3f\" %s"%(self.status['state'],self.status['position'],self.status['turns'],self.status['override'],self.wire['size'],self.wire['diameter'],dir)
+                if self.leadin:
+                    windchar = "L"
+                else:
+                    windchar = "W"
+                print "%-8s POS %-7.4f TURNS %-7.2f OVERRIDE %s%%   AWG %d/%0.3f\" %s %c"%(self.status['state'],self.status['position'],self.status['turns'],self.status['override'],self.wire['size'],self.wire['diameter'],dir,windchar)
                 self.screenPos(73,1)
                 print self.timeGet()
 
@@ -200,8 +222,19 @@ class Machine():
     def processChar(self,c):
         # these are the single key commands
 
+        if c == '!':
+            self._port.write('!')
+            self.statusTimeout = 0.0
+            return
+        if c == '~':
+            self._port.write('~')
+            self.statusTimeout = 0.0
+            return
         if c == 'q':
             self.running = False
+            return
+        if c == '?':
+            self.help()
             return
         if c == 'K':
             self.command("$J=G91Y0.05F30")
@@ -234,34 +267,40 @@ class Machine():
         if c == 'z':
             self.zero()
             return
-        if c == ' ':
+        if c == ' ': # clear
             self.screenClear()
             self.statusTimeout = 0.0
             self.modalTimeout = 0.0
             return
-        if c == 'a':
+        if c == 'a': # absolute
             self.command("G90")
             self.modalTimeout = 0.0
             return
-        if c == 'r':
+        if c == 'r': # linear
             self.command("G91")
             self.modalTimeout = 0.0
             return
-        if c == '-':
+        if c == '-': # override
             self.modalTimeout = 0.0
             self.statusTimeout = 0.0
             self._port.write('\x92')
             return
-        if c == '+':
+        if c == '+': # override
             self.modalTimeout = 0.0
             self.statusTimeout = 0.0
             self._port.write('\x91')
             return
-        if c == 'D':
+        if c == 'D': # debug
             self.screenClear()
             self.modalTimeout = 0.0
             self.statusTimeout = 0.0
             self.debug = not self.debug
+            return
+        if c == 'w': # leadin choice
+            self.screenClear()
+            self.modalTimeout = 0.0
+            self.statusTimeout = 0.0
+            self.leadin = not self.leadin
             return
         if c == 'W':
             self.wireSet()

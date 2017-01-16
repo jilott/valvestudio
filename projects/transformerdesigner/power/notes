@@ -44,3 +44,5 @@ $132=200.000
 ok
 $N0=G1G20G90F125
 
+
+cat Transformer.nc | sed "s/(.*//g" | sed "s/ *//g" | grep -v -e '^$'
