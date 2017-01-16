@@ -5,9 +5,8 @@
 # G10 P0 L20 X0
 # G10 P0 L20 Y0
 
-import serial,time,sys,termios,os
+import serial,time,sys,termios,os,csv
 
-debug=False
 
 class Machine():
     def __init__(self,port='/dev/ttyUSB0'):
@@ -16,8 +15,11 @@ class Machine():
         self.modalTimeout = time.time() + 5.0
         self.buffer = ""
         self.keybuffer = ""
-        self.status = {}
+        self.status = {'lastPn':"",'Pn':""}
         self.running = True
+        self.wire = None
+        self.debug=False
+        self.direction = 1
 
         self.fd = sys.stdin.fileno()
         self.old = termios.tcgetattr(self.fd)
@@ -27,6 +29,20 @@ class Machine():
         new[6][termios.VTIME] = 0
         termios.tcsetattr(self.fd, termios.TCSANOW, new)
         termios.tcsendbreak(self.fd,0)
+
+        self.wires = []
+        f = open('wire table.csv','rb')
+        reader = csv.DictReader(f)
+        for r in reader:
+            for k in r:
+                try:
+                    r[k] = float(r[k])
+                except:
+                    pass
+            self.wires.append(r)
+            if int(r['size']) == 22:
+                self.wire = r
+
 
     def getchar(self):
         return os.read(self.fd,7)
@@ -47,17 +63,75 @@ class Machine():
         now = time.time()
         if now > self.statusTimeout:
             self._port.write("?")
-            self.statusTimeout = now + 0.25
+            self.statusTimeout = now + 0.20
             return
         if now > self.modalTimeout:
             self.command("$G")
             self.modalTimeout = now + 5.00
             return
 
+    def loopSwitches(self):
+        # Pn could be any of XYZS
+        if self.debug:
+            self.screenPos(1,12)
+            self.screenClear('eol')
+            print "lastPn:"+self.status['lastPn']+" Pn:"+self.status['Pn']
+
+        pn = self.status['Pn']
+        lpn = self.status['lastPn']
+        if pn.count('X') == 1 and lpn.count('X') == 0: # buttonDown
+            self.command("$J=G91X6.0F25")
+        if pn.count('X') == 0 and lpn.count('X') == 1: # buttonUp
+            self._port.write('\x85') # jog cancel
+
+        if pn.count('Y') == 1 and lpn.count('Y') == 0: # buttonDown
+            self.command("$J=G91X-6.0F25")
+        if pn.count('Y') == 0 and lpn.count('Y') == 1: # buttonUp
+            self._port.write('\x85') # jog cancel
+
+        if pn.count('Z') == 1 and lpn.count('Z') == 0: # buttonDown
+            self.command("$J=G91Y100F25")
+        if pn.count('Z') == 0 and lpn.count('Z') == 1: # buttonUp
+            self._port.write('\x85') # jog cancel
+
+        if pn.count('S') == 1 and lpn.count('S') == 0: # buttonDown
+            y = 6.0/self.wire['diameter']
+            x = self.direction * 6.0
+            self.command("$J=G91X%0.5fY%0.4fF100"%(x,y))
+        if pn.count('S') == 0 and lpn.count('S') == 1: # buttonUp
+            self._port.write('\x85') # jog cancel
+
+        if pn.count('H') == 1 and lpn.count('H') == 0: # buttonDown
+            self.direction = -self.direction
+
+    def wireSet(self):
+        number = ""
+        self.screenPos(1,5)
+        self.screenClear('eol')
+        sys.stdout.write("awg? "+number)
+        sys.stdout.flush()
+        while True:
+            c = self.getchar()
+            if len(c):
+                if ord(c) == 10:
+                    awg = int(number)
+                    for w in self.wires:
+                        if awg == int(w['size']):
+                            self.wire = w
+                            print self.wire
+                            break
+                    break
+                else:
+                    number += c
+                self.screenPos(1,5)
+                self.screenClear('eol')
+                sys.stdout.write("awg? "+number)
+                sys.stdout.flush()
+        
     def processBuffer(self):
         # <Idle|WPos:0.0000,0.0000,0.0000|Bf:15,128|FS:0.0,0|WCO:0.0000,0.0000,0.0000>
         if len(self.buffer) > 5:
-            if debug:
+            if self.debug:
                 self.screenPos(1,10)
                 self.screenClear('eol')
                 print self.buffer
@@ -65,19 +139,29 @@ class Machine():
             if self.buffer[0] == '<' and self.buffer[-1] == '>':
                 fields = self.buffer[1:-1].split("|")
                 self.status['state'] = fields[0]
+                self.status['lastPn'] = self.status['Pn']
+                self.status['Pn'] = ""
                 for field in fields[1:]:
                     k,v = field.split(":")
                     self.status[k] = v
+                self.loopSwitches()
                 
                 x,y,z = self.status['WPos'].split(',')
                 self.status['position'] = float(x)
                 self.status['turns'] = float(y)
                 self.status['override'] = self.status['FS'].split(',')[0]
+
+
                 self.screenPos(1,1)
                 self.screenClear('eol')
-                print "%-10s POS %-10.4f TURNS %-10.2f  OVERRIDE %s%%"%(self.status['state'],self.status['position'],self.status['turns'],self.status['override'])
+                if self.direction == 1:
+                    dir = ">>>"
+                if self.direction == -1:
+                    dir = "<<<"
+                print "%-8s POS %-7.4f TURNS %-7.2f OVERRIDE %s%%   AWG %d/%0.3f\" %s"%(self.status['state'],self.status['position'],self.status['turns'],self.status['override'],self.wire['size'],self.wire['diameter'],dir)
                 self.screenPos(73,1)
                 print self.timeGet()
+
             elif self.buffer[0] == '[' and self.buffer[-1] == ']':
                 self.screenPos(1,2)
                 self.screenClear('eol')
@@ -161,6 +245,18 @@ class Machine():
             self.modalTimeout = 0.0
             self.statusTimeout = 0.0
             self._port.write('\x91')
+            return
+        if c == 'D':
+            self.screenClear()
+            self.modalTimeout = 0.0
+            self.statusTimeout = 0.0
+            self.debug = not self.debug
+            return
+        if c == 'W':
+            self.wireSet()
+            self.screenClear()
+            self.modalTimeout = 0.0
+            self.statusTimeout = 0.0
             return
 
         # if c == '0':
