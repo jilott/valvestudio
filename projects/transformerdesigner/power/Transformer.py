@@ -1,5 +1,6 @@
-import pprint,math,csv
+import pprint,math,csv,os
 import operator
+import __main__
 
 INCHTOMM=25.4
 BOBBINMARGIN=0.02    # estimate by looking at edcor bobbin lengths/2
@@ -158,25 +159,6 @@ class Transformer():
         print "  %-20s = %s"%("Window Length",self.lamination['windowLength'])
         print
 
-        print "Bobbin"
-        print "  %-20s = %.3f in"%("Winding Length",self.bobbin.windingLength)
-        print "  Winding Stack"
-        print "    Description          Layers Turns T/L   Height LHeight"
-        for s in self.bobbin.stack:
-            per = int(100*s['turns']/s['turnsPerLayer'])
-            if per < 100:
-                extra = str(per)+"% layer filled"
-            else:
-                extra = ""
-            print "    %-20s %-6d %-5d %-5d %-6.3f %-6.3f %s"%(s['description'],s['layers'],s['turns'],s['turnsPerLayer'],s['layers']*s['height'],s['height'],extra)
-        print "  %-20s = %0.2f in"%("Stack Height",self.bobbin.stackHeight)
-        print "  %-20s = %0.2f in"%("Window Height",self.lamination['windowHeight'])
-        if self.bobbin.fill > 93.0:
-            note = "<<<<<<<<<<<<<<<<<<<<<< 93% or greater, increase lamination VA"
-        else:
-            note = ""
-        print "  %-20s = %0.1f %% %s"%("Fill",self.bobbin.fill,note)
-        print
 
         print "Windings"
         wdata = []
@@ -222,41 +204,27 @@ class Transformer():
 
 
         print "\n".join(wdata)
-        
-        '''
-        print "Winding Primary"
-        print "  %-20s = %.1f V"%("Voltage",self.primary.voltage)
-        print "  %-20s = %.3f A"%("Current",self.primary.current)
-        print "  %-20s = %d"%("AWG",int(self.primary.wire['size']))
-        print "  %-20s = %d"%("Turns",self.primary.turns)
-        print "  %-20s = %d"%("Layers",self.primary.layers)
-        print "  %-20s = %d"%("Turns/layer",self.primary.turnsPerLayer)
-        print "  %-20s = %.1f in"%("Mean Path Length",self.primary.meanPathLength)
-        print "  %-20s = %0.1f ft"%("Wire Length",self.primary.wireLength)
-        print "  %-20s = %s"%("Wire Diameter",self.primary.wireDiameter)
-        print "  %-20s = %0.4f  %0.4fohms/1000ft"%("Resistance",self.primary.resistance,self.primary.wire['ohmsPer1000ft'])
-        print "  %-20s = %0.3f V"%("Voltage Drop",self.primary.voltageDrop)
         print
 
-        for secondary in self.secondaries:
-            print "Winding Secondary"
-            print "  %-20s = %.1f V"%("Voltage",secondary.voltage)
-            print "  %-20s = %.3f A"%("Current",secondary.current)
-            print "  %-20s = %d"%("AWG",int(secondary.wire['size']))
-            print "  %-20s = %d"%("Turns",secondary.turns)
-            print "  %-20s = %d"%("Layers",secondary.layers)
-            print "  %-20s = %d"%("Turns/layer",secondary.turnsPerLayer)
-            print "  %-20s = %.1f in"%("Mean Path Length",secondary.meanPathLength)
-            print "  %-20s = %0.1f ft"%("Wire Length",secondary.wireLength)
-            print "  %-20s = %s"%("Wire Diameter",secondary.wireDiameter)
-            print "  %-20s = %0.4f  %0.4fohms/1000ft"%("Resistance",secondary.resistance,secondary.wire['ohmsPer1000ft'])
-            print "  %-20s = %0.4f V"%("Voltage Drop",secondary.voltageDrop)
-            print "  %-20s = %.3f V"%("Vout",secondary.vout)
-            # print "  %-20s = %.3f V"%("VoutRMS",secondary.voutRMS)
-            print "  %-20s = %.3f V"%("VoutNoLoad",secondary.voutNoLoad)
-            print "  %-20s = %0.1f %%"%("Regulation",secondary.voutRegulation)
-            print
-        '''
+        print "Bobbin"
+        print "  %-20s = %.3f in"%("Winding Length",self.bobbin.windingLength)
+        print "  Winding Stack"
+        print "    Description          Layers Turns T/L   Height LHeight"
+        for s in self.bobbin.stack:
+            per = int(100*s['turns']/s['turnsPerLayer'])
+            if per < 100:
+                extra = str(per)+"% layer filled"
+            else:
+                extra = ""
+            print "    %-20s %-6d %-5d %-5d %-6.3f %-6.3f %s"%(s['description'],s['layers'],s['turns'],s['turnsPerLayer'],s['layers']*s['height'],s['height'],extra)
+        print "  %-20s = %0.2f in"%("Stack Height",self.bobbin.stackHeight)
+        print "  %-20s = %0.2f in"%("Window Height",self.lamination['windowHeight'])
+        if self.bobbin.fill > 93.0:
+            note = "<<<<<<<<<<<<<<<<<<<<<< 93% or greater, increase lamination VA"
+        else:
+            note = ""
+        print "  %-20s = %0.1f %% %s"%("Fill",self.bobbin.fill,note)
+        print
         
     def wireTable(self):
         l = "Wire Table\nsize diameter turns/\" cmArea  ohms/1000ft ohms/lb   amps\n"
@@ -357,7 +325,7 @@ class Transformer():
     
     def route(self):
         for winding in self.windings:
-            winding.route = [(0,0,'left')]
+            winding.route = []
 
             for i in range(1,int(winding.layers+1)):
                 if i % 2 == 0:
@@ -386,16 +354,24 @@ class Transformer():
         self.routed = True
 
     def gcode(self): 
+        print "(----------------------------------------------)"
+        print "(-- design %-33s --)"%os.path.basename(__main__.__file__).replace(".py","")
+        print "(----------------------------------------------)"
+        print 
+        print "(-- setup -------------------------------------)"
+        print "( inches, work offset 54, absolute             )"
+        print "G20 G54 G90"
+        print "G1 F100"
+        print
         for winding in self.windings:
             if self.routed == False:
                 self.route()
-            print "(----------------------------------------------)"
-            print "( load #%2d AWG wire for %6.1fV %-10s     )"%(winding.wire['size'],winding.voltage,winding.typeText)
-            print "( set bobbin zero                              )"
+            print "(-- winding - %6.1fV %-10s --------------)"%(winding.voltage,winding.typeText)
+            print "( load #%2d AWG wire                            )"%winding.wire['size']
             print "( winding %4d turns                           )"%winding.turns
-            print "G20 G54 G90"
-            print "G1 F1000"
-            print "M0                          ( next move is 0,0 )"
+            print "( move to 0.0                                  )"
+            print "( wind leadin                                  )"
+            print "M0"
             for r in winding.route:
                 print "X%-10.4f Y%-10.4f     ( %-16s )"%r
                 if r[2] == 'tape' or r[2] == 'tap':

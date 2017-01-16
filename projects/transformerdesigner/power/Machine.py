@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
-# https://github.com/gnea/grbl/blob/master/doc/markdown/interface.md
+# grbl v1.1 docs
+#   https://github.com/gnea/grbl/blob/master/doc/markdown
 
 # G10 P0 L20 X0
 # G10 P0 L20 Y0
@@ -43,6 +44,12 @@ class Machine():
             if int(r['size']) == 22:
                 self.wire = r
 
+    def help(self):
+        self.screenPos(1,5)
+        self.screenClear("eos")
+        print "Operation"
+        print "%-15s %-10s"%("help","?")
+        print "%-15s %-10s"%("refresh screen","space")
 
     def getchar(self):
         return os.read(self.fd,7)
@@ -80,26 +87,30 @@ class Machine():
         pn = self.status['Pn']
         lpn = self.status['lastPn']
         if pn.count('X') == 1 and lpn.count('X') == 0: # buttonDown
-            self.command("$J=G91X6.0F25")
+            self.command("$J=G91X6.0F10")
         if pn.count('X') == 0 and lpn.count('X') == 1: # buttonUp
             self._port.write('\x85') # jog cancel
 
         if pn.count('Y') == 1 and lpn.count('Y') == 0: # buttonDown
-            self.command("$J=G91X-6.0F25")
+            self.command("$J=G91X-6.0F10")
         if pn.count('Y') == 0 and lpn.count('Y') == 1: # buttonUp
             self._port.write('\x85') # jog cancel
 
+        '''
+        just do rotation only from keyboard
         if pn.count('Z') == 1 and lpn.count('Z') == 0: # buttonDown
             self.command("$J=G91Y100F25")
         if pn.count('Z') == 0 and lpn.count('Z') == 1: # buttonUp
             self._port.write('\x85') # jog cancel
+        '''
 
-        if pn.count('S') == 1 and lpn.count('S') == 0: # buttonDown
+        if pn.count('Z') == 1 and lpn.count('Z') == 0: # buttonDown
             y = 6.0/self.wire['diameter']
             x = self.direction * 6.0
             self.command("$J=G91X%0.5fY%0.4fF100"%(x,y))
-        if pn.count('S') == 0 and lpn.count('S') == 1: # buttonUp
+        if pn.count('Z') == 0 and lpn.count('Z') == 1: # buttonUp
             self._port.write('\x85') # jog cancel
+
 
         if pn.count('H') == 1 and lpn.count('H') == 0: # buttonDown
             self.direction = -self.direction
