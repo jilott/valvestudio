@@ -178,6 +178,7 @@ class Transformer():
         wdata.append("  Voltage Out           ")
         wdata.append("  Voltage No Load       ")
         wdata.append("  Voltage Regulation    ")
+        wdata.append("  Fill Last Layer       ")
 
         for winding in self.windings:
             wdata[0] += "%-12s"%winding.typeText
@@ -193,6 +194,7 @@ class Transformer():
             wdata[10] += "%-12.1f"%(winding.wireLength/12.0)
             wdata[11] += "%-12.4f"%winding.resistance
             wdata[12] += "%-12.3f"%winding.voltageDrop
+            wdata[16] += "%-12s"%winding.fillLast
             if winding.type == 's':
                 wdata[13] += "%-12.2f"%winding.vout
                 wdata[14] += "%-12.2f"%winding.voutNoLoad
@@ -336,13 +338,16 @@ class Transformer():
                     label = 'right'
 
                 if i == winding.layers:
-                    winding.route.append((direction*self.bobbin.windingLength,float(winding.turns),label))  # this spirals last layer to fill the windinglength
+                    if winding.fillLast:
+                        winding.route.append((direction*winding.turnsPerLayer*winding.wireDiameter,float(winding.turns),label))  # this spirals last layer to fill the windinglength
+                    else:
+                        winding.route.append((direction*(winding.turns-(winding.turnsPerLayer*(i-1)))*winding.wireDiameter,float(winding.turns),label))  # this spirals last layer to fill the windinglength
                 else:
-                    winding.route.append((direction*self.bobbin.windingLength,float(i*winding.turnsPerLayer),label))
+                    winding.route.append((direction*winding.turnsPerLayer*winding.wireDiameter,float(i*winding.turnsPerLayer),label))
 
             if winding.taps:
                 for i in range(len(winding.taps)):
-                    tapturn = int(round(winding.taps[i])*float(winding.turns)/100.0)
+                    tapturn = float(winding.taps[i])*float(winding.turns)/100.0
                     lastTurn = 0
                     lastX = 0
                     for i in range(len(winding.route)):
@@ -366,6 +371,9 @@ class Transformer():
         self.routed = True
 
     def gcode(self): 
+        if self.routed == False:
+            self.route()
+
         nc = ""
         nc += "(-----------------------------------------------------------)\n"
         nc += "(-- design %-46s --)\n"%os.path.basename(__main__.__file__).replace(".py","")
@@ -384,7 +392,7 @@ class Transformer():
         for w in self.wires:
             avail += "%d "%int(w['size'])
         nc += "(  %-20s = %-20s )\n"%("AWG Selection",avail)
-        nc += "(  %-20s = %.1f VA                           )\n"%("VA Selection",self.laminationVA)
+        nc += "(  %-20s = %.1f VA                          )\n"%("VA Selection",self.laminationVA)
 
         nc += "\n"
         nc += "(-- setup -------------------------------------)\n"
@@ -392,12 +400,11 @@ class Transformer():
         nc += "G20 G54 G90\n"
         nc += "G1 F125\n"
         nc += "\n"
+
         for winding in self.windings:
-            if self.routed == False:
-                self.route()
             nc += "(-- winding - %6.1fV %-10s --------------)\n"%(winding.voltage,winding.typeText)
             nc += "( load #%2d AWG wire                            )\n"%winding.wire['size']
-            nc += "( winding %4d turns                           )\n"%winding.turns
+            nc += "( winding %4d turns, fill last %-6s         )\n"%(winding.turns,winding.fillLast)
             nc += "( move to 0.0                                  )\n"
             nc += "( wind leadin                                  )\n"
             nc += "M0\n"

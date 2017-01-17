@@ -60,6 +60,7 @@ class Machine():
             wdata.append("  AWG                   ")
             wdata.append("  Wire Diameter         ")
             wdata.append("  Taps                  ")
+            wdata.append("  Fill Last Layer       ")
             for winding in self.windings:
                 wdata[0] += "%-12s"%winding.typeText
                 wdata[1] += "%-12.1f"%winding.voltage
@@ -70,6 +71,7 @@ class Machine():
                 wdata[6] += "%-12d"%winding.wire['size']
                 wdata[7] += "%-12s"%winding.wireDiameter
                 wdata[8] += "%-12s"%winding.taps
+                wdata[9] += "%-12s"%winding.fillLast
 
             self.windingInfo = "\n".join(wdata)
         else:
