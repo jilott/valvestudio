@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import math
-import Winding, Transformer
+import Winding, Transformer, Machine
 
 primary   = Winding.Winding('p',115.0,0.0)
 secondary5 = Winding.Winding('s',5.0,2.0)
@@ -26,3 +26,6 @@ t.report()
 
 #t.fluxTable(sort='error')
 t.gcode()
+
+m = Machine.Machine(windings=t.windings)
+m.run()

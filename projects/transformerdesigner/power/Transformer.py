@@ -390,7 +390,7 @@ class Transformer():
             nc += "( wind leadin                                  )\n"
             nc += "M0\n"
             for r in winding.route:
-                nc += "X%-10.4f Y%-10.4f     ( %-16s )\n"%r
+                nc += "X%-10.4f Y%-10.4f     ( %-16s )\n"%(r[0],r[1],r[2])
                 if r[2] == 'tape' or r[2] == 'tap':
                     nc += "M0                          ( %-16s )\n"%r[2]
             nc += "\n"
