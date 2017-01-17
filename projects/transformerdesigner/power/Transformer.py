@@ -334,23 +334,35 @@ class Transformer():
                 else:
                     direction = 1
                     label = 'right'
+
                 if i == winding.layers:
-                    winding.route.append((direction*self.bobbin.windingLength,float(winding.turns),label))
+                    winding.route.append((direction*self.bobbin.windingLength,float(winding.turns),label))  # this spirals last layer to fill the windinglength
                 else:
                     winding.route.append((direction*self.bobbin.windingLength,float(i*winding.turnsPerLayer),label))
 
             if winding.taps:
                 for i in range(len(winding.taps)):
-                    tapturn = float(winding.taps[i])*float(winding.turns)/100.0
+                    tapturn = int(round(winding.taps[i])*float(winding.turns)/100.0)
+                    lastTurn = 0
+                    lastX = 0
                     for i in range(len(winding.route)):
-                        if winding.route[i-1][1] < tapturn and winding.route[i][1] > tapturn:
-                            m = (winding.route[i][0]-winding.route[i-1][0])/(winding.route[i][1] - winding.route[i-1][1])
-                            if i % 2 == 0:
-                                winding.route.insert(i,(self.bobbin.windingLength + m*(tapturn-winding.route[i-1][1]),tapturn,'right tap'))
-                                winding.route.insert(i,(self.bobbin.windingLength + m*(tapturn-self.tapeSetback-winding.route[i-1][1]),tapturn-self.tapeSetback,'right tape'))
+                        if lastTurn < tapturn and tapturn < winding.route[i][1]: # tap in this layer
+                            # x = m*turns + b, turns = deltaX/deltaTurns, b = 0 when m > 0, b = bobbin.winding.length
+                            m = (winding.route[i][0]-lastX)/(winding.route[i][1] - lastTurn) # slope of this layer
+                            if m > 0.0:
+                                winding.route.insert(i,(m*(tapturn-lastTurn),tapturn,'right tap'))
+                                if tapturn-self.tapeSetback > lastTurn: # check to see if tape start turn is on this level
+                                    winding.route.insert(i,(m*(tapturn-self.tapeSetback-lastTurn),tapturn-self.tapeSetback,'right tape'))
+                                else:
+                                    winding.route.insert(i,(0.0,lastTurn+0.1,'right tape')) # we want the tape first in the route to pause on the corner
                             else:
-                                winding.route.insert(i,(m*(tapturn-winding.route[i-1][1]),tapturn,'left tap'))
-                                winding.route.insert(i,(m*(tapturn-self.tapeSetback-winding.route[i-1][1]),tapturn-self.tapeSetback,'left tape'))
+                                winding.route.insert(i,(m*(tapturn-lastTurn) + self.bobbin.windingLength,tapturn,'left tap'))
+                                if tapturn-self.tapeSetback > lastTurn: # check to see if tape start turn in on the level
+                                    winding.route.insert(i,(m*(tapturn-self.tapeSetback-lastTurn) + self.bobbin.windingLength,tapturn-self.tapeSetback,'left tape'))
+                                else:
+                                    winding.route.insert(i,(self.bobbin.windingLength,lastTurn+0.1,'left tape')) # we want the tape first in the route to pause on the corner
+                        lastTurn = winding.route[i][1]
+                        lastX = winding.route[i][0]
         self.routed = True
 
     def gcode(self): 

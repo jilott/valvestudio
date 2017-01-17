@@ -126,7 +126,7 @@ class Machine():
 
         self.screenPos(1,5)
         self.screenClear('eol')
-        sys.stdout.write("position for wind, zero grl, zero counter, wind lead-in. 'y' when ready ")
+        sys.stdout.write("position for wind, zero grbl, zero counter, wind lead-in. 'y' when ready ")
         sys.stdout.flush()
 
         while self.running:
@@ -140,6 +140,7 @@ class Machine():
                     break
                 self.processChar(c)
         if c == 'y':
+            self._port.write('\x90')
             i = 0
             while self.running:
                 if i < len(route):
