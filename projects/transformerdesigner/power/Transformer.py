@@ -346,11 +346,11 @@ class Transformer():
                         if winding.route[i-1][1] < tapturn and winding.route[i][1] > tapturn:
                             m = (winding.route[i][0]-winding.route[i-1][0])/(winding.route[i][1] - winding.route[i-1][1])
                             if i % 2 == 0:
-                                winding.route.insert(i,(self.bobbin.windingLength + m*(tapturn-winding.route[i-1][1]),tapturn,'tap'))
-                                winding.route.insert(i,(self.bobbin.windingLength + m*(tapturn-self.tapeSetback-winding.route[i-1][1]),tapturn-self.tapeSetback,'tape'))
+                                winding.route.insert(i,(self.bobbin.windingLength + m*(tapturn-winding.route[i-1][1]),tapturn,'right tap'))
+                                winding.route.insert(i,(self.bobbin.windingLength + m*(tapturn-self.tapeSetback-winding.route[i-1][1]),tapturn-self.tapeSetback,'right tape'))
                             else:
-                                winding.route.insert(i,(m*(tapturn-winding.route[i-1][1]),tapturn,'tap'))
-                                winding.route.insert(i,(m*(tapturn-self.tapeSetback-winding.route[i-1][1]),tapturn-self.tapeSetback,'tape'))
+                                winding.route.insert(i,(m*(tapturn-winding.route[i-1][1]),tapturn,'left tap'))
+                                winding.route.insert(i,(m*(tapturn-self.tapeSetback-winding.route[i-1][1]),tapturn-self.tapeSetback,'left tape'))
         self.routed = True
 
     def gcode(self): 
@@ -391,7 +391,7 @@ class Transformer():
             nc += "M0\n"
             for r in winding.route:
                 nc += "X%-10.4f Y%-10.4f     ( %-16s )\n"%(r[0],r[1],r[2])
-                if r[2] == 'tape' or r[2] == 'tap':
+                if r[2].count('tape') or r[2].count('tap'):
                     nc += "M0                          ( %-16s )\n"%r[2]
             nc += "\n"
 

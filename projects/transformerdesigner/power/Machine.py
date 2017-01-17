@@ -59,6 +59,7 @@ class Machine():
             wdata.append("  Turns/layer           ")
             wdata.append("  AWG                   ")
             wdata.append("  Wire Diameter         ")
+            wdata.append("  Taps                  ")
             for winding in self.windings:
                 wdata[0] += "%-12s"%winding.typeText
                 wdata[1] += "%-12.1f"%winding.voltage
@@ -68,6 +69,7 @@ class Machine():
                 wdata[5] += "%-12d"%winding.turnsPerLayer
                 wdata[6] += "%-12d"%winding.wire['size']
                 wdata[7] += "%-12s"%winding.wireDiameter
+                wdata[8] += "%-12s"%winding.taps
 
             self.windingInfo = "\n".join(wdata)
         else:
@@ -124,7 +126,7 @@ class Machine():
 
         self.screenPos(1,5)
         self.screenClear('eol')
-        sys.stdout.write("position for wind, zero, wind leadin. 'y' when ready ")
+        sys.stdout.write("position for wind, zero grl, zero counter, wind lead-in. 'y' when ready ")
         sys.stdout.flush()
 
         while self.running:
@@ -140,6 +142,27 @@ class Machine():
         if c == 'y':
             i = 0
             while self.running:
+                if i < len(route):
+                    # self.screenPos(1,6)
+                    # self.screenClear('eol')
+                    # sys.stdout.write("X%-10.4f Y%-10.4f     ( %-16s )"%route[i])
+                    self.screenPos(1,8+i)
+                    sys.stdout.write("*")
+                    sys.stdout.flush()
+                    self.command("X%-10.4f Y%-10.4f"%(route[i][0],route[i][1])) 
+                    if route[i][2].count('left'):
+                        self.direction = -1
+                    if route[i][2].count('right'):
+                        self.direction = 1
+                    self.statusTimeout = 0
+                if i >= len(route):
+                    break
+
+                # this loop waits for state to change to Run
+                while self.status['state'] == 'Idle':
+                    self.loop()
+                    time.sleep(0.001)
+
                 while self.status['state'] != 'Idle':
                     self.loop()
                     time.sleep(0.001)
@@ -150,44 +173,26 @@ class Machine():
                         self.screenClear()
                         return
 
-                # idle here
-                if i < len(route):
-                    # self.screenPos(1,6)
-                    # self.screenClear('eol')
-                    # sys.stdout.write("X%-10.4f Y%-10.4f     ( %-16s )"%route[i])
-                    self.screenPos(1,8+i)
-                    sys.stdout.write("*")
+                # idle here, done with this route
+                if route[i][2].count('tape') or route[i][2].count('tap'):
+                    self.screenPos(1,5)
+                    self.screenClear('eol')
+                    sys.stdout.write("paused for '%s', 'y' when ready "%route[i][2])
                     sys.stdout.flush()
-
-                    if route[i][2] == 'tape' or route[i][2] == 'tap':
-                        self.screenPos(1,5)
-                        self.screenClear('eol')
-                        sys.stdout.write("paused for '%s', 'y' when ready "%route[i][2])
-                        sys.stdout.flush()
-                        while True:
-                            self.loop()
-                            time.sleep(0.001)
-                            c = self.getchar()
-                            if len(c):
-                                if c == 'y':
-                                    self.screenPos(1,5)
-                                    self.screenClear('eol')
-                                    break
-                                self.processChar(c)
-                            if not self.running:
-                                self.screenClear()
-                                return
-
-                    self.command("X%-10.4f Y%-10.4f"%(route[i][0],route[i][1])) 
-                    self.statusTimeout = 0
-                    i += 1
-                if i >= len(route):
-                    break
-
-                # this loop waits for state to change to Run
-                while self.status['state'] == 'Idle':
-                    self.loop()
-                    time.sleep(0.001)
+                    while True:
+                        self.loop()
+                        time.sleep(0.001)
+                        c = self.getchar()
+                        if len(c):
+                            if c == 'y':
+                                self.screenPos(1,5)
+                                self.screenClear('eol')
+                                break
+                            self.processChar(c)
+                        if not self.running:
+                            self.screenClear()
+                            return
+                i += 1
 
             self.screenPos(1,7)
             self.screenClear('eol')
@@ -210,6 +215,8 @@ class Machine():
         print "%-20s %-10s"%("debug","D")
         print "%-20s %-10s"%("wire choice","A")
         print "%-20s %-10s"%("speed leadin/wind","s")
+        print "%-20s %-10s"%("windings","w")
+        print "%-20s %-10s"%("wind","W")
 
     def getchar(self):
         return os.read(self.fd,7)
@@ -339,7 +346,7 @@ class Machine():
                     windchar = "L"
                 else:
                     windchar = "W"
-                print "%-8s POS %-7.4f TURNS %-7.2f OVERRIDE %s%%  AWG %d/%0.3f\" %s %c "%(self.status['state'],self.status['position'],self.status['turns'],self.status['override'],self.wire['size'],self.wire['diameter'],dir,windchar)
+                print "%-8s POS %-7.4f TURNS %-7.2f OVERRIDE %5s%%  AWG %d/%0.3f\" %s %c "%(self.status['state'],self.status['position'],self.status['turns'],self.status['override'],self.wire['size'],self.wire['diameter'],dir,windchar)
                 self.screenPos(73,1)
                 print self.timeGet()
 
