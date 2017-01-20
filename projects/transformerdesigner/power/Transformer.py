@@ -11,6 +11,9 @@ BOBBINPADDING=0.02   # a little play
 # windowlength = margin + thickness + padding + windinglength + padding + thickness + margin 
 
 import Bobbin
+import matplotlib.pyplot as plt
+import numpy as np
+import math
 
 # references
 #    Transformer Desing and Manufacturing Manual - Wolpert
@@ -24,13 +27,12 @@ class Transformer():
         for secondary in self.secondaries:
             self.va += secondary.voltage * secondary.current
 
-
         # find initial layer turns and wire diameter, then iterate from there, no voltage drops considered yet
 
         primary.current = self.va * (1/self.efficiency) / primary.voltage
         self.coreArea = self.lamination['area']
         self.coreAreaEffective = self.coreArea * self.stackingFactor
-        primary.turns = float(math.floor((primary.voltage * 10**8)/(4.44 * self.fluxDensity * self.coreAreaEffective * self.lineFrequency)))
+        primary.turns = float(math.floor((primary.voltage * 10**8)/(self.turnsFactor * self.fluxDensity * self.coreAreaEffective * self.lineFrequency)))
         primary.wireDiameter = primary.current * self.circularMilsPerAmp
         # scan for larger diameter
         for w in self.wires:
@@ -277,6 +279,7 @@ class Transformer():
         self.lineFrequency          = 60.0
         self.stackingFactor         = 0.92 # stacking factor wolpert p11 0.92 1x1 interleave, 0.95 butt stack
         self.lossFactor             = 0.95 # 1/1.05 in wolpert p11
+        self.turnsFactor            = 4.44 # factor used for sine-wave signals 
         self.isolationThickness     = 0.003
         self.wrappingThickness      = 0.015
         self.weightExtra            = 1.15 # percentage of extra stuff like bells, brackets, screws
@@ -453,6 +456,27 @@ class Transformer():
                 print "%-6.2f %-6.2f"%(secondary.vout,secondary.voutNoLoad),
             error = error / len(self.secondaries)
             print "   %-.2f"%error
+
+    def plot(self,windingIndex):
+        self.route()
+        a = np.array(self.windings[windingIndex].route)
+        x = a[:,0]
+        x = np.insert(x,0,0)
+        turns = a[:,1]
+        turns = np.insert(turns,0,0)
+
+        plt.figure(figsize=(10,6))
+        plt.plot(x,turns)
+        plt.xlim(-0.1, math.ceil(self.bobbin.windingLength*1.1))
+
+        for r in a:
+            if r[2].count("tape"):
+                plt.annotate(s="Tape",xy=(r[0],float(r[1])+80),rotation=90)
+                plt.plot([r[0]],[r[1]],marker="o",color='black')
+            if r[2][-3:] == "tap":
+                plt.annotate(s="Tap",xy=(r[0],float(r[1])+50),rotation=90)
+                plt.plot([r[0]],[r[1]],marker="o",color='red')
+        plt.show()
 
     def fluxFind(self,bmin=20000,bmax=103000,inc=1000,fillmax=150):
         # 1.6T = 103225.6 flux lines
