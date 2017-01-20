@@ -375,10 +375,13 @@ class Transformer():
             self.route()
 
         nc = ""
-        nc += "(-----------------------------------------------------------)\n"
-        nc += "(-- design %-46s --)\n"%os.path.basename(__main__.__file__).replace(".py","")
-        nc += "(-----------------------------------------------------------)\n"
-        nc += "\n"
+        try: # this fails running a notebook
+            nc += "(-----------------------------------------------------------)\n"
+            nc += "(-- design %-46s --)\n"%os.path.basename(__main__.__file__).replace(".py","")
+            nc += "(-----------------------------------------------------------)\n"
+            nc += "\n"
+        except:
+            pass
         nc += "(-- Requirements -------------------------------------------)\n"
         nc += "(  %-20s = %.1f V                           )\n"%("Primary",self.primary.voltage)
         for secondary in self.secondaries:
@@ -414,9 +417,11 @@ class Transformer():
                     nc += "M0                          ( %-16s )\n"%r[2]
             nc += "\n"
 
-        fn = os.path.basename(__main__.__file__).replace(".py",".nc")
-        open(fn,"w").write(nc)
-        print nc
+        try:
+            fn = os.path.basename(__main__.__file__).replace(".py",".nc")
+            open(fn,"w").write(nc)
+        except:
+            pass
         return nc
 
     def fluxTable(self,sort=None,min=50000,max=103000):
@@ -467,14 +472,15 @@ class Transformer():
 
         plt.figure(figsize=(10,6))
         plt.plot(x,turns)
-        plt.xlim(-0.1, math.ceil(self.bobbin.windingLength*1.1))
+        xmax = math.ceil(self.bobbin.windingLength * 2) / 2
+        plt.xlim(-0.1,xmax)
 
         for r in a:
             if r[2].count("tape"):
-                plt.annotate(s="Tape",xy=(r[0],float(r[1])+80),rotation=90)
+                plt.annotate(s="Tape",xy=(r[0],float(r[1])+65),rotation=45)
                 plt.plot([r[0]],[r[1]],marker="o",color='black')
             if r[2][-3:] == "tap":
-                plt.annotate(s="Tap",xy=(r[0],float(r[1])+50),rotation=90)
+                plt.annotate(s="Tap",xy=(r[0],float(r[1])+50),rotation=45)
                 plt.plot([r[0]],[r[1]],marker="o",color='red')
         plt.show()
 
