@@ -338,6 +338,7 @@ class Transformer():
                     winding.route.append((direction*self.bobbin.windingLength,float(winding.turns),label))
                 else:
                     winding.route.append((direction*self.bobbin.windingLength,float(i*winding.turnsPerLayer),label))
+            print winding.route
 
             if winding.taps:
                 for i in range(len(winding.taps)):
@@ -351,6 +352,8 @@ class Transformer():
                             else:
                                 winding.route.insert(i,(m*(tapturn-winding.route[i-1][1]),tapturn,'tap'))
                                 winding.route.insert(i,(m*(tapturn-self.tapeSetback-winding.route[i-1][1]),tapturn-self.tapeSetback,'tape'))
+        print zip(self.windings[0].route)
+
         self.routed = True
 
     def gcode(self): 
