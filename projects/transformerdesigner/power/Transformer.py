@@ -98,11 +98,6 @@ class Transformer():
                 winding.turnsPerLayer = math.floor(self.bobbin.windingLength/winding.wireDiameter)
                 winding.weight = winding.resistance / winding.wire['ohmsPerPound']
 
-        self.weight = 0
-        for winding in self.windings:
-            self.weight += winding.weight
-            self.loss = winding.voltageDrop*winding.current 
-
         self.bobbin.stack = []
         self.bobbin.stack.append({'type':'insulation','height':BOBBINTHICKNESS,'layers':1,'description':'Bobbin Base','turns':1,'turnsPerLayer':1})
         for winding in self.windings:
@@ -111,17 +106,19 @@ class Transformer():
         del(self.bobbin.stack[-1])
         self.bobbin.stack.append({'type':'insulation','height':self.wrappingThickness,'layers':self.insulationLayers,'description':'Wrapping','turns':1,'turnsPerLayer':1})
 
-        self.weight += self.lamination['weight']*self.stackingFactor
-
         self.bobbin.stackHeight = 0.0
         for s in self.bobbin.stack:
             self.bobbin.stackHeight += s['layers']*s['height']
         self.bobbin.fill = self.bobbin.stackHeight / self.lamination['windowHeight'] * 100
 
-        # add in core loss and other stuff
-        self.loss += self.weight * self.coreLoss
-        self.temperatureRise = self.loss/(0.1*math.pow((self.weight/1.073),2.0/3.0))
+        # calculate weight, losses and temperature rise
+        self.weight = self.lamination['weight']*self.stackingFactor
+        self.loss = self.weight*self.coreLoss
+        for winding in self.windings:
+            self.weight += winding.weight
+            self.loss += winding.voltageDrop*winding.current 
         self.weight = self.weight * self.weightExtra
+        self.temperatureRise = self.loss/(0.1*math.pow((self.weight/1.073),2.0/3.0))
 
     def report(self):
         print "Requirements"
