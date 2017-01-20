@@ -10,8 +10,9 @@ import serial,time,sys,termios,os,csv
 
 
 class Machine():
-    def __init__(self,port='/dev/ttyUSB0'):
+    def __init__(self,port='/dev/ttyUSB0',windings=None):
         self._port = serial.Serial(port,115200,timeout=0)
+        self.windings = windings
         self.statusTimeout = time.time() + 5.0
         self.modalTimeout = time.time() + 5.0
         self.buffer = ""
@@ -21,6 +22,7 @@ class Machine():
         self.wire = None
         self.debug=False
         self.direction = 1
+        self.leadin = True
 
         self.fd = sys.stdin.fileno()
         self.old = termios.tcgetattr(self.fd)
@@ -44,12 +46,180 @@ class Machine():
             if int(r['size']) == 22:
                 self.wire = r
 
-    def help(self):
-        self.screenPos(1,5)
+        self.windingSetup()
+
+    def windingSetup(self):
+        if self.windings:
+            wdata = []
+            wdata.append("  Type                  ")
+            wdata.append("  Voltage V             ")
+            wdata.append("  Current A             ")
+            wdata.append("  Turns                 ")
+            wdata.append("  Layers                ")
+            wdata.append("  Turns/layer           ")
+            wdata.append("  AWG                   ")
+            wdata.append("  Wire Diameter         ")
+            wdata.append("  Taps                  ")
+            wdata.append("  Fill Last Layer       ")
+            for winding in self.windings:
+                wdata[0] += "%-12s"%winding.typeText
+                wdata[1] += "%-12.1f"%winding.voltage
+                wdata[2] += "%-12.1f"%winding.current
+                wdata[3] += "%-12d"%winding.turns
+                wdata[4] += "%-12d"%winding.layers
+                wdata[5] += "%-12d"%winding.turnsPerLayer
+                wdata[6] += "%-12d"%winding.wire['size']
+                wdata[7] += "%-12s"%winding.wireDiameter
+                wdata[8] += "%-12s"%winding.taps
+                wdata[9] += "%-12s"%winding.fillLast
+
+            self.windingInfo = "\n".join(wdata)
+        else:
+            self.windingInfo = ""
+
+
+    def windingDisplay(self):
+        self.screenPos(1,7)
         self.screenClear("eos")
-        print "Operation"
-        print "%-15s %-10s"%("help","?")
-        print "%-15s %-10s"%("refresh screen","space")
+        if self.windings == None:
+            return
+        print "Windings               ",
+        for i in range(len(self.windings)):
+            print "%-11d"%i,
+        print
+        print self.windingInfo
+
+    def windingWindStart(self):
+        number = ""
+        self.screenPos(1,5)
+        self.screenClear('eol')
+        sys.stdout.write("wind? "+number)
+        sys.stdout.flush()
+        while True:
+            c = self.getchar()
+            if len(c):
+                if ord(c) == 10:
+                    which = int(number)
+                    self.windingWind(which)
+                    return
+                else:
+                    number += c
+                self.screenPos(1,5)
+                self.screenClear('eol')
+                sys.stdout.write("wind? "+number)
+                sys.stdout.flush()
+
+    def windingDisplayRoute(self,which):
+        self.screenPos(1,7)
+        self.screenClear("eos")
+        winding = self.windings[which]
+        if winding.taps:
+            t = len(winding.taps)
+        else:
+            t = 0
+        print "Route Winding %d, Type %s, AWG %d, Turns %d, Layers %d, Taps %d"%(which,winding.typeText,winding.wire['size'],winding.turns,winding.layers,t)
+        for r in self.windings[which].route:
+            print "  X%-10.4f Y%-10.4f     ( %-16s )"%r
+
+    def windingWind(self,which):
+        self.windingDisplayRoute(which)
+        route = self.windings[which].route
+        self.wire = self.windings[which].wire
+
+        self.screenPos(1,5)
+        self.screenClear('eol')
+        sys.stdout.write("position for wind, zero grbl, zero counter, wind lead-in. 'y' when ready ")
+        sys.stdout.flush()
+
+        while self.running:
+            self.loop()
+            time.sleep(0.001)
+            c = self.getchar()
+            if len(c):
+                if c == 'y':
+                    self.screenPos(1,5)
+                    self.screenClear('eol')
+                    break
+                self.processChar(c)
+        if c == 'y':
+            self._port.write('\x90')
+            i = 0
+            while self.running:
+                if i < len(route):
+                    # self.screenPos(1,6)
+                    # self.screenClear('eol')
+                    # sys.stdout.write("X%-10.4f Y%-10.4f     ( %-16s )"%route[i])
+                    self.screenPos(1,8+i)
+                    sys.stdout.write("*")
+                    sys.stdout.flush()
+                    self.command("X%-10.4f Y%-10.4f"%(route[i][0],route[i][1])) 
+                    if route[i][2].count('left'):
+                        self.direction = -1
+                    if route[i][2].count('right'):
+                        self.direction = 1
+                    self.statusTimeout = 0
+                if i >= len(route):
+                    break
+
+                # this loop waits for state to change to Run
+                while self.status['state'] == 'Idle':
+                    self.loop()
+                    time.sleep(0.001)
+
+                while self.status['state'] != 'Idle':
+                    self.loop()
+                    time.sleep(0.001)
+                    c = self.getchar()
+                    if len(c):
+                        self.processChar(c)
+                    if not self.running:
+                        self.screenClear()
+                        return
+
+                # idle here, done with this route
+                if route[i][2].count('tape') or route[i][2].count('tap'):
+                    self.screenPos(1,5)
+                    self.screenClear('eol')
+                    sys.stdout.write("paused for '%s', 'y' when ready "%route[i][2])
+                    sys.stdout.flush()
+                    while True:
+                        self.loop()
+                        time.sleep(0.001)
+                        c = self.getchar()
+                        if len(c):
+                            if c == 'y':
+                                self.screenPos(1,5)
+                                self.screenClear('eol')
+                                break
+                            self.processChar(c)
+                        if not self.running:
+                            self.screenClear()
+                            return
+                i += 1
+
+            self.screenPos(1,7)
+            self.screenClear('eol')
+         
+
+    def help(self):
+        self.screenPos(1,7)
+        self.screenClear("eos")
+        print "Help"
+        print "%-20s %-10s"%("command","key")
+        print "%-20s %-10s"%("help","?")
+        print "%-20s %-10s"%("refresh screen","space")
+        print "%-20s %-10s"%("quit","q")
+        print "%-20s %-10s"%("zero","z")
+        print "%-20s %-10s"%("absolute, relative","a r")
+        print "%-20s %-10s"%("small move","i j k l")
+        print "%-20s %-10s"%("big move","I J K L")
+        print "%-20s %-10s"%("move X to zero","<")
+        print "%-20s %-10s"%("override speed","- +")
+        print "%-20s %-10s"%("debug","D")
+        print "%-20s %-10s"%("wire choice","A")
+        print "%-20s %-10s"%("speed leadin/wind","s")
+        print "%-20s %-10s"%("windings","w")
+        print "%-20s %-10s"%("wind","W")
 
     def getchar(self):
         return os.read(self.fd,7)
@@ -107,7 +277,10 @@ class Machine():
         if pn.count('Z') == 1 and lpn.count('Z') == 0: # buttonDown
             y = 6.0/self.wire['diameter']
             x = self.direction * 6.0
-            self.command("$J=G91X%0.5fY%0.4fF100"%(x,y))
+            if self.leadin:
+                self.command("$J=G91X%0.5fY%0.4fF25"%(x,y))
+            else:
+                self.command("$J=G91X%0.5fY%0.4fF100"%(x,y))
         if pn.count('Z') == 0 and lpn.count('Z') == 1: # buttonUp
             self._port.write('\x85') # jog cancel
 
@@ -147,6 +320,9 @@ class Machine():
                 self.screenClear('eol')
                 print self.buffer
             self.buffer = self.buffer.strip()
+            if self.buffer.count("Grbl"):
+                self.statusTimeout = 0
+                self.modalTimeout = 0
             if self.buffer[0] == '<' and self.buffer[-1] == '>':
                 fields = self.buffer[1:-1].split("|")
                 self.status['state'] = fields[0]
@@ -166,10 +342,14 @@ class Machine():
                 self.screenPos(1,1)
                 self.screenClear('eol')
                 if self.direction == 1:
-                    dir = ">>>"
+                    dir = ">>"
                 if self.direction == -1:
-                    dir = "<<<"
-                print "%-8s POS %-7.4f TURNS %-7.2f OVERRIDE %s%%   AWG %d/%0.3f\" %s"%(self.status['state'],self.status['position'],self.status['turns'],self.status['override'],self.wire['size'],self.wire['diameter'],dir)
+                    dir = "<<"
+                if self.leadin:
+                    windchar = "L"
+                else:
+                    windchar = "W"
+                print "%-8s POS %-7.4f TURNS %-7.2f OVERRIDE %5s%%  AWG %d/%0.3f\" %s %c "%(self.status['state'],self.status['position'],self.status['turns'],self.status['override'],self.wire['size'],self.wire['diameter'],dir,windchar)
                 self.screenPos(73,1)
                 print self.timeGet()
 
@@ -200,8 +380,25 @@ class Machine():
     def processChar(self,c):
         # these are the single key commands
 
+        if c == '!':
+            self._port.write('!')
+            self.statusTimeout = 0.0
+            return
+        if c == '~':
+            self._port.write('~')
+            self.statusTimeout = 0.0
+            return
+        if c == 'w':
+            self.windingDisplay()
+            return
+        if c == 'W':
+            self.windingWindStart()
+            return
         if c == 'q':
             self.running = False
+            return
+        if c == '?':
+            self.help()
             return
         if c == 'K':
             self.command("$J=G91Y0.05F30")
@@ -234,36 +431,42 @@ class Machine():
         if c == 'z':
             self.zero()
             return
-        if c == ' ':
+        if c == ' ': # clear
             self.screenClear()
             self.statusTimeout = 0.0
             self.modalTimeout = 0.0
             return
-        if c == 'a':
+        if c == 'a': # absolute
             self.command("G90")
             self.modalTimeout = 0.0
             return
-        if c == 'r':
+        if c == 'r': # linear
             self.command("G91")
             self.modalTimeout = 0.0
             return
-        if c == '-':
+        if c == '-': # override
             self.modalTimeout = 0.0
             self.statusTimeout = 0.0
             self._port.write('\x92')
             return
-        if c == '+':
+        if c == '+': # override
             self.modalTimeout = 0.0
             self.statusTimeout = 0.0
             self._port.write('\x91')
             return
-        if c == 'D':
+        if c == 'D': # debug
             self.screenClear()
             self.modalTimeout = 0.0
             self.statusTimeout = 0.0
             self.debug = not self.debug
             return
-        if c == 'W':
+        if c == 's': # leadin choice
+            self.screenClear()
+            self.modalTimeout = 0.0
+            self.statusTimeout = 0.0
+            self.leadin = not self.leadin
+            return
+        if c == 'A':
             self.wireSet()
             self.screenClear()
             self.modalTimeout = 0.0
@@ -337,17 +540,21 @@ class Machine():
     def shutdown(self):
         termios.tcsetattr(self.fd, termios.TCSAFLUSH, self.old)
 
+    def run(self):
+        self.screenClear()
+        print "startup"
+        self.cursorHide()
+        
+        while self.running:
+            self.loop()
+            time.sleep(0.001)
+            c = self.getchar()
+            if len(c):
+                self.processChar(c)
+        self.shutdown()
+
+    
+
 if __name__ == '__main__':
     m = Machine()
-    m.screenClear()
-    print "startup"
-    m.cursorHide()
-    
-    while m.running:
-        m.loop()
-        time.sleep(0.001)
-        c = m.getchar()
-        if len(c):
-            m.processChar(c)
-
-    m.shutdown()
+    m.run()

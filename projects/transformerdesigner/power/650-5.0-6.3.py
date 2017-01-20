@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import math
-import Winding, Transformer
+import Winding, Transformer, Machine
 
 # maybe like http://www.hammondmfg.com/pdf/EDB290AX.pdf
 
@@ -28,3 +28,7 @@ t.compute()
 t.report()
 
 t.fluxTable(sort='error')
+
+t.route()
+m = Machine.Machine(windings=t.windings)
+m.run()

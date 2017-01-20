@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 import math
-import Winding, Transformer
+import Winding, Transformer, Machine
 
 primary   = Winding.Winding('p',115.0,0.0,None)
 
-secondary5   = Winding.Winding('s',5.0 ,2.5,[50])
+secondary5   = Winding.Winding('s',5.0 ,2.5,[50],False)
 secondary5b  = Winding.Winding('s',5.0 ,2.5,[50])
-secondary6   = Winding.Winding('s',6.3 ,4.0,[50])
+secondary6   = Winding.Winding('s',6.3 ,4.0,[50],False)
 secondary6b  = Winding.Winding('s',6.3 ,4.0,[50])
-secondary12  = Winding.Winding('s',12.6,3.0,[50])
+secondary12  = Winding.Winding('s',12.6,3.0,[50],False)
 secondary12b = Winding.Winding('s',12.6,3.0,[50])
 
 t = Transformer.Transformer([primary,secondary6,secondary6b,secondary12,secondary12b,secondary5,secondary5b],160,have=1)
@@ -26,3 +26,6 @@ t.report()
 # t.fluxTable(sort='error')
 
 t.gcode()
+
+m = Machine.Machine(windings=t.windings)
+# m.run()

@@ -178,6 +178,7 @@ class Transformer():
         wdata.append("  Voltage Out           ")
         wdata.append("  Voltage No Load       ")
         wdata.append("  Voltage Regulation    ")
+        wdata.append("  Fill Last Layer       ")
 
         for winding in self.windings:
             wdata[0] += "%-12s"%winding.typeText
@@ -193,6 +194,7 @@ class Transformer():
             wdata[10] += "%-12.1f"%(winding.wireLength/12.0)
             wdata[11] += "%-12.4f"%winding.resistance
             wdata[12] += "%-12.3f"%winding.voltageDrop
+            wdata[16] += "%-12s"%winding.fillLast
             if winding.type == 's':
                 wdata[13] += "%-12.2f"%winding.vout
                 wdata[14] += "%-12.2f"%winding.voutNoLoad
@@ -334,55 +336,88 @@ class Transformer():
                 else:
                     direction = 1
                     label = 'right'
+
                 if i == winding.layers:
-                    winding.route.append((direction*self.bobbin.windingLength,float(winding.turns),label))
+                    if winding.fillLast:
+                        winding.route.append((direction*winding.turnsPerLayer*winding.wireDiameter,float(winding.turns),label))  # this spirals last layer to fill the windinglength
+                    else:
+                        winding.route.append((direction*(winding.turns-(winding.turnsPerLayer*(i-1)))*winding.wireDiameter,float(winding.turns),label))  # this spirals last layer to fill the windinglength
                 else:
-                    winding.route.append((direction*self.bobbin.windingLength,float(i*winding.turnsPerLayer),label))
-            print winding.route
+                    winding.route.append((direction*winding.turnsPerLayer*winding.wireDiameter,float(i*winding.turnsPerLayer),label))
 
             if winding.taps:
                 for i in range(len(winding.taps)):
                     tapturn = float(winding.taps[i])*float(winding.turns)/100.0
+                    lastTurn = 0
+                    lastX = 0
                     for i in range(len(winding.route)):
-                        if winding.route[i-1][1] < tapturn and winding.route[i][1] > tapturn:
-                            m = (winding.route[i][0]-winding.route[i-1][0])/(winding.route[i][1] - winding.route[i-1][1])
-                            if i % 2 == 0:
-                                winding.route.insert(i,(self.bobbin.windingLength + m*(tapturn-winding.route[i-1][1]),tapturn,'tap'))
-                                winding.route.insert(i,(self.bobbin.windingLength + m*(tapturn-self.tapeSetback-winding.route[i-1][1]),tapturn-self.tapeSetback,'tape'))
+                        if lastTurn < tapturn and tapturn < winding.route[i][1]: # tap in this layer
+                            # x = m*turns + b, turns = deltaX/deltaTurns, b = 0 when m > 0, b = bobbin.winding.length
+                            m = (winding.route[i][0]-lastX)/(winding.route[i][1] - lastTurn) # slope of this layer
+                            if m > 0.0:
+                                winding.route.insert(i,(m*(tapturn-lastTurn),tapturn,'right tap'))
+                                if tapturn-self.tapeSetback > lastTurn: # check to see if tape start turn is on this level
+                                    winding.route.insert(i,(m*(tapturn-self.tapeSetback-lastTurn),tapturn-self.tapeSetback,'right tape'))
+                                else:
+                                    winding.route.insert(i,(0.0,lastTurn+0.1,'right tape')) # we want the tape first in the route to pause on the corner
                             else:
-                                winding.route.insert(i,(m*(tapturn-winding.route[i-1][1]),tapturn,'tap'))
-                                winding.route.insert(i,(m*(tapturn-self.tapeSetback-winding.route[i-1][1]),tapturn-self.tapeSetback,'tape'))
-        print zip(self.windings[0].route)
-
+                                winding.route.insert(i,(m*(tapturn-lastTurn) + self.bobbin.windingLength,tapturn,'left tap'))
+                                if tapturn-self.tapeSetback > lastTurn: # check to see if tape start turn in on the level
+                                    winding.route.insert(i,(m*(tapturn-self.tapeSetback-lastTurn) + self.bobbin.windingLength,tapturn-self.tapeSetback,'left tape'))
+                                else:
+                                    winding.route.insert(i,(self.bobbin.windingLength,lastTurn+0.1,'left tape')) # we want the tape first in the route to pause on the corner
+                        lastTurn = winding.route[i][1]
+                        lastX = winding.route[i][0]
         self.routed = True
 
     def gcode(self): 
-        print "(----------------------------------------------)"
-        print "(-- design %-33s --)"%os.path.basename(__main__.__file__).replace(".py","")
-        print "(----------------------------------------------)"
-        print 
-        print "(-- setup -------------------------------------)"
-        print "( inches, work offset 54, absolute             )"
-        print "G20 G54 G90"
-        print "G1 F100"
-        print
-        for winding in self.windings:
-            if self.routed == False:
-                self.route()
-            print "(-- winding - %6.1fV %-10s --------------)"%(winding.voltage,winding.typeText)
-            print "( load #%2d AWG wire                            )"%winding.wire['size']
-            print "( winding %4d turns                           )"%winding.turns
-            print "( move to 0.0                                  )"
-            print "( wind leadin                                  )"
-            print "M0"
-            for r in winding.route:
-                print "X%-10.4f Y%-10.4f     ( %-16s )"%r
-                if r[2] == 'tape' or r[2] == 'tap':
-                    print "M0                          ( %-16s )"%r[2]
+        if self.routed == False:
+            self.route()
 
-            print
-            # for r in winding.route:
-            #    print "%10.4f %10.4f %s"%r
+        nc = ""
+        nc += "(-----------------------------------------------------------)\n"
+        nc += "(-- design %-46s --)\n"%os.path.basename(__main__.__file__).replace(".py","")
+        nc += "(-----------------------------------------------------------)\n"
+        nc += "\n"
+        nc += "(-- Requirements -------------------------------------------)\n"
+        nc += "(  %-20s = %.1f V                           )\n"%("Primary",self.primary.voltage)
+        for secondary in self.secondaries:
+            if secondary.taps:
+                taps = "Taps "+','.join(str(x) for x in secondary.taps)
+            else:
+                taps = ""
+            nc += "(  %-20s = %5.1f V @ %5.3f A %-15s )\n"%("Secondary",secondary.voltage,secondary.current,taps)
+        nc += "(  %-20s = %-15s                   )\n"%("Size",self.lamination['size'])
+        avail = ""
+        for w in self.wires:
+            avail += "%d "%int(w['size'])
+        nc += "(  %-20s = %-20s )\n"%("AWG Selection",avail)
+        nc += "(  %-20s = %.1f VA                          )\n"%("VA Selection",self.laminationVA)
+
+        nc += "\n"
+        nc += "(-- setup -------------------------------------)\n"
+        nc += "( inches, work offset 54, absolute             )\n"
+        nc += "G20 G54 G90\n"
+        nc += "G1 F125\n"
+        nc += "\n"
+
+        for winding in self.windings:
+            nc += "(-- winding - %6.1fV %-10s --------------)\n"%(winding.voltage,winding.typeText)
+            nc += "( load #%2d AWG wire                            )\n"%winding.wire['size']
+            nc += "( winding %4d turns, fill last %-6s         )\n"%(winding.turns,winding.fillLast)
+            nc += "( move to 0.0                                  )\n"
+            nc += "( wind leadin                                  )\n"
+            nc += "M0\n"
+            for r in winding.route:
+                nc += "X%-10.4f Y%-10.4f     ( %-16s )\n"%(r[0],r[1],r[2])
+                if r[2].count('tape') or r[2].count('tap'):
+                    nc += "M0                          ( %-16s )\n"%r[2]
+            nc += "\n"
+
+        fn = os.path.basename(__main__.__file__).replace(".py",".nc")
+        open(fn,"w").write(nc)
+        print nc
+        return nc
 
     def fluxTable(self,sort=None,min=50000,max=103000):
         # this modifies transformer
