@@ -6,10 +6,112 @@
 # G10 P0 L20 X0
 # G10 P0 L20 Y0
 
+X=0
+TURNS=1
+LABEL=2
+BUFFERTHRES=5
+
 import serial,time,sys,termios,os,csv
 
-
 class Machine():
+    def windingWind(self,which):
+        self.windingDisplayRoute(which)
+        self.windingWhich = which
+        route = self.windings[which].route
+        self.wire = self.windings[which].wire
+
+        self.screenPos(1,5)
+        self.screenClear('eol')
+        sys.stdout.write("position for wind, zero grbl, zero counter, wind lead-in. 'y' when ready ")
+        sys.stdout.flush()
+
+        while self.running:
+            self.loop()
+            time.sleep(0.001)
+            c = self.getchar()
+            if len(c):
+                if c == 'y':
+                    self.screenPos(1,5)
+                    self.screenClear('eol')
+                    break
+                self.processChar(c)
+        if c == 'y':
+            self.windingNextUpdate = 0
+            self._port.write('\x90') # put feed rate back to 100%
+            for leg in route:
+                while self.status['bufferIndex'] <= BUFFERTHRES:
+                    self.statusTimeout = 0
+                    self.loop()
+                    time.sleep(0.001)
+                    c = self.getchar()
+                    if len(c):
+                        if c == 'q': # this needs to look for esc key
+                            self.screenPos(1,5)
+                            self.screenClear('eol')
+                            self.command("$X") 
+                            break
+                        self.processChar(c)
+                        if not self.running:
+                            self.statusTimeout = 0
+                            self.screenClear()
+                            return
+                    self.windingUpdate()
+
+                if self.debug:
+                    self.screenPos(1,30)
+                    self.screenClear('eol')
+                    print leg
+
+                self.command("X%-10.4f Y%-10.4f"%(leg[X],leg[TURNS])) 
+                if self.windingWaitForState("Run"):
+                    break
+                if leg[LABEL].count('tap'): # could be tap or tape
+                    self.command("M0") 
+                    if self.windingWaitForState("Hold:0"):
+                        break
+
+                if not self.running:
+                    return
+
+    def windingUpdate(self):
+        if time.time() > self.windingNextUpdate:
+            self.windingNextUpdate = time.time() + 1.0
+            route = self.windings[self.windingWhich].route
+
+            i = 0
+            for leg in route:
+                self.screenPos(1,8+i)
+                sys.stdout.write("-")
+                sys.stdout.flush()
+                if  leg[TURNS] > self.status['turns']:
+                    self.screenPos(1,8+i)
+                    if leg[LABEL].count('left'):
+                        sys.stdout.write("<")
+                        self.direction = -1
+                    if leg[LABEL].count('right'):
+                        sys.stdout.write(">")
+                        self.direction = 1
+                    sys.stdout.flush()
+                    return
+                i += 1
+
+    def windingWaitForState(self,s):
+        self.statusTimeout = 0
+        while True:
+            self.loop()
+            time.sleep(0.001)
+            c = self.getchar()
+            if c == chr(27):
+                return c
+            if len(c):
+                self.processChar(c)
+                self.statusTimeout = 0
+            if self.status['state'] == s:
+                break
+            if not self.running:
+                return None
+            self.windingUpdate()
+
     def __init__(self,port='/dev/ttyUSB0',windings=None):
         self._port = serial.Serial(port,115200,timeout=0)
         self.windings = windings
@@ -23,6 +125,7 @@ class Machine():
         self.debug=False
         self.direction = 1
         self.leadin = True
+        self.windingNextUpdate = 0
 
         self.fd = sys.stdin.fileno()
         self.old = termios.tcgetattr(self.fd)
@@ -119,87 +222,8 @@ class Machine():
             t = 0
         print "Route Winding %d, Type %s, AWG %d, Turns %d, Layers %d, Taps %d"%(which,winding.typeText,winding.wire['size'],winding.turns,winding.layers,t)
         for r in self.windings[which].route:
-            print "  X%-10.4f Y%-10.4f     ( %-16s )"%r
+            print "  P%-10.4f T%-10.4f     ( %-16s )"%r
 
-    def windingWind(self,which):
-        self.windingDisplayRoute(which)
-        route = self.windings[which].route
-        self.wire = self.windings[which].wire
-
-        self.screenPos(1,5)
-        self.screenClear('eol')
-        sys.stdout.write("position for wind, zero grbl, zero counter, wind lead-in. 'y' when ready ")
-        sys.stdout.flush()
-
-        while self.running:
-            self.loop()
-            time.sleep(0.001)
-            c = self.getchar()
-            if len(c):
-                if c == 'y':
-                    self.screenPos(1,5)
-                    self.screenClear('eol')
-                    break
-                self.processChar(c)
-        if c == 'y':
-            self._port.write('\x90')
-            i = 0
-            while self.running:
-                if i < len(route):
-                    # self.screenPos(1,6)
-                    # self.screenClear('eol')
-                    # sys.stdout.write("X%-10.4f Y%-10.4f     ( %-16s )"%route[i])
-                    self.screenPos(1,8+i)
-                    sys.stdout.write("*")
-                    sys.stdout.flush()
-                    self.command("X%-10.4f Y%-10.4f"%(route[i][0],route[i][1])) 
-                    if route[i][2].count('left'):
-                        self.direction = -1
-                    if route[i][2].count('right'):
-                        self.direction = 1
-                    self.statusTimeout = 0
-                if i >= len(route):
-                    break
-
-                # this loop waits for state to change to Run
-                while self.status['state'] == 'Idle':
-                    self.loop()
-                    time.sleep(0.001)
-
-                while self.status['state'] != 'Idle':
-                    self.loop()
-                    time.sleep(0.001)
-                    c = self.getchar()
-                    if len(c):
-                        self.processChar(c)
-                    if not self.running:
-                        self.screenClear()
-                        return
-
-                # idle here, done with this route
-                if route[i][2].count('tape') or route[i][2].count('tap'):
-                    self.screenPos(1,5)
-                    self.screenClear('eol')
-                    sys.stdout.write("paused for '%s', 'y' when ready "%route[i][2])
-                    sys.stdout.flush()
-                    while True:
-                        self.loop()
-                        time.sleep(0.001)
-                        c = self.getchar()
-                        if len(c):
-                            if c == 'y':
-                                self.screenPos(1,5)
-                                self.screenClear('eol')
-                                break
-                            self.processChar(c)
-                        if not self.running:
-                            self.screenClear()
-                            return
-                i += 1
-
-            self.screenPos(1,7)
-            self.screenClear('eol')
-         
 
     def help(self):
         self.screenPos(1,7)
@@ -248,7 +272,7 @@ class Machine():
             return
 
     def loopSwitches(self):
-        # Pn could be any of XYZS
+        # Pn could be any of XYZSH
         if self.debug:
             self.screenPos(1,12)
             self.screenClear('eol')
@@ -284,8 +308,7 @@ class Machine():
         if pn.count('Z') == 0 and lpn.count('Z') == 1: # buttonUp
             self._port.write('\x85') # jog cancel
 
-
-        if pn.count('H') == 1 and lpn.count('H') == 0: # buttonDown
+        if pn.count('S') == 1 and lpn.count('S') == 0: # buttonDown
             self.direction = -self.direction
 
     def wireSet(self):
@@ -337,7 +360,7 @@ class Machine():
                 self.status['position'] = float(x)
                 self.status['turns'] = float(y)
                 self.status['override'] = self.status['FS'].split(',')[0]
-
+                self.status['bufferIndex'] = int(self.status['Bf'].split(',')[0])
 
                 self.screenPos(1,1)
                 self.screenClear('eol')

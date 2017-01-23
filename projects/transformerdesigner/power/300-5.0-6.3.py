@@ -18,7 +18,11 @@ t.report()
 
 t.route()
 print t.gcode()
-t.plot(3)
+
+#t.plot(3)
+
+#print t.windings[3].route
+
 
 if len(sys.argv) > 1:
     m = Machine.Machine(windings=t.windings)
