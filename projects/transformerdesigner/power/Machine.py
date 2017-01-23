@@ -9,7 +9,7 @@
 X=0
 TURNS=1
 LABEL=2
-BUFFERTHRES=5
+BUFFERTHRES=10
 
 import serial,time,sys,termios,os,csv
 
@@ -39,10 +39,11 @@ class Machine():
             self.windingNextUpdate = 0
             self._port.write('\x90') # put feed rate back to 100%
             for leg in route:
-                while self.status['bufferIndex'] <= BUFFERTHRES:
+                while True:
                     self.statusTimeout = 0
-                    self.loop()
-                    time.sleep(0.001)
+                    for j in range(10):
+                        self.loop()
+                        time.sleep(0.1)
                     c = self.getchar()
                     if len(c):
                         if c == 'q': # this needs to look for esc key
@@ -55,12 +56,18 @@ class Machine():
                             self.statusTimeout = 0
                             self.screenClear()
                             return
+                    if self.debug:
+                        self.screenPos(1,32)
+                        self.screenClear('eol')
+                        print "bufferthres",time.time()
                     self.windingUpdate()
+                    if self.status['bufferIndex'] > BUFFERTHRES:
+                        break
 
                 if self.debug:
                     self.screenPos(1,30)
                     self.screenClear('eol')
-                    print leg
+                    print leg,time,self.status['bufferIndex']
 
                 self.command("X%-10.4f Y%-10.4f"%(leg[X],leg[TURNS])) 
                 if self.windingWaitForState("Run"):
@@ -69,9 +76,13 @@ class Machine():
                     self.command("M0") 
                     if self.windingWaitForState("Hold:0"):
                         break
-
                 if not self.running:
                     return
+
+            self.windingWaitForState("Idle")
+            self.screenPos(1,20)
+            self.screenClear('eol')
+            print "windingWind done"
 
     def windingUpdate(self):
         if time.time() > self.windingNextUpdate:
@@ -201,9 +212,14 @@ class Machine():
         while True:
             c = self.getchar()
             if len(c):
-                if ord(c) == 10:
-                    which = int(number)
-                    self.windingWind(which)
+                if ord(c[0]) == 10:
+                    try:
+                        which = int(number)
+                        self.windingWind(which)
+                    except:
+                        self.screenClear()
+                        self.statusTimeout = 0.0
+                        self.modalTimeout = 0.0
                     return
                 else:
                     number += c
@@ -246,7 +262,7 @@ class Machine():
         print "%-20s %-10s"%("wind","W")
 
     def getchar(self):
-        return os.read(self.fd,7)
+        return os.read(self.fd,1)
 
     def timeGet(self):
         return time.strftime("%H:%M:%S", time.localtime())
@@ -320,7 +336,7 @@ class Machine():
         while True:
             c = self.getchar()
             if len(c):
-                if ord(c) == 10:
+                if ord(c[0]) == 10:
                     awg = int(number)
                     for w in self.wires:
                         if awg == int(w['size']):
@@ -505,9 +521,8 @@ class Machine():
         # if c == '~':
         #    self.command("~")
         #    return
-
         
-        if ord(c) == 127:
+        if ord(c[0]) == 127:
             self.keybuffer = self.keybuffer[:-1]
         else:
             self.keybuffer += c
@@ -516,7 +531,7 @@ class Machine():
         self.screenClear('eol')
         print "> "+self.keybuffer
 
-        if ord(c) == 10:
+        if ord(c[0]) == 10:
             self.screenPos(1,4)
             self.screenClear('eol')
             print "COMMAND "+self.keybuffer
