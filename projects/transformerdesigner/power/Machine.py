@@ -9,7 +9,7 @@
 X=0
 TURNS=1
 LABEL=2
-BUFFERTHRES=10
+BUFFERTHRES=13
 
 import serial,time,sys,termios,os,csv
 
@@ -35,54 +35,75 @@ class Machine():
                     self.screenClear('eol')
                     break
                 self.processChar(c)
+
         if c == 'y':
             self.windingNextUpdate = 0
             self._port.write('\x90') # put feed rate back to 100%
-            for leg in route:
-                while True:
-                    self.statusTimeout = 0
-                    for j in range(10):
-                        self.loop()
-                        time.sleep(0.1)
-                    c = self.getchar()
-                    if len(c):
-                        if c == 'q': # this needs to look for esc key
-                            self.screenPos(1,5)
-                            self.screenClear('eol')
-                            self.command("$X") 
-                            break
-                        self.processChar(c)
-                        if not self.running:
-                            self.statusTimeout = 0
-                            self.screenClear()
-                            return
-                    if self.debug:
-                        self.screenPos(1,32)
-                        self.screenClear('eol')
-                        print "bufferthres",time.time()
-                    self.windingUpdate()
-                    if self.status['bufferIndex'] > BUFFERTHRES:
-                        break
+            i = 0
+
+            windingState = "windingLoop"
+            windingNextLeg = 0
+            debugTimeout = 0
+
+            while True:
+                now = time.time()
+
+                self.loop()
+                c = self.getchar()
+                if c == chr(27):
+                    windingState = "waitingForIdle"
+                if len(c):
+                    self.processChar(c)
+
+                    if not self.running:
+                        self.statusTimeout = 0
+                        self.screenClear()
+                        windingState = "waitingForIdle"
 
                 if self.debug:
-                    self.screenPos(1,30)
-                    self.screenClear('eol')
-                    print leg,time,self.status['bufferIndex']
+                    if now > debugTimeout:
+                        self.screenPos(1,32)
+                        self.screenClear('eol')
+                        print windingState, self.status['bufferIndex'],now
+                        debugTimeout = now + 1.0
 
-                self.command("X%-10.4f Y%-10.4f"%(leg[X],leg[TURNS])) 
-                if self.windingWaitForState("Run"):
-                    break
-                if leg[LABEL].count('tap'): # could be tap or tape
-                    self.command("M0") 
-                    if self.windingWaitForState("Hold:0"):
+                # running the winding statemap here
+
+                if windingState == "windingLoop":
+                    if now > windingNextLeg:
+                        if self.status['bufferIndex'] > BUFFERTHRES:
+                            leg = route[i]
+                            self.command("X%-10.4fY%-10.4f"%(leg[X],leg[TURNS])) 
+
+                            if self.debug:
+                                self.screenPos(1,36)
+                                self.screenClear('eol')
+                                print leg
+
+                            if leg[LABEL].count('tap'): # could be tap or tape
+                                self.command("M0") 
+                                windingState = "waitingForHold"
+                            i += 1
+                            if i == len(route):
+                                windingState = "waitingForIdle"
+                        windingNextLeg = now + 2.0
+
+                if windingState == "waitingForHold":
+                    if self.status['state'] == "Hold:0":
+                        windingState = "waitingForIdleToContinue"
+                        continue
+
+                if windingState == "waitingForIdleToContinue":
+                    if self.status['state'] == "Idle":
+                        windingNextLeg = now + 1.0
+                        windingState = "windingLoop"
+                        continue
+
+                if windingState == "waitingForIdle":
+                    if self.status['state'] == "Idle":
                         break
-                if not self.running:
-                    return
 
-            self.windingWaitForState("Idle")
-            self.screenPos(1,20)
-            self.screenClear('eol')
-            print "windingWind done"
+                self.windingUpdate()
 
     def windingUpdate(self):
         if time.time() > self.windingNextUpdate:
@@ -94,7 +115,7 @@ class Machine():
                 self.screenPos(1,8+i)
                 sys.stdout.write("-")
                 sys.stdout.flush()
-                if  leg[TURNS] > self.status['turns']:
+                if  leg[TURNS] > (self.status['turns']-1):
                     self.screenPos(1,8+i)
                     if leg[LABEL].count('left'):
                         sys.stdout.write("<")
@@ -105,23 +126,6 @@ class Machine():
                     sys.stdout.flush()
                     return
                 i += 1
-
-    def windingWaitForState(self,s):
-        self.statusTimeout = 0
-        while True:
-            self.loop()
-            time.sleep(0.001)
-            c = self.getchar()
-            if c == chr(27):
-                return c
-            if len(c):
-                self.processChar(c)
-                self.statusTimeout = 0
-            if self.status['state'] == s:
-                break
-            if not self.running:
-                return None
-            self.windingUpdate()
 
     def __init__(self,port='/dev/ttyUSB0',windings=None):
         self._port = serial.Serial(port,115200,timeout=0)
@@ -213,6 +217,9 @@ class Machine():
             c = self.getchar()
             if len(c):
                 if ord(c[0]) == 10:
+                    which = int(number)
+                    self.windingWind(which)
+                    '''
                     try:
                         which = int(number)
                         self.windingWind(which)
@@ -220,6 +227,7 @@ class Machine():
                         self.screenClear()
                         self.statusTimeout = 0.0
                         self.modalTimeout = 0.0
+                    '''
                     return
                 else:
                     number += c
@@ -238,7 +246,7 @@ class Machine():
             t = 0
         print "Route Winding %d, Type %s, AWG %d, Turns %d, Layers %d, Taps %d"%(which,winding.typeText,winding.wire['size'],winding.turns,winding.layers,t)
         for r in self.windings[which].route:
-            print "  P%-10.4f T%-10.4f     ( %-16s )"%r
+            print "  P %-10.4f T %-10.4f     ( %-16s )"%r
 
 
     def help(self):
@@ -290,7 +298,7 @@ class Machine():
     def loopSwitches(self):
         # Pn could be any of XYZSH
         if self.debug:
-            self.screenPos(1,12)
+            self.screenPos(1,31)
             self.screenClear('eol')
             print "lastPn:"+self.status['lastPn']+" Pn:"+self.status['Pn']
 
@@ -324,8 +332,9 @@ class Machine():
         if pn.count('Z') == 0 and lpn.count('Z') == 1: # buttonUp
             self._port.write('\x85') # jog cancel
 
-        if pn.count('S') == 1 and lpn.count('S') == 0: # buttonDown
-            self.direction = -self.direction
+        if pn.count('S') == 0 and lpn.count('S') == 1: # buttonUp
+            if self.status['state'] == 'Idle':
+                self.direction = -self.direction
 
     def wireSet(self):
         number = ""
@@ -355,7 +364,7 @@ class Machine():
         # <Idle|WPos:0.0000,0.0000,0.0000|Bf:15,128|FS:0.0,0|WCO:0.0000,0.0000,0.0000>
         if len(self.buffer) > 5:
             if self.debug:
-                self.screenPos(1,10)
+                self.screenPos(1,30)
                 self.screenClear('eol')
                 print self.buffer
             self.buffer = self.buffer.strip()
@@ -494,9 +503,9 @@ class Machine():
             self._port.write('\x91')
             return
         if c == 'D': # debug
-            self.screenClear()
-            self.modalTimeout = 0.0
-            self.statusTimeout = 0.0
+            # self.screenClear()
+            # self.modalTimeout = 0.0
+            # self.statusTimeout = 0.0
             self.debug = not self.debug
             return
         if c == 's': # leadin choice
