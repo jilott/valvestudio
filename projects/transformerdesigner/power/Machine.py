@@ -54,6 +54,8 @@ class Machine():
                     windingState = "waitingForIdle"
                 if len(c):
                     self.processChar(c)
+                    if c == 'w':
+                        self.windingDisplayRoute(which)
 
                     if not self.running:
                         self.statusTimeout = 0
@@ -104,6 +106,10 @@ class Machine():
                         break
 
                 self.windingUpdate()
+
+            self.screenPos(1,7+len(route))
+            sys.stdout.write("-")
+            
 
     def windingUpdate(self):
         if time.time() > self.windingNextUpdate:
@@ -194,7 +200,6 @@ class Machine():
             self.windingInfo = "\n".join(wdata)
         else:
             self.windingInfo = ""
-
 
     def windingDisplay(self):
         self.screenPos(1,7)
@@ -591,6 +596,9 @@ class Machine():
         self.screenClear()
         print "startup"
         self.cursorHide()
+
+        if self.windings:
+            self.windingDisplay()
         
         while self.running:
             self.loop()
