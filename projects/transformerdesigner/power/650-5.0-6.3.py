@@ -27,7 +27,7 @@ t.fluxDensity = t.fluxFind(bmax=100000,inc=500)
 t.compute()
 t.report()
 
-t.fluxTable(sort='error')
+#t.fluxTable(sort='error')
 
 t.route()
 m = Machine.Machine(windings=t.windings)

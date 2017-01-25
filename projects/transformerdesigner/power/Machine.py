@@ -606,7 +606,9 @@ class Machine():
             c = self.getchar()
             if len(c):
                 self.processChar(c)
+
         self.shutdown()
+        self.screenClear()
 
     
 
