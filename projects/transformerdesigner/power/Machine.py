@@ -498,15 +498,17 @@ class Machine():
             self.modalTimeout = 0.0
             return
         if c == '-': # override
-            self.modalTimeout = 0.0
-            self.statusTimeout = 0.0
-            self._port.write('\x92')
-            return
+            if self.status['state'] == 'Run':
+                self.modalTimeout = 0.0
+                self.statusTimeout = 0.0
+                self._port.write('\x92')
+                return
         if c == '+': # override
-            self.modalTimeout = 0.0
-            self.statusTimeout = 0.0
-            self._port.write('\x91')
-            return
+            if self.status['state'] == 'Run':
+                self.modalTimeout = 0.0
+                self.statusTimeout = 0.0
+                self._port.write('\x91')
+                return
         if c == 'D': # debug
             # self.screenClear()
             # self.modalTimeout = 0.0
