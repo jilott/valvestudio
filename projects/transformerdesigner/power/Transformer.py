@@ -10,7 +10,7 @@ BOBBINPADDING=0.02   # a little play
 # winding length
 # windowlength = margin + thickness + padding + windinglength + padding + thickness + margin 
 
-import Bobbin
+import Bobbin, Machine
 import matplotlib.pyplot as plt
 import numpy as np
 import math
@@ -503,4 +503,9 @@ class Transformer():
         self.fluxDensity = bminimal
         self.compute()
         return bminimal
+
+    def wind(self):
+        m = Machine.Machine(windings=t.windings)
+        m.run()
+        m.shutdown()
          
