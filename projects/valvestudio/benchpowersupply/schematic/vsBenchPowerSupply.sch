@@ -4189,6 +4189,11 @@ ENABLE</text>
 <wire x1="120.65" y1="194.056" x2="128.27" y2="194.056" width="0.1524" layer="97"/>
 <wire x1="136.398" y1="194.056" x2="144.018" y2="194.056" width="0.1524" layer="97"/>
 <text x="66.548" y="194.056" size="1.778" layer="97" ratio="15">FRONT</text>
+<text x="131.572" y="174.752" size="1.778" layer="97">HAVE</text>
+<text x="134.366" y="129.286" size="1.778" layer="97">HAVE</text>
+<text x="45.72" y="12.7" size="1.778" layer="97">WIND</text>
+<text x="58.674" y="123.444" size="1.778" layer="97">WIND</text>
+<text x="50.8" y="68.58" size="1.778" layer="97">WIND</text>
 </plain>
 <instances>
 <instance part="FRAME2" gate="G$1" x="0" y="0"/>
