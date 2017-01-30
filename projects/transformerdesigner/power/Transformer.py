@@ -351,6 +351,7 @@ class Transformer():
                     lastTurn = 0
                     lastX = 0
                     for i in range(len(winding.route)):
+                        # print tapturn, winding.route[i][1]
                         if lastTurn < tapturn and tapturn < winding.route[i][1]: # tap in this layer
                             # x = m*turns + b, turns = deltaX/deltaTurns, b = 0 when m > 0, b = bobbin.winding.length
                             m = (winding.route[i][0]-lastX)/(winding.route[i][1] - lastTurn) # slope of this layer
@@ -395,11 +396,11 @@ class Transformer():
         for w in self.wires:
             avail += "%d "%int(w['size'])
         nc += "(  %-20s = %-20s )\n"%("AWG Selection",avail)
-        nc += "(  %-20s = %.1f VA                          )\n"%("VA Selection",self.laminationVA)
+        nc += "(  %-20s = %5.1f VA                          )\n"%("VA Selection",self.laminationVA)
 
         nc += "\n"
         nc += "(-- setup -------------------------------------)\n"
-        nc += "( inches, work offset 54, absolute             )\n"
+        nc += "( inches, work offset 54, absolute, linear 125%)\n"
         nc += "G20 G54 G90\n"
         nc += "G1 F125\n"
         nc += "\n"
@@ -477,10 +478,10 @@ class Transformer():
 
         for r in a:
             if r[2].count("tape"):
-                plt.annotate(s="Tape",xy=(r[0],float(r[1])+65),rotation=45)
+                plt.annotate(s="Tape",xy=(float(r[0])*1.02,r[1]),rotation=0,horizontalalignment='left',verticalalignment='top')
                 plt.plot([r[0]],[r[1]],marker="o",color='black')
             if r[2][-3:] == "tap":
-                plt.annotate(s="Tap",xy=(r[0],float(r[1])+50),rotation=45)
+                plt.annotate(s="Tap ",xy=(float(r[0])*1.02,r[1]),rotation=0,horizontalalignment='left',verticalalignment='top')
                 plt.plot([r[0]],[r[1]],marker="o",color='red')
         plt.show()
 
