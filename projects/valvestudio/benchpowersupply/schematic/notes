@@ -1,0 +1,5 @@
+Craig -- if you put 15k||100nF on the source of Q1 and up-bias the MOSFET it linearizes quite nicely.
+gatestopper on Q2 should be 100R
+circuit needs compensation to avoid smoke.
+if you are going to ramp you need C1 (in your design) just adequate for stability.
+the attached is the circuit I used, pretty much, for an article in AudioXpress around 2005

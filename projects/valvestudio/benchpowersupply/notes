@@ -24,3 +24,33 @@ STP33N65M2  300V@2000mA,    650V@1000mA to-220 $2.78    190W, no dc on SOA
 AOT42S60    300V@1500mA,    600V@700mA to-220
 FCP104N60   300V@1250mA,    600V@600ma to-220
 
+
+
+parts
+banana jacks
+    http://www.digikey.com/product-detail/en/cinch-connectivity-solutions-johnson/108-0904-001/J153-ND/5931
+
+outlet single
+    schurter 4300.0701
+        https://www.digikey.de/product-detail/en/schurter-inc/4300.0701/486-1082-ND/1207600
+    Panel Thickness 0.031" ~ 0.063" (0.79mm ~ 1.60mm)
+
+pilot lights
+    http://www.ebay.com/itm/5-Pcs-120V-AC-DC-9mm-Yellow-Mini-Plug-LED-Pilot-Lights-Fresnal-Dome-Cap-/172330236751?hash=item281faebb4f
+
+
+buy
+high voltage warning
+    LR8
+        http://www.mouser.com/ProductDetail/Microchip-Technology/LR8K4-G/?qs=sGAEpiMZZMsSqfo6rglx8SOPQAmQFLR9
+    Red Flashing 5mm LED
+        lumex, SSL-LX5093BSRD
+            http://www.digikey.com/product-detail/en/lumex-opto-components-inc/SSL-LX5093BSRD/67-1499-ND/273364
+            http://www.mouser.com/ProductDetail/Lumex/SSL-LX5093BSRD/?qs=sGAEpiMZZMt82OzCyDsLFJnme%2fkho22fA0bBsTBXPlU%3d
+
+high voltage filter switches, 600V
+inrush limiters
+banana jacks
+
+high voltage relays, http://www.digikey.com/product-detail/en/standex-meder-electronics/KT05-1A-40L-SMD/374-1356-2-ND/5052637
+

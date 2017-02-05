@@ -58,12 +58,16 @@ features
             look at http://www.magnatoneamps.com/schematics/magnatone_260a.pdf
         tremolo
             use 6be6, see playmaster 102.pdf
+
         overdrive
             6bj8 dual diode with triode
+            https://robrobinette.com/Tube_Guitar_Amp_Overdrive.htm#What_is_Distortion_and_Overdrive
 
     footswitch to switch L or R amp
     
     led light acrylitic front panel  
+
+    pentode preamp, use 7 pin like 6ak5, http://ax84.com/bbs/dm.php?thread=372975
 
 parts from 
     Wurlitzer 4100B - 650172
@@ -96,6 +100,7 @@ tone stack
         http://www.tubebooks.org/file_downloads/Baxandall.pdf
     http://electronbunker.ca/eb/TubeAudio_01a.html
     http://electronicdesign.com/analog/simple-circuit-offers-single-adjustment-tone-control
+    https://github.com/aalpern/monster.partyhat.co/tree/master/site/_articles/projects/amps/tone-stacks/images
 
 phase inverter
     long tail pair 
