@@ -11,7 +11,12 @@ TURNS=1
 LABEL=2
 BUFFERTHRES=13
 
-import serial,time,sys,termios,os,csv
+import time,sys,termios,os,csv
+
+try:
+    import serial
+except ImportError:
+    pass
 
 class Machine():
     def windingWind(self,which):
