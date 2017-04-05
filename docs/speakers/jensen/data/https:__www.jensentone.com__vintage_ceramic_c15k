@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html class="responsive">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="https://www.jensentone.com/sites/jensentone.com/themes/jensentone_red/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="C15K - Full, boomy low-end with aggressive mids and bright highs. Responds to overdrive distortion with a strong rhythm crunch and fuzz lead voice." />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://www.jensentone.com/vintage_ceramic/c15k" />
+<link rel="shortlink" href="https://www.jensentone.com/node/38" />
+<meta name="dcterms.title" content="C15K" />
+<meta name="dcterms.creator" content="dmoberly" />
+<meta name="dcterms.date" content="2011-09-23T10:23-07:00" />
+<meta name="dcterms.type" content="Text" />
+<meta name="dcterms.format" content="text/html" />
+<meta name="dcterms.identifier" content="https://www.jensentone.com/vintage_ceramic/c15k" />
+<meta name="dcterms.language" content="en" />
+	<title>C15K | Jensen Loudspeakers</title>
+	<meta property="og:site_name" content="Jensen Tone" />
+	<meta property="fb:admins" content="100000356957081" />
+	<meta name="msvalidate.01" content="B6AADD33A79E8538C173D999538D57F2" />
+	<meta name="google-site-verification" content="S5tpdfmAeh28loBljS93oPcP2CO7amU0_LEioAkizrQ" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Language" content="en" />
+	<meta name="referrer" content="always" />
+	<link type="text/css" rel="stylesheet" href="https://www.jensentone.com/sites/jensentone.com/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.jensentone.com/sites/jensentone.com/files/css/css_TICnSWM379MLB1Xd9i5i8uZzQ1QcQj2h3GgRrGcHAdA.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.jensentone.com/sites/jensentone.com/files/css/css_KgayhKT7MpvFoWxUqEt3skzGHyDj2Yd8tfv2JpP61Bg.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.jensentone.com/sites/jensentone.com/files/css/css_zXGebR0rt9x6na6I1mO5o7-_ovVtIJohtELSKkcMC7o.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.jensentone.com/sites/jensentone.com/files/css/css_CRfaUmP8XVQNPKxuOno80t9ZJpMUD2zCIHQJJ9LFMGo.css" media="print" />
+	<script type="text/javascript" src="https://www.jensentone.com/sites/jensentone.com/files/js/js_ri60QNjcazMKdlAmWmDsmRb0iKaVkkXUQxH2MsgpmVo.js"></script>
+<script type="text/javascript" src="https://www.jensentone.com/sites/jensentone.com/files/js/js_fmKYzv9xv2c4R2zU3TFtykoLn9VrfjTgaIk9Vvkz8Kg.js"></script>
+<script type="text/javascript" src="https://www.jensentone.com/sites/jensentone.com/files/js/js_2aoO-cHooAbfs99TDL5_7T2331rnt7gXmuSBKktuxn4.js"></script>
+<script type="text/javascript" src="https://www.jensentone.com/sites/jensentone.com/files/js/js_R_a_ztViKXUrXX87jSzzqMdSbqt7gDpCrjhqgzyczMg.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-2068365-4", {"cookieDomain":"auto"});ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"jensentone_red","theme_token":"TfUd67IFpKiHFlt5SgThoivHCuwgdcQjNVsjHoyoW-8","js":{"sites\/all\/modules\/custom\/browser_update\/browser_update.js":1,"sites\/all\/libraries\/jplayer\/dist\/jplayer\/jquery.jplayer.min.js":1,"sites\/all\/libraries\/jplayer\/dist\/add-on\/jplayer.playlist.min.js":1,"0":1,"1":1,"2":1,"3":1,"sites\/jensentone.com\/modules\/custom\/jensentone_module\/js\/speaker_spec_tabs.js":1,"sites\/jensentone.com\/modules\/custom\/jensentone_module\/js\/speaker_rotate.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.8\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/nice_menus\/js\/jquery.bgiframe.js":1,"sites\/all\/modules\/contrib\/nice_menus\/js\/jquery.hoverIntent.js":1,"sites\/all\/modules\/contrib\/nice_menus\/js\/superfish.js":1,"sites\/all\/modules\/contrib\/nice_menus\/js\/nice_menus.js":1,"sites\/all\/libraries\/plotly\/plotly-latest.min.js":1,"sites\/jensentone.com\/modules\/custom\/jensentone_module\/js\/audioplayer.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/galleryformatter\/theme\/infiniteCarousel.js":1,"sites\/all\/modules\/contrib\/galleryformatter\/theme\/galleryformatter.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"4":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/field\/theme\/field.css":1,"sites\/jensentone.com\/modules\/custom\/jdl_locator\/jdl_locator.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/custom\/print_dev_info\/print_dev_info.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/galleryformatter\/theme\/galleryformatter.css":1,"sites\/all\/modules\/contrib\/nice_menus\/css\/nice_menus.css":1,"sites\/all\/modules\/contrib\/nice_menus\/css\/nice_menus_default.css":1,"sites\/all\/libraries\/fontawesome\/css\/font-awesome.css":1,"sites\/jensentone.com\/themes\/jensentone_red\/css\/html-reset.css":1,"sites\/jensentone.com\/themes\/jensentone_red\/css\/wireframes.css":1,"sites\/jensentone.com\/themes\/jensentone_red\/css\/layout-fixed.css":1,"sites\/jensentone.com\/themes\/jensentone_red\/css\/tabs.css":1,"sites\/jensentone.com\/themes\/jensentone_red\/css\/pages.css":1,"sites\/jensentone.com\/themes\/jensentone_red\/css\/navigation.css":1,"sites\/jensentone.com\/themes\/jensentone_red\/css\/nodes.css":1,"sites\/jensentone.com\/themes\/jensentone_red\/css\/comments.css":1,"sites\/jensentone.com\/themes\/jensentone_red\/css\/forms.css":1,"sites\/jensentone.com\/themes\/jensentone_red\/css\/responsive.css":1,"sites\/jensentone.com\/themes\/jensentone_red\/css\/print.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"nice_menus_options":{"delay":800,"speed":"slow"},"urlIsAjaxTrusted":{"\/search\/jensen":true}});
+//--><!]]>
+</script>
+	
+	<meta property="og:url" content="https://www.jensentone.com/vintage_ceramic/c15k" />
+	<meta property="og:title" content="C15K" /><meta property="og:image" content="https://www.jensentone.com/sites/jensentone.com/files/speaker_images/p-a-c15k_off.png" /><meta property="og:type" content="product" /><link rel="apple-touch-icon" href="/sites/jensentone.com/themes/jensentone_red/apple-touch-icon.png" /></head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-38 node-type-speaker section-vintage-ceramic" >
+		<div id="fb-root"></div><noscript><span class="noscript-header">Jensen Loudspeakers requires Javascript be enabled. Please enable Javascript to continue using this site without issues.</span></noscript><div id="header"><div class="section"><ul class="nice-menu nice-menu-down nice-menu-user-menu" id="nice-menu-0"><li class="menu-670 menu-path-sound-samples first odd "><a href="/sound_samples" title="">Sound Samples</a></li>
+<li class="menu-4239 menu-path-tone-chart  even "><a href="/tone_chart" title="">Tone Chart</a></li>
+<li class="menu-720 menu-path-videos  odd "><a href="/videos" title="">Videos</a></li>
+<li class="menu-4238 menu-path-tone-generator  even "><a href="/tone_generator" title="">Tone Generator</a></li>
+<li class="menu-8643 menu-path-builder-profiles  odd "><a href="/builder_profiles" title="">Builder Profiles</a></li>
+<li class="menu-660 menu-path-jdl-locator  even "><a href="/jdl_locator" title="">Find a Local Dealer</a></li>
+<li class="menu-3786 menu-path-contact  odd "><a href="/contact" title="">Contact Us</a></li>
+<li class="menu-4237 menuparent  menu-path-node-336  even last"><a href="#" class="nolink">More <i class="fa fa-arrow-down"></i></a><ul><li class="menu-5473 menu-path-frequency-response-comparison first odd "><a href="/frequency_response_comparison" title="">Frequency Response Comparisons</a></li>
+<li class="menu-4362 menu-path-recommended-replacements  even "><a href="/recommended_replacements" title="">Recommended Speakers for your Amp</a></li>
+<li class="menu-4241 menu-path-vintage-replacements  odd "><a href="/vintage_replacements" title="">Vintage Amp Replacements</a></li>
+<li class="menu-4267 menu-path-node-341  even "><a href="/changing_your_tone" title="">Changing your Tone</a></li>
+<li class="menu-4261 menu-path-node-340  odd "><a href="/date_code_information" title="">Date Code Information</a></li>
+<li class="menu-659 menu-path-node-3  even "><a href="/history_jensen" title="">History</a></li>
+<li class="menu-4315 menu-path-advertisement-archives  odd "><a href="/advertisement_archives" title="">Advertisement Archives</a></li>
+<li class="menu-4365 menu-path-wiring-diagrams  even last"><a href="/wiring_diagrams" title="">Wiring Diagrams</a></li>
+</ul></li>
+</ul>
+</div></div><div id="navigation"><div id="main-menu"><div class="logo"><a href="/" title="Home" rel="home" id="logo"><img src="https://www.jensentone.com/sites/jensentone.com/themes/jensentone_red/logo.png" alt="Jensentone" height="39" width="138"/></a></div><div class="item-list"><ul><li class="first"><a href="/vintage_alnico" title="Browse Vintage Alnico Speakers" class="">Vintage Alnico</a></li>
+<li><a href="/vintage_ceramic" title="Browse Vintage Ceramic Speakers" class="active">Vintage Ceramic</a></li>
+<li><a href="/jet_series" title="Browse Jet Series Speakers" class="">Jet Series</a></li>
+<li><a href="/mod_series" title="Browse Mod Series Speakers" class="">Mod Series</a></li>
+<li class="last"><a href="/bass_speakers" title="Browse Bass Speakers Speakers" class="">Bass Speakers</a></li>
+</ul></div></div></div><div id="search-frame"><div id="search-holder"><form class="search-form" role="form" action="/search/jensen" method="post" id="search-form" accept-charset="UTF-8"><div><div class="container-inline form-wrapper" id="edit-basic"><i class="fa fa-search" aria-hidden="true"></i><div class="form-item form-type-textfield form-item-keys">
+  <input placeholder="Search Jensentone" type="text" id="edit-keys" name="keys" value="" size="20" maxlength="255" class="form-text" />
+</div>
+<input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-bUTuuhtZi8R_DXsBg50qTyXh-8GIJ-atzqO2u7ASMrY" />
+<input type="hidden" name="form_id" value="search_form" />
+</div></form></div></div><h1 class="title" id="page-title">C15K</h1><div id="page-wrapper"><div id="page"><div id="main-wrapper"><div id="main" class="clearfix with-navigation"><div id="content" class="column"><div class="section">  <div class="region region-content">
+    <div id="block-system-main" class="block block-system first last odd">
+
+      
+  <div class="content">
+    <div id="node-38" class="node node-speaker node-promoted view-mode-full clearfix" about="/vintage_ceramic/c15k" typeof="sioc:Item foaf:Document"><div class="content"><div id="left_speaker_column"><div id="speaker_image"><div class="field field-name-field-speaker-image field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><div class="galleryformatter galleryview galleryformatter-nostyle"><div class="gallery-slides" style="width:350px; height:350px;"><div class="gallery-frame"><ul><li class="gallery-slide" id="slide-0-field_speaker_image-38"><a href="https://www.jensentone.com/sites/jensentone.com/files/speaker_images/p-a-c15k_off.png" title="C15K image 1" class="shownext colorbox" data-rel="gallery-[field_speaker_image-38]"><span class="view-full" title="View the full image"><i class="fa fa-search" aria-hidden="true"></i></span></a><img typeof="foaf:Image" src="https://www.jensentone.com/sites/jensentone.com/files/styles/product_image/public/speaker_images/p-a-c15k_off.png?itok=bcKtiRmH" width="350" height="350" alt="" title="C15K image 1" /></li><li class="gallery-slide" id="slide-1-field_speaker_image-38"><a href="https://www.jensentone.com/sites/jensentone.com/files/speaker_images/p-a-c15k_cone.png" title="C15K image 2" class="shownext colorbox" data-rel="gallery-[field_speaker_image-38]"><span class="view-full" title="View the full image"><i class="fa fa-search" aria-hidden="true"></i></span></a><img typeof="foaf:Image" src="https://www.jensentone.com/sites/jensentone.com/files/styles/product_image/public/speaker_images/p-a-c15k_cone.png?itok=5UxBthVF" width="350" height="350" alt="" title="C15K image 2" /></li><li class="gallery-slide" id="slide-2-field_speaker_image-38"><a href="https://www.jensentone.com/sites/jensentone.com/files/speaker_images/p-a-c15k_side.png" title="C15K image 3" class="shownext colorbox" data-rel="gallery-[field_speaker_image-38]"><span class="view-full" title="View the full image"><i class="fa fa-search" aria-hidden="true"></i></span></a><img typeof="foaf:Image" src="https://www.jensentone.com/sites/jensentone.com/files/styles/product_image/public/speaker_images/p-a-c15k_side.png?itok=WOFzxdYH" width="350" height="350" alt="" title="C15K image 3" /></li><li class="gallery-slide" id="slide-3-field_speaker_image-38"><a href="https://www.jensentone.com/sites/jensentone.com/files/speaker_images/p-a-c15k_top.png" title="C15K image 4" class="shownext colorbox" data-rel="gallery-[field_speaker_image-38]"><span class="view-full" title="View the full image"><i class="fa fa-search" aria-hidden="true"></i></span></a><img typeof="foaf:Image" src="https://www.jensentone.com/sites/jensentone.com/files/styles/product_image/public/speaker_images/p-a-c15k_top.png?itok=ay_TbNd2" width="350" height="350" alt="" title="C15K image 4" /></li></ul></div></div><div class="gallery-thumbs" style="width:350px;"><div class="wrapper"><ul><li class="slide-0" style="width:50px;"><a href="#slide-0-field_speaker_image-38"><img typeof="foaf:Image" src="https://www.jensentone.com/sites/jensentone.com/files/styles/galleryformatter_thumb/public/speaker_images/p-a-c15k_off.png?itok=rP0YtO-J" width="50" height="48" alt="" title="C15K image 1" /></a></li><li class="slide-1" style="width:50px;"><a href="#slide-1-field_speaker_image-38"><img typeof="foaf:Image" src="https://www.jensentone.com/sites/jensentone.com/files/styles/galleryformatter_thumb/public/speaker_images/p-a-c15k_cone.png?itok=So__KLCy" width="50" height="50" alt="" title="C15K image 2" /></a></li><li class="slide-2" style="width:50px;"><a href="#slide-2-field_speaker_image-38"><img typeof="foaf:Image" src="https://www.jensentone.com/sites/jensentone.com/files/styles/galleryformatter_thumb/public/speaker_images/p-a-c15k_side.png?itok=7WvKkaVH" width="50" height="23" alt="" title="C15K image 3" /></a></li><li class="slide-3" style="width:50px;"><a href="#slide-3-field_speaker_image-38"><img typeof="foaf:Image" src="https://www.jensentone.com/sites/jensentone.com/files/styles/galleryformatter_thumb/public/speaker_images/p-a-c15k_top.png?itok=VwFnKaJA" width="50" height="50" alt="" title="C15K image 4" /></a></li></ul></div></div></div></div></div></div></div><div class="item-list"><ul id="ohm_tabs"><li class="active spec first" id="ohm_tab_8">8Ω</li>
+<li class="spec last" id="ohm_tab_16">16Ω</li>
+</ul></div><div id="characteristic_tables"><div id="ohm_table_8" class="spec_table_frame active"><table id="genchar">
+<caption>General Characteristics for 8Ω</caption>
+<tbody>
+ <tr class="odd"><td>Nominal Overall Diameter</td><td>385 mm.</td><td>15 in.</td> </tr>
+ <tr class="even"><td>Nominal Voice Coil Diameter</td><td>50 mm.</td><td>2.00 in.</td> </tr>
+ <tr class="odd"><td>Magnet Weight</td><td>1450 g</td><td>50.00 oz</td> </tr>
+ <tr class="even"><td>Overall Weight</td><td></td><td>11.35 lbs</td> </tr>
+ <tr class="odd"><td>Flux Density</td><td></td><td>1.15 T</td> </tr>
+</tbody>
+</table>
+<table id="thiele">
+<caption>Thiele-Small Parameters for 8Ω</caption>
+<tbody>
+ <tr class="odd"><td>Voice Coil DC Resistance</td><td>R<sub>E</sub></td><td>6.70 Ω</td> </tr>
+ <tr class="even"><td>Resonance Frequency</td><td>ƒ<sub>S</sub></td><td>73.0 Hz</td> </tr>
+ <tr class="odd"><td>Mechanical Q Factor</td><td>Q<sub>MS</sub></td><td>14.39</td> </tr>
+ <tr class="even"><td>Electrical Q Factor</td><td>Q<sub>ES</sub></td><td>0.91</td> </tr>
+ <tr class="odd"><td>Total Q Factor</td><td>Q<sub>TS</sub></td><td>0.86</td> </tr>
+ <tr class="even"><td>Mechanical Moving Mass</td><td>M<sub>MS</sub></td><td>43.3 g</td> </tr>
+ <tr class="odd"><td>Mechanical Compliance</td><td>C<sub>MS</sub></td><td>110 µm/N</td> </tr>
+ <tr class="even"><td>Force Factor</td><td>BxL</td><td>12.48 Wb/m</td> </tr>
+ <tr class="odd"><td>Equivalent Acoustic Volume</td><td>V<sub>AS</sub></td><td>87.6 lt.</td> </tr>
+ <tr class="even"><td>Maximum Linear Displacement</td><td>X<sub>MAX</sub></td><td>±1.00 mm</td> </tr>
+ <tr class="odd"><td>Reference Efficiency</td><td>n<sub>O</sub></td><td>3.60 %</td> </tr>
+ <tr class="even"><td>Diaphragm Area</td><td>S<sub>D</sub></td><td>754.7 cm<sup>2</sup></td> </tr>
+ <tr class="odd"><td>Losses Electrical Resistance</td><td>R<sub>ES</sub></td><td>110.0 Ω</td> </tr>
+ <tr class="even"><td>Voice Coil Inductance @ 1kHz</td><td>L<sub>E</sub></td><td>0.96 mH</td> </tr>
+</tbody>
+</table>
+<table id="construct">
+<caption>Constructive Characteristics for 8Ω</caption>
+<tbody>
+ <tr class="odd"><td>Magnet</td><td></td><td>Ferrite</td> </tr>
+ <tr class="even"><td>Voice Coil Winding</td><td></td><td>Copper</td> </tr>
+ <tr class="odd"><td>Voice Coil Former</td><td></td><td>Kapton</td> </tr>
+ <tr class="even"><td>Cone Material</td><td></td><td>Paper</td> </tr>
+ <tr class="odd"><td>Surround Material</td><td></td><td>Integrated Paper</td> </tr>
+ <tr class="even"><td>Dust Dome Material</td><td></td><td>Non-treated Cloth</td> </tr>
+ <tr class="odd"><td>Basket Material</td><td></td><td>Pressed Sheet Steel</td> </tr>
+</tbody>
+</table>
+<table id="electrical">
+<caption>Electrical Characteristics for 8Ω</caption>
+<tbody>
+ <tr class="odd"><td>Nominal Impedance</td><td></td><td>8 Ω</td> </tr>
+ <tr class="even"><td>Rated Power</td><td></td><td>100 W</td> </tr>
+ <tr class="odd"><td>Musical Power</td><td></td><td>200 W</td> </tr>
+ <tr class="even"><td>Sensitivity@1W,1m</td><td></td><td>98.0 dB</td> </tr>
+</tbody>
+</table>
+</div><div id="ohm_table_16" class="spec_table_frame"><table id="genchar">
+<caption>General Characteristics for 16Ω</caption>
+<tbody>
+ <tr class="odd"><td>Nominal Overall Diameter</td><td>385 mm.</td><td>15 in.</td> </tr>
+ <tr class="even"><td>Nominal Voice Coil Diameter</td><td>50 mm.</td><td>2.00 in.</td> </tr>
+ <tr class="odd"><td>Magnet Weight</td><td>1450 g</td><td>50.00 oz</td> </tr>
+ <tr class="even"><td>Overall Weight</td><td></td><td>11.35 lbs</td> </tr>
+ <tr class="odd"><td>Flux Density</td><td></td><td>1.15 T</td> </tr>
+</tbody>
+</table>
+<table id="thiele">
+<caption>Thiele-Small Parameters for 16Ω</caption>
+<tbody>
+ <tr class="odd"><td>Voice Coil DC Resistance</td><td>R<sub>E</sub></td><td>11.90 Ω</td> </tr>
+ <tr class="even"><td>Resonance Frequency</td><td>ƒ<sub>S</sub></td><td>73.8 Hz</td> </tr>
+ <tr class="odd"><td>Mechanical Q Factor</td><td>Q<sub>MS</sub></td><td>9.87</td> </tr>
+ <tr class="even"><td>Electrical Q Factor</td><td>Q<sub>ES</sub></td><td>1.05</td> </tr>
+ <tr class="odd"><td>Total Q Factor</td><td>Q<sub>TS</sub></td><td>0.95</td> </tr>
+ <tr class="even"><td>Mechanical Moving Mass</td><td>M<sub>MS</sub></td><td>56.1 g</td> </tr>
+ <tr class="odd"><td>Mechanical Compliance</td><td>C<sub>MS</sub></td><td>82 µm/N</td> </tr>
+ <tr class="even"><td>Force Factor</td><td>BxL</td><td>17.21 Wb/m</td> </tr>
+ <tr class="odd"><td>Equivalent Acoustic Volume</td><td>V<sub>AS</sub></td><td>66.2 lt.</td> </tr>
+ <tr class="even"><td>Maximum Linear Displacement</td><td>X<sub>MAX</sub></td><td>±1.00 mm</td> </tr>
+ <tr class="odd"><td>Reference Efficiency</td><td>n<sub>O</sub></td><td>2.47 %</td> </tr>
+ <tr class="even"><td>Diaphragm Area</td><td>S<sub>D</sub></td><td>754.8 cm<sup>2</sup></td> </tr>
+ <tr class="odd"><td>Losses Electrical Resistance</td><td>R<sub>ES</sub></td><td>111.8 Ω</td> </tr>
+ <tr class="even"><td>Voice Coil Inductance @ 1kHz</td><td>L<sub>E</sub></td><td>1.28 mH</td> </tr>
+</tbody>
+</table>
+<table id="construct">
+<caption>Constructive Characteristics for 16Ω</caption>
+<tbody>
+ <tr class="odd"><td>Magnet</td><td></td><td>Ferrite</td> </tr>
+ <tr class="even"><td>Voice Coil Winding</td><td></td><td>Copper</td> </tr>
+ <tr class="odd"><td>Voice Coil Former</td><td></td><td>Kapton</td> </tr>
+ <tr class="even"><td>Cone Material</td><td></td><td>Paper</td> </tr>
+ <tr class="odd"><td>Surround Material</td><td></td><td>Integrated Paper</td> </tr>
+ <tr class="even"><td>Dust Dome Material</td><td></td><td>Non-treated Cloth</td> </tr>
+ <tr class="odd"><td>Basket Material</td><td></td><td>Pressed Sheet Steel</td> </tr>
+</tbody>
+</table>
+<table id="electrical">
+<caption>Electrical Characteristics for 16Ω</caption>
+<tbody>
+ <tr class="odd"><td>Nominal Impedance</td><td></td><td>16 Ω</td> </tr>
+ <tr class="even"><td>Rated Power</td><td></td><td>100 W</td> </tr>
+ <tr class="odd"><td>Musical Power</td><td></td><td>200 W</td> </tr>
+ <tr class="even"><td>Sensitivity@1W,1m</td><td></td><td>97.4 dB</td> </tr>
+</tbody>
+</table>
+</div></div><div id="social_buttons"><a href="/speaker/print/38" class="printer"><i class="fa fa-print" aria-hidden="true"></i> Print this page</a><a href="mailto:?subject=Check%20out%20C15K&amp;body=https%3A//www.jensentone.com/vintage_ceramic/c15k" class="icon email"><i class="fa fa-envelope-square fa-fw" aria-hidden="true"></i></a><a href="https://plus.google.com/share?url=https%3A//www.jensentone.com/vintage_ceramic/c15k" class="icon googleplus"><i class="fa fa-google-plus-square fa-fw" aria-hidden="true"></i></a><a href="http://twitter.com/home?status=Check%20out%20C15K%20https%3A//www.jensentone.com/vintage_ceramic/c15k" class="icon twitter"><i class="fa fa-twitter-square fa-fw" aria-hidden="true"></i></a><a href="http://pinterest.com/pin/create/button/?url=https%3A//www.jensentone.com/vintage_ceramic/c15k&amp;media=&amp;description=C15K" class="icon pinterest"><i class="fa fa-pinterest-square fa-fw" aria-hidden="true"></i></a><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.jensentone.com/vintage_ceramic/c15k" class="icon facebook"><i class="fa fa-facebook-square fa-fw" aria-hidden="true"></i></a></div></div><div id="main_speaker_data"><div class="general_data"><div class="field field-name-field-diameter field-type-number-integer field-label-hidden"><div class="field-items"><div class="field-item even">15"</div></div></div>, <div class="field field-name-field-watts field-type-number-integer field-label-hidden"><div class="field-items"><div class="field-item even">100 watts</div></div></div><div class="item-list"><ul id="printed_ohms" class="printed_ohms"><li class="first">Ohms:</li>
+<li class="second active printed_ohm" id="printed_ohm_8">8Ω</li>
+<li class="printed_ohm last" id="printed_ohm_16">16Ω</li>
+</ul></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Full, boomy low-end with aggressive mids and bright highs. Responds to overdrive distortion with a strong rhythm crunch and fuzz lead voice.</p>
+</div></div></div><table id="guitarist_table">
+<caption></caption>
+ <thead><tr><th>Lows:</th><th>Mids:</th><th>Highs:</th><th>Overdrive:</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td>Fat</td><td>Aggressive</td><td>Bright</td><td>Crunchy</td> </tr>
+ <tr class="even"><td colspan="4"><label>Guitarist Description:</label> Full, boomy low-end with aggressive mids and bright highs. Responds to overdrive distortion with a strong rhythm crunch and fuzz lead voice</td> </tr>
+ <tr class="odd"><td colspan="4"><label>Bassist Description:</label> Hard and straightfoward with low-end dominance</td> </tr>
+</tbody>
+</table>
+</div><div class="field field-name-field-genre-sound-sample field-type-file field-label-above"><div class="field-label">Sound Samples:</div><div class="playlist"><div class="jp-jplayer"></div><div id="jp_container_73313855" class="jp-audio" role="application" aria-label="media player"><div class="jp-type-playlist"><div class="jp-gui jp-interface"><div class="jp-controls"><i class="fa fa-play fa-fw jp-play play" aria-hidden="true"></i><i class="fa fa-pause fa-fw jp-play pause" aria-hidden="true"></i></div><div class="playbar"><div class="playing">Now Playing: <span class="text">Clean Sound Sample</span></div><div class="jp-progress"><div class="jp-seek-bar"><div class="jp-play-bar"></div></div></div><div class="jp-time-holder"><div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div><div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div></div></div><div class="jp-volume-controls"><i class="fa fa-volume-off fa-fw jp-mute" aria-hidden="true"></i><div class="jp-volume-bar"><div class="jp-volume-bar-value"></div></div><i class="fa fa-volume-up fa-fw jp-volume-max" aria-hidden="true"></i></div></div><div class="jp-playlist"><div class="item-list"><ul><li class="first last">&nbsp;</li>
+</ul></div></div><div class="jp-no-solution"><span>Update Required</span>To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.</div></div></div><div class="song"><span class="track"><span class="title">Clean Sound Sample</span><span class="length">00:18</span></span><span class="url">https://www.jensentone.com/sites/jensentone.com/files/sound_samples/c15k_clean_0.mp3</span></div><div class="song"><span class="track"><span class="title">Overdriven Sound Sample</span><span class="length">00:18</span></span><span class="url">https://www.jensentone.com/sites/jensentone.com/files/sound_samples/c15k_overdriven_0.mp3</span></div><div class="song"><span class="track"><span class="title">Blues Sound Sample</span><span class="length">00:49</span></span><span class="url">https://www.jensentone.com/sites/jensentone.com/files/sound_samples/c15k_blues.mp3</span></div><div class="song"><span class="track"><span class="title">Country Sound Sample</span><span class="length">00:35</span></span><span class="url">https://www.jensentone.com/sites/jensentone.com/files/sound_samples/c15k_country.mp3</span></div><div class="song"><span class="track"><span class="title">Jazz Sound Sample</span><span class="length">00:43</span></span><span class="url">https://www.jensentone.com/sites/jensentone.com/files/sound_samples/c15k_jazz.mp3</span></div><div class="song"><span class="track"><span class="title">Metal Sound Sample</span><span class="length">00:55</span></span><span class="url">https://www.jensentone.com/sites/jensentone.com/files/sound_samples/c15k_metal.mp3</span></div><div class="song"><span class="track"><span class="title">Rock Sound Sample</span><span class="length">00:42</span></span><span class="url">https://www.jensentone.com/sites/jensentone.com/files/sound_samples/c15k_rock.mp3</span></div></div><div class="how_sound_samples"><a href="/how_we_created_our_sound_samples">Learn how we created our sound samples</a></div><div class="how_sound_samples">Having trouble playing our sound samples? <a href="/sound_samples/38">Click here to access the files directly.</a></div></div><div id="speaker_files"><div class="field field-name-field-spec-sheet field-type-file field-label-above"><div class="field-label">Specification Sheet:</div><div class="framework"><a href="/speaker/spec/38"><img typeof="foaf:Image" src="https://www.jensentone.com/sites/jensentone.com/files/styles/spec_image/public/spec_sheet_previews/c15k.png?itok=gnWzftBP" width="250" height="354" alt="" title="Jensen specification sheet for C15K" /></a><div class="note"><a href="/spec_sheets/38">Click for individual ohm-value spec sheets</a></div></div></div><div class="field field-name-field-dimensions-image field-type-image field-label-above"><div class="field-label">Product Dimensions:</div><div class="framework"><a href="/dimensions/render/600xdimxc15k_drawing.svg?height=610&amp;width=600&amp;iframe=1" class="colorbox-load"><svg height="355" enable-background="new 326.9 247.1 180 288" version="1.1"   viewBox="326.9 247.1 180 288" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M415.9,324.2 l-3-0.1 m6,0.5 l-3-0.4 m5.9,1 l-2.9-0.7 m5.7,1.5 l-2.9-0.8 m5.8,1.8 l-2.8-1 m5.5,2.3 l-2.7-1.2 m5.3,2.7 l-2.6-1.5 m5,3.1 l-2.4-1.7 m4.8,3.5 l-2.4-1.8 m4.6,3.8 l-2.2-2.1 m4.2,4.4 l-2.1-2.2 m4,4.4 l-1.9-2.4 m3.6,4.9 l-1.6-2.5 m3,5.1 l-1.5-2.6 m2.7,5.4 l-1.2-2.7 m2.3,5.4 l-1-2.7 m1.8,5.7 l-0.8-2.9 m1.4,5.6 l-0.7-2.9 m1.1,6 l-0.4-3 m0.5,6 l-0.1-3 m-32.9,-67.6 l-5.1-0.2 m10.1,0.8 l-5-0.6 m10,1.4 l-5-0.9 m9.9,2.2 l-4.9,-1.2 m9.7,2.8 l-4.8-1.6 m9.5,3.5 l-4.7-1.9 m9.2,4.1 l-4.5-2.3 m8.8,5 l-4.3-2.6 m8.5,5.5 l-4.1-2.9 m8,6 l-4-3.2 m7.7,6.7 l-3.7-3.5 m7.3,7.1 l-3.5-3.7 m6.5,7.7 l-3.2-4 m6.2,8.1 l-2.9-4.1 m5.4,8.5 l-2.6-4.3 m4.9,8.7 l-2.3-4.5 m4.3,9.3 l-1.9-4.7 m3.4,9.5 l-1.6-4.8 m2.8,9.6 l-1.2-4.9 m2.2,9.9 l-0.9-5 m1.5,10 l-0.6-5 m0.6,10.1 l-0.1-5.1 m-65.2,-71.3 l-5.5-0.2 m10.9,0.8 l-5.5-0.6 m10.9,1.6 l-5.5-0.9 m10.8,2.3 l-5.3-1.3 m10.6,3 l-5.2-1.7 m10.2,3.8 l-5.1-2.2 m9.9,4.6 l-4.9-2.5 m9.7,5.3 l-4.7-2.7 m9.1,5.8 l-4.4-3.2 m8.8,6.6 l-4.3-3.4 m8.2,7.2 l-4.1-3.8 m7.9,7.8 l-3.8-4.1 m7.2,8.3 l-3.5-4.2 m6.6,8.7 l-3.1-4.4 m5.9,9.1 l-2.8-4.7 m5.3,9.6 l-2.5-4.9 m4.6,10 l-2.1-5.1 m3.8,10.3 l-1.7-5.2 m3.1,10.4 l-1.4-5.3 m2.3,10.7 l-0.9-5.5 m1.5,10.9 l-0.6-5.5 m0.8,11 l-0.2-5.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M452,358.5 l28.6-3.6 m-64.6,-31.8 l-3-0.2 m6,0.5 l-3-0.4 m6.1,1 l-3.1-0.7 m6.1,1.5 l-3-0.8 m5.8,1.9 l-2.9-1 m5.7,2.3 l-2.8-1.3 m5.5,2.8 l-2.6-1.5 m5.2,3.2 l-2.6-1.7 m5,3.6 l-2.4-1.9 m4.7,3.9 l-2.4-2.1 m4.5,4.4 l-2.1-2.3 m3.9,4.8 l-1.9-2.5 m3.6,5 l-1.7-2.5 m3.3,5.2 l-1.5-2.7 m2.8,5.4 l-1.3-2.7 m2.4,5.8 l-1-2.9 m1.7,5.8 l-0.8-2.9 m1.5,5.9 l-0.7-3 m1,6.1 l-0.4-3 m0.6,6 l-0.2-3 m-35.9,-28.7 l-3.1-0.2 m6.2,0.8 l-3.1-0.5 m6,1.2 l-3-0.8 m6,1.8 l-3-1 m5.8,2.4 l-2.8-1.3 m5.4,2.9 l-2.6-1.6 m5.2,3.4 l-2.5-1.9 m4.8,4 l-2.4-2.1 m4.5,4.5 l-2.1-2.4 m4,4.8 l-1.9-2.5 m3.5,5.2 l-1.6-2.7 m2.9,5.6 l-1.3-2.8 m2.4,5.7 l-1-2.9 m1.7,5.9 l-0.8-3 m1.3,6.1 l-0.5-3.1 m0.7,6.2 l-0.2-3.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M457.3,352.9 l19.3-2.2 m2.8,-2.7 l-0.1-0.8 m0,1.5 l0.2-0.8 m-0.6,1.6 l0.4-0.8 m-1,1.4 l0.6-0.6 m-1.3,0.9 l0.8-0.4 m-1.6,0.7 l0.8-0.2 m-20.7,2.4 h0.5 m-1,-0.2 l0.5,0.2 m-1.1,-0.5 l0.5,0.3 m-0.9,-0.7 l0.4,0.4 m-0.7,-0.8 l0.4,0.5 m-0.5,-1 l0.2,0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M452,358.5 l31.7-0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M480.6,354.8 l3.1,3.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M435.6,330.1 l17.4-22.9 m27.5,47.6 c-1-9.5-4.1-18.6-8.7-26.8 m-17,23 c-0.9-3.8-2.5-7.3-4.4-10.6 m-32.4,-49.7 l-5.1-0.2 m10.2,0.7 l-5.1-0.5 m10.2,1.6 l-5-0.9 m9.9,2 l-5-1.2 m9.9,2.8 l-4.9-1.6 m9.6,3.6 l-4.7-1.9 m9.3,4.2 l-4.6-2.3 m9,4.9 l-4.4-2.6 m8.6,5.5 l-4.2-2.9 m8.2,6.1 l-4-3.2 m7.7,6.7 l-3.8-3.5 m7.3,7.2 l-3.5-3.8 m6.7,7.8 l-3.2-4.1 m6.1,8.3 l-2.9-4.2 m5.6,8.6 l-2.6-4.3 m4.8,8.9 l-2.3-4.6 m4.3,9.3 l-2-4.7 m3.6,9.6 l-1.6-4.9 m2.9,9.8 l-1.3-5 m2.1,10 l-0.9-5 m1.5,10.1 l-0.6-5.1 m0.8,10.2 l-0.2-5.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M443.2,328.3 l11.6-15.7 m0.6,-0.6 l-0.6,0.7 m1.2,-1.1 l-0.7,0.4 m1.5,-0.6 l-0.8,0.2 m1.6,-0.2 l-0.8-0.1 m1.6,0.4 l-0.8-0.2 m1.4,0.6 l-0.7-0.5 m-15.2,19.3 l0.4,0.4 m-0.6,-0.9 l0.2,0.5 m-0.3,-1.1 l0.1,0.6 m-0.1,-1.1 v0.6 m0.1,-1.2 l-0.1,0.5 m0.4,-0.9 l-0.3,0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M435.6,330.1 l16.4-27.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M452,303.1 l1,4.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M429.3,326.6 l11.2-26.6 m31.3,28.1 c-4.7-8.3-11.2-15.3-18.9-21 m-2.4,33.3 c-1.9-3.3-4.3-6.4-7-9.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M427.2,319 l7.8-17.9 m-1.1,-3.5 l-0.8-0.4 m1.4,1 l-0.7-0.6 m1.2,1.2 l-0.4-0.7 m0.6,1.5 l-0.2-0.8 m0.2,1.6 v-0.8 m-0.2,1.6 l0.2-0.8 m-8.4,19 l0.4-0.5 m-0.7,1 l0.4-0.4 m-1,0.6 l0.5-0.3 m-0.9,0.4 l0.5-0.2 m-1.1,0.3 l0.6-0.1 m-1.2,0 l0.5,0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M429.3,326.6 l15.3-27.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M440.5,299.9 l4.1-1.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M416.7,320.2 l-0.2-0.1 m0.5,0.3 l-0.2-0.1 m0.4,0.2 l-0.2-0.1 m0.3,0.3 l-0.1-0.2 m0.1,0.3 l-0.1-0.2 m0.1,0.5 l0.1-0.2 m-0.4,0.5 l0.3-0.3 m-0.6,0.3 l0.2-0.1 m-0.3,0.2 l0.2-0.1 m-0.7,0 l0.5,0.1 m-0.7,-0.3 l0.2,0.2 m-0.3,-0.3 m-0.1,-0.3 l0.1,0.2 m0,-0.3 l-0.1,0.2 m0.2,-0.4 l-0.1,0.2 m0.6,-0.5 l-0.5,0.2 m0.7,-0.2 l-0.2,0.1 m31.1,18 l-0.1-0.2 m0.1,0.7 v-0.5 m0,0.6 l0.1-0.2 m-0.3,0.4 l0.2-0.2 m-0.4,0.3 l0.2-0.1 m-0.4,0 l0.2,0.1 m-0.4,-0.1 l0.2,0.1 m-0.4,-0.3 l0.2,0.2 m-0.4,-0.4 l0.1,0.2 m-0.2,-0.5 l0.1,0.3 m-0.1,-0.5 l0.1,0.2 m-0.1,-0.5 l-0.1,0.2 m0.2,-0.3 m0.2,-0.2 l-0.2,0.2 m0.3,-0.2 l-0.2,0.1 m0.4,-0.1 h-0.2 m0.5,0.1 l-0.2-0.1 m0.3,0.3 l-0.2-0.2 m0.4,0.3 l-0.2-0.2 m3.9,6.7 l-0.1-0.2 m0.1,0.5 l-0.1-0.2 m0.1,0.4 l0.1-0.2 m-0.2,0.3 l0.1-0.2 m-0.2,0.3 m-0.1,0.1 l0.2-0.1 m-0.5,0.1 h0.2 m-0.4,-0.1 l0.2,0.1 m-0.4,-0.2 l0.2,0.1 m-0.4,-0.5 l0.2,0.5 m-0.3,-0.8 l0.1,0.2 m-0,-0.4 l-0.1,0.2 m0.1,-0.4 l-0.1,0.2 m0.3,-0.4 l-0.2,0.2 m0.6,-0.2 h-0.4 m0.6,0.1 l-0.2-0.1 m0.4,0.3 l-0.2-0.2 m0.3,0.4 l-0.2-0.2 m-33.1,-49.8 l-4.7-0.2 m9.4,0.7 l-4.7-0.5 m9.4,1.3 l-4.7-0.8 m9.3,1.9 l-4.6-1.2 m9,2.8 l-4.4-1.5 m8.8,3.1 l-4.4-1.8 m-20.3,20.7 l-2.9-0.1 m5.8,0.4 l-2.9-0.3 m5.7,0.8 l-2.9-0.5 m5.7,1.1 l-2.8-0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M375,359.1 l-0.1,3 m0.5,-6.1 l-0.4,3 m0.9,-5.7 l-0.6,2.9 m1.5,-5.9 l-0.8,2.9 m1.8,-5.6 l-1,2.7 m2.3,-5.5 l-1.2,2.7 m2.5,-5.3 l-1.4,2.6 m3.1,-5.1 l-1.7,2.5 m3.6,-4.7 l-1.9,2.4 m3.9,-4.7 l-2.1,2.2 m4.4,-4.2 l-2.3,2 m4.5,-3.8 l-2.4,1.8 m4.9,-3.4 l-2.5,1.7 m5.2,-3.2 l-2.6,1.5 m5.2,-2.8 l-2.6,1.2 m5.4,-2.2 l-2.8,1 m5.8,-1.8 l-2.9,0.8 m5.7,-1.4 l-2.9,0.7 m6,-1.1 l-3,0.4 m6,-0.5 l-3,0.1 m-67.8,32.8 l-0.2,5.1 m0.7,-10.1 l-0.6,5 m1.6,-10 l-0.9,5 m2.1,-9.8 l-1.2,4.9 m2.8,-9.7 l-1.6,4.8 m3.5,-9.6 l-1.9,4.7 m4.2,-9.1 l-2.4,4.5 m5,-8.9 l-2.6,4.3 m5.5,-8.4 l-2.9,4.1 m6.1,-8.1 l-3.2,4 m6.6,-7.6 l-3.5,3.7 m7.2,-7.2 l-3.8,3.5 m7.8,-6.6 l-4,3.2 m8.1,-6.1 l-4.1,2.9 m8.5,-5.6 l-4.4,2.6 m8.8,-4.8 l-4.5,2.3 m9.3,-4.2 l-4.7,1.9 m9.4,-3.5 l-4.8,1.6 m9.7,-2.9 l-4.9,1.2 m9.9,-2 l-5,0.9 m10.1,-1.5 l-5,0.5 m10.1,-0.6 l-5.1,0.2 m-71.5,65 l-0.1,5.5 m0.7,-10.9 l-0.7,5.5 m1.7,-10.9 l-0.9,5.5 m2.3,-10.7 l-1.3,5.3 m3,-10.5 l-1.8,5.2 m3.8,-10.3 l-2.1,5.1 m4.6,-10 l-2.5,4.9 m5.3,-9.6 l-2.8,4.7 m5.9,-9.2 l-3.1,4.4 m6.6,-8.6 l-3.5,4.2 m7.1,-8.2 l-3.8,4.1 m7.9,-7.9 l-4.1,3.8 m8.4,-7.2 l-4.3,3.4 m8.8,-6.5 l-4.5,3.2 m9.1,-6 l-4.7,2.7 m9.7,-5.1 l-4.9,2.5 m9.9,-4.6 l-5,2.2 m10.2,-3.9 l-5.2,1.7 m10.5,-3.1 l-5.4,1.3 m10.8,-2.3 l-5.4,0.9 m10.8,-1.5 l-5.5,0.6 m11.1,-0.7 l-5.5,0.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M345.3,354.8 l28.6,3.6 m-0.1,0.7 l-0.1,3 m0.4,-6.1 l-0.4,3 m1,-6 l-0.6,3 m1.5,-5.9 l-0.8,2.9 m1.9,-6 l-1,2.9 m2.3,-5.6 l-1.3,2.7 m2.7,-5.4 l-1.5,2.7 m3.3,-5.2 l-1.8,2.5 m3.7,-5 l-1.9,2.5 m3.9,-4.8 l-2.2,2.3 m4.5,-4.3 l-2.3,2.1 m4.8,-4 l-2.5,1.9 m5,-3.6 l-2.5,1.7 m5.2,-3.2 l-2.7,1.5 m5.4,-2.8 l-2.7,1.3 m5.8,-2.4 l-2.9,1 m5.8,-1.8 l-2.9,0.8 m5.9,-1.4 l-3,0.7 m6.1,-1 l-3.1,0.3 m6.2,-0.5 l-3.1,0.2 m-28.7,35.9 l-0.2,3.1 m0.7,-6.2 l-0.5,3.1 m1.3,-6.1 l-0.8,3 m1.7,-5.9 l-1,2.9 m2.5,-5.8 l-1.3,2.8 m2.9,-5.5 l-1.6,2.7 m3.4,-5.1 l-1.9,2.5 m4,-4.9 l-2.1,2.4 m4.4,-4.5 l-2.3,2.1 m4.8,-3.9 l-2.5,1.9 m5.1,-3.5 l-2.6,1.6 m5.6,-3 l-2.9,1.3 m5.8,-2.3 l-2.9,1 m6,-1.7 l-3,0.8 m6,-1.4 l-3,0.6 m6.2,-0.7 l-3.2,0.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M349.1,350.7 l19.3,2.2 m-20.1,-2.5 l0.8,0.2 m-1.6,-0.5 l0.8,0.4 m-1.3,-1 l0.6,0.6 m-1,-1.4 l0.4,0.8 m-0.6,-1.5 l0.2,0.8 m-0.1,-1.7 l-0.1,0.8 m24.3,3.7 l0.2-0.5 m-0.5,0.9 l0.3-0.5 m-0.7,0.9 l0.4-0.4 m-0.9,0.7 l0.5-0.3 m-1,0.5 l0.5-0.2 m-1.1,0.2 h0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M342.2,357.9 l31.7,0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M342.2,357.9 l3.1-3.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M372.8,307.2 l17.4,22.9 m-36.2,-2 c-4.7,8.2-7.7,17.3-8.6,26.8 m29.9,-14.5 c-2,3.3-3.5,6.9-4.4,10.6 m-29.4,6 l-0.2,5.1 m0.7,-10.2 l-0.6,5.1 m1.4,-10.1 l-0.9,5 m2.3,-9.9 l-1.3,5 m2.9,-9.9 l-1.6,4.9 m3.5,-9.6 l-2,4.7 m4.3,-9.3 l-2.3,4.6 m4.9,-9 l-2.6,4.3 m5.5,-8.5 l-2.9,4.2 m6.1,-8.2 l-3.2,4.1 m6.7,-7.8 l-3.5,3.8 m7.3,-7.3 l-3.8,3.5 m7.7,-6.7 l-4,3.2 m8.2,-6.1 l-4.2,2.9 m8.7,-5.5 l-4.4,2.6 m9,-4.9 l-4.6,2.3 m9.3,-4.3 l-4.7,1.9 m9.5,-3.5 l-4.9,1.6 m9.8,-2.7 l-4.9,1.2 m10,-2.3 l-5.1,0.9 m10.2,-1.4 l-5.1,0.5 m10.3,-0.6 l-5.2,0.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M371,312.6 l11.7,15.7 m-15.2,-16.6 l-0.8,0.5 m1.5,-0.8 l-0.8,0.3 m1.7,-0.3 h-0.8 m1.5,0.2 l-0.8-0.2 m1.5,0.6 l-0.8-0.4 m1.3,1 l-0.5-0.7 m12.4,16.8 l-0.2-0.5 m0.4,1.1 l-0.2-0.5 m0.2,1 v-0.6 m-0.2,1.2 l0.1-0.6 m-0.3,1.1 l0.2-0.5 m-0.6,0.8 l0.4-0.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M373.9,303.1 l16.4,27.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M372.8,307.2 l1-4.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M385.3,299.9 l11.1,26.6 m-23.6,-19.3 c-7.7,5.6-14.2,12.7-18.9,21 m28.4,3 c-2.7,2.7-5.2,5.8-7,9.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M391,301.2 l7.8,17.9 m-8.1,-18.7 l0.2,0.8 m-0.2,-1.6 v0.8 m0.2,-1.6 l-0.2,0.8 m0.7,-1.4 l-0.5,0.7 m1,-1.3 l-0.6,0.6 m1.4,-1 l-0.8,0.4 m9,22.7 l0.6-0.1 m-1.1,0 l0.5,0.1 m-1.1,-0.2 l0.6,0.2 m-1,-0.4 l0.5,0.3 m-0.9,-0.8 l0.4,0.4 m-0.7,-0.8 l0.3,0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M381.2,298.8 l15.2,27.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M381.2,298.8 l4.1,1.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M452,358.5 l28.6-3.6 m-64.6,-31.8 l-3-0.2 m6,0.5 l-3-0.4 m6.1,1 l-3.1-0.7 m6.1,1.5 l-3-0.8 m5.8,1.9 l-2.9-1 m5.7,2.3 l-2.8-1.3 m5.5,2.8 l-2.6-1.5 m5.2,3.2 l-2.6-1.7 m5,3.6 l-2.4-1.9 m4.7,3.9 l-2.4-2.1 m4.5,4.4 l-2.1-2.3 m3.9,4.8 l-1.9-2.5 m3.6,5 l-1.7-2.5 m3.3,5.2 l-1.5-2.7 m2.8,5.4 l-1.3-2.7 m2.4,5.8 l-1-2.9 m1.7,5.8 l-0.8-2.9 m1.5,5.9 l-0.7-3 m1,6.1 l-0.4-3 m0.6,6 l-0.2-3 m-35.9,-28.7 l-3.1-0.2 m6.2,0.8 l-3.1-0.5 m6,1.2 l-3-0.8 m6,1.8 l-3-1 m5.8,2.4 l-2.8-1.3 m5.4,2.9 l-2.6-1.6 m5.2,3.4 l-2.5-1.9 m6.9,6.4 l-2.1-2.4 l-2.4-2.1 m6.4,6.9 l-1.9-2.5 m3.5,5.2 l-1.6-2.7 m2.9,5.6 l-1.3-2.8 m2.4,5.7 l-1-2.9 m1.7,5.9 l-0.8-3 m1.3,6.1 l-0.5-3.1 m0.7,6.2 l-0.2-3.1 m-28.7,-34.8 l-3-0.1 m6,0.5 l-3-0.4 m5.9,1 l-2.9-0.7 m5.7,1.5 l-2.9-0.8 m5.8,1.8 l-2.8-1 m5.5,2.3 l-2.7-1.2 m5.3,2.7 l-2.6-1.5 m5,3.1 l-2.4-1.7 m4.8,3.5 l-2.4-1.8 m4.6,3.8 l-2.2-2.1 m4.2,4.4 l-2.1-2.2 m4,4.4 l-1.9-2.4 m3.6,4.9 l-1.6-2.5 m3,5.1 l-1.5-2.6 m2.7,5.4 l-1.2-2.7 m2.3,5.4 l-1-2.7 m1.8,5.7 l-0.8-2.9 m1.4,5.6 l-0.7-2.9 m1.1,6 l-0.4-3 m0.5,6 l-0.1-3 m-32.9,-67.6 l-5.1-0.2 m10.1,0.8 l-5-0.6 m10,1.4 l-5-0.9 m9.9,2.2 l-4.9,-1.2 m9.7,2.8 l-4.8-1.6 m9.5,3.5 l-4.7-1.9 m9.2,4.1 l-4.5-2.3 m8.8,5 l-4.3-2.6 m8.5,5.5 l-4.1-2.9 m8,6 l-4-3.2 m7.7,6.7 l-3.7-3.5 m7.3,7.1 l-3.5-3.7 m6.5,7.7 l-3.2-4 m6.2,8.1 l-2.9-4.1 m5.4,8.5 l-2.6-4.3 m4.9,8.7 l-2.3-4.5 m4.3,9.3 l-1.9-4.7 m3.4,9.5 l-1.6-4.8 m2.8,9.6 l-1.2-4.9 m2.2,9.9 l-0.9-5 m1.5,10 l-0.6-5 m0.6,10.1 l-0.1-5.1 m-65.2,-71.3 l-5.5-0.2 m10.9,0.8 l-5.5-0.6 m10.9,1.6 l-5.5-0.9 m10.8,2.3 l-5.3-1.3 m10.6,3 l-5.2-1.7 m10.2,3.8 l-5.1-2.2 m9.9,4.6 l-4.9-2.5 m9.7,5.3 l-4.7-2.7 m9.1,5.8 l-4.4-3.2 m8.8,6.6 l-4.3-3.4 m8.2,7.2 l-4.1-3.8 m7.9,7.8 l-3.8-4.1 m7.2,8.3 l-3.5-4.2 m9.4,13.4 l-2.8-4.7 l-3.1-4.4 m8.4,14 l-2.5-4.9 m4.6,10 l-2.1-5.1 m3.8,10.3 l-1.7-5.2 m3.1,10.4 l-1.4-5.3 m2.3,10.7 l-0.9-5.5 m1.5,10.9 l-0.6-5.5 m0.8,11 l-0.2-5.5 m-79.3,-35.5 l0.1-0.2 m-0.2,0.3 m-0.2,0.2 l0.2-0.2 m-0.4,0.2 l0.2-0.1 m-0.5,0.2 l0.2-0.1 m-0.7,0 l0.5,0.1 m-0.7,-0.3 l0.2,0.2 m-0.3,-0.6 l0.2,0.4 m-0.2,-0.5 l-0.1,0.2 m0.2,-0.4 l-0.1,0.2 m0.6,-0.5 l-0.5,0.3 m0.7,-0.3 l-0.2,0.1 m0.5,-0.1 l-0.2-0.1 m0.6,0.4 l-0.4-0.3 m0.5,0.6 l-0.1-0.4 m-30.5,17.4 l-0.1-0.2 m0.2,0.3 m0,0.5 v-0.5 m-0.1,0.8 l0.1-0.3 m-0.5,0.7 l0.4-0.4 m-0.5,0.4 l0.2-0.1 m-0.4,0.2 l0.2-0.1 m-0.4,0 l0.2,0.1 m-0.5,-0.4 l0.2,0.4 m-0.2,-0.9 v0.5 m0.2,-0.8 l-0.2,0.2 m0.3,-0.3 m0.2,-0.2 l-0.2,0.2 m0.4,-0.3 l-0.2,0.1 m0.4,-0.1 h-0.2 m0.4,0 l-0.2-0.1 m-3.2,6.7 l-0.3-0.4 m0.3,0.9 v-0.5 m-0.2,0.7 l0.1-0.2 m-0.1,0.4 l0.2-0.2 m-0.6,0.4 l0.4-0.2 m-0.6,0.2 h0.2 m-0.4,-0.1 l0.2,0.1 m-0.4,-0.2 l0.2,0.1 m-0.3,-0.2 l0.1,0.2 m-0.1,-0.4 l0.1,0.2 m0,-0.7 l-0.1,0.5 m0.3,-0.7 l-0.2,0.2 m0.4,-0.4 l-0.2,0.2 m0.4,-0.3 l-0.2,0.1 m0.6,-0.1 h-0.4 m14.3,-45.5 l-4.4,1.8 m8.9,-3.4 l-4.5,1.5 m9.1,-2.6 l-4.6,1.2 m9.3,-2 l-4.7,0.8 m9.4,-1.3 l-4.7,0.5 m9.5,-0.7 l-4.7,0.2 m-4,25.3 l-2.8,0.7 m5.6,-1.2 l-2.8,0.5 m5.7,-0.8 l-2.9,0.3 m5.9,-0.4 l-2.9,0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M457.3,352.9 l19.3-2.2 m2.8,-2.7 l-0.1-0.8 m0,1.5 l0.2-0.8 m-0.6,1.6 l0.4-0.8 m-1,1.4 l0.6-0.6 m-1.3,0.9 l0.8-0.4 m-1.6,0.7 l0.8-0.2 m-20.7,2.4 h0.5 m-1,-0.2 l0.5,0.2 m-1.1,-0.5 l0.5,0.3 m-0.9,-0.7 l0.4,0.4 m-0.7,-0.8 l0.4,0.5 m-0.5,-1 l0.2,0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M452,358.5 l31.7-0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M480.6,354.8 l3.1,3.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M435.6,330.1 l17.4-22.9 m27.5,47.6 c-1-9.5-4.1-18.6-8.7-26.8 m-17,23 c-0.9-3.8-2.5-7.3-4.4-10.6 m-32.4,-49.7 l-5.1-0.2 m10.2,0.7 l-5.1-0.5 m10.2,1.6 l-5-0.9 m9.9,2 l-5-1.2 m9.9,2.8 l-4.9-1.6 m9.6,3.6 l-4.7-1.9 m9.3,4.2 l-4.6-2.3 m9,4.9 l-4.4-2.6 m8.6,5.5 l-4.2-2.9 m8.2,6.1 l-4-3.2 m7.7,6.7 l-3.8-3.5 m7.3,7.2 l-3.5-3.8 m6.7,7.8 l-3.2-4.1 m6.1,8.3 l-2.9-4.2 m5.6,8.6 l-2.6-4.3 m4.8,8.9 l-2.3-4.6 m4.3,9.3 l-2-4.7 m3.6,9.6 l-1.6-4.9 m2.9,9.8 l-1.3-5 m2.1,10 l-0.9-5 m1.5,10.1 l-0.6-5.1 m0.8,10.2 l-0.2-5.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M443.2,328.3 l11.6-15.7 m0.6,-0.6 l-0.6,0.7 m1.2,-1.1 l-0.7,0.4 m1.5,-0.6 l-0.8,0.2 m1.6,-0.2 l-0.8-0.1 m1.6,0.4 l-0.8-0.2 m1.4,0.6 l-0.7-0.5 m-15.2,19.3 l0.4,0.4 m-0.6,-0.9 l0.2,0.5 m-0.3,-1.1 l0.1,0.6 m-0.1,-1.1 v0.6 m0.1,-1.2 l-0.1,0.5 m0.4,-0.9 l-0.3,0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M435.6,330.1 l16.4-27.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M452,303.1 l1,4.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M429.3,326.6 l11.2-26.6 m31.3,28.1 c-4.7-8.3-11.2-15.3-18.9-21 m-2.4,33.3 c-1.9-3.3-4.3-6.4-7-9.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M427.2,319 l7.8-17.9 m-1.1,-3.5 l-0.8-0.4 m1.4,1 l-0.7-0.6 m1.2,1.2 l-0.4-0.7 m0.6,1.5 l-0.2-0.8 m0.2,1.6 v-0.8 m-0.2,1.6 l0.2-0.8 m-8.4,19 l0.4-0.5 m-0.7,1 l0.4-0.4 m-1,0.6 l0.5-0.3 m-0.9,0.4 l0.5-0.2 m-1.1,0.3 l0.6-0.1 m-1.2,0 l0.5,0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M429.3,326.6 l15.3-27.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M440.5,299.9 l4.1-1.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M416.7,320.2 l-0.2-0.1 m0.5,0.3 l-0.2-0.1 m0.4,0.2 l-0.2-0.1 m0.3,0.3 l-0.1-0.2 m0.1,0.3 l-0.1-0.2 m0.1,0.5 l0.1-0.2 m-0.4,0.5 l0.3-0.3 m-0.6,0.3 l0.2-0.1 m-0.3,0.2 l0.2-0.1 m-0.7,0 l0.5,0.1 m-0.7,-0.3 l0.2,0.2 m-0.3,-0.3 m-0.1,-0.3 l0.1,0.2 m0,-0.3 l-0.1,0.2 m0.2,-0.4 l-0.1,0.2 m0.6,-0.5 l-0.5,0.2 m0.7,-0.2 l-0.2,0.1 m31.1,18 l-0.1-0.2 m0.1,0.7 v-0.5 m0,0.6 l0.1-0.2 m-0.3,0.4 l0.2-0.2 m-0.4,0.3 l0.2-0.1 m-0.4,0 l0.2,0.1 m-0.4,-0.1 l0.2,0.1 m-0.4,-0.3 l0.2,0.2 m-0.4,-0.4 l0.1,0.2 m-0.2,-0.5 l0.1,0.3 m-0.1,-0.5 l0.1,0.2 m-0.1,-0.5 l-0.1,0.2 m0.2,-0.3 m0.2,-0.2 l-0.2,0.2 m0.3,-0.2 l-0.2,0.1 m0.4,-0.1 h-0.2 m0.5,0.1 l-0.2-0.1 m0.3,0.3 l-0.2-0.2 m0.4,0.3 l-0.2-0.2 m3.9,6.7 l-0.1-0.2 m0.1,0.5 l-0.1-0.2 m0.1,0.4 l0.1-0.2 m-0.2,0.3 l0.1-0.2 m-0.2,0.3 m-0.1,0.1 l0.2-0.1 m-0.5,0.1 h0.2 m-0.4,-0.1 l0.2,0.1 m-0.4,-0.2 l0.2,0.1 m-0.4,-0.5 l0.2,0.5 m-0.3,-0.8 l0.1,0.2 m-0,-0.4 l-0.1,0.2 m0.1,-0.4 l-0.1,0.2 m0.3,-0.4 l-0.2,0.2 m0.6,-0.2 h-0.4 m0.6,0.1 l-0.2-0.1 m0.4,0.3 l-0.2-0.2 m0.3,0.4 l-0.2-0.2 m-33.1,-49.8 l-4.7-0.2 m9.4,0.7 l-4.7-0.5 m9.4,1.3 l-4.7-0.8 m9.3,1.9 l-4.6-1.2 m9,2.8 l-4.4-1.5 m8.8,3.1 l-4.4-1.8 m-20.3,20.7 l-2.9-0.1 m5.8,0.4 l-2.9-0.3 m5.7,0.8 l-2.9-0.5 m5.7,1.1 l-2.8-0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M450.9,365.1 l0.1-3 m-0.5,5.9 l0.4-2.9 m-1,5.8 l0.7-2.9 m-1.5,5.8 l0.8-2.9 m-1.9,5.8 l1-2.8 m-2.2,5.5 l1.2-2.7 m-2.6,5.2 l1.5-2.6 m-3.2,5.1 l1.6-2.5 m-3.5,4.8 l1.9-2.4 m-3.9,4.7 l2.1-2.2 m-4.3,4.2 l2.2-2.1 m-4.6,3.9 l2.4-1.9 m-4.8,3.5 l2.5-1.6 m-5.1,3.1 l2.6-1.5 m-5.3,2.7 l2.7-1.2 m-5.6,2.4 l2.8-1 m-5.6,1.7 l2.9-0.8 m-5.8,1.4 l2.9-0.6 m-5.9,1 l3-0.4 m-5.9,0.5 l3-0.1 m67.7,-32.9 l0.1-5.1 m-0.7,10.1 l0.6-5 m-1.6,10 l0.9-5 m-2.1,9.9 l1.2-4.9 m-2.7,9.7 l1.6-4.7 m-3.6,9.4 l1.9-4.7 m-4.2,9.2 l2.3-4.5 m-4.8,8.8 l2.6-4.3 m-5.6,8.5 l2.9-4.1 m-5.9,8 l3.2-3.9 m-6.8,7.6 l3.5-3.8 m-7.2,7.3 l3.7-3.5 m-7.6,6.6 l4-3.2 m-8.2,6.1 l4.1-2.9 m-8.4,5.5 l4.3-2.6 m-8.8,4.9 l4.5-2.3 m-9.2,4.2 l4.7-1.9 m-9.5,3.4 l4.8-1.6 m-9.7,3 l4.9-1.2 m-9.9,2 l5-0.9 m-10,1.5 l5-0.5 m-10,0.7 l5.1-0.2 m71.3,-65.2 l0.2-5.5 m-0.8,11 l0.6-5.5 m-1.5,10.9 l0.9-5.5 m-2.3,10.8 l1.4-5.3 m-3.1,10.4 l1.7-5.2 m-3.8,10.2 l2.1-5.1 m-4.6,10 l2.5-4.9 m-5.3,9.7 l2.8-4.7 m-5.9,9.1 l3.1-4.4 m-6.5,8.7 l3.5-4.3 m-7.3,8.3 l3.8-4.1 m-7.7,7.9 l4.1-3.8 m-8.5,7.2 l4.3-3.5 m-8.7,6.6 l4.4-3.1 m-9.2,5.9 l4.7-2.7 m-9.5,5.1 l4.9-2.5 m-9.9,4.6 l5.1-2.1 m-10.4,3.8 l5.2-1.7 m-10.5,3.1 l5.3-1.3 m-10.7,2.2 l5.5-1 m-10.9,1.6 l5.5-0.6 m-10.9,0.8 l5.5-0.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M452,365.7 l28.6,3.6 m-28.6,-4.2 l0.2-3 m-0.5,6.1 l0.4-3.1 m-1.1,6.1 l0.7-3 m-1.4,6 l0.8-3 m-1.9,5.9 l1-2.9 m-2.3,5.6 l1.3-2.7 m-2.9,5.5 l1.5-2.7 m-3.2,5.2 l1.7-2.5 m-3.5,5 l1.9-2.5 m-4,4.7 l2.1-2.3 m-4.4,4.4 l2.4-2.1 m-4.8,3.9 l2.4-1.9 m-5,3.6 l2.6-1.7 m-5.3,3.2 l2.6-1.5 m-5.4,2.9 l2.8-1.3 m-5.6,2.3 l2.9-1 m-5.9,1.9 l3-0.8 m-6.1,1.4 l3-0.7 m-6,1 l3-0.4 m-6,0.5 l3-0.1 m28.6,-35.8 l0.2-3.2 m-0.7,6.2 l0.5-3 m-1.2,6 l0.8-3 m-1.9,6 l1-2.9 m-2.3,5.7 l1.3-2.8 m-2.9,5.4 l1.6-2.6 m-3.5,5.2 l1.9-2.5 m-4,4.7 l2.1-2.3 m-4.4,4.4 l2.4-2.1 m-5,4 l2.5-1.9 m-5.1,3.5 l2.6-1.6 m-5.4,2.9 l2.8-1.3 m-5.8,2.3 l3-1 m-5.9,1.9 l3-0.8 m-6.1,1.2 l3.1-0.5 m-6.2,0.6 l3.1-0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M457.3,371.3 l19.3,2.2 m1,0.2 l-0.8-0.2 m1.5,0.6 l-0.8-0.5 m1.4,1.1 l-0.6-0.5 m1,1.2 l-0.4-0.8 m0.5,1.6 l-0.2-0.8 m0.2,1.6 l0.1-0.8 m-24.4,-3.6 l-0.2,0.5 m0.5,-1 l-0.4,0.4 m0.8,-0.7 l-0.4,0.4 m1,-0.7 l-0.5,0.3 m1,-0.4 l-0.5,0.1 m0.9,-0.2 l-0.5,0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M452,365.7 l31.7,0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M480.6,369.3 l3.1-3.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M435.6,394 l17.4,23 m18.7,-21 c4.8-8.2,7.8-17.3,8.8-26.7 m-30,14.4 c2-3.3,3.5-6.9,4.4-10.6 m29.5,-5.9 l0.2-5.2 m-0.8,10.3 l0.6-5.1 m-1.4,10.1 l0.9-5 m-2.2,10 l1.3-5 m-2.9,9.8 l1.6-4.8 m-3.6,9.5 l2-4.7 m-4.2,9.3 l2.3-4.6 m-5,9 l2.6-4.4 m-5.5,8.5 l2.9-4.1 m-6.1,8.2 l3.2-4.1 m-6.7,7.8 l3.5-3.8 m-7.2,7.2 l3.8-3.5 m-7.8,6.7 l4-3.2 m-8.2,6.1 l4.2-2.9 m-8.6,5.6 l4.4-2.6 m-9,4.8 l4.6-2.4 m-9.3,4.4 l4.7-2 m-9.6,3.6 l4.9-1.6 m-9.8,2.9 l5-1.3 m-10.1,2.2 l5-0.9 m-10.1,1.4 l5.2-0.5 m-10.2,0.7 l5.1-0.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M443.2,395.8 l11.6,15.7 m3.6,1 l0.7-0.5 m-1.5,0.8 l0.8-0.2 m-1.6,0.2 l0.8-0.1 m-1.6,-0.1 l0.8,0.2 m-1.4,-0.6 l0.7,0.4 m-1.3,-1 l0.6,0.6 m-12.5,-16.8 l0.3,0.5 m-0.4,-1 l0.1,0.5 m-0.1,-1.1 v0.6 m0.1,-1.2 l-0.1,0.6 m0.3,-1 l-0.2,0.5 m0.6,-0.9 l-0.4,0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M435.6,394 l16.4,27.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M452,421.2 l1-4.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M429.3,397.7 l11.2,26.5 m12.4,-7.2 c7.7-5.6,14.2-12.8,18.8-21 m-28.3,-3.2 c2.7-2.7,5.2-5.8,7-9.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M427.2,405.1 l7.8,17.9 m0.2,0.7 l-0.2,-0.7 m0.2,1.6 v-0.8 m-0.2,1.5 l0.2-0.8 m-0.7,1.5 l0.4-0.7 m-1,1.3 l0.7-0.6 m-1.4,0.9 l0.8-0.4 m-9.1,-22.7 l-0.5,0.1 m1.1,-0 l-0.6-0.1 m1,0.2 l-0.5-0.2 m1.1,0.5 l-0.5,-0.3 m0.8,0.7 l-0.4-0.4 m0.8,0.8 l-0.4-0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M429.3,397.7 l15.3,27.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M440.5,424.2 l4.1,1.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M345.3,369.3 l28.6-3.6 m36,35.4 l3.1,0.1 m-6.2,-0.4 l3,0.4 m-6,-1 l3,0.7 m-5.9,-1.6 l2.9,0.8 m-6,-1.8 l2.9,1 m-5.6,-2.4 l2.7,1.3 m-5.4,-2.8 l2.7,1.5 m-5.2,-3.2 l2.5,1.7 m-5,-3.5 l2.5,1.9 m-4.8,-4 l2.3,2.1 m-4.3,-4.3 l2.2,2.3 m-4.1,-4.8 l1.9,2.5 m-3.7,-5 l1.8,2.5 m-3.2,-5.3 l1.5,2.7 m-2.8,-5.4 l1.3,2.7 m-2.4,-5.6 l1,2.9 m-1.9,-5.9 l0.8,3 m-1.4,-6 l0.6,3 m-0.9,-6.1 l0.4,3.1 m-0.5,-6.1 l0.1,3 m36,28.6 l3.2,0.1 m-6.2,-0.5 l3,0.5 m-6.1,-1.4 l3,0.8 m-5.9,-1.8 l2.9,1 m-5.9,-2.3 l2.9,1.3 m-5.5,-2.9 l2.6,1.6 m-5.1,-3.5 l2.5,1.9 m-4.8,-4 l2.3,2.1 m-4.4,-4.3 l2.1,2.3 m-3.9,-4.9 l1.9,2.5 m-3.5,-5.1 l1.6,2.6 m-3.1,-5.4 l1.3,2.8 m-2.2,-5.8 l1,2.9 m-1.8,-5.9 l0.8,3 m-1.3,-6 l0.5,3 m-0.6,-6.2 l0.2,3.2 m25.6,34.3 l3,0.4 l3,0.1 m-8.8,-1.1 l2.9,0.6 m-5.9,-1.3 l2.9,0.8 m-5.7,-2 l2.8,1 m-5.4,-2.2 l2.6,1.2 m-5.3,-2.7 l2.6,1.5 m-5.1,-3.1 l2.5,1.6 m-4.7,-3.4 l2.4,1.9 m-4.7,-3.9 l2.2,2.1 m-4.2,-4.4 l2.1,2.2 m-4,-4.5 l1.9,2.4 m-3.6,-4.9 l1.7,2.5 m-3,-5 l1.4,2.6 m-2.7,-5.3 l1.2,2.7 m-2.2,-5.6 l1,2.8 m-1.9,-5.7 l0.8,2.9 m-1.3,-5.8 l0.6,2.9 m-1,-5.8 l0.4,2.9 m-0.5,-5.9 l0.1,3 m32.9,67.6 l5.1,0.2 m-10.2,-0.8 l5,0.5 m-10,-1.3 l5,0.9 m-9.9,-2.3 l4.9,1.2 m-9.6,-2.7 l4.8,1.6 m-9.6,-3.5 l4.7,1.9 m-9.1,-4.2 l4.5,2.3 m-8.9,-4.9 l4.4,2.6 m-8.5,-5.5 l4.1,2.9 m-8.1,-6 l4,3.2 m-7.7,-6.7 l3.8,3.5 m-7.2,-7.2 l3.5,3.8 m-6.7,-7.7 l3.2,3.9 m-6.1,-8.1 l2.9,4.1 m-5.5,-8.4 l2.6,4.3 m-4.9,-8.8 l2.4,4.5 m-4.3,-9.2 l1.9,4.7 m-3.5,-9.5 l1.6,4.7 m-2.8,-9.6 l1.2,4.9 m-2.2,-9.9 l0.9,5 m-1.4,-10 l0.6,5 m-0.8,-10 l0.2,5.1 m65.2,71.2 l5.5,0.2 m-10.9,-0.8 l5.5,0.6 m-10.9,-1.5 l5.4,1 m-10.7,-2.4 l5.4,1.3 m-10.6,-3 l5.2,1.7 m-10.2,-3.8 l5,2.1 m-10,-4.5 l4.9,2.5 m-9.5,-5.3 l4.7,2.7 m-9.2,-5.8 l4.5,3.1 m-8.8,-6.5 l4.3,3.5 m-8.4,-7.3 l4.1,3.8 m-7.7,-7.8 l3.8,4.1 m-7.3,-8.4 l3.5,4.3 m-6.6,-8.7 l3.1,4.4 m-5.9,-9.2 l2.8,4.7 m-5.3,-9.6 l2.5,4.9 m-4.5,-9.9 l2.1,5.1 m-3.8,-10.2 l1.8,5.2 m-3.2,-10.5 l1.3,5.3 m-2.3,-10.7 l0.9,5.5 m-1.5,-11 l0.7,5.5 m-0.8,-10.9 l0.2,5.5 m80.7,36 l0.1-0.2 l0.1-0.2 m-0.4,0.5 l0.2-0.1 m-0.5,0.3 l0.2-0.1 m-0.5,0.1 h0.5 m-0.8,-0.2 l0.2,0.1 m-0.4,-0.2 l0.2,0.1 m-0.3,-0.2 l0.1,0.2 m-0.2,-0.3 l0.1,0.2 m0,-0.5 l-0.1,0.2 m0.2,-0.4 l-0.1,0.2 m0.3,-0.3 l-0.2,0.1 m0.5,-0.1 l-0.2,0.1 m0.5,-0.1 h-0.5 m0.8,0 l-0.2-0.1 m0.4,0.2 l-0.2-0.1 m0.3,0.3 l-0.1-0.2 m0.1,0.5 l-0.1-0.2 m30.3,-18 l-0.2-0.1 m0.2,0.3 l-0.1-0.2 m0.1,0.7 v-0.5 m-0.1,0.7 l0.1-0.2 m-0.3,0.4 l0.2-0.2 m-0.3,0.3 l0.2-0.1 m-0.5,0.2 l0.2-0.1 m-0.4,0.1 h0.2 m-0.3,0 l0.2,0.1 m-0.4,-0.2 l0.2,0.1 m-0.3,-0.5 l0.1,0.5 m-0.1,-0.8 v0.3 m0.1,-0.4 l-0.1,0.2 m0.3,-0.5 l-0.1,0.2 m0.3,-0.4 l-0.2,0.2 m0.4,-0.2 l-0.2,0.1 m0.4,-0.1 h-0.2 m0.4,0 l-0.2-0.1 m3.9,-6 m0.1,0.2 l-0.1,-0.2 m0.1,0.4 l-0.1-0.2 m0.1,0.4 l0.1-0.3 m-0.2,0.6 l0.1-0.2 m-0.4,0.5 l0.4-0.4 m-0.6,0.5 l0.2-0.1 m-0.4,0.1 l0.2-0.1 m-0.4,0.1 l0.2,0.1 m-0.4,-0.3 l0.2,0.2 m-0.2,-0.4 l0.1,0.2 m-0.2,-0.4 l0.1,0.2 m-0,-0.4 l-0.1,0.2 m0.2,-0.4 l-0.1,0.2 m0.2,-0.4 l-0.1,0.2 m0.3,-0.4 l-0.2,0.2 m0.4,-0.3 l-0.2,0.1 m0.5,-0.1 h-0.2 m0.3,0.1 l-0.2-0.1 m-14.6,47.2 l4.4-1.8 m-8.8,3.2 l4.4-1.4 m-9,2.6 l4.6-1.2 m-9.3,2 l4.7-0.8 m-9.4,1.2 l4.7-0.5 m-9.4,0.7 l4.7-0.2 m3.8,-25.2 l2.8-0.7 m-5.6,1.1 l2.9-0.5 m-5.8,0.8 l2.9-0.3 m-5.7,0.4 l2.9-0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M349.1,373.5 l19.3-2.2 m-22,4.9 l0.1,0.8 m0.1,-1.6 l-0.2,0.8 m0.6,-1.5 l-0.4,0.8 m0.9,-1.4 l-0.6,0.5 m1.4,-0.9 l-0.8,0.5 m1.6,-0.7 l-0.8,0.2 m20.7,-2.3 l-0.6-0.1 m1.1,0.2 l-0.5-0.1 m1,0.4 l-0.5-0.3 m0.9,0.6 l-0.4-0.4 m0.7,0.9 l-0.3-0.4 m0.5,0.9 l-0.2-0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M342.2,366.2 l31.7-0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M342.2,366.2 l3.1,3.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M372.8,417 l17.4-22.9 m-44.9,-24.9 c0.9,9.4,4,18.5,8.7,26.7 m16.9,-22.9 c0.9,3.8,2.5,7.3,4.4,10.6 m32.5,49.8 l5.2,0.2 m-10.3,-0.7 l5.1,0.5 m-10.2,-1.4 l5.1,0.9 m-10,-2.2 l4.9,1.3 m-9.7,-2.9 l4.9,1.6 m-9.6,-3.6 l4.7,2 m-9.3,-4.2 l4.6,2.4 m-9.1,-5.1 l4.4,2.6 m-8.6,-5.5 l4.2,2.9 m-8.1,-6.1 l4,3.2 m-7.8,-6.6 l3.8,3.5 m-7.3,-7.2 l3.5,3.8 m-6.7,-7.9 l3.2,4.1 m-6.1,-8.2 l2.9,4.1 m-5.5,-8.5 l2.6,4.4 m-4.9,-9 l2.3,4.6 m-4.2,-9.3 l2,4.7 m-3.6,-9.5 l1.6,4.8 m-3,-9.8 l1.2,5 m-2,-10 l0.9,5 m-1.4,-10.1 l0.6,5.1 m-0.8,-10.2 l0.2,5.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M371,411.6 l11.7-15.7 m-12.2,16.3 l0.5-0.6 m-1.2,1 l0.8-0.4 m-1.5,0.6 l0.8-0.2 m-1.7,0.2 l0.8,0.1 m-1.5,-0.4 l0.8,0.2 m-1.6,-0.7 l0.8,0.5 m15.2,-19.2 l-0.4-0.5 m0.6,0.9 l-0.2-0.5 m0.4,1.1 l-0.1-0.6 m0.1,1.2 v-0.6 m-0.2,1.1 l0.2-0.5 m-0.5,0.9 l0.2-0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M373.9,421.2 l16.4-27.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M372.8,417 l1,4.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M385.3,424.2 l11.1-26.5 m-42.4,-1.7 c4.7,8.3,11.1,15.4,18.8,21 m2.5,-33.3 c1.9,3.3,4.3,6.4,7,9.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M391,423 l7.8-17.9 m-6.9,21.5 l0.8,0.4 m-1.3,-1 l0.6,0.6 m-1.1,-1.3 l0.5,0.7 m-0.7,-1.4 l0.2,0.8 m-0.2,-1.7 v0.8 m0.3,-1.5 l-0.2,0.8 m8.2,-19.1 l-0.3,0.5 m0.7,-0.9 l-0.4,0.4 m0.8,-0.7 l-0.5,0.3 m1.1,-0.4 l-0.6,0.2 m1.1,-0.3 l-0.5,0.1 m1.1,-0 l-0.6-0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M381.2,425.3 l15.2-27.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M381.2,425.3 l4.1-1.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M452,365.7 l28.6,3.6 m-28.6,-4.2 l0.2-3 m-0.5,6.1 l0.4-3.1 m-1.1,6.1 l0.7-3 m-1.4,6 l0.8-3 m-1.9,5.9 l1-2.9 m-2.3,5.6 l1.3-2.7 m-2.9,5.5 l1.5-2.7 m-3.2,5.2 l1.7-2.5 m-3.5,5 l1.9-2.5 m-4,4.7 l2.1-2.3 m-4.4,4.4 l2.4-2.1 m-4.8,3.9 l2.4-1.9 m-5,3.6 l2.6-1.7 m-5.3,3.2 l2.6-1.5 m-5.4,2.9 l2.8-1.3 m-5.6,2.3 l2.9-1 m-5.9,1.9 l3-0.8 m-6.1,1.4 l3-0.7 m-6,1 l3-0.4 m-6,0.5 l3-0.1 m28.6,-35.8 l0.2-3.2 m-0.7,6.2 l0.5-3 m-1.2,6 l0.8-3 m-1.9,6 l1-2.9 m-2.3,5.7 l1.3-2.8 m-2.9,5.4 l1.6-2.6 m-3.5,5.2 l1.9-2.5 m-4,4.7 l2.1-2.3 m-4.4,4.4 l2.4-2.1 m-5,4 l2.5-1.9 m-5.1,3.5 l2.6-1.6 m-5.4,2.9 l2.8-1.3 m-8.7,3.2 l3-0.8 l3-1 m-9.1,2.2 l3.1-0.5 m-6.2,0.6 l3.1-0.1 m34.8,-28.6 l0.1-3 m-0.5,5.9 l0.4-2.9 m-1,5.8 l0.7-2.9 m-1.5,5.8 l0.8-2.9 m-1.9,5.8 l1-2.8 m-2.2,5.5 l1.2-2.7 m-2.6,5.2 l1.5-2.6 m-3.2,5.1 l1.6-2.5 m-3.5,4.8 l1.9-2.4 m-3.9,4.7 l2.1-2.2 m-4.3,4.2 l2.2-2.1 m-4.6,3.9 l2.4-1.9 m-4.8,3.5 l2.5-1.6 m-5.1,3.1 l2.6-1.5 m-5.3,2.7 l2.7-1.2 m-5.6,2.4 l2.8-1 m-5.6,1.7 l2.9-0.8 m-5.8,1.4 l2.9-0.6 m-5.9,1 l3-0.4 m-5.9,0.5 l3-0.1 m67.7,-32.9 l0.1-5.1 m-0.7,10.1 l0.6-5 m-1.6,10 l0.9-5 m-2.1,9.9 l1.2-4.9 m-2.7,9.7 l1.6-4.7 m-3.6,9.4 l1.9-4.7 m-4.2,9.2 l2.3-4.5 m-4.8,8.8 l2.6-4.3 m-5.6,8.5 l2.9-4.1 m-5.9,8 l3.2-3.9 m-6.8,7.6 l3.5-3.8 m-7.2,7.3 l3.7-3.5 m-7.6,6.6 l4-3.2 m-8.2,6.1 l4.1-2.9 m-8.4,5.5 l4.3-2.6 m-8.8,4.9 l4.5-2.3 m-9.2,4.2 l4.7-1.9 m-9.5,3.4 l4.8-1.6 m-9.7,3 l4.9-1.2 m-9.9,2 l5-0.9 m-10,1.5 l5-0.5 m-10,0.7 l5.1-0.2 m71.3,-65.2 l0.2-5.5 m-0.8,11 l0.6-5.5 m-1.5,10.9 l0.9-5.5 m-2.3,10.8 l1.4-5.3 m-3.1,10.4 l1.7-5.2 m-3.8,10.2 l2.1-5.1 m-4.6,10 l2.5-4.9 m-5.3,9.7 l2.8-4.7 m-5.9,9.1 l3.1-4.4 m-6.5,8.7 l3.5-4.3 m-7.3,8.3 l3.8-4.1 m-7.7,7.9 l4.1-3.8 m-8.5,7.2 l4.3-3.5 m-8.7,6.6 l4.4-3.1 m-9.2,5.9 l4.7-2.7 m-9.5,5.1 l4.9-2.5 m-9.9,4.6 l5.1-2.1 m-10.4,3.8 l5.2-1.7 m-15.9,4 l5.5-1 l5.3-1.3 m-16.2,2.9 l5.5-0.6 m-10.9,0.8 l5.5-0.2 m-8.9,-35.6 h-0.2 m0.4,0 l-0.2-0.1 m0.4,0.2 l-0.2-0.1 m0.3,0.3 l-0.1-0.2 m0.1,0.5 l-0.1-0.2 m0,0.4 l0.1-0.4 m-0.5,0.7 l0.5-0.2 m-1,0.2 h0.5 m-1,-0.3 l0.5,0.2 m-0.6,-0.3 l0.1,0.2 m-0.1,-0.3 l0.1,0.2 m-0.1,-0.5 l-0.1,0.2 m0.2,-0.4 l-0.1,0.2 m0.3,-0.3 l-0.2,0.1 m0.5,-0.1 l-0.2,0.1 m0.4,-0.1 h-0.2 m-29.5,-17.1 l-0.1-0.2 m0.1,0.6 v-0.5 m-0.1,0.8 l0.1-0.2 m-0.2,0.3 m-0.2,0 l0.2-0.1 m-0.4,0.1 h0.2 m-0.4,-0.1 l0.2,0.1 m-0.4,-0.2 l0.2,0.1 m-0.3,-0.3 l0.1,0.2 m-0.3,-0.4 l0.2,0.2 m-0.2,-0.7 v0.5 m0.1,-0.7 l-0.1,0.2 m0.3,-0.3 m0.2,0 l-0.2,0.1 m0.4,-0.1 h-0.2 m0.3,0 l-0.2-0.1 m0.4,0.3 l-0.2-0.2 m0.4,0.5 l-0.2-0.2 m-3.3,-5.9 l-0.1-0.2 m0.1,0.6 v-0.5 m-0.2,0.9 l0.2-0.4 m-0.4,0.4 h0.2 m-0.4,0 l0.2,0.1 m-0.4,-0.2 l0.2,0.1 m-0.4,-0.3 l0.2,0.2 m-0.4,-0.3 l0.2,0.2 m-0.3,-0.5 l0.1,0.2 m-0.1,-0.4 l0.1,0.3 m-0.1,-0.5 l-0.1,0.2 m0.2,-0.4 l-0.1,0.2 m0.3,-0.3 l-0.2,0.1 m0.4,-0.2 l-0.2,0.1 m0.4,-0.1 h-0.2 m0.4,0.1 l-0.2-0.1 m0.4,0.5 l-0.4-0.4 m32.8,50.9 l4.7,0.2 m-9.4,-0.6 l4.7,0.5 m-9.4,-1.3 l4.7,0.8 m-9.3,-2 l4.6,1.2 m-9.1,-2.6 l4.5,1.4 m-8.9,-3.2 l4.4,1.8 m20.3,-20.7 l2.9,0.1 m-5.8,-0.4 l2.9,0.3 m-5.7,-0.7 l2.8,0.5 m-5.6,-1.2 l2.8,0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M457.3,371.3 l19.3,2.2 m1,0.2 l-0.8-0.2 m1.5,0.6 l-0.8-0.5 m1.4,1.1 l-0.6-0.5 m1,1.2 l-0.4-0.8 m0.5,1.6 l-0.2-0.8 m0.2,1.6 l0.1-0.8 m-24.4,-3.6 l-0.2,0.5 m0.5,-1 l-0.4,0.4 m0.8,-0.7 l-0.4,0.4 m1,-0.7 l-0.5,0.3 m1,-0.4 l-0.5,0.1 m0.9,-0.2 l-0.5,0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M452,365.7 l31.7,0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M480.6,369.3 l3.1-3.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M435.6,394 l17.4,23 m18.7,-21 c4.8-8.2,7.8-17.3,8.8-26.7 m-30,14.4 c2-3.3,3.5-6.9,4.4-10.6 m29.5,-5.9 l0.2-5.2 m-0.8,10.3 l0.6-5.1 m-1.4,10.1 l0.9-5 m-2.2,10 l1.3-5 m-2.9,9.8 l1.6-4.8 m-3.6,9.5 l2-4.7 m-4.2,9.3 l2.3-4.6 m-5,9 l2.6-4.4 m-5.5,8.5 l2.9-4.1 m-6.1,8.2 l3.2-4.1 m-6.7,7.8 l3.5-3.8 m-7.2,7.2 l3.8-3.5 m-7.8,6.7 l4-3.2 m-8.2,6.1 l4.2-2.9 m-8.6,5.6 l4.4-2.6 m-9,4.8 l4.6-2.4 m-9.3,4.4 l4.7-2 m-9.6,3.6 l4.9-1.6 m-9.8,2.9 l5-1.3 m-10.1,2.2 l5-0.9 m-10.1,1.4 l5.2-0.5 m-10.2,0.7 l5.1-0.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M443.2,395.8 l11.6,15.7 m3.6,1 l0.7-0.5 m-1.5,0.8 l0.8-0.2 m-1.6,0.2 l0.8-0.1 m-1.6,-0.1 l0.8,0.2 m-1.4,-0.6 l0.7,0.4 m-1.3,-1 l0.6,0.6 m-12.5,-16.8 l0.3,0.5 m-0.4,-1 l0.1,0.5 m-0.1,-1.1 v0.6 m0.1,-1.2 l-0.1,0.6 m0.3,-1 l-0.2,0.5 m0.6,-0.9 l-0.4,0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M435.6,394 l16.4,27.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M452,421.2 l1-4.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M429.3,397.7 l11.2,26.5 m12.4,-7.2 c7.7-5.6,14.2-12.8,18.8-21 m-28.3,-3.2 c2.7-2.7,5.2-5.8,7-9.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M427.2,405.1 l7.8,17.9 m0.2,0.7 l-0.2,-0.7 m0.2,1.6 v-0.8 m-0.2,1.5 l0.2-0.8 m-0.7,1.5 l0.4-0.7 m-1,1.3 l0.7-0.6 m-1.4,0.9 l0.8-0.4 m-9.1,-22.7 l-0.5,0.1 m1.1,-0 l-0.6-0.1 m1,0.2 l-0.5-0.2 m1.1,0.5 l-0.5,-0.3 m0.8,0.7 l-0.4-0.4 m0.8,0.8 l-0.4-0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M429.3,397.7 l15.3,27.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M440.5,424.2 l4.1,1.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M372.9,385.1 l3.1,5.5 m41.2,13 l0.1-0.2 l0.1-0.2 m-0.4,0.5 l0.2-0.1 m-0.5,0.3 l0.2-0.1 m-0.5,0.1 h0.5 m-0.8,-0.2 l0.2,0.1 m-0.4,-0.2 l0.2,0.1 m-0.3,-0.2 l0.1,0.2 m-0.2,-0.3 l0.1,0.2 m0,-0.5 l-0.1,0.2 m0.2,-0.4 l-0.1,0.2 m0.3,-0.3 l-0.2,0.1 m0.5,-0.1 l-0.2,0.1 m0.5,-0.1 h-0.5 m0.8,0 l-0.2-0.1 m0.4,0.2 l-0.2-0.1 m0.3,0.3 l-0.1-0.2 m0.1,0.5 l-0.1-0.2 m30.3,-18 l-0.2-0.1 m0.2,0.3 l-0.1-0.2 m0.1,0.7 v-0.5 m-0.1,0.7 l0.1-0.2 m-0.3,0.4 l0.2-0.2 m-0.3,0.3 l0.2-0.1 m-0.5,0.2 l0.2-0.1 m-0.4,0.1 h0.2 m-0.3,0 l0.2,0.1 m-0.4,-0.2 l0.2,0.1 m-0.3,-0.5 l0.1,0.5 m-0.1,-0.8 v0.3 m0.1,-0.4 l-0.1,0.2 m0.3,-0.5 l-0.1,0.2 m0.3,-0.4 l-0.2,0.2 m0.4,-0.2 l-0.2,0.1 m0.4,-0.1 h-0.2 m0.4,0 l-0.2-0.1 m3.9,-6 m0.1,0.2 l-0.1,-0.2 m0.1,0.4 l-0.1-0.2 m0.1,0.4 l0.1-0.3 m-0.2,0.6 l0.1-0.2 m-0.4,0.5 l0.4-0.4 m-0.6,0.5 l0.2-0.1 m-0.4,0.1 l0.2-0.1 m-0.4,0.1 l0.2,0.1 m-0.4,-0.3 l0.2,0.2 m-0.2,-0.4 l0.1,0.2 m-0.2,-0.4 l0.1,0.2 m-0,-0.4 l-0.1,0.2 m0.2,-0.4 l-0.1,0.2 m0.2,-0.4 l-0.1,0.2 m0.3,-0.4 l-0.2,0.2 m0.4,-0.3 l-0.2,0.1 m0.5,-0.1 h-0.2 m0.3,0.1 l-0.2-0.1 m-14.6,47.2 l4.4-1.8 m-8.8,3.2 l4.4-1.4 m-9,2.6 l4.6-1.2 m-9.3,2 l4.7-0.8 m-9.4,1.2 l4.7-0.5 m-9.4,0.7 l4.7-0.2 m3.8,-25.2 l2.8-0.7 m-5.6,1.1 l2.9-0.5 m-5.8,0.8 l2.9-0.3 m-5.7,0.4 l2.9-0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M376,390.6 l2.8-1.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M376.4,386.8 l1.6,2.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M374.4,387.9 l2.5-1.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M374,388.6 l1.2,2.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M371.3,390.1 l3.3-1.9 m-1.2,2.3 c-0.1-0.2-0.2-0.4-0.4-0.4 s-0.4,0.1-0.4,0.4 c0,0.2,0.1,0.4,0.4,0.4 s0.4,-0.2,0.4,-0.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M371.2,390.7 l0.1-0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M371.2,390.7 l0.7,1.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M372.5,392.1 l3.3-1.9"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M372,392 l0.6,0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M369.7,379.7 l3.2,5.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M369.7,379.7 l2.8-1.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M371.7,378.6 l1.5,2.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M371.2,382.4 l2.5-1.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M369.2,380.4 l1.2,2.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M367.8,384 l3.3-1.9 m-2.4,0.2 c-0.1-0.2-0.2-0.4-0.4-0.4 c-0.2,0-0.4,0.1-0.4,0.4 c0,0.2,0.2,0.4,0.4,0.4 c0.2,0,0.4,-0.2,0.4,-0.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M367.3,383.9 l0.6,0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M366.5,382.5 l0.8,1.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M366.5,381.9 l3.4-1.9"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M366.5,382.5 l0.1-0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M338.1,276.8 l-1.8,0.3 l1.8,0.4 v-0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M338.1,276.8 l-1.8,0.3 l1.8,0.4 v-0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M487.7,277.5 l1.9-0.4 l-1.9-0.3 v0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M487.7,277.5 l1.9-0.4 l-1.9-0.3 v0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M336.3,277.1 h68.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M420.7,277.1 h68.9"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M336.3,361.4 v-85.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M489.6,361.4 v-85.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M502.2,292.4 l-0.3-1.9 l-0.4,1.9 h0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M502.2,292.4 l-0.3-1.9 l-0.4,1.9 h0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M501.5,431.7 l0.4,1.9 l0.3-1.9 h-0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M501.5,431.7 l0.4,1.9 l0.3-1.9 h-0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M501.9,354.1 v-63.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M501.9,433.6 v-63.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M413.5,433.6 h89.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M413.5,290.6 h89.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M413,448.6 h76.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M413,489.6 h39.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M452.2,489.6 l28.5-30.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M429.3,489.6 l15.3-30.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M435.6,489.6 l16.4,-30.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M435.6,489.6 l17.4,-30.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M429.3,489.6 l11.2-30.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M489.6,450 v-1.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M413,451.3 h75.5 m-3.9,0.7 l-0.1,0.3 m0.2,-0.5 l-0.1,0.2 m0.3,-0.4 l-0.2,0.2 m0.5,-0.4 l-0.2,0.2 m0.4,-0.3 l-0.3,0.1 m0.6,-0.1 h-0.3 m4.2,-0.9 v-0.4 m-0.2,0.6 l0.2-0.3 m-0.4,0.5 l0.2-0.2 m-0.4,0.5 l0.2-0.2 m-0.5,0.2 l0.3-0.1 m-0.6,0.3 l0.4-0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M483.8,458.3 l0.7-6.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M452.7,489.1 l30.6-29.5 m-0.1,-0.1 c0.4-0.4,0.5-0.8,0.6-1.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M451.5,491.1 l0.4-0.8 m0.8,-1.3 c-0.4,0.4-0.7,0.8-0.8,1.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M442.9,494.2 l1.5-1.6 m0.1,-0.2 l-0.2,0.2 m0.5,-0.3 l-0.2,0.2 m0.4,-0.3 l-0.2,0.1 m0.5,-0.1 h-0.3 m6.1,-0.7 l0.4-0.5 m-0.7,0.9 l0.4-0.4 m-0.9,0.6 l0.5-0.2 m-1.2,0.3 l0.7-0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M413,492.2 h36.8 m-7.1,2.1 l0.2-0.1 m-0.4,0.3 l0.2-0.2 m-0.4,0.2 l0.2-0.1 m-0.5,0.1 h0.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M426.9,482.3 l8.3-20.5 m21.2,-2.1 l-0.4,0.5 m0.9,-0.9 l-0.5,0.4 m1,-0.6 l-0.6,0.2 m1.3,-0.3 l-0.7,0.1 m-23.7,-0.1 l-0.5-0.1 m1,0.4 l-0.5-0.2 m0.9,0.4 l-0.4-0.2 m0.8,0.5 l-0.4-0.4 m0.6,0.9 l-0.2-0.5 m0.2,1 l-0.1-0.5 m0.1,1 v-0.5 m0,0.9 l0.1-0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M413,483.8 h11.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M443.1,482 l12.9-21.8 m-29.5,22.7 l0.4-0.7 m-0.9,1.2 l0.5-0.5 m-1.1,0.8 l0.7-0.3 m-1.5,0.4 l0.8-0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M444.1,483.8 h10.4 m-10.7,-0.1 l0.4,0.1 m-0.7,-0.2 l0.3,0.1 m-0.8,-0.6 l0.5,0.5 m-0.6,-1 l0.1,0.6 m-0.1,-0.9 l-0.1,0.4 m0.3,-0.7 l-0.1,0.3"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M455.9,483.1 l21.9-22.1 m-22.2,22.4 l0.3-0.3 m-0.5,0.5 l0.4-0.2 m-0.8,0.3 l0.4-0.1 m-0.9,0.2 l0.4-0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M413,459 h70.3 m-5.8,0 l-0.4-0.1 m0.6,0.3 l-0.3-0.2 m0.6,0.5 l-0.3-0.2 m0.5,0.4 l-0.2-0.4 m0.3,0.8 l-0.1-0.4 m0,0.7 l0.1-0.4 m-0.2,0.7 l0.1-0.3 m-0.3,0.7 l0.2-0.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M450.3,469.7 l15.5-10.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M336.3,448.6 h76.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M373.7,489.6 h39.3"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M345.3,459 l28.4,30.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M381.2,459 l15.2,30.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M373.9,459 l16.4,30.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M372.8,459 l17.4,30.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M385.3,459 l11.1,30.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M336.3,450 v-1.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M337.5,451.3 h75.5 m-72.5,0 h-0.3 m0.5,0.1 l-0.2-0.1 m0.5,0.3 l-0.3-0.2 m0.7,0.6 l-0.4-0.5 m0.4,0.7 l-0.1-0.3 m-4.2,-0.8 l0.4,0.1 m-0.7,-0.1 l0.3,0.1 m-0.6,-0.4 l0.3,0.2 m-0.4,-0.4 l0.2,0.2 m-0.3,-0.4 l0.1,0.3 m-0.1,-0.7 l0.1,0.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M341.4,452.2 l0.6,6.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M342.6,459.5 l30.6,29.5 m-31.2,-30.8 c0.1,0.5,0.2,0.9,0.6,1.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M374.1,490.3 l0.4,0.8 m-0.6,-0.9 c-0.2-0.5-0.5-0.9-0.8-1.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M381.4,492.5 l1.5,1.6 m-2.1,-1.9 h-0.2 m0.5,0.1 l-0.3-0.1 m0.5,0.2 l-0.2-0.2 m0.3,0.3 l-0.1-0.2 m-5.7,-0.2 l0.6,0.1 m-1.1,-0.3 l0.5,0.2 m-1,-0.6 l0.5,0.4 m-0.8,-0.8 l0.3,0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M383.8,494.5 h29.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M376.1,492.2 h36.7 m-29.2,2.3 h0.2 m-0.4,0 l0.3,0.1 m-0.5,-0.3 l0.2,0.2 m-0.5,-0.3 l0.2,0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M390.7,461.7 l8.3,20.5 m-30.6,-23.1 l-0.7-0.1 m1.3,0.3 l-0.6-0.2 m1.1,0.6 l-0.5-0.4 m0.8,0.8 l-0.4-0.5 m21.2,1.7 l0.1,0.5 m-0.1,-1 v0.5 m0.1,-1 l-0.1,0.5 m0.4,-1 l-0.2,0.5 m0.5,-0.8 l-0.3,0.4 m1.1,-0.9 l-0.9,0.5 m1.4,-0.5 l-0.5,0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M401.1,483.8 h11.9"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M369.8,460.1 l12.9,21.8 m17.8,1.8 l0.7,0.1 m-1.4,-0.4 l0.7,0.3 m-1.3,-0.8 l0.6,0.5 m-0.8,-1.1 l0.4,0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M371.2,483.8 h10.5 m1.2,-1.5 l-0.1-0.3 m0.1,0.6 l-0.1-0.4 m0.1,0.7 l0.1-0.3 m-0.2,0.5 l0.1-0.3 m-0.6,0.8 l0.5-0.5 m-0.8,0.6 l0.3-0.1 m-0.5,0.2 l0.3-0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M347.9,461.1 l21.9,22.1 m1.1,0.5 l0.4,0.1 m-0.8,-0.2 l0.4,0.1 m-0.7,-0.3 l0.4,0.2 m-0.8,-0.5 l0.4,0.3"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M342.6,459 h70.4 m-65.4,1.7 l0.2,0.4 m-0.3,-0.7 l0.1,0.3 m-0.1,-0.6 v0.4 m0.1,-0.8 l-0.1,0.4 m0.3,-0.6 l-0.2,0.4 m0.5,-0.7 l-0.2,0.2 m0.5,-0.4 l-0.4,0.2 m0.8,-0.2 l-0.4,0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M360,459 l15.4,10.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M413,447.1 h74.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M488.3,448.6 v-0.8"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M338.4,447.1 h74.6 m74.6,0 h-0.2 m0.6,0.1 l-0.4-0.2 m0.5,0.4 l-0.2-0.2 m0.3,0.4 l-0.1-0.2 m0.2,0.4 l-0.1-0.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M337.7,448.6 v-0.8"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M337.7,447.6 l-0.1,0.2 m0.2,-0.4 l-0.1,0.2 m0.2,-0.4 l-0.1,0.2 m0.3,-0.3 l-0.2,0.1 m0.3,-0.1 l-0.2,0.1 m0.4,-0.1 h-0.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M333.5,445.2 l0.3,1.9 l0.3-1.9 h-0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M333.5,445.2 l0.3,1.9 l0.3-1.9 h-0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M334.1,450.5 l-0.3-2 l-0.3,2 h0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M334.1,450.5 l-0.3-2 l-0.3,2 h0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M333.8,447.1 v-6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M333.8,452.4 v-3.9"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M332.6,447.1 h5.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M332.6,448.6 h3"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M501.5,446.8 l0.3,1.8 l0.3-1.8 h-0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M501.5,446.8 l0.3,1.8 l0.3-1.8 h-0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M502.1,453.1 l-0.3-1.8 l-0.3,1.8 h0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M502.1,453.1 l-0.3-1.8 l-0.3,1.8 h0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M501.8,448.6 v-4.8"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M501.8,455 v-3.8"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M490.3,448.6 h12.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M489.1,451.3 h13.9"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M502.1,453.1 l-0.3-1.8 l-0.3,1.8 h0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M502.1,453.1 l-0.3-1.8 l-0.3,1.8 h0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M501.5,492.7 l0.3,1.8 l0.3-1.8 h-0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M501.5,492.7 l0.3,1.8 l0.3-1.8 h-0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M501.8,468.6 v-17.3"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M501.8,494.5 v-10.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M489.1,451.3 h13.9"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M442.7,494.5 h60.3"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M413,497.8 h30.8"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M413,505.3 h30.8"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M443.7,505.3 v-7.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M441.8,497.8 v-2.5 m1.9,-133.3 c-0.1-17-13.8-30.7-30.8-30.7 s-30.8,13.7-30.8,30.8 c0,16.9,13.7,30.8,30.8,30.8 c17,-0.1,30.8,-13.9,30.8,-30.9 m-1.9,0 c0-15.9-12.9-28.7-28.9-28.7 c-15.9,0-28.8,12.9-28.8,28.7 c0,15.9,12.9,28.8,28.8,28.8 s28.9,-12.9,28.9,-28.8"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M413,509.4 h28 m0.2,-14.8 l-0.2-0.1 m0.4,0.2 l-0.2-0.1 m0.4,0.2 l-0.2-0.1 m0.3,0.3 l-0.1-0.2 m0.2,0.4 l-0.1-0.2 m0.1,0.4 v-0.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M441.8,508.5 v-3.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M413,494.5 h29.2 m-0.4,14.3 v-0.2 m-0.2,0.5 l0.2-0.4 m-0.4,0.6 l0.2-0.2 m-0.4,0.3 l0.2-0.1 m-0.4,0.1 h0.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M382,497.8 h31"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M382,505.3 h31"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M382,505.3 v-7.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M384.1,497.8 v-2.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M384.9,509.4 h28 m-28.8,-14.2 v0.2 m0.1,-0.4 l-0.1,0.2 m0.4,-0.5 l-0.3,0.3 m0.5,-0.4 l-0.2,0.1 m0.4,-0.2 l-0.2,0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M384.1,508.5 v-3.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M384.7,509.4 h0.2 m-0.4,-0.1 l0.2,0.1 m-0.4,-0.3 l0.1,0.2 m-0.2,-0.4 l0.2,0.2 m-0.3,-0.3 l0.1,0.2 m-0.1,-0.5 v0.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M331,453.1 l-0.3-1.8 l-0.4,1.8 h0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M331,453.1 l-0.3-1.8 l-0.4,1.8 h0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M330.3,507.5 l0.4,1.9 l0.3-1.9 h-0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M330.3,507.5 l0.4,1.9 l0.3-1.9 h-0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M330.7,472.5 v-21.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M330.7,509.4 v-21.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M329.4,451.3 h7.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M329.4,509.4 h54.8"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M383.9,515.6 l-1.9,0.4 l1.9,0.3 v-0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M383.9,515.6 l-1.9,0.4 l1.9,0.3 v-0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M441.8,516.3 l1.9-0.3 l-1.9-0.4 v0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M441.8,516.3 l1.9-0.3 l-1.9-0.4 v0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M382,516 h20"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M424.3,516 h19.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M382,517.2 v-11.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M443.7,517.2 v-11.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M418.9,362 c-0.1-3.3-2.7-5.9-6-5.9 s-6,2.6-6,6 c0,3.3,2.6,6,6,6 c3.3,0,6,-2.7,6,-6.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M501.5,492.7 l0.3,1.8 l0.3-1.8 h-0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M501.5,492.7 l0.3,1.8 l0.3-1.8 h-0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M502.1,511.3 l-0.3-1.9 l-0.3,1.9 h0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M502.1,511.3 l-0.3-1.9 l-0.3,1.9 h0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M501.8,494.5 v-3.8"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M501.8,513.1 v-3.8"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M442.7,494.5 h60.3"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M441.6,509.4 h61.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M483.1,492.7 l0.3,1.8 l0.4-1.8 h-0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M483.1,492.7 l0.3,1.8 l0.4-1.8 h-0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M483.7,499.6 l-0.4-1.8 l-0.3,1.8 h0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M483.7,499.6 l-0.4-1.8 l-0.3,1.8 h0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M483.4,494.5 v-10.2"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M483.4,501.6 v-3.8"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M442.7,494.5 h42"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M444.4,497.8 h40.3"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M487.4,360.9 h0.6 m0.4,0.1 l-0.4-0.1 m0.6,0.1 l-0.3-0.1 m0.5,0.3 l-0.2-0.2 m0.5,0.4 l-0.2-0.2 m0.3,0.6 l-0.1-0.4 m0.1,1.1 v-0.7 m-0.1,0.9 l0.1-0.3 m-0.6,0.7 l0.5-0.5 m-0.7,0.6 l0.3-0.1 m-0.7,0.2 l0.4-0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M487.4,363.3 h0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M486.9,360.9 h0.7 m-1.1,2.3 l0.4,0.1 m-0.7,-0.2 l0.3,0.1 m-0.6,-0.3 l0.3,0.2 m-0.5,-0.4 l0.2,0.2 m-0.3,-0.4 l0.1,0.3 m-0.2,-0.7 l0.1,0.4 m0,-0.7 l-0.1,0.3 m0.2,-0.7 l-0.1,0.4 m0.3,-0.6 l-0.2,0.2 m0.5,-0.4 l-0.3,0.2 m0.6,-0.2 l-0.3,0.1 m0.7,-0.2 l-0.4,0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M486.9,363.3 h0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M464.7,308.7 l0.5-0.5 m1.6,1.6 c0.2-0.2,0.4-0.5,0.4-0.8 c0-0.7-0.6-1.2-1.2-1.2 c-0.4,0-0.7,0.1-0.8,0.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M466.5,310.4 l0.4-0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M464.3,309.2 l0.4-0.5 m-0.4,0.4 c-0.2,0.2-0.4,0.5-0.4,0.8 c0,0.7,0.5,1.2,1.1,1.2 c0.3,0,0.7-0.2,0.8-0.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M466,310.8 l0.5-0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M411.7,287.7 v-0.7 m0.1,-0.1 l-0.1,0.3 m0.1,-0.6 l-0.1,0.3 m0.4,-0.6 l-0.2,0.3 m0.4,-0.5 l-0.2,0.2 m0.5,-0.3 l-0.3,0.1 m0.7,-0.2 l-0.4,0.1 m0.7,0 l-0.4-0.1 m0.6,0.2 l-0.3-0.1 m0.6,0.3 l-0.2-0.2 m0.3,0.5 l-0.1-0.3 m0.3,0.6 l-0.1-0.3 m0.1,0.6 l-0.1-0.3"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M414.1,287.7 v-0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M411.7,288.4 v-0.7 m2.4,1 l0.1-0.3 m-0.3,0.6 l0.1-0.3 m-0.2,0.4 l0.2-0.2 m-0.5,0.5 l0.2-0.2 m-0.4,0.3 l0.3-0.1 m-0.6,0.1 l0.4-0.1 m-0.8,0.1 l0.4,0.1 m-0.7,-0.2 l0.3,0.1 m-0.8,-0.5 l0.5,0.5 m-0.5,-0.8 l0.1,0.3 m-0.2,-0.6 l0.1,0.3"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M414.1,287.7 v0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M358.9,309.9 l0.5,0.5 m1.2,-2.2 c-0.2-0.2-0.5-0.4-0.8-0.4 c-0.7,0-1.2,0.5-1.2,1.2 c0,0.3,0.1,0.6,0.4,0.8"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M360.6,308.2 l0.5,0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M359.4,310.4 l0.5,0.5 m-0.1,-0.2 c0.2,0.2,0.5,0.4,0.8,0.4 c0.7,0,1.2-0.6,1.2-1.2 c0-0.4-0.2-0.7-0.4-0.8"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M361.1,308.7 l0.5,0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M337.8,363.3 h0.7 m-1,-0.1 l0.3,0.1 m-0.6,-0.2 l0.3,0.1 m-0.7,-0.5 l0.5,0.5 m-0.7,-0.7 l0.1,0.3 m-0.1,-0.7 l0.1,0.4 m-0.1,-0.7 l-0.1,0.3 m0.3,-0.7 l-0.1,0.4 m0.3,-0.6 l-0.2,0.2 m0.4,-0.4 l-0.2,0.2 m0.5,-0.2 l-0.3,0.1 m0.6,-0.2 l-0.3,0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M337.8,360.9 h0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M338.4,363.3 h0.7 m0.3,-2.3 l-0.3-0.1 m0.6,0.1 l-0.3-0.1 m0.5,0.3 l-0.3-0.2 m0.4,0.4 l-0.2-0.2 m0.4,0.6 l-0.1-0.4 m0.1,0.7 l-0.1-0.3 m0.1,0.7 l0.1-0.4 m-0.3,0.6 l0.1-0.3 m-0.2,0.5 l0.2-0.2 m-0.4,0.4 l0.3-0.2 m-0.6,0.3 l0.3-0.1 m-0.6,0.2 l0.3-0.1"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M338.4,360.9 h0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M360.6,416 l0.5-0.5 m-2.2,-1.3 c-0.2,0.2-0.4,0.5-0.4,0.8 c0,0.7,0.5,1.2,1.2,1.2 c0.3,0,0.6-0.2,0.8-0.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M358.9,414.3 l0.5-0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M361.1,415.5 l0.5-0.5 m-0.1,0 c0.2-0.2,0.4-0.5,0.4-0.8 c0-0.7-0.6-1.2-1.2-1.2 c-0.4,0-0.7,0.1-0.8,0.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M359.4,413.8 l0.5-0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M414.1,437 v-0.7 m0,1.1 l0.1-0.4 m-0.3,0.7 l0.1-0.3 m-0.2,0.4 l0.2-0.2 m-0.5,0.4 l0.2-0.2 m-0.4,0.3 l0.3-0.1 m-0.6,0.2 l0.4-0.1 m-0.8,0 l0.4,0.1 m-0.7,-0.2 l0.3,0.1 m-0.5,-0.3 l0.2,0.2 m-0.5,-0.3 l0.2,0.2 m-0.2,-0.5 l0.1,0.3 m-0.2,-0.7 l0.1,0.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M411.7,437 v-0.6"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M414.1,436.4 v-0.7 m-2.3,-0.2 l-0.1,0.3 m0.1,-0.6 l-0.1,0.3 m0.6,-0.8 l-0.5,0.5 m0.8,-0.6 l-0.3,0.1 m0.7,-0.1 l-0.4,0.1 m0.7,-0.1 l-0.4-0.1 m0.6,0.2 l-0.3-0.1 m0.6,0.4 l-0.2-0.2 m0.3,0.4 l-0.2-0.2 m0.4,0.5 l-0.1-0.3 m0.1,0.6 l-0.1-0.3"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M411.7,436.4 v-0.7"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M466.5,413.8 l0.4,0.5 m-1.7,1.6 c0.2,0.2,0.5,0.4,0.8,0.4 c0.7,0,1.2-0.6,1.2-1.2 c0-0.4-0.2-0.7-0.4-0.8"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M464.7,415.5 l0.5,0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M466,413.3 l0.5,0.5 m-0.5,-0.5 c-0.2-0.2-0.6-0.4-0.8-0.4 c-0.7,0-1.1,0.5-1.1,1.2 c0,0.3,0.1,0.6,0.4,0.8"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M464.3,415 l0.4,0.5"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M489.6,269.1 l-21.9,38.4"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M467.2,307 v1.2 l1.1-0.6 l-1.1,-0.6z"/>
+	<path fill="none" stroke="#000000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M489.6,269.1 h-23.7"/>
+	<path fill="none" stroke="#B32317" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M341.3,274.9 c0,0,2.8-0.1,2.8-3 c-0.2-2.7-2.2-3-3.5-3 s-2.9,0.6-3.2,3 c-0.1,2.6,2.8,4.8,6.3,4.8 c3.9,0.1,6.3-2.4,6.4-4.1 c0-1.8,0-8.6,0-8.6 h-5.3 v11.4 c-0.1,0,-2,0.8,-3.5,-0.5"/>
+	<path fill="none" stroke="#B32317" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M358.7,268.8 v6.7 h2.5 v-5 c0,0,1.1-0.4,1.1,0.2 v4.8 h2.5 v-5.5 c0,0,0.1-0.9-1-1.3 c-1.2-0.5-2.6,0.3-2.6,0.3 v-0.3 h-2.5"/>
+	<path fill="none" stroke="#B32317" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M358,272 c0,0,0.4-3.6-3.4-3.6 c-3.8,0-3.6,3.7-3.6,3.7 s-0.1,3.5,3.7,3.5 c2.4,0,3-1.9,3-1.9 l-0.9-0.4 c0,0-0.4,1.2-1.3,1.3 c-1,0.2-1.3-0.1-1.4-0.7 v-1.9 h3.9 m-3.9,-2 c0,0,0.1-0.4,0.8-0.4 c0.7,0,0.8,0.4,0.8,0.4 l0.1,1.5 h-1.6 l-0.1,-1.5"/>
+	<path fill="none" stroke="#B32317" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M365.7,271.5 l0.5,0.4 l1.5-1.2 c0,0,2,2.6,1.8,3.4 c0,0.4-0.7,1-1.1,0.8 c-0.5,0-0.8-0.5-0.8-0.5 s0.4-0.4,0.3-1 c0-0.6-0.6-0.8-1-0.8 s-1,0.3-1,1 c0,1.2,1.3,1.9,2.5,1.9 c1.3,0,2.6-0.9,2.7-2 c0.2-0.9-1.5-3.7-1.5-3.7 s-0.4-0.5-0.1-0.7 l0.5-0.4 l-0.5-0.4 l-3.8,3.2 z"/>
+	<path fill="none" stroke="#B32317" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M378.4,272.1 c0,0,0.4-3.6-3.4-3.6 c-3.8,0-3.6,3.7-3.6,3.7 s-0.1,3.5,3.7,3.5 c2.4,0,3-1.9,3-1.9 l-0.9-0.4 c0,0-0.4,1.2-1.3,1.3 c-1,0.2-1.3-0.1-1.4-0.7 v-1.9 h3.9 m-3.9,-2.1 c0,0,0.1-0.4,0.8-0.4 c0.7,0,0.8,0.4,0.8,0.4 l0.1,1.5 h-1.6 l-0.1,-1.5"/>
+	<path fill="none" stroke="#B32317" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M379.2,268.8 v6.7 h2.5 v-5 c0,0,1.1-0.4,1.1,0.2 v4.8 h2.5 v-5.4 c0,0,0.1-0.9-1-1.3 c-1.2-0.5-2.6,0.3-2.6,0.3 v-0.3 h-2.5"/>
+	<path fill="none" stroke="#B32317" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M386.8,269.2 c0,0.4,0.4,0.8,0.9,0.8 c0.5,0,0.9-0.3,0.9-0.8 s-0.4-0.8-0.9-0.8 c-0.5,0,-0.9,0.4,-0.9,0.8"/>
+	<path fill="none" stroke="#B32317" stroke-linecap="square" stroke-miterlimit="10" stroke-width="0.4" d="M387.4,268.9 h0.3 c0.1,0,0.2,0,0.2,0.2 c0,0.1-0.1,0.2-0.2,0.2 h-0.3 v-0.4 m0,0.4 h0.3 c0.2,0,0.2,0.1,0.2,0.2 c0,0,0,0.2,0,0.2 h0.2 c0,0,0,0,0-0.1 v-0.2 c0-0.1-0.1-0.1-0.1-0.2 c0.1,0,0.2-0.1,0.2-0.2 c0-0.2-0.2-0.2-0.3-0.2 h-0.5 v0.9 h0.2 l-0.2,-0.4"/>
+	<text font-family="Arial" font-size="6.0104" style="fill:#000000;stroke:none;" transform="matrix(1 0 0 1 405.255 279.3322)">383.0</text>
+	<text font-family="Arial" font-size="6.0104" style="fill:#000000;stroke:none;" transform="matrix(0 -1 1 0 504.0118 369.4591)">358.0</text>
+	<text font-family="Arial" font-size="6.0104" style="fill:#000000;stroke:none;" transform="matrix(0 -1 1 0 335.9952 440.5802)">4.0</text>
+	<text font-family="Arial" font-size="6.0104" style="fill:#000000;stroke:none;" transform="matrix(0 -1 1 0 504.0118 443.3996)">6.5</text>
+	<text font-family="Arial" font-size="6.0104" style="fill:#000000;stroke:none;" transform="matrix(0 -1 1 0 504.0118 484.008)">107.0</text>
+	<text font-family="Arial" font-size="6.0104" style="fill:#000000;stroke:none;" transform="matrix(0 -1 1 0 332.838 487.8419)">144.0</text>
+	<text font-family="Arial" font-size="6.0104" style="fill:#000000;stroke:none;" transform="matrix(1 0 0 1 402.4904 518.1301)">Ø154.0</text>
+	<text font-family="Arial" font-size="6.0104" style="fill:#000000;stroke:none;" transform="matrix(0 -1 1 0 504.0118 508.3166)">37.0</text>
+	<text font-family="Arial" font-size="6.0104" style="fill:#000000;stroke:none;" transform="matrix(0 -1 1 0 485.5685 483.84)">8.0</text>
+	<text font-family="Arial" font-size="6.0104" style="fill:#000000;stroke:none;" transform="matrix(1 0 0 1 436.006 266.963)">n° 8 holes 6×9</text>
+	<text font-family="Arial" font-size="6.0104" style="fill:#000000;stroke:none;" transform="matrix(1 0 0 1 436.2286 274.4103)">on Ø372.0</text>
+	</svg></a><div class="note">Note: all dimensions in mm.</div></div></div></div><div class="field field-name-field-frequency-response field-type-image field-label-above"><div class="field-label"><i class="fa fa-line-chart" aria-hidden="true"></i> Frequency Response Charts:</div><div class="item-list"><ul id="freq_tabs" class="spec_tabs"><li class="active spec first" id="freq_tab_8">8Ω</li>
+<li class="spec last" id="freq_tab_16">16Ω</li>
+</ul></div><div id="freq_charts_framework"><div id="freq_8" class="freq_chart_frame active"><div><div id="plotly_graph_1203692608"></div></div><div class="instructions">Hover over the graph to see values. <a href="/frequency_response_comparison/render?width=1200&amp;height=800&amp;speakers[0]=38o8">Click here to view full size graph.</a></div></div><div id="freq_16" class="freq_chart_frame"><div><div id="plotly_graph_789152694"></div></div><div class="instructions">Hover over the graph to see values. <a href="/frequency_response_comparison/render?width=1200&amp;height=800&amp;speakers[0]=38o16">Click here to view full size graph.</a></div></div><div id="confused">Confused? - <a href="/what_is_frequency_response_chart">click here to find out how to read this frequency response chart.</a></div><a href="/frequency_response_comparison">Compare this frequency response chart against other speakers</a></div></div></div></div>  </div>
+
+</div><!-- /.block -->
+  </div><!-- /.region -->
+<div id="buttons"><a href="/tone_generator" id="button1">Tone Generator</a><a href="/tone_chart" id="button2">Tone Chart</a><a href="/videos" id="button3">Videos</a><a href="/sound_samples" id="button4">Sound Samples</a><a href="/history_jensen" id="button5">Jensen History</a><a href="/jdl_locator" id="button6">Find a Dealer</a></div></div></div></div></div></div></div><div id="page-footer"><div class="frame"><div class="subnav"><div class="item-list"><ul><li class="main first"><div class="item-list"><h3>Pages</h3><ul><li class="first"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+<li><a href="/advertisement_archives">Advertisement Archives</a></li>
+<li><a href="/builder_profiles">Builder Profiles</a></li>
+<li><a href="/changing_your_tone">Changing your Tone</a></li>
+<li><a href="/contact">Contact Us</a></li>
+<li><a href="/date_code_information">Date Code Information</a></li>
+<li><a href="/jdl_locator">Find a Local Dealer</a></li>
+<li><a href="/frequency_response_comparison">Frequency Response Comparisons</a></li>
+<li><a href="/history_jensen">History</a></li>
+<li><a href="/recommended_replacements">Recommended Speakers for your Amp</a></li>
+<li><a href="/sound_samples">Sound Samples</a></li>
+<li><a href="/tone_chart">Tone Chart</a></li>
+<li><a href="/tone_generator">Tone Generator</a></li>
+<li><a href="/videos">Videos</a></li>
+<li><a href="/vintage_replacements">Vintage Amp Replacements</a></li>
+<li class="last"><a href="/wiring_diagrams">Wiring Diagrams</a></li>
+</ul></div></li>
+<li class="main"><div class="item-list"><h3><a href="/vintage_alnico">Vintage Alnico</a></h3><ul><li class="first"><a href="/vintage_alnico/p6v">P6V</a></li>
+<li><a href="/vintage_alnico/p8r">P8R</a></li>
+<li><a href="/vintage_alnico/p10q">P10Q</a></li>
+<li><a href="/vintage_alnico/p10r">P10R</a></li>
+<li><a href="/vintage_alnico/p10r_f">P10R-F</a></li>
+<li><a href="/vintage_alnico/p12n">P12N</a></li>
+<li><a href="/vintage_alnico/p12n_no_bell">P12N No Bell</a></li>
+<li><a href="/vintage_alnico/p12q">P12Q</a></li>
+<li><a href="/vintage_alnico/p12r">P12R</a></li>
+<li class="last"><a href="/vintage_alnico/p15n_no_bell">P15N No Bell</a></li>
+</ul></div></li>
+<li class="main"><div class="item-list"><h3><a href="/vintage_ceramic">Vintage Ceramic</a></h3><ul><li class="first"><a href="/vintage_ceramic/c6v">C6V</a></li>
+<li><a href="/vintage_ceramic/c8r">C8R</a></li>
+<li><a href="/vintage_ceramic/c10q">C10Q</a></li>
+<li><a href="/vintage_ceramic/c10r">C10R</a></li>
+<li><a href="/vintage_ceramic/c12k">C12K</a></li>
+<li><a href="/vintage_ceramic/c12n">C12N</a></li>
+<li><a href="/vintage_ceramic/c12q">C12Q</a></li>
+<li><a href="/vintage_ceramic/c12r">C12R</a></li>
+<li><a href="/vintage_ceramic/c15k" class="active">C15K</a></li>
+<li class="last"><a href="/vintage_ceramic/c15n">C15N</a></li>
+</ul></div></li>
+<li class="main"><div class="item-list"><h3><a href="/jet_series">Jet Series</a></h3><ul><li class="first"><a href="/jet_series/10_blackbird_100">10&quot; Blackbird 100</a></li>
+<li><a href="/jet_series/10_electric_lightning_50">10&quot; Electric Lightning 50</a></li>
+<li><a href="/jet_series/10_falcon_40">10&quot; Falcon 40</a></li>
+<li><a href="/jet_series/10_tornado_classic_100">10&quot; Tornado Classic 100</a></li>
+<li><a href="/jet_series/12_blackbird_100">12&quot; Blackbird 100</a></li>
+<li><a href="/jet_series/12_electric_lightning_70">12&quot; Electric Lightning 70</a></li>
+<li><a href="/jet_series/12_falcon_50">12&quot; Falcon 50</a></li>
+<li><a href="/jet_series/12_nighthawk_75">12&quot; Nighthawk 75</a></li>
+<li><a href="/jet_series/12_tornado_classic_100">12&quot; Tornado Classic 100</a></li>
+<li><a href="/jet_series/12_tornado_stealth_100">12&quot; Tornado Stealth 100</a></li>
+<li><a href="/jet_series/12_tornado_stealth_65">12&quot; Tornado Stealth 65</a></li>
+<li class="last"><a href="/jet_series/12_tornado_stealth_80">12&quot; Tornado Stealth 80</a></li>
+</ul></div></li>
+<li class="main"><div class="item-list"><h3><a href="/mod_series">Mod Series</a></h3><ul><li class="first"><a href="/mod_series/mod_5_30">Mod 5-30</a></li>
+<li><a href="/mod_series/mod_6_15">Mod 6-15</a></li>
+<li><a href="/mod_series/mod_8_20">Mod 8-20</a></li>
+<li><a href="/mod_series/mod_10_35">Mod 10-35</a></li>
+<li><a href="/mod_series/mod_10_50">Mod 10-50</a></li>
+<li><a href="/mod_series/mod_10_70">Mod 10-70</a></li>
+<li><a href="/mod_series/mod_12_110">Mod 12-110</a></li>
+<li><a href="/mod_series/mod_12_35">Mod 12-35</a></li>
+<li><a href="/mod_series/mod_12_50">Mod 12-50</a></li>
+<li><a href="/mod_series/mod_12_70">Mod 12-70</a></li>
+<li><a href="/mod_series/mod_15_120">Mod 15-120</a></li>
+<li class="last"><a href="/mod_series/mod_15_200">Mod 15-200</a></li>
+</ul></div></li>
+<li class="main last"><div class="item-list"><h3><a href="/bass_speakers">Bass Speakers</a></h3><ul><li class="first"><a href="/bass_speakers/v_11_compression_driver">V 1/1 Compression Driver</a></li>
+<li><a href="/bass_speakers/punch_bp_8150">Punch BP 8/150</a></li>
+<li><a href="/bass_speakers/smooth_bs_8n250a">Smooth BS 8N/250A</a></li>
+<li><a href="/bass_speakers/punch_bp_10150">Punch BP 10/150</a></li>
+<li><a href="/bass_speakers/smooth_bs_10n250a">Smooth BS 10N/250A</a></li>
+<li><a href="/bass_speakers/punch_bp_12250">Punch BP 12/250</a></li>
+<li><a href="/bass_speakers/smooth_bs_12n250a">Smooth BS 12N/250A</a></li>
+<li><a href="/bass_speakers/punch_bp_15250">Punch BP 15/250</a></li>
+<li class="last"><a href="/bass_speakers/smooth_bs_15n350a">Smooth BS 15N/350A</a></li>
+</ul></div></li>
+</ul></div></div></div><div class="frame">  <div class="region region-footer">
+    <div id="block-copyright-block-copyright-block" class="block block-copyright-block first odd">
+
+      
+  <div class="content">
+    Copyright &reg; 2017 <a href="http://www.cedist.com">CE Distribution</a>. All rights reserved  </div>
+
+</div><!-- /.block -->
+<div id="block-block-4" class="block block-block last even">
+
+      
+  <div class="content">
+    <div class="fb-like" data-href="http://www.facebook.com/jensenspeakers"></div>
+  </div>
+
+</div><!-- /.block -->
+  </div><!-- /.region -->
+</div></div>	<script type="text/javascript" src="https://www.jensentone.com/sites/jensentone.com/files/js/js_XkOAYZe_DnDSdldm-to29vLiX2RPP8rbS1XMXedqFo4.js"></script>
+<script type="text/javascript" src="https://www.jensentone.com/sites/jensentone.com/files/js/js_FdngH6tex7ny3cHG4qDNquWcjGDyalxtgUC620MNJLY.js"></script>
+<script type="text/javascript" src="https://www.jensentone.com/sites/all/libraries/jplayer/dist/add-on/jplayer.playlist.min.js?olhixk"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+	(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+			if(jQuery(".node-type-speaker").length){
+				jQuery(document).bind("keyup keydown", function(e){
+					if(e.ctrlKey && e.keyCode == 80){
+						window.open("/print/38", "_blank");
+						return false;
+					}
+				});
+			}
+		
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+      var trace0 = {
+        name: "Sound Pressure Level - C15K 8Ω",
+        x: [20, 21.1796875, 22.4375, 23.765625, 25.1796875, 26.671875, 28.25, 29.921875, 31.6953125, 33.5703125, 35.5625, 37.671875, 39.90625, 42.265625, 44.7734375, 47.421875, 50.234375, 53.2109375, 56.3671875, 59.703125, 63.2421875, 66.9921875, 70.9609375, 75.1640625, 79.6171875, 84.3359375, 89.3359375, 94.625, 100.234375, 106.171875, 112.46875, 119.1328125, 126.1875, 133.6640625, 141.5859375, 149.9765625, 158.8671875, 168.2734375, 178.25, 188.8125, 200, 211.8515625, 224.3984375, 237.6953125, 251.78125, 266.703125, 282.5078125, 299.2421875, 316.9765625, 335.7578125, 355.65625, 376.7265625, 399.046875, 422.6953125, 447.7421875, 474.2734375, 502.375, 532.140625, 563.671875, 597.078125, 632.453125, 669.9296875, 709.625, 751.671875, 796.2109375, 843.390625, 893.3671875, 946.296875, 1002.375, 1061.765625, 1124.679688, 1191.320313, 1261.914063, 1336.6875, 1415.890625, 1499.789063, 1588.65625, 1682.789063, 1782.5, 1888.117188, 2000, 2118.507813, 2244.03125, 2377, 2517.851563, 2667.039063, 2825.070313, 2992.46875, 3169.78125, 3357.609375, 3556.554688, 3767.296875, 3990.523438, 4226.976563, 4477.4375, 4742.742188, 5023.773438, 5321.445313, 5636.765625, 5970.765625, 6324.554688, 6699.304688, 7096.265625, 7516.75, 7962.140625, 8433.929688, 8933.671875, 9463.023438, 10023.74219, 10617.6875, 11246.82813, 11913.24219, 12619.14844, 13366.875, 14158.91406, 14997.88281, 15886.5625, 16827.89844, 17825.01563, 18881.21875, 20000],
+        y: [70.03066581, 70.8488857, 71.77199861, 73.19056209, 74.23927341, 75.7718456, 76.72445424, 77.62809439, 78.33524574, 79.1280964, 80.33691418, 81.55069361, 82.56573828, 83.82112389, 84.92306377, 86.19692659, 87.33939718, 88.33203013, 89.64529772, 90.88329949, 92.02506846, 93.31945739, 94.63529971, 95.51283462, 96.70042755, 97.73311867, 98.64408299, 99.38860948, 99.94007829, 100.1600201, 100.2699109, 100.7323284, 101.7505264, 101.7160651, 101.6321212, 101.6219932, 101.3323413, 101.203329, 100.974661, 100.1480203, 99.27723161, 99.35212942, 99.49426269, 98.98169835, 98.79973981, 98.866489, 98.31261282, 97.94566736, 97.46314113, 97.02229924, 97.28595624, 96.79098478, 95.93197445, 95.63763079, 96.0268413, 97.23316139, 96.69720242, 98.30684229, 97.90516961, 98.60193962, 99.07051268, 100.1593539, 100.236297, 101.3526905, 102.2731233, 102.199687, 100.7491525, 101.4795193, 101.6394286, 99.53945884, 100.9667722, 104.7463968, 104.5267612, 103.9227462, 101.6349325, 102.1585015, 106.094589, 106.9377513, 109.7787221, 110.6652306, 108.3854293, 108.5816654, 103.9847301, 106.4168758, 106.5557964, 106.5046031, 106.1026592, 103.2921682, 103.1611216, 101.5988797, 101.2721786, 99.15917564, 94.28443341, 91.41660298, 86.50476352, 80.48616898, 87.05796425, 89.25906761, 87.00359703, 86.11088976, 86.19775774, 84.5576839, 85.0797295, 80.84749503, 74.9623972, 67.59635746, 62.89084567, 79.1948915, 81.32935762, 82.04978626, 80.17923534, 83.93348511, 76.77194014, 67.41765672, 78.07610186, 82.07387007, 82.50905345, 69.09384601, 68.60706703, 65.0732283, 65.631918],
+        text: ["70.03 dB SPL at 20.00 Hz", "70.85 dB SPL at 21.18 Hz", "71.77 dB SPL at 22.44 Hz", "73.19 dB SPL at 23.77 Hz", "74.24 dB SPL at 25.18 Hz", "75.77 dB SPL at 26.67 Hz", "76.72 dB SPL at 28.25 Hz", "77.63 dB SPL at 29.92 Hz", "78.34 dB SPL at 31.70 Hz", "79.13 dB SPL at 33.57 Hz", "80.34 dB SPL at 35.56 Hz", "81.55 dB SPL at 37.67 Hz", "82.57 dB SPL at 39.91 Hz", "83.82 dB SPL at 42.27 Hz", "84.92 dB SPL at 44.77 Hz", "86.20 dB SPL at 47.42 Hz", "87.34 dB SPL at 50.23 Hz", "88.33 dB SPL at 53.21 Hz", "89.65 dB SPL at 56.37 Hz", "90.88 dB SPL at 59.70 Hz", "92.03 dB SPL at 63.24 Hz", "93.32 dB SPL at 66.99 Hz", "94.64 dB SPL at 70.96 Hz", "95.51 dB SPL at 75.16 Hz", "96.70 dB SPL at 79.62 Hz", "97.73 dB SPL at 84.34 Hz", "98.64 dB SPL at 89.34 Hz", "99.39 dB SPL at 94.63 Hz", "99.94 dB SPL at 100.23 Hz", "100.16 dB SPL at 106.17 Hz", "100.27 dB SPL at 112.47 Hz", "100.73 dB SPL at 119.13 Hz", "101.75 dB SPL at 126.19 Hz", "101.72 dB SPL at 133.66 Hz", "101.63 dB SPL at 141.59 Hz", "101.62 dB SPL at 149.98 Hz", "101.33 dB SPL at 158.87 Hz", "101.20 dB SPL at 168.27 Hz", "100.97 dB SPL at 178.25 Hz", "100.15 dB SPL at 188.81 Hz", "99.28 dB SPL at 200.00 Hz", "99.35 dB SPL at 211.85 Hz", "99.49 dB SPL at 224.40 Hz", "98.98 dB SPL at 237.70 Hz", "98.80 dB SPL at 251.78 Hz", "98.87 dB SPL at 266.70 Hz", "98.31 dB SPL at 282.51 Hz", "97.95 dB SPL at 299.24 Hz", "97.46 dB SPL at 316.98 Hz", "97.02 dB SPL at 335.76 Hz", "97.29 dB SPL at 355.66 Hz", "96.79 dB SPL at 376.73 Hz", "95.93 dB SPL at 399.05 Hz", "95.64 dB SPL at 422.70 Hz", "96.03 dB SPL at 447.74 Hz", "97.23 dB SPL at 474.27 Hz", "96.70 dB SPL at 502.38 Hz", "98.31 dB SPL at 532.14 Hz", "97.91 dB SPL at 563.67 Hz", "98.60 dB SPL at 597.08 Hz", "99.07 dB SPL at 632.45 Hz", "100.16 dB SPL at 669.93 Hz", "100.24 dB SPL at 709.63 Hz", "101.35 dB SPL at 751.67 Hz", "102.27 dB SPL at 796.21 Hz", "102.20 dB SPL at 843.39 Hz", "100.75 dB SPL at 893.37 Hz", "101.48 dB SPL at 946.30 Hz", "101.64 dB SPL at 1,002.38 Hz", "99.54 dB SPL at 1,061.77 Hz", "100.97 dB SPL at 1,124.68 Hz", "104.75 dB SPL at 1,191.32 Hz", "104.53 dB SPL at 1,261.91 Hz", "103.92 dB SPL at 1,336.69 Hz", "101.63 dB SPL at 1,415.89 Hz", "102.16 dB SPL at 1,499.79 Hz", "106.09 dB SPL at 1,588.66 Hz", "106.94 dB SPL at 1,682.79 Hz", "109.78 dB SPL at 1,782.50 Hz", "110.67 dB SPL at 1,888.12 Hz", "108.39 dB SPL at 2,000.00 Hz", "108.58 dB SPL at 2,118.51 Hz", "103.98 dB SPL at 2,244.03 Hz", "106.42 dB SPL at 2,377.00 Hz", "106.56 dB SPL at 2,517.85 Hz", "106.50 dB SPL at 2,667.04 Hz", "106.10 dB SPL at 2,825.07 Hz", "103.29 dB SPL at 2,992.47 Hz", "103.16 dB SPL at 3,169.78 Hz", "101.60 dB SPL at 3,357.61 Hz", "101.27 dB SPL at 3,556.55 Hz", "99.16 dB SPL at 3,767.30 Hz", "94.28 dB SPL at 3,990.52 Hz", "91.42 dB SPL at 4,226.98 Hz", "86.50 dB SPL at 4,477.44 Hz", "80.49 dB SPL at 4,742.74 Hz", "87.06 dB SPL at 5,023.77 Hz", "89.26 dB SPL at 5,321.45 Hz", "87.00 dB SPL at 5,636.77 Hz", "86.11 dB SPL at 5,970.77 Hz", "86.20 dB SPL at 6,324.55 Hz", "84.56 dB SPL at 6,699.30 Hz", "85.08 dB SPL at 7,096.27 Hz", "80.85 dB SPL at 7,516.75 Hz", "74.96 dB SPL at 7,962.14 Hz", "67.60 dB SPL at 8,433.93 Hz", "62.89 dB SPL at 8,933.67 Hz", "79.19 dB SPL at 9,463.02 Hz", "81.33 dB SPL at 10,023.74 Hz", "82.05 dB SPL at 10,617.69 Hz", "80.18 dB SPL at 11,246.83 Hz", "83.93 dB SPL at 11,913.24 Hz", "76.77 dB SPL at 12,619.15 Hz", "67.42 dB SPL at 13,366.88 Hz", "78.08 dB SPL at 14,158.91 Hz", "82.07 dB SPL at 14,997.88 Hz", "82.51 dB SPL at 15,886.56 Hz", "69.09 dB SPL at 16,827.90 Hz", "68.61 dB SPL at 17,825.02 Hz", "65.07 dB SPL at 18,881.22 Hz", "65.63 dB SPL at 20,000.00 Hz"],
+        showlegend:true,
+        type: "scatter",
+        mode: "lines",
+        hoverinfo:"x+text",
+        line: {
+          color:"rgb(179, 35, 23)",
+        },
+        yaxis: "y1",
+      };
+    
+      var trace1 = {
+        name: "Impedance Curve - C15K 8Ω",
+        x: [20, 21.1796875, 22.4375, 23.765625, 25.1796875, 26.671875, 28.25, 29.921875, 31.6953125, 33.5703125, 35.5625, 37.671875, 39.90625, 42.265625, 44.7734375, 47.421875, 50.234375, 53.2109375, 56.3671875, 59.703125, 63.2421875, 66.9921875, 70.9609375, 75.1640625, 79.6171875, 84.3359375, 89.3359375, 94.625, 100.234375, 106.171875, 112.46875, 119.1328125, 126.1875, 133.6640625, 141.5859375, 149.9765625, 158.8671875, 168.2734375, 178.25, 188.8125, 200, 211.8515625, 224.3984375, 237.6953125, 251.78125, 266.703125, 282.5078125, 299.2421875, 316.9765625, 335.7578125, 355.65625, 376.7265625, 399.046875, 422.6953125, 447.7421875, 474.2734375, 502.375, 532.140625, 563.671875, 597.078125, 632.453125, 669.9296875, 709.625, 751.671875, 796.2109375, 843.390625, 893.3671875, 946.296875, 1002.375, 1061.765625, 1124.679688, 1191.320313, 1261.914063, 1336.6875, 1415.890625, 1499.789063, 1588.65625, 1682.789063, 1782.5, 1888.117188, 2000, 2118.507813, 2244.03125, 2377, 2517.851563, 2667.039063, 2825.070313, 2992.46875, 3169.78125, 3357.609375, 3556.554688, 3767.296875, 3990.523438, 4226.976563, 4477.4375, 4742.742188, 5023.773438, 5321.445313, 5636.765625, 5970.765625, 6324.554688, 6699.304688, 7096.265625, 7516.75, 7962.140625, 8433.929688, 8933.671875, 9463.023438, 10023.74219, 10617.6875, 11246.82813, 11913.24219, 12619.14844, 13366.875, 14158.91406, 14997.88281, 15886.5625, 16827.89844, 17825.01563, 18881.21875, 20000],
+        y: [7.788076116, 7.871460514, 7.970509208, 8.08483628, 8.212451988, 8.363412644, 8.5361457, 8.735513138, 8.97444369, 9.265113622, 9.607670897, 10.02974689, 10.55513082, 11.20948648, 12.05948453, 13.17691644, 14.70735368, 16.92032517, 20.25854875, 25.75027567, 36.51683841, 61.64308032, 104.070407, 65.22688163, 38.1299248, 26.00020106, 19.67633745, 16.01807414, 13.61620756, 12.02087087, 10.931943, 10.09395685, 9.440374234, 8.971626918, 8.61933357, 8.371846167, 8.172716828, 8.010619074, 7.880682309, 7.811726097, 7.766832787, 7.740380906, 7.749999505, 7.759618409, 7.814131283, 7.865446451, 7.907146405, 7.993772286, 8.074003451, 8.160676896, 8.285915501, 8.417632228, 8.687669121, 8.803472611, 9.019113129, 9.186581238, 9.434732093, 9.857375694, 10.21918496, 10.44553383, 10.75946641, 12.11273873, 11.59603604, 11.42399561, 11.77467096, 11.74218412, 11.84940379, 11.66422979, 11.67397299, 12.05745211, 13.15855831, 14.60773742, 14.0769955, 14.14246959, 14.22433184, 14.86032543, 15.95549294, 16.70730761, 18.94719875, 16.9847548, 15.85012175, 15.6658089, 16.20589407, 16.9186733, 17.27568164, 18.0042005, 17.96441877, 17.95115933, 18.78761673, 19.21335179, 19.94645428, 20.6812947, 21.24361971, 21.88752581, 22.6539001, 23.53014406, 24.40885772, 25.3850977, 26.20096594, 27.22379966, 28.18146374, 29.21078288, 30.29865323, 31.40413427, 32.59685953, 33.86384583, 35.09389963, 36.41310503, 37.85079718, 39.46533593, 40.6459847, 41.48789554, 43.0060533, 44.47372175, 45.91913115, 47.67676881, 49.47328957, 51.01480889, 52.77073411, 54.52128188, 56.16162537],
+        text: ["7.79 Ω at 20.00 Hz", "7.87 Ω at 21.18 Hz", "7.97 Ω at 22.44 Hz", "8.08 Ω at 23.77 Hz", "8.21 Ω at 25.18 Hz", "8.36 Ω at 26.67 Hz", "8.54 Ω at 28.25 Hz", "8.74 Ω at 29.92 Hz", "8.97 Ω at 31.70 Hz", "9.27 Ω at 33.57 Hz", "9.61 Ω at 35.56 Hz", "10.03 Ω at 37.67 Hz", "10.56 Ω at 39.91 Hz", "11.21 Ω at 42.27 Hz", "12.06 Ω at 44.77 Hz", "13.18 Ω at 47.42 Hz", "14.71 Ω at 50.23 Hz", "16.92 Ω at 53.21 Hz", "20.26 Ω at 56.37 Hz", "25.75 Ω at 59.70 Hz", "36.52 Ω at 63.24 Hz", "61.64 Ω at 66.99 Hz", "104.07 Ω at 70.96 Hz", "65.23 Ω at 75.16 Hz", "38.13 Ω at 79.62 Hz", "26.00 Ω at 84.34 Hz", "19.68 Ω at 89.34 Hz", "16.02 Ω at 94.63 Hz", "13.62 Ω at 100.23 Hz", "12.02 Ω at 106.17 Hz", "10.93 Ω at 112.47 Hz", "10.09 Ω at 119.13 Hz", "9.44 Ω at 126.19 Hz", "8.97 Ω at 133.66 Hz", "8.62 Ω at 141.59 Hz", "8.37 Ω at 149.98 Hz", "8.17 Ω at 158.87 Hz", "8.01 Ω at 168.27 Hz", "7.88 Ω at 178.25 Hz", "7.81 Ω at 188.81 Hz", "7.77 Ω at 200.00 Hz", "7.74 Ω at 211.85 Hz", "7.75 Ω at 224.40 Hz", "7.76 Ω at 237.70 Hz", "7.81 Ω at 251.78 Hz", "7.87 Ω at 266.70 Hz", "7.91 Ω at 282.51 Hz", "7.99 Ω at 299.24 Hz", "8.07 Ω at 316.98 Hz", "8.16 Ω at 335.76 Hz", "8.29 Ω at 355.66 Hz", "8.42 Ω at 376.73 Hz", "8.69 Ω at 399.05 Hz", "8.80 Ω at 422.70 Hz", "9.02 Ω at 447.74 Hz", "9.19 Ω at 474.27 Hz", "9.43 Ω at 502.38 Hz", "9.86 Ω at 532.14 Hz", "10.22 Ω at 563.67 Hz", "10.45 Ω at 597.08 Hz", "10.76 Ω at 632.45 Hz", "12.11 Ω at 669.93 Hz", "11.60 Ω at 709.63 Hz", "11.42 Ω at 751.67 Hz", "11.77 Ω at 796.21 Hz", "11.74 Ω at 843.39 Hz", "11.85 Ω at 893.37 Hz", "11.66 Ω at 946.30 Hz", "11.67 Ω at 1,002.38 Hz", "12.06 Ω at 1,061.77 Hz", "13.16 Ω at 1,124.68 Hz", "14.61 Ω at 1,191.32 Hz", "14.08 Ω at 1,261.91 Hz", "14.14 Ω at 1,336.69 Hz", "14.22 Ω at 1,415.89 Hz", "14.86 Ω at 1,499.79 Hz", "15.96 Ω at 1,588.66 Hz", "16.71 Ω at 1,682.79 Hz", "18.95 Ω at 1,782.50 Hz", "16.98 Ω at 1,888.12 Hz", "15.85 Ω at 2,000.00 Hz", "15.67 Ω at 2,118.51 Hz", "16.21 Ω at 2,244.03 Hz", "16.92 Ω at 2,377.00 Hz", "17.28 Ω at 2,517.85 Hz", "18.00 Ω at 2,667.04 Hz", "17.96 Ω at 2,825.07 Hz", "17.95 Ω at 2,992.47 Hz", "18.79 Ω at 3,169.78 Hz", "19.21 Ω at 3,357.61 Hz", "19.95 Ω at 3,556.55 Hz", "20.68 Ω at 3,767.30 Hz", "21.24 Ω at 3,990.52 Hz", "21.89 Ω at 4,226.98 Hz", "22.65 Ω at 4,477.44 Hz", "23.53 Ω at 4,742.74 Hz", "24.41 Ω at 5,023.77 Hz", "25.39 Ω at 5,321.45 Hz", "26.20 Ω at 5,636.77 Hz", "27.22 Ω at 5,970.77 Hz", "28.18 Ω at 6,324.55 Hz", "29.21 Ω at 6,699.30 Hz", "30.30 Ω at 7,096.27 Hz", "31.40 Ω at 7,516.75 Hz", "32.60 Ω at 7,962.14 Hz", "33.86 Ω at 8,433.93 Hz", "35.09 Ω at 8,933.67 Hz", "36.41 Ω at 9,463.02 Hz", "37.85 Ω at 10,023.74 Hz", "39.47 Ω at 10,617.69 Hz", "40.65 Ω at 11,246.83 Hz", "41.49 Ω at 11,913.24 Hz", "43.01 Ω at 12,619.15 Hz", "44.47 Ω at 13,366.88 Hz", "45.92 Ω at 14,158.91 Hz", "47.68 Ω at 14,997.88 Hz", "49.47 Ω at 15,886.56 Hz", "51.01 Ω at 16,827.90 Hz", "52.77 Ω at 17,825.02 Hz", "54.52 Ω at 18,881.22 Hz", "56.16 Ω at 20,000.00 Hz"],
+        showlegend:true,
+        type: "scatter",
+        mode: "lines",
+        hoverinfo:"x+text",
+        line: {
+          color:"rgb(61, 98, 184)",
+        },
+        yaxis: "y2",
+      };
+    
+      var layout = {
+        title:"Frequency Response on IEC Baffle (DIN 45575) @ 1W, 1m - Free Air Impedance",
+        autosize:true,
+        width:580,
+        height:275,
+        font:{
+          size: 10,
+          color: "black",
+        },
+        showlegend:false,
+        legend: {
+          x:0,
+          font:{
+            size: 8,
+            color: "black",
+          },
+        },
+        margin:{
+          l:45,
+          r:45,
+          t:45,
+          b:45,
+          pad:4,
+        },
+        xaxis:{
+          title:"Hz",
+          type: "log",
+          fixedrange:false,
+          range: [1.30102999566, 4.30102999566],
+          autorange:false,
+        },
+        yaxis:{
+          title:"dB SPL",
+          autotick: false,
+          range: [60, 110],
+          dtick: 5,
+          fixedrange:false,
+          tickprefix:"+",
+        },
+        yaxis2:{
+          title:"Ω",
+          overlaying: "y",
+          side: "right",
+          type: "log",
+          autotick:true,
+          fixedrange:false,
+          range: [0.47712125472, 2.69897000434],
+          autorange:false,
+        },
+      };
+
+      Plotly.newPlot("plotly_graph_1203692608", [trace0, trace1], layout);
+  
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+      var trace0 = {
+        name: "Sound Pressure Level - C15K 16Ω",
+        x: [20, 21.1796875, 22.4375, 23.765625, 25.1796875, 26.671875, 28.25, 29.921875, 31.6953125, 33.5703125, 35.5625, 37.671875, 39.90625, 42.265625, 44.7734375, 47.421875, 50.234375, 53.2109375, 56.3671875, 59.703125, 63.2421875, 66.9921875, 70.9609375, 75.1640625, 79.6171875, 84.3359375, 89.3359375, 94.625, 100.234375, 106.171875, 112.46875, 119.1328125, 126.1875, 133.6640625, 141.5859375, 149.9765625, 158.8671875, 168.2734375, 178.25, 188.8125, 200, 211.8515625, 224.3984375, 237.6953125, 251.78125, 266.703125, 282.5078125, 299.2421875, 316.9765625, 335.7578125, 355.65625, 376.7265625, 399.046875, 422.6953125, 447.7421875, 474.2734375, 502.375, 532.140625, 563.671875, 597.078125, 632.453125, 669.9296875, 709.625, 751.671875, 796.2109375, 843.390625, 893.3671875, 946.296875, 1002.375, 1061.765625, 1124.679688, 1191.320313, 1261.914063, 1336.6875, 1415.890625, 1499.789063, 1588.65625, 1682.789063, 1782.5, 1888.117188, 2000, 2118.507813, 2244.03125, 2377, 2517.851563, 2667.039063, 2825.070313, 2992.46875, 3169.78125, 3357.609375, 3556.554688, 3767.296875, 3990.523438, 4226.976563, 4477.4375, 4742.742188, 5023.773438, 5321.445313, 5636.765625, 5970.765625, 6324.554688, 6699.304688, 7096.265625, 7516.75, 7962.140625, 8433.929688, 8933.671875, 9463.023438, 10023.74219, 10617.6875, 11246.82813, 11913.24219, 12619.14844, 13366.875, 14158.91406, 14997.88281, 15886.5625, 16827.89844, 17825.01563, 18881.21875, 20000],
+        y: [68.40839862, 68.92587587, 70.32724673, 71.81808349, 73.45786947, 74.53228406, 75.54604379, 76.84604025, 77.48027699, 78.37010829, 79.37221241, 80.75817421, 81.48516897, 82.9286174, 84.35173496, 85.79829945, 87.32115946, 88.62664694, 89.95651159, 91.51133353, 92.87059563, 94.32626328, 95.60308212, 96.70117164, 97.6283173, 98.93809862, 99.70179014, 100.3380565, 100.7559974, 100.8660173, 100.8660173, 101.3810994, 102.1727801, 102.1420786, 102.0063337, 102.0578885, 101.8113328, 101.5666437, 101.3637172, 100.5022754, 99.58726792, 99.61568571, 99.87974032, 99.36381972, 99.29196844, 99.42348678, 98.82463668, 98.34387186, 97.84015192, 97.31928166, 97.79391082, 97.42945191, 96.00752083, 95.61180247, 96.2762571, 97.82905035, 97.4878695, 98.47669494, 98.79740206, 99.91887066, 100.3334865, 100.8309376, 102.7882339, 103.5979446, 103.5222776, 102.7428277, 101.9928576, 102.5910791, 102.2929493, 101.5126498, 104.0836719, 105.6614288, 104.2948079, 103.9365586, 104.4652936, 105.2055281, 105.7654737, 107.970464, 108.9205926, 108.5917656, 109.3343411, 108.308597, 106.1295058, 106.0487156, 108.6821424, 109.0918957, 105.748686, 102.5192777, 104.1073865, 103.9503492, 101.225161, 97.49670019, 91.92635682, 83.51814873, 83.96578371, 83.33520291, 87.6232891, 90.07060039, 86.60684842, 85.9959663, 88.13279922, 86.44034576, 85.77542607, 80.59456965, 81.4306646, 79.07494851, 75.24850092, 80.19251969, 78.84161505, 80.13257945, 80.12589382, 81.57336941, 71.68958396, 76.89408079, 81.65788029, 85.5848881, 87.62892975, 78.7363007, 73.66414304, 75.15417625, 71.79493527],
+        text: ["68.41 dB SPL at 20.00 Hz", "68.93 dB SPL at 21.18 Hz", "70.33 dB SPL at 22.44 Hz", "71.82 dB SPL at 23.77 Hz", "73.46 dB SPL at 25.18 Hz", "74.53 dB SPL at 26.67 Hz", "75.55 dB SPL at 28.25 Hz", "76.85 dB SPL at 29.92 Hz", "77.48 dB SPL at 31.70 Hz", "78.37 dB SPL at 33.57 Hz", "79.37 dB SPL at 35.56 Hz", "80.76 dB SPL at 37.67 Hz", "81.49 dB SPL at 39.91 Hz", "82.93 dB SPL at 42.27 Hz", "84.35 dB SPL at 44.77 Hz", "85.80 dB SPL at 47.42 Hz", "87.32 dB SPL at 50.23 Hz", "88.63 dB SPL at 53.21 Hz", "89.96 dB SPL at 56.37 Hz", "91.51 dB SPL at 59.70 Hz", "92.87 dB SPL at 63.24 Hz", "94.33 dB SPL at 66.99 Hz", "95.60 dB SPL at 70.96 Hz", "96.70 dB SPL at 75.16 Hz", "97.63 dB SPL at 79.62 Hz", "98.94 dB SPL at 84.34 Hz", "99.70 dB SPL at 89.34 Hz", "100.34 dB SPL at 94.63 Hz", "100.76 dB SPL at 100.23 Hz", "100.87 dB SPL at 106.17 Hz", "100.87 dB SPL at 112.47 Hz", "101.38 dB SPL at 119.13 Hz", "102.17 dB SPL at 126.19 Hz", "102.14 dB SPL at 133.66 Hz", "102.01 dB SPL at 141.59 Hz", "102.06 dB SPL at 149.98 Hz", "101.81 dB SPL at 158.87 Hz", "101.57 dB SPL at 168.27 Hz", "101.36 dB SPL at 178.25 Hz", "100.50 dB SPL at 188.81 Hz", "99.59 dB SPL at 200.00 Hz", "99.62 dB SPL at 211.85 Hz", "99.88 dB SPL at 224.40 Hz", "99.36 dB SPL at 237.70 Hz", "99.29 dB SPL at 251.78 Hz", "99.42 dB SPL at 266.70 Hz", "98.82 dB SPL at 282.51 Hz", "98.34 dB SPL at 299.24 Hz", "97.84 dB SPL at 316.98 Hz", "97.32 dB SPL at 335.76 Hz", "97.79 dB SPL at 355.66 Hz", "97.43 dB SPL at 376.73 Hz", "96.01 dB SPL at 399.05 Hz", "95.61 dB SPL at 422.70 Hz", "96.28 dB SPL at 447.74 Hz", "97.83 dB SPL at 474.27 Hz", "97.49 dB SPL at 502.38 Hz", "98.48 dB SPL at 532.14 Hz", "98.80 dB SPL at 563.67 Hz", "99.92 dB SPL at 597.08 Hz", "100.33 dB SPL at 632.45 Hz", "100.83 dB SPL at 669.93 Hz", "102.79 dB SPL at 709.63 Hz", "103.60 dB SPL at 751.67 Hz", "103.52 dB SPL at 796.21 Hz", "102.74 dB SPL at 843.39 Hz", "101.99 dB SPL at 893.37 Hz", "102.59 dB SPL at 946.30 Hz", "102.29 dB SPL at 1,002.38 Hz", "101.51 dB SPL at 1,061.77 Hz", "104.08 dB SPL at 1,124.68 Hz", "105.66 dB SPL at 1,191.32 Hz", "104.29 dB SPL at 1,261.91 Hz", "103.94 dB SPL at 1,336.69 Hz", "104.47 dB SPL at 1,415.89 Hz", "105.21 dB SPL at 1,499.79 Hz", "105.77 dB SPL at 1,588.66 Hz", "107.97 dB SPL at 1,682.79 Hz", "108.92 dB SPL at 1,782.50 Hz", "108.59 dB SPL at 1,888.12 Hz", "109.33 dB SPL at 2,000.00 Hz", "108.31 dB SPL at 2,118.51 Hz", "106.13 dB SPL at 2,244.03 Hz", "106.05 dB SPL at 2,377.00 Hz", "108.68 dB SPL at 2,517.85 Hz", "109.09 dB SPL at 2,667.04 Hz", "105.75 dB SPL at 2,825.07 Hz", "102.52 dB SPL at 2,992.47 Hz", "104.11 dB SPL at 3,169.78 Hz", "103.95 dB SPL at 3,357.61 Hz", "101.23 dB SPL at 3,556.55 Hz", "97.50 dB SPL at 3,767.30 Hz", "91.93 dB SPL at 3,990.52 Hz", "83.52 dB SPL at 4,226.98 Hz", "83.97 dB SPL at 4,477.44 Hz", "83.34 dB SPL at 4,742.74 Hz", "87.62 dB SPL at 5,023.77 Hz", "90.07 dB SPL at 5,321.45 Hz", "86.61 dB SPL at 5,636.77 Hz", "86.00 dB SPL at 5,970.77 Hz", "88.13 dB SPL at 6,324.55 Hz", "86.44 dB SPL at 6,699.30 Hz", "85.78 dB SPL at 7,096.27 Hz", "80.59 dB SPL at 7,516.75 Hz", "81.43 dB SPL at 7,962.14 Hz", "79.07 dB SPL at 8,433.93 Hz", "75.25 dB SPL at 8,933.67 Hz", "80.19 dB SPL at 9,463.02 Hz", "78.84 dB SPL at 10,023.74 Hz", "80.13 dB SPL at 10,617.69 Hz", "80.13 dB SPL at 11,246.83 Hz", "81.57 dB SPL at 11,913.24 Hz", "71.69 dB SPL at 12,619.15 Hz", "76.89 dB SPL at 13,366.88 Hz", "81.66 dB SPL at 14,158.91 Hz", "85.58 dB SPL at 14,997.88 Hz", "87.63 dB SPL at 15,886.56 Hz", "78.74 dB SPL at 16,827.90 Hz", "73.66 dB SPL at 17,825.02 Hz", "75.15 dB SPL at 18,881.22 Hz", "71.79 dB SPL at 20,000.00 Hz"],
+        showlegend:true,
+        type: "scatter",
+        mode: "lines",
+        hoverinfo:"x+text",
+        line: {
+          color:"rgb(179, 35, 23)",
+        },
+        yaxis: "y1",
+      };
+    
+      var trace1 = {
+        name: "Impedance Curve - C15K 16Ω",
+        x: [20, 21.1796875, 22.4375, 23.765625, 25.1796875, 26.671875, 28.25, 29.921875, 31.6953125, 33.5703125, 35.5625, 37.671875, 39.90625, 42.265625, 44.7734375, 47.421875, 50.234375, 53.2109375, 56.3671875, 59.703125, 63.2421875, 66.9921875, 70.9609375, 75.1640625, 79.6171875, 84.3359375, 89.3359375, 94.625, 100.234375, 106.171875, 112.46875, 119.1328125, 126.1875, 133.6640625, 141.5859375, 149.9765625, 158.8671875, 168.2734375, 178.25, 188.8125, 200, 211.8515625, 224.3984375, 237.6953125, 251.78125, 266.703125, 282.5078125, 299.2421875, 316.9765625, 335.7578125, 355.65625, 376.7265625, 399.046875, 422.6953125, 447.7421875, 474.2734375, 502.375, 532.140625, 563.671875, 597.078125, 632.453125, 669.9296875, 709.625, 751.671875, 796.2109375, 843.390625, 893.3671875, 946.296875, 1002.375, 1061.765625, 1124.679688, 1191.320313, 1261.914063, 1336.6875, 1415.890625, 1499.789063, 1588.65625, 1682.789063, 1782.5, 1888.117188, 2000, 2118.507813, 2244.03125, 2377, 2517.851563, 2667.039063, 2825.070313, 2992.46875, 3169.78125, 3357.609375, 3556.554688, 3767.296875, 3990.523438, 4226.976563, 4477.4375, 4742.742188, 5023.773438, 5321.445313, 5636.765625, 5970.765625, 6324.554688, 6699.304688, 7096.265625, 7516.75, 7962.140625, 8433.929688, 8933.671875, 9463.023438, 10023.74219, 10617.6875, 11246.82813, 11913.24219, 12619.14844, 13366.875, 14158.91406, 14997.88281, 15886.5625, 16827.89844, 17825.01563, 18881.21875, 20000],
+        y: [12.91103479, 13.00317011, 13.108385, 13.227509, 13.35565976, 13.51816988, 13.70446827, 13.91623401, 14.16907243, 14.47045928, 14.82956092, 15.26958101, 15.81555469, 16.48453972, 17.34680207, 18.46039867, 19.96480408, 22.04031383, 25.07460743, 29.66303189, 37.47136359, 52.58769147, 87.74477027, 136.3563146, 87.49030233, 51.43816851, 35.77036107, 27.70568668, 22.94009339, 19.94311807, 17.94784456, 16.5587778, 15.64935776, 14.98546616, 14.41474595, 13.95631424, 13.67545385, 13.46467087, 13.27851802, 13.16590143, 13.11368748, 13.07371719, 13.07045454, 13.12918757, 13.13245085, 13.19772366, 13.26627508, 13.40995633, 13.49489054, 13.61253059, 13.72367651, 13.94281725, 14.17521187, 14.38156855, 14.70940373, 15.07042677, 15.32668198, 15.67855914, 16.15316113, 16.64128553, 17.11696027, 18.21645626, 19.02702064, 20.20011144, 19.04032629, 19.0669393, 18.48198108, 18.34919016, 18.45541833, 19.3198771, 21.31063105, 20.97571888, 20.16004651, 20.57430057, 21.19002106, 21.75326866, 22.93672488, 24.70682975, 25.99679937, 26.70514665, 26.88248402, 25.94237744, 26.20096594, 25.41225906, 26.24181523, 26.86883912, 27.14185001, 27.53813847, 28.92223366, 29.23827757, 30.24348078, 31.04442783, 31.93059734, 33.1253143, 34.36647329, 35.55640149, 36.9479577, 38.21830723, 39.49373413, 40.88834245, 42.38933143, 43.91176397, 45.49929539, 47.13829491, 48.90258294, 50.73532527, 52.57844962, 54.52128188, 56.56551264, 58.59243019, 60.61674767, 62.88232976, 65.08670086, 67.08938824, 69.43078045, 71.79062526, 74.30725466, 76.90644354, 79.78237523, 82.10077565, 84.56519414],
+        text: ["12.91 Ω at 20.00 Hz", "13.00 Ω at 21.18 Hz", "13.11 Ω at 22.44 Hz", "13.23 Ω at 23.77 Hz", "13.36 Ω at 25.18 Hz", "13.52 Ω at 26.67 Hz", "13.70 Ω at 28.25 Hz", "13.92 Ω at 29.92 Hz", "14.17 Ω at 31.70 Hz", "14.47 Ω at 33.57 Hz", "14.83 Ω at 35.56 Hz", "15.27 Ω at 37.67 Hz", "15.82 Ω at 39.91 Hz", "16.48 Ω at 42.27 Hz", "17.35 Ω at 44.77 Hz", "18.46 Ω at 47.42 Hz", "19.96 Ω at 50.23 Hz", "22.04 Ω at 53.21 Hz", "25.07 Ω at 56.37 Hz", "29.66 Ω at 59.70 Hz", "37.47 Ω at 63.24 Hz", "52.59 Ω at 66.99 Hz", "87.74 Ω at 70.96 Hz", "136.36 Ω at 75.16 Hz", "87.49 Ω at 79.62 Hz", "51.44 Ω at 84.34 Hz", "35.77 Ω at 89.34 Hz", "27.71 Ω at 94.63 Hz", "22.94 Ω at 100.23 Hz", "19.94 Ω at 106.17 Hz", "17.95 Ω at 112.47 Hz", "16.56 Ω at 119.13 Hz", "15.65 Ω at 126.19 Hz", "14.99 Ω at 133.66 Hz", "14.41 Ω at 141.59 Hz", "13.96 Ω at 149.98 Hz", "13.68 Ω at 158.87 Hz", "13.46 Ω at 168.27 Hz", "13.28 Ω at 178.25 Hz", "13.17 Ω at 188.81 Hz", "13.11 Ω at 200.00 Hz", "13.07 Ω at 211.85 Hz", "13.07 Ω at 224.40 Hz", "13.13 Ω at 237.70 Hz", "13.13 Ω at 251.78 Hz", "13.20 Ω at 266.70 Hz", "13.27 Ω at 282.51 Hz", "13.41 Ω at 299.24 Hz", "13.49 Ω at 316.98 Hz", "13.61 Ω at 335.76 Hz", "13.72 Ω at 355.66 Hz", "13.94 Ω at 376.73 Hz", "14.18 Ω at 399.05 Hz", "14.38 Ω at 422.70 Hz", "14.71 Ω at 447.74 Hz", "15.07 Ω at 474.27 Hz", "15.33 Ω at 502.38 Hz", "15.68 Ω at 532.14 Hz", "16.15 Ω at 563.67 Hz", "16.64 Ω at 597.08 Hz", "17.12 Ω at 632.45 Hz", "18.22 Ω at 669.93 Hz", "19.03 Ω at 709.63 Hz", "20.20 Ω at 751.67 Hz", "19.04 Ω at 796.21 Hz", "19.07 Ω at 843.39 Hz", "18.48 Ω at 893.37 Hz", "18.35 Ω at 946.30 Hz", "18.46 Ω at 1,002.38 Hz", "19.32 Ω at 1,061.77 Hz", "21.31 Ω at 1,124.68 Hz", "20.98 Ω at 1,191.32 Hz", "20.16 Ω at 1,261.91 Hz", "20.57 Ω at 1,336.69 Hz", "21.19 Ω at 1,415.89 Hz", "21.75 Ω at 1,499.79 Hz", "22.94 Ω at 1,588.66 Hz", "24.71 Ω at 1,682.79 Hz", "26.00 Ω at 1,782.50 Hz", "26.71 Ω at 1,888.12 Hz", "26.88 Ω at 2,000.00 Hz", "25.94 Ω at 2,118.51 Hz", "26.20 Ω at 2,244.03 Hz", "25.41 Ω at 2,377.00 Hz", "26.24 Ω at 2,517.85 Hz", "26.87 Ω at 2,667.04 Hz", "27.14 Ω at 2,825.07 Hz", "27.54 Ω at 2,992.47 Hz", "28.92 Ω at 3,169.78 Hz", "29.24 Ω at 3,357.61 Hz", "30.24 Ω at 3,556.55 Hz", "31.04 Ω at 3,767.30 Hz", "31.93 Ω at 3,990.52 Hz", "33.13 Ω at 4,226.98 Hz", "34.37 Ω at 4,477.44 Hz", "35.56 Ω at 4,742.74 Hz", "36.95 Ω at 5,023.77 Hz", "38.22 Ω at 5,321.45 Hz", "39.49 Ω at 5,636.77 Hz", "40.89 Ω at 5,970.77 Hz", "42.39 Ω at 6,324.55 Hz", "43.91 Ω at 6,699.30 Hz", "45.50 Ω at 7,096.27 Hz", "47.14 Ω at 7,516.75 Hz", "48.90 Ω at 7,962.14 Hz", "50.74 Ω at 8,433.93 Hz", "52.58 Ω at 8,933.67 Hz", "54.52 Ω at 9,463.02 Hz", "56.57 Ω at 10,023.74 Hz", "58.59 Ω at 10,617.69 Hz", "60.62 Ω at 11,246.83 Hz", "62.88 Ω at 11,913.24 Hz", "65.09 Ω at 12,619.15 Hz", "67.09 Ω at 13,366.88 Hz", "69.43 Ω at 14,158.91 Hz", "71.79 Ω at 14,997.88 Hz", "74.31 Ω at 15,886.56 Hz", "76.91 Ω at 16,827.90 Hz", "79.78 Ω at 17,825.02 Hz", "82.10 Ω at 18,881.22 Hz", "84.57 Ω at 20,000.00 Hz"],
+        showlegend:true,
+        type: "scatter",
+        mode: "lines",
+        hoverinfo:"x+text",
+        line: {
+          color:"rgb(61, 98, 184)",
+        },
+        yaxis: "y2",
+      };
+    
+      var layout = {
+        title:"Frequency Response on IEC Baffle (DIN 45575) @ 1W, 1m - Free Air Impedance",
+        autosize:true,
+        width:580,
+        height:275,
+        font:{
+          size: 10,
+          color: "black",
+        },
+        showlegend:false,
+        legend: {
+          x:0,
+          font:{
+            size: 8,
+            color: "black",
+          },
+        },
+        margin:{
+          l:45,
+          r:45,
+          t:45,
+          b:45,
+          pad:4,
+        },
+        xaxis:{
+          title:"Hz",
+          type: "log",
+          fixedrange:false,
+          range: [1.30102999566, 4.30102999566],
+          autorange:false,
+        },
+        yaxis:{
+          title:"dB SPL",
+          autotick: false,
+          range: [60, 110],
+          dtick: 5,
+          fixedrange:false,
+          tickprefix:"+",
+        },
+        yaxis2:{
+          title:"Ω",
+          overlaying: "y",
+          side: "right",
+          type: "log",
+          autotick:true,
+          fixedrange:false,
+          range: [0.47712125472, 2.69897000434],
+          autorange:false,
+        },
+      };
+
+      Plotly.newPlot("plotly_graph_789152694", [trace0, trace1], layout);
+  
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://www.jensentone.com/sites/jensentone.com/files/js/js_bnLzSCeoM7ZyEgWf6FgsOZeujXwQ5HsLqSamoMf6ccE.js"></script>
+</body>
+</html>

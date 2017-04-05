@@ -3,3 +3,20 @@ gatestopper on Q2 should be 100R
 circuit needs compensation to avoid smoke.
 if you are going to ramp you need C1 (in your design) just adequate for stability.
 the attached is the circuit I used, pretty much, for an article in AudioXpress around 2005
+
+todos
+verify that all rectifiers can run on 5 pins
+find rectifier box for stick out
+find led holders
+add filter artwork
+
+jacks - ordered these on aliexpress
+    red     108-0902-001 
+    black   108-0903-001
+    green   108-0904-001
+    yellow  108-0907-001
+    white   108-0901-001
+
+recifier box parts
+    plug    108-0753-001
+    plug    108-0750-001 better

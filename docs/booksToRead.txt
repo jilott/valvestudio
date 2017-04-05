@@ -3,6 +3,9 @@ Just starting out?
         https://www.amazon.com/Vacuum-Tube-Amplifier-Basics-Jurich/dp/1500938866
     RCA RC-22 Receiving Tube Manual
 
+blencowe
+    preamp books
+
 More advanced
     Reich "Theory and Applications of Electron Tubes"
 
