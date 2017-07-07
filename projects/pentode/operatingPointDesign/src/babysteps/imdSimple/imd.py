@@ -14,6 +14,8 @@ def mag2db(x):
 # if available import pylab (from matlibplot)
 
 import matplotlib.pylab as plt
+plt.rcParams["figure.figsize"] = 50,10
+
 
 # Intermodulation products
 fs = 5e6                                        # sample rate
@@ -28,7 +30,7 @@ x1 = np.cos(np.dot(np.dot(2.*np.pi, f1), t))    # tone1
 x2 = np.cos(np.dot(np.dot(2.*np.pi, f2), t))    # tone2
 x = x1+x2
 
-#x = awgn(x, 80.) need to implement this        # add white noise with snr = 80dB
+x = np.random.normal(x, 0.0001)                 # add white noise with snr = 80dB
 
 plt.subplot(3, 1, 1)
 plt.plot(t, x)                                  # plot two-tone input signal
@@ -54,9 +56,9 @@ Ydb = Ydb-np.amax(Ydb)
 n = np.arange(1.0,(N/2.0+1.0)+(1.0), 1.0)
 plt.subplot(3, 1, 3)
 
-plt.step(n,Ydb)
-
-plt.xlabel('samples')
+plt.step(n[0:1000],Ydb[0:1000])
+plt.xlabel('KHz')
+plt.xticks(range(0,1000,20))
 plt.ylabel('magnitude')
 plt.title('Two-tone output FFT with Intermodulation products')
 
@@ -66,8 +68,8 @@ M2 = M2+1.0
 
 m1dB = Ydb[int(M1)-1]                       # tone1 mag
 m2dB = Ydb[int(M2)-1]                       # tone2 mag
-print 'f1 = %e Hz, f1dB = %f dB'%(f1, m1dB)
-print 'f2 = %e Hz, f2dB = %f dB\n'%(f2, m2dB)
+print 'f1 = %10.1f Hz, f1dB = %f dB'%(f1, m1dB)
+print 'f2 = %10.1f Hz, f2dB = %f dB\n'%(f2, m2dB)
 IM1 = Ydb[int((2.*M1-M2))-1]
 IM2 = Ydb[int((2.*M2-M1))-1]
 IM3 = (IM1+IM2)/2.
