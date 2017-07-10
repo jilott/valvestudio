@@ -14,14 +14,14 @@ def mag2db(x):
 # if available import pylab (from matlibplot)
 
 import matplotlib.pylab as plt
-plt.rcParams["figure.figsize"] = 50,10
+plt.rcParams["figure.figsize"] = 15,9
 
 
 # Intermodulation products
 fs = 5e6                                        # sample rate
 N = 4096.0                                      # number of samples
-M1 = 173.0                                      # tone1 bin
-M2 = 211.0                                      # tone2 bin
+M1 = 180.0                                      # tone1 bin
+M2 = 220.0                                      # tone2 bin
 
 f1 = np.dot(fs/N, M1)                           # tone1 freq ~211KHz
 f2 = np.dot(fs/N, M2)                           # tone2 freq ~258Khz
@@ -30,14 +30,15 @@ x1 = np.cos(np.dot(np.dot(2.*np.pi, f1), t))    # tone1
 x2 = np.cos(np.dot(np.dot(2.*np.pi, f2), t))    # tone2
 x = x1+x2
 
-x = np.random.normal(x, 0.0001)                 # add white noise with snr = 80dB
+# x = np.random.normal(x, 0.0001)                 # add white noise with snr = 80dB
+
 
 plt.subplot(3, 1, 1)
 plt.plot(t, x)                                  # plot two-tone input signal
 plt.xlabel('time')
 plt.ylabel('amplitude')
 plt.ylim(np.array(np.hstack((-5.0, 5.0))))
-plt.title('input')
+plt.title('input - linear')
 
 # plot output signal with non-linearities
 # amplifier output with 2nd and 3rd order products
@@ -47,7 +48,7 @@ plt.subplot(3, 1, 2)
 plt.plot(t, y)
 plt.xlabel('time')
 plt.ylabel('amplitude')
-plt.title('output')
+plt.title('output non-linear')
 
 yf = fft(y, int(N))                             # output fft
 Y = np.abs(yf[0:int(N/2.0+1.0)])                # single-sided
@@ -58,7 +59,7 @@ plt.subplot(3, 1, 3)
 
 plt.step(n[0:1000],Ydb[0:1000])
 plt.xlabel('KHz')
-plt.xticks(range(0,1000,20))
+plt.xticks(range(0,1000,50))
 plt.ylabel('magnitude')
 plt.title('Two-tone output FFT with Intermodulation products')
 
@@ -75,4 +76,5 @@ IM2 = Ydb[int((2.*M2-M1))-1]
 IM3 = (IM1+IM2)/2.
 print "IM3 = %f dB\n"% IM3
 
+plt.tight_layout()
 plt.show()

@@ -19,9 +19,9 @@ x1 = cos(2*pi*f1*t); % tone1
 x2 = cos(2*pi*f2*t); % tone2
 x = x1 + x2; % input two-tone signal
 
-x = awgn(x,80); % add white noise with snr = 80dB
+% x = awgn(x,80); % add white noise with snr = 80dB
 
-figure('Position',[0,0,1920,1080]);
+figure('Position',[600,0,800,800]);
 
 subplot(3,1,1);
 plot(t,x); % plot two-tone input signal
@@ -52,7 +52,7 @@ stairs(n,Ydb); % plot fft
 xlabel('samples');
 ylabel('magnitude');
 grid on;
-title('Two-tome output FFT with Intermodulation products');
+title('Two-tone output FFT with Intermodulation products');
 set(gca,'xtick',0:100:2048)
 
 M1 = M1 + 1; M2 = M2 + 1; % moved 1 bin up in fft

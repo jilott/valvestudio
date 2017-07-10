@@ -1897,6 +1897,8 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$68">
 </signal>
+<signal name="+12V">
+</signal>
 </signals>
 </board>
 </drawing>

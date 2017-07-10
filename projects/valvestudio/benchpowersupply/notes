@@ -1,6 +1,5 @@
 STM VIPER
 
-
 https://en.wikipedia.org/wiki/Current_mirror
 https://en.wikipedia.org/wiki/Widlar_current_source
 LT3092 - 200mA 2-Terminal Programmable Current Source
@@ -10,12 +9,9 @@ Very High Common-Mode Voltage Precision Difference Amplifier, 600V common mode
 http://www.analog.com/media/en/technical-documentation/data-sheets/AD8479.PDF
     common mode halves when run from single supply
 
-
-
 power mosfet linear mode
 https://www.youtube.com/watch?v=1qRWBkrcnAM
     http://www.nxp.com/products/discretes-and-logic/mosfets/standard-mosfets/nextpower-live:GRP_11730
-
 
 HV IRF740 follower
 http://www.eleccircuit.com/the-variable-high-voltage-power-supply-0-300v/
@@ -38,6 +34,7 @@ FCP104N60   300V@1250mA,    600V@600ma to-220
 
 use this for dac driven n-ch, AOD1N60, 500V@60mA
     alt                       STD1NK60, 1000V@60mA
+    BSS127H6327XTSA2
 
 
 parts
@@ -52,7 +49,6 @@ outlet single
 pilot lights
     http://www.ebay.com/itm/5-Pcs-120V-AC-DC-9mm-Yellow-Mini-Plug-LED-Pilot-Lights-Fresnal-Dome-Cap-/172330236751?hash=item281faebb4f
 
-
 high voltage warning
     LR8
         http://www.mouser.com/ProductDetail/Microchip-Technology/LR8K4-G/?qs=sGAEpiMZZMsSqfo6rglx8SOPQAmQFLR9
@@ -64,7 +60,6 @@ high voltage warning
         lumex, SSL-LX5093BSRD
             http://www.digikey.com/product-detail/en/lumex-opto-components-inc/SSL-LX5093BSRD/67-1499-ND/273364
             http://www.mouser.com/ProductDetail/Lumex/SSL-LX5093BSRD/?qs=sGAEpiMZZMt82OzCyDsLFJnme%2fkho22fA0bBsTBXPlU%3d
-    
 
 high voltage filter switches, 600V
 inrush limiters
@@ -76,14 +71,26 @@ measuring high voltages
     http://www.edn.com/design/analog/4400220/Standalone-digital-voltmeter-uses-a-multichannel-ADC
 
 possible adc
-    MAX11060GUU+    4-ch, 16-bit, 64ksps << use this one
+    MAX11060GUU+    4-ch    16  64k     ~3V     $7
+    MAX1302         8-ch    16  115k    4.096   11.56   tssop24 not a lot of avail
+    MAX1303         4-ch    16  115k    4.096   11.56   tssop24 not a lot of avail
+
+    LTC2344-16      4-ch    16  400k    2.048   17.86   sim qfn
+
     ADS7871         8-ch, PGA, 14bit, 48KS/s, linux support
     ADS130E08       8-ch, PGA, 16bit,  8kS/s
     LTC2345-16      8-ch, 16-Bit, 200ksps
+    MAX1032         8-ch, 14-bit, 115ksps
 
     resolutions 16b     14b     12b     10b     8b
     500VFS      7.6mV   30mV    122mV   488mV   1.95V
     100mA       1.5uA   6.1uA   24.4uA  97.7uA  391uA
+
+    ltc
+        http://www.linear.com/parametric/Analog-to-Digital_Converters_(ADC)#!cols_1049,1030,2228,2201,1097,1054,1367,2275,1059!s_2275,0!gtd_!1049_>=15!1030_4|>=8!1097_100|200|400|500|800:1000|1500:1600|5000!1054_Serial I2C|Serial SPI
+
+    dk
+https://www.digikey.com/products/en/integrated-circuits-ics/data-acquisition-analog-to-digital-converters-adc/700?k=adc&k=&pkeyword=adc&FV=403305%2C403306%2C40346b%2C40062e%2C400e12%2C2640005%2C3cc009f%2C3cc00b5%2C3cc0024%2C3cc004e%2C5700066%2C5700068%2C5700072%2C5700077%2C5700079%2C570007c%2C5700080%2C5700081%2C5700085%2C5700089%2C570008a%2C5700090%2C5700092%2C5700095%2C5700096%2C570009b%2C570009d%2C570009e%2C57000a5%2C57000a9%2C57000ad%2C57000b0%2C57000b4%2C57000bd%2C57000bf%2C57000c1%2C57000c2%2C57000c6%2C57000c8%2C57000c9%2C57000ca%2C57000cb%2C57000d3%2C57000d6%2C57000d8%2C57000db%2C57000dd%2C57000e2%2C57000e4%2C57000e6%2C57000e8%2C57000e9%2C57000ef%2C57000f0%2C57000f1%2C57000f7%2C57000f9%2C570013d%2C570014b%2C5700154%2C5700163%2C5700173%2C5700176%2C5700181%2C57001a7%2C57001a8%2C57001ab%2C5700037%2C5700232%2C5700039%2C5700249%2C570003b%2C5700267%2C5700271%2C570027c%2C570027d%2C570027f%2C5700040%2C5700282%2C5700287%2C5700288%2C5700041%2C5700042%2C5700295%2C5700297%2C570029a%2C5700043%2C57002a4%2C5700044%2C5700048%2C570004a%2C570004e%2C5700050%2C5700054%2C5700057%2C570005c%2C570005d%2C570005e%2C5700062%2C76800a0%2C76800a1%2C76800a3%2C76800a4%2Ca6c007f%2Ca6c0004%2Ca6c003b%2Ca6c003c%2Ca6c0046%2Ca6c0047%2Ca6c0049%2Ca6c004f%2Cffe002bc&mnonly=0&newproducts=0&ColumnSort=1000011&page=1&stock=1&quantity=10&ptm=0&fid=0&pageSize=25
 
 pga
     LTC6915 Zero Drift, Precision Instrumentation Amplifier with Digitally Programmable Gain, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, or 4096 
@@ -96,6 +103,16 @@ possible dac
     LTC2600 - Octal 16-Bit Rail-to-Rail DACs in 16-Lead SSOP
     LTC2604 - Quad 16-Bit Rail-to-Rail DACs in 16-Lead SSOP
     MAX5544 - single 14-bit 
+
+    grid voltage power supply
+        https://www.digikey.com/products/en/integrated-circuits-ics/data-acquisition-digital-to-analog-converters-dac/701?FV=2640005%2C2640055%2C1ed40002%2Cffe002bd%2C3cc0024%2C3cc004e&mnonly=0&newproducts=0&ColumnSort=0&page=1&stock=1&pbfree=0&rohs=0&quantity=10&ptm=0&fid=0&pageSize=25
+        http://pdfserv.maximintegrated.com/en/an/AN5581.pdf
+            MAX542
+        http://www.ti.com/lit/ug/slau525/slau525.pdf
+        see design on ltc6090
+
+    fet as resistor
+        http://www.vishay.com/docs/70598/70598.pdf
     
 
 high voltage opamp for gate drive
@@ -123,3 +140,63 @@ quad encoder
 ptp
     https://en.wikipedia.org/wiki/Precision_Time_Protocol
     https://www.perle.com/supportfiles/precision-time-protocol.shtml
+
+from tubetracer
+mosfet
+    AOD514, 6.5 mOhm @ 20A, 10V, 22.5nC @ 10V 
+    BSC024NE2LS, 2.4 mOhm @ 30A, 10V, 23nC @ 10V
+
+    AOT12N60 is MOSFET N-CH 600V 12A TO-220, 500V@500mA DC
+
+inductor
+    wirth 7443310100, FIXED IND 1UH 21A 1.15 MOHM SMD
+
+capacitor
+    ELG107M450AR2AA 100uF, 450VDC, esr=.628
+
+
+http://www.poweresim.com/ 
+    22uf 400uF 1.3ohm, EEUED2G220
+
+
+circuit adds
+    plate current fuse
+    gate-gnd diode to limit forward voltage
+
+voltage regulator
+    LR8
+
+http://www.valvewizard.co.uk/curvetracer.html
+
+put led in cathode bias, see blencowe p46
+
+add capability to measure currents for biasing with biasing adapter
+
+switching matrix
+    high voltage phototransistor coupler
+    MOC8204SR2M
+
+    Optocoupler, Phototriac Output, Non-Zero Crossing, 0.5 kV/μs dV/dt, 600 V
+    VOM160
+
+examples
+    http://sound.westhost.com/project165.htm
+    http://sicimatic.blogspot.com/2013/12/0-300v-variable-high-voltage-power.html    
+
+Very High Common-Mode Voltage Precision Difference Amplifier, 600V common mode
+http://www.analog.com/media/en/technical-documentation/data-sheets/AD8479.PDF
+    common mode halves when run from single supply
+
+or opa725
+    http://www.ti.com/lit/ds/symlink/opa735.pdf
+
+
+creepage
+    http://www.pcbtechguide.com/2009/02/creepage-vs-clearance.html#.WTcqh8grIlI
+
+
+
+software
+    PyQtGraph
+    matplotlib live data
+        https://www.youtube.com/watch?v=ZmYPzESC5YY
