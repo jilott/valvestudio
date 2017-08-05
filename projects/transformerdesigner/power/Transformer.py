@@ -167,6 +167,7 @@ class Transformer():
         wdata.append("  Turns                 ")
         wdata.append("  Layers                ")
         wdata.append("  Turns/layer           ")
+        wdata.append("  Fill Last Layer       ")
         wdata.append("  AWG                   ")
         wdata.append("  Wire Diameter         ")
         wdata.append("  Ohms/1000 feet        ")
@@ -174,10 +175,11 @@ class Transformer():
         wdata.append("  Wire Length feet      ")
         wdata.append("  Resistance            ")
         wdata.append("  Voltage Drop          ")
-        wdata.append("  Voltage Out           ")
-        wdata.append("  Voltage No Load       ")
         wdata.append("  Voltage Regulation    ")
-        wdata.append("  Fill Last Layer       ")
+        wdata.append("  --------------------- ")
+        wdata.append("  Voltage Out Load Open ")
+        wdata.append("  Voltage Out Load Half ")
+        wdata.append("  Voltage Out Load Full ")
 
         for winding in self.windings:
             wdata[0] += "%-12s"%winding.typeText
@@ -186,22 +188,27 @@ class Transformer():
             wdata[3] += "%-12d"%winding.turns
             wdata[4] += "%-12d"%winding.layers
             wdata[5] += "%-12d"%winding.turnsPerLayer
-            wdata[6] += "%-12d"%winding.wire['size']
-            wdata[7] += "%-12s"%winding.wireDiameter
-            wdata[8] += "%-12.4f"%winding.wire['ohmsPer1000ft']
-            wdata[9] += "%-12.2f"%winding.meanPathLength
-            wdata[10] += "%-12.1f"%(winding.wireLength/12.0)
-            wdata[11] += "%-12.4f"%winding.resistance
-            wdata[12] += "%-12.3f"%winding.voltageDrop
-            wdata[16] += "%-12s"%winding.fillLast
+            wdata[6] += "%-12s"%winding.fillLast
+            wdata[7] += "%-12d"%winding.wire['size']
+            wdata[8] += "%-12s"%winding.wireDiameter
+            wdata[9] += "%-12.4f"%winding.wire['ohmsPer1000ft']
+            wdata[10] += "%-12.2f"%winding.meanPathLength
+            wdata[11] += "%-12.1f"%(winding.wireLength/12.0)
+            wdata[12] += "%-12.4f"%winding.resistance
+            wdata[13] += "%-12.3f"%winding.voltageDrop
             if winding.type == 's':
-                wdata[13] += "%-12.2f"%winding.vout
-                wdata[14] += "%-12.2f"%winding.voutNoLoad
-                wdata[15] += "%-12.2f"%winding.voutRegulation
+                wdata[14] += "%-12.2f"%winding.voutRegulation
+                wdata[15] += "            "
+                wdata[16] += "%-12.2f"%winding.voutNoLoad
+                wdata[17] += "%-12.2f"%((winding.voutNoLoad + winding.vout)/2.0)
+                wdata[18] += "%-12.2f"%winding.vout
             else:
-                wdata[13] += "            "
                 wdata[14] += "            "
                 wdata[15] += "            "
+                wdata[16] += "            "
+                wdata[17] += "            "
+                wdata[18] += "            "
+
 
 
         print "\n".join(wdata)
@@ -433,7 +440,7 @@ class Transformer():
         for secondary in self.secondaries: 
             print "%-8.2f     "%secondary.voltage,
         print "   Error"
-        print "-----------------------------------------------------------------------------------------"
+        print "-------------------------------------------------------------------------------------------------------------------------------"
 
         fluxorder = {}
         for b in range(min,max,1000):

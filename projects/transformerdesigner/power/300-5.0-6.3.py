@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import math, sys
-import Winding, Transformer, Machine
+import Winding, Transformer
 
 primary      = Winding.Winding('p',115.0,0.0)
 secondary5   = Winding.Winding('s',  5.0,2.0,fill=False)
@@ -25,6 +25,7 @@ print t.gcode()
 
 
 if len(sys.argv) > 1:
+    import Machine
     m = Machine.Machine(windings=t.windings)
     m.run()
     m.shutdown()
