@@ -617,8 +617,21 @@ class Machine():
         self.shutdown()
         self.screenClear()
 
+    def grblConfig(self):
+        time.sleep(5)
+        self._port.flush()
+        grblconfig = open("grbl.conf","r")
+        for l in grblconfig.readlines():
+            print l
+            self._port.write(l)
+            time.sleep(0.5)
+            print self._port.read(100)
+
+
+
     
 
 if __name__ == '__main__':
     m = Machine()
+    #m.grblConfig()
     m.run()
