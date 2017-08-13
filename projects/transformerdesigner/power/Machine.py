@@ -278,6 +278,7 @@ class Machine():
         print "%-20s %-10s"%("speed leadin/wind","s")
         print "%-20s %-10s"%("windings","w")
         print "%-20s %-10s"%("wind","W")
+        print "%-20s %-10s"%("config","C")
 
     def getchar(self):
         return os.read(self.fd,1)
@@ -532,6 +533,12 @@ class Machine():
             self.modalTimeout = 0.0
             self.statusTimeout = 0.0
             return
+        if c == 'C':
+            self.screenClear()
+            self.modalTimeout = 0.0
+            self.statusTimeout = 0.0
+            self.grblConfig()
+            return
 
         # if c == '0':
         #    self.command("G90X0")
@@ -633,5 +640,4 @@ class Machine():
 
 if __name__ == '__main__':
     m = Machine()
-    #m.grblConfig()
     m.run()
