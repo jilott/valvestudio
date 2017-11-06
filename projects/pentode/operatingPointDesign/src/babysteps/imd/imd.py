@@ -18,7 +18,7 @@ ftable = {
 gtable = {
 #   label          gain  offset    level
     'clean'     : (50.0, 0,      1.0),
-    'even1'     : (50.0, 5e-1,   1.0),
+    'even1'     : (50.0, 0.77,    1.0),
     'even20'    : (50.0, 1e-1,   1.0),
     'even40'    : (50.0, 1e-2,   1.0),
     'even60'    : (50.0, 1e-3,   1.0),
@@ -121,7 +121,7 @@ def play():
     p = pyaudio.PyAudio()
     stream = p.open(format = pyaudio.paFloat32, channels = 1, rate = int(Fs), output = True)
     data = (play_vout/np.absolute(play_vout).max()).astype(np.float32)
-    print np.absolute(play_vout).max(), data.max()
+    # print np.absolute(play_vout).max(), data.max()
     stream.write(data)
     stream.stop_stream()
     stream.close()
