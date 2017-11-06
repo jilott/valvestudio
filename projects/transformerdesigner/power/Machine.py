@@ -625,14 +625,36 @@ class Machine():
         self.screenClear()
 
     def grblConfig(self):
+        time.sleep(1.0)
+        self._port.flush()
+        grblconfig = open("grbl.conf","r")
+        for l in grblconfig.readlines():
+            print "%-20s"%l.strip(),
+            sys.stdout.flush()
+            self._port.write(l)
+            time.sleep(0.5)
+            print self._port.read(100).strip()
+        self.screenClear()
+        self.statusTimeout = 0.0
+        self.modalTimeout = 0.0
+
+    def query(command):
+        self._port.write('\n')
+        time.sleep(0.5) # let remaining grbl string transmitting finish
+        self._port.flush()
+        self._port.write(command+'\n')
+        rv = self._port.readline()
+        return rv.strip()
+
+    def grblConfigalt(self):
         time.sleep(5)
         self._port.flush()
         grblconfig = open("grbl.conf","r")
         for l in grblconfig.readlines():
             print l
-            self._port.write(l)
-            time.sleep(0.5)
-            print self._port.read(100)
+            l = l.strip()
+            print self.query(l)
+            print
 
 
 

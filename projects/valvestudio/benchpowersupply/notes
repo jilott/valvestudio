@@ -36,6 +36,8 @@ use this for dac driven n-ch, AOD1N60, 500V@60mA
     alt                       STD1NK60, 1000V@60mA
     BSS127H6327XTSA2
 
+here's another family of high-voltage FETs in SOT-223 package
+    https://www.infineon.com/cms/en/product/channel.html?channel=5546d462525dbac40153141e97d0618f
 
 parts
 banana jacks
@@ -81,6 +83,8 @@ possible adc
     ADS130E08       8-ch, PGA, 16bit,  8kS/s
     LTC2345-16      8-ch, 16-Bit, 200ksps
     MAX1032         8-ch, 14-bit, 115ksps
+
+    see also, http://www.ti.com/product/ADS8578S
 
     resolutions 16b     14b     12b     10b     8b
     500VFS      7.6mV   30mV    122mV   488mV   1.95V

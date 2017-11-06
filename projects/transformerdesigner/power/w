@@ -1,2 +1,6 @@
 #!/bin/bash
-column -s, -t < wire\ table.csv
+if [ $# -gt 0 ]; then
+    column -s, -t < wire\ table.csv | grep -E " 1 "
+else
+    column -s, -t < wire\ table.csv
+fi

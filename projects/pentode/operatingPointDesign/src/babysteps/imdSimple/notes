@@ -11,12 +11,12 @@ https://github.com/awesomebytes/libermate
 
 In imd.py, replaced a few functions and got it working, yay! 
 
-holla@watson[515]: octave a.m 
+holla@watson[515]: octave imd.m 
 f1 = 2.111816e+05 Hz, f1dB = 0.000000 dB
 f2 = 2.575684e+05 Hz, f2dB = -0.000013 dB
 IM3 = -68.529627 dB
 
-holla@watson[510]: python a.py 
+holla@watson[510]: python imd.py 
 f1 = 2.111816e+05 Hz, f1dB = 0.000000 dB
 f2 = 2.575684e+05 Hz, f2dB = 0.000000 dB
 IM3 = -68.529141 dB
