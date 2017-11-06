@@ -7,33 +7,29 @@ from matplotlib.widgets import Slider, Button, RadioButtons
 ftable = {
     '300':(300,0,0),
     '300-400':(300,400,0),
-    'GDG':(98,147,196),
+    'GDG':(196,294,392),
     'Gm' :(196,247,294),
-    'Reset':(300,0,0),
     'Play':(0,0,0)
 }
 
 # vout = gain*np.arctan(offset+level*vin)
 
+clean = True
+
 gtable = {
-#   label          gain  offset    level
-    'clean'     : (50.0, 0,      1.0),
-    'even1'     : (50.0, 0.77,    1.0),
+#   label          gain  offset  level
+    '/ clean'   : (50.0, 0,      1.0),
+    'bias0'     : (100.0, 0,     0.2),
+    'even1'     : (50.0, 0.65,   0.6),
     'even20'    : (50.0, 1e-1,   1.0),
     'even40'    : (50.0, 1e-2,   1.0),
     'even60'    : (50.0, 1e-3,   1.0),
-    'even1020'  : (25.0, 1e-1,   1e-2),
-    'even2040'  : (50.0, 1e-1,   1e-2),
-    'even6080'  : (50.0, 1e-3,   1e-4),
     'odd20'     : (50.0, 1e-1,   1.0),
     'odd40'     : (50.0, 1e-2,   1.0),
-    'odd2040'   : (50.0, 1e-1,   1e-2),
-    'odd6080'   : (50.0, 1e-3,   1e-4),
-    'odd1020'   : (25.0, 100e-1, 100e-2),
 }
 
 freq1,freq2,freq3       = ftable['300']
-gain,offset,level         = gtable['clean']
+gain,offset,level       = gtable['/ clean']
 
 Fs = 22050.0;           # sampling rate
 Ts = 1.0/Fs;            # sampling interval
@@ -62,11 +58,22 @@ vin1 = ampl1*np.sin(2*np.pi*freq1*t+phase1)
 vin2 = ampl2*np.sin(2*np.pi*freq2*t+phase2)
 vin3 = ampl3*np.sin(2*np.pi*freq3*t+phase3)
 vin = vin1 + vin2 + vin3
-vout = gain*np.arctan(offset+level*vin) + noise  # adding a noise to have a noise floor
+
+def voutCalc():
+    global clean,vout
+    if clean:
+        vout = gain*vin + noise
+    else:
+        vout = gain*np.arctan(offset+level*vin) + noise  # adding a noise to have a noise floor
+
+voutCalc()
 
 def updatetransfer():
     global transferallvin,transferallvout,transfervin,offset
-    transferallvout = gain*np.arctan(offset+level*transferallvin)
+    if clean:
+        transferallvout = gain*transferallvin
+    else:
+        transferallvout = gain*np.arctan(offset+level*transferallvin)
 
     if transfervallplot: # this checks if plot exists yet
         # print len(vin),len(transferallvin)
@@ -84,6 +91,8 @@ fftout   = fftout[range(n/2)]
 fftmag   = 20*np.log10(np.abs(fftout))
 
 fig,axa = plt.subplots(2,2)
+
+fig.text(0.70,0.965,"vout = gain * vin     or\nvout = gain * atan(offset + (level * vin))")
 
 vin3plot, = axa[0,0].plot(t,vin3,label='%dHz'%freq3)
 vin2plot, = axa[0,0].plot(t,vin2,label='%dHz'%freq2)
@@ -116,7 +125,10 @@ def play():
     play_vin2 = ampl2*np.sin(2*np.pi*freq2*play_t+phase2)
     play_vin3 = ampl3*np.sin(2*np.pi*freq3*play_t+phase3)
     play_vin = play_vin1 + play_vin2 + play_vin3
-    play_vout = gain*np.arctan(offset+level*play_vin)
+    if clean:
+        play_vout = gain*play_vin
+    else:
+        play_vout = gain*np.arctan(offset+level*play_vin)
 
     p = pyaudio.PyAudio()
     stream = p.open(format = pyaudio.paFloat32, channels = 1, rate = int(Fs), output = True)
@@ -146,7 +158,7 @@ def updatefft():
 
 fftplot, = axa[1,1].semilogx(fftfrq,fftmag,'r',label="Peaks") # plotting the spectrum
 axa[1,1].set_xlabel('Freq (Hz)')
-axa[1,1].set_xlim(100,10000)
+axa[1,1].set_xlim(10,10000)
 axa[1,1].grid(True,'both')
 axa[1,1].set_ylabel('Vout dB')
 axa[1,1].set_ylim(-120,40)
@@ -157,7 +169,8 @@ updatefft()
 
 def updatevout():
     global vin,vout,gain,offset,level,voutplot,axa
-    vout = gain*np.arctan(offset+level*vin)
+    # vout = gain*np.arctan(offset+level*vin)
+    voutCalc()
     voutmean = vout.mean()
     vout = vout - voutmean + np.random.normal(0.0,0.1,Fs)/100.0
     voutplot.set_ydata(vout)
@@ -290,7 +303,7 @@ sgain  = Slider(axgain,  'gain', 0.0, 100, valinit=gain)
 sgain.on_changed(updategain)
 
 axoffset = plt.axes([0.25, 0.1425, 0.65, 0.01])
-soffset  = Slider(axoffset,  'offset', -20, 20, valinit=offset)
+soffset  = Slider(axoffset,  'offset', -5, 5, valinit=offset)
 soffset.on_changed(updateoffset)
 
 axlevel = plt.axes([0.25, 0.13, 0.65, 0.01])
@@ -303,8 +316,6 @@ def freqSet(label):
         return
     freq1,freq2,freq3 = ftable[label]
     ampl1,ampl2,ampl3 = [1.0,1.0,1.0]
-    if label == 'Reset':
-        gainSet('clean')
     updatefreq1(freq1)
     updatefreq2(freq2)
     updatefreq3(freq3)
@@ -326,6 +337,11 @@ for circ in freqradio.circles:
 freqradio.on_clicked(freqSet)
 
 def gainSet(label):
+    global clean
+    if label == '/ clean':
+        clean = True
+    else:
+        clean = False
     gain,offset,level = gtable[label]
     updategain(gain,False)
     updateoffset(offset,False)
@@ -344,7 +360,7 @@ gainradio.on_clicked(gainSet)
 
 mng = plt.get_current_fig_manager()
 # mng.resize(*mng.window.maxsize())
-mng.resize(1280,1000)
+mng.resize(1920,1080)
 
 plt.tight_layout(rect=[0, 0.1, 1, 1])
 plt.show()
