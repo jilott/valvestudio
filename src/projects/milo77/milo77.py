@@ -1,6 +1,7 @@
+#!/home/holla/anaconda2/bin/python
+
 import requests
 import pandas as pd
-import numpy as np
 from StringIO import StringIO
 from mpmath import isnan
 import collections
@@ -25,7 +26,6 @@ def solve(key,debug=False,showcode=False,showequations=False):
     df = pd.read_csv(StringIO(data),header=-1)
     if debug:
         print df
-
 
     locInput = 1
     locName = 2
@@ -88,7 +88,10 @@ def solve(key,debug=False,showcode=False,showequations=False):
     code += "\n"
 
     if debug:
+        print "-- code -----------------------------------------------------------"
         print code
+        print "-- code -----------------------------------------------------------"
+        print
         print outputs
 
     code += "# rules\n"
@@ -113,14 +116,20 @@ def solve(key,debug=False,showcode=False,showequations=False):
     if len(outputs.keys()) == 1:
         code += "print ans\n" 
     else:
+        for v in variables:
+            if not isnan(v['input']) and v['st'] != 'g':
+                code += "print \"%-10s = %14.6f\"\n"%(v['name'],float(v['input']))
+        
+        code += "print\n"
+
         for k in outputs.keys():
             code += "print \"%-10s = %%14.6f\"%%ans[%d]\n"%(k,i)
             i += 1
+
         
     if debug or showcode:
+        print variables
         print code
-        print 
-        print "# ------------------------------------------------------------------\n\n"
 
     try:
         exec(code)
@@ -129,3 +138,9 @@ def solve(key,debug=False,showcode=False,showequations=False):
     except TypeError as msg:
         print msg
         print "modify initial values"
+
+if __name__ == "__main__":
+    # put your shared google sheet key here
+    gkey = '1VDXSMqPVYYLuDkyzly2UBEbpBGAHBq336GsacR9QOZk'
+
+    solve(gkey)
