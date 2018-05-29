@@ -11,10 +11,15 @@ TURNS=1
 LABEL=2
 BUFFERTHRES=13
 
-import time,sys,termios,os,csv
+import time,sys,os,csv
 
 try:
     import serial
+except ImportError:
+    pass
+
+try:
+    import termios
 except ImportError:
     pass
 

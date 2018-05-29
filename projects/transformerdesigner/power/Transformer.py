@@ -2,6 +2,8 @@ import pprint,math,csv,os
 import operator
 import __main__
 
+# todo: 'lines' is not flux density, consider renaming self.fluxDensity to lines
+
 INCHTOMM=25.4
 BOBBINMARGIN=0.02    # estimate by looking at edcor bobbin lengths/2
 BOBBINTHICKNESS=0.04 # majority of edcor bobbins are 0.04 thick
