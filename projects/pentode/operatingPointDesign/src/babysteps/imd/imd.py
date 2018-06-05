@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# uses a lot of global variables, its a hack I know
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider, Button, RadioButtons
@@ -17,19 +19,19 @@ ftable = {
 clean = True
 
 gtable = {
-#   label          gain  offset  level
-    '/ clean'   : (50.0, 0,      1.0),
-    'bias0'     : (100.0, 0,     0.2),
-    'even1'     : (50.0, 0.65,   0.6),
-    'even20'    : (50.0, 1e-1,   1.0),
-    'even40'    : (50.0, 1e-2,   1.0),
-    'even60'    : (50.0, 1e-3,   1.0),
-    'odd20'     : (50.0, 1e-1,   1.0),
-    'odd40'     : (50.0, 1e-2,   1.0),
+#   label          gain  bias offset  level
+    '/ clean'   : (50.0, 1, 0,      1.0),
+    'bias0'     : (50.0, 1, 0,      0.2),
+    'even1'     : (50.0, 1, 0.65,   0.6),
+    'even20'    : (50.0, 1, 1e-1,   1.0),
+    'even40'    : (50.0, 1, 1e-2,   1.0),
+    'even60'    : (50.0, 1, 1e-3,   1.0),
+    'odd20'     : (50.0, 1, 1e-1,   1.0),
+    'odd40'     : (50.0, 1, 1e-2,   1.0),
 }
 
 freq1,freq2,freq3       = ftable['300']
-gain,offset,level       = gtable['/ clean']
+gain,bias,offset,level       = gtable['/ clean']
 
 Fs = 22050.0;           # sampling rate
 Ts = 1.0/Fs;            # sampling interval
@@ -71,16 +73,21 @@ voutCalc()
 def updatetransfer():
     global transferallvin,transferallvout,transfervin,offset
     if clean:
-        transferallvout = gain*transferallvin
+        transferallvout = gain*(bias*transferallvin)
+    else:
+        transferallvout = gain*np.arctan(bias*transferallvin)
+    '''
+    if clean:
+        transferallvout = gain*(offset+level*transferallvin)
     else:
         transferallvout = gain*np.arctan(offset+level*transferallvin)
-
+    '''
     if transfervallplot: # this checks if plot exists yet
         # print len(vin),len(transferallvin)
         # transfervallplot.set_xdata(vin)
         transfervallplot.set_ydata(transferallvout)
     if transferplot:
-        r = np.logical_and(transferallvin>=vin.min(), transferallvin<=vin.max())
+        r = np.logical_and(transferallvin>=offset+level*vin.min(), transferallvin<=offset+level*vin.max())
         transferplot.set_xdata(transferallvin[r])
         transferplot.set_ydata(transferallvout[r])
 
@@ -112,7 +119,7 @@ axa[0,1].relim()
 axa[0,1].autoscale_view(True,True,True)
 
 transfervallplot,  = axa[1,0].plot(transferallvin,transferallvout,color='blue')
-transferplot,  = axa[1,0].plot(vin,vout,color='green',linewidth=3)
+transferplot,      = axa[1,0].plot(vin,vout,color='green',linewidth=3)
 axa[1,0].set_xlim(-transfermax,transfermax)
 axa[1,0].set_ylim(-100.0,100.0)
 
@@ -182,6 +189,10 @@ def updatevout():
 def updategain(val,update=True):
     global gain
     gain = val
+    updatevout()
+def updatebias(val,update=True):
+    global bias
+    bias = val
     updatevout()
 def updateoffset(val,update=True):
     global offset
@@ -298,9 +309,13 @@ axphase3 = plt.axes([0.25, 0.0100, 0.65, 0.01])
 sphase3 = Slider(axphase3, 'Phase3', -90, 90, valinit=0,valfmt='%1d')
 sphase3.on_changed(updatephase3)
 
-axgain = plt.axes([0.25, 0.1550, 0.65, 0.01])
+axgain = plt.axes([0.25, 0.1675, 0.65, 0.01])
 sgain  = Slider(axgain,  'gain', 0.0, 100, valinit=gain)
 sgain.on_changed(updategain)
+
+axbias = plt.axes([0.25, 0.1550, 0.65, 0.01])
+sbias  = Slider(axbias,  'bias', 0.0, 4.0, valinit=bias)
+sbias.on_changed(updatebias)
 
 axoffset = plt.axes([0.25, 0.1425, 0.65, 0.01])
 soffset  = Slider(axoffset,  'offset', -5, 5, valinit=offset)
@@ -342,7 +357,7 @@ def gainSet(label):
         clean = True
     else:
         clean = False
-    gain,offset,level = gtable[label]
+    gain,bias,offset,level = gtable[label]
     updategain(gain,False)
     updateoffset(offset,False)
     updatelevel(level,True)
