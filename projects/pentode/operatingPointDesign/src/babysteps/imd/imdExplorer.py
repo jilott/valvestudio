@@ -4,7 +4,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.widgets import Slider, Button, RadioButtons
+from matplotlib.widgets import Slider, Button, RadioButtons, CheckButtons
 
 ftable = {
     '300':(300,0,0),
@@ -18,6 +18,7 @@ ftable = {
 
 gaintype = 'linear' # linear, clipped, tube
 clipping = 50
+labelShow = False
 
 gtable = {
 #   label          gain  bias offset  level
@@ -106,11 +107,6 @@ def updatetransfer():
 
 updatetransfer() # should do this all functions
 
-fftout   = np.fft.fft(vout)/n # fft computing and normalization
-fftout   = fftout[range(n/2)]
-fftmag   = 20*np.log10(np.abs(fftout))
-
-
 
 fig.text(0.70,0.965,"vout = gain * (offset + level*vin)\nvout = gain * atan(bias*(offset + (level * vin)))")
 
@@ -163,22 +159,10 @@ def play():
     stream.close()
     p.terminate()
 
-
-def updatefft():
-    global fftfrq
-    global vout,fftplot,ax,n,noise
-    fftout   = np.fft.fft(vout)/n # fft computing and normalization
-    fftout   = fftout[range(n/2)]
-    fftmag   = 20*np.log10(np.abs(fftout))
-
-    peakindices = fftmag > -90
-    peakfrqs = fftfrq[peakindices]
-    peaks    = fftmag[peakindices]
-    peaksgtdc = len(peaks[peakfrqs > 10])
-    handles, labels = axa[1,1].get_legend_handles_labels()
-    axa[1,1].legend(handles[::-1], ["%d peaks"%peaksgtdc])
-
-    fftplot.set_ydata(fftmag)
+fftout   = np.fft.fft(vout)/n # fft computing and normalization
+fftout   = fftout[range(n/2)]
+fftmag   = 20*np.log10(np.abs(fftout))
+fftann   = []
 
 fftplot, = axa[1,1].semilogx(fftfrq,fftmag,'r',label="Peaks") # plotting the spectrum
 axa[1,1].set_xlabel('Freq (Hz)')
@@ -190,6 +174,55 @@ axa[1,1].relim()
 axa[1,1].autoscale_view(True,True,True)
 handles, labels = axa[1,1].get_legend_handles_labels()
 axa[1,1].legend(handles[::-1], labels[::-1])
+
+def updatefft():
+    global fftfrq,fftann
+    global vout,fftplot,ax,n,noise
+    fftout   = np.fft.fft(vout)/n # fft computing and normalization
+    fftout   = fftout[range(n/2)]
+    fftmag   = 20*np.log10(np.abs(fftout))
+
+    peakindices = fftmag > -90
+    peakfrqs = fftfrq[peakindices]
+    peaks    = fftmag[peakindices]
+    peaksgtdc = len(peaks[peakfrqs > 10])
+    handles, labels = axa[1,1].get_legend_handles_labels()
+
+    fftplot.set_ydata(fftmag)
+
+    if peaksgtdc == 1:
+        plabel = "Peak"
+    else:
+        plabel = "Peaks"
+
+    axa[1,1].legend(handles[::-1], ["%d %s"%(peaksgtdc,plabel)])
+
+    for i,ann in enumerate(fftann):
+        ann.remove()
+    fftann[:] = []
+
+    if peaksgtdc < 20:
+        '''
+        peakindices = fftmag > -30
+        peakfrqs = fftfrq[peakindices]
+        peaks    = fftmag[peakindices]
+        peaksgtdc = len(peaks[peakfrqs > 10])
+        '''
+
+        for i in range(len(peakfrqs)):
+            ann = axa[1,1].annotate("%.0f,%.1f"%(peakfrqs[i],peaks[i]),
+                xy=(peakfrqs[i],peaks[i]),
+                xycoords='data',
+                xytext=(-5,8),
+                textcoords='offset points',
+                verticalalignment='left',
+                rotation=90,
+                bbox=dict(boxstyle="round", fc="1.0"),
+                size=7)
+            fftann.append(ann)
+
+
+
 updatefft()
 
 def updatevout():
