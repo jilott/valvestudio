@@ -14,6 +14,7 @@ ftable = {
     'Play':(0,0,0)
 }
 
+
 # vout = gain*np.arctan(offset+level*vin)
 
 gaintype = 'linear' # linear, clipped, tube
@@ -65,6 +66,8 @@ vin3 = ampl3*np.sin(2*np.pi*freq3*t+phase3)
 vin = vin1 + vin2 + vin3
 
 fig,axa = plt.subplots(2,2)
+fig.canvas.set_window_title("ValveStudio imdExplorer")
+
 
 def voutCalc():
     global gaintype,vout
@@ -102,8 +105,8 @@ def updatetransfer():
             r = np.logical_and(transferallvin>=offset+level*vin.min(), transferallvin<=offset+level*vin.max())
         transferplot.set_xdata(transferallvin[r])
         transferplot.set_ydata(transferallvout[r])
-    axa[1,0].relim()
-    axa[1,0].autoscale_view(False,True,True)
+    # axa[1,0].relim()
+    # axa[1,0].autoscale_view(False,True,True)
 
 updatetransfer() # should do this all functions
 
@@ -123,16 +126,16 @@ voutplot, = axa[0,1].plot(t,vout,label='Vout')
 axa[0,1].set_xlim(0,10.0/freq1)
 handles, labels = axa[0,1].get_legend_handles_labels()
 axa[0,1].legend(handles[::-1], labels[::-1])
-# axa[0,1].set_ylim(-100.0,100.0)
+#axa[0,1].set_ylim(-100.0,100.0)
 axa[0,1].relim()
 axa[0,1].autoscale_view(True,True,True)
 
 transfervallplot,  = axa[1,0].plot(transferallvin,transferallvout,color='blue')
 transferplot,      = axa[1,0].plot(vin,vout,color='green',linewidth=3)
 axa[1,0].set_xlim(-transfermax,transfermax)
-#axa[1,0].set_ylim(-100.0,100.0)
-axa[1,0].relim()
-axa[1,0].autoscale_view(False,True,True)
+axa[1,0].set_ylim(-120.0,120.0)
+#axa[1,0].relim()
+#axa[1,0].autoscale_view(False,True,True)
 
 def play():
     import pyaudio
@@ -218,7 +221,7 @@ def updatefft():
                 verticalalignment='left',
                 rotation=90,
                 bbox=dict(boxstyle="round", fc="1.0"),
-                size=7)
+                size=10)
             fftann.append(ann)
 
 
