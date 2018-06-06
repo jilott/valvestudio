@@ -16,12 +16,14 @@ ftable = {
 
 # vout = gain*np.arctan(offset+level*vin)
 
-clean = True
+gaintype = 'linear' # linear, clipped, tube
+clipping = 50
 
 gtable = {
 #   label          gain  bias offset  level
-    '/ clean'   : (50.0, 1, 0,      1.0),
-    'bias0'     : (50.0, 1, 0,      0.2),
+    'linear'    : (50.0, 1, 0,      1.0),
+    'clipped'   : (50.0, 1, 0,      1.0),
+    'bias0'     : (50.0, 1, 0,      1.0),
     'even1'     : (50.0, 1, 0.65,   0.6),
     'even20'    : (50.0, 1, 1e-1,   1.0),
     'even40'    : (50.0, 1, 1e-2,   1.0),
@@ -31,7 +33,7 @@ gtable = {
 }
 
 freq1,freq2,freq3       = ftable['300']
-gain,bias,offset,level       = gtable['/ clean']
+gain,bias,offset,level  = gtable[gaintype]
 
 Fs = 22050.0;           # sampling rate
 Ts = 1.0/Fs;            # sampling interval
@@ -61,23 +63,29 @@ vin2 = ampl2*np.sin(2*np.pi*freq2*t+phase2)
 vin3 = ampl3*np.sin(2*np.pi*freq3*t+phase3)
 vin = vin1 + vin2 + vin3
 
+fig,axa = plt.subplots(2,2)
+
 def voutCalc():
-    global clean,vout
-    if clean:
-        vout = gain*vin + noise
-    else:
-        vout = gain*np.arctan(offset+level*vin) + noise  # adding a noise to have a noise floor
+    global gaintype,vout
+    if gaintype == 'linear':
+        vout = gain*(offset + level*vin) + noise
+    if gaintype == 'clipped':
+        vout = np.clip(gain*(offset + level*vin) + noise,-clipping,clipping)
+    if gaintype == 'tube':
+        vout = gain*np.arctan(bias*(offset+level*vin)) + noise  # adding a noise to have a noise floor
 
 voutCalc()
 
 def updatetransfer():
-    global transferallvin,transferallvout,transfervin,offset
-    if clean:
+    global transferallvin,transferallvout,transfervin,offset,axa
+    if gaintype == 'linear':
         transferallvout = gain*(bias*transferallvin)
-    else:
-        transferallvout = gain*np.arctan(bias*transferallvin)
+    if gaintype == 'clipped':
+        transferallvout = np.clip(gain*(bias*transferallvin),-clipping,clipping)
+    if gaintype == 'tube':
+        transferallvout = gain*np.arctan(bias*(transferallvin))
     '''
-    if clean:
+    if linear:
         transferallvout = gain*(offset+level*transferallvin)
     else:
         transferallvout = gain*np.arctan(offset+level*transferallvin)
@@ -87,9 +95,14 @@ def updatetransfer():
         # transfervallplot.set_xdata(vin)
         transfervallplot.set_ydata(transferallvout)
     if transferplot:
-        r = np.logical_and(transferallvin>=offset+level*vin.min(), transferallvin<=offset+level*vin.max())
+        if gaintype == 'linear' or gaintype == 'clipped':
+            r = np.logical_and(transferallvin>=(offset+level*vin).min(), transferallvin<=(offset+level*vin).max())
+        if gaintype == 'tube':
+            r = np.logical_and(transferallvin>=offset+level*vin.min(), transferallvin<=offset+level*vin.max())
         transferplot.set_xdata(transferallvin[r])
         transferplot.set_ydata(transferallvout[r])
+    axa[1,0].relim()
+    axa[1,0].autoscale_view(False,True,True)
 
 updatetransfer() # should do this all functions
 
@@ -97,9 +110,9 @@ fftout   = np.fft.fft(vout)/n # fft computing and normalization
 fftout   = fftout[range(n/2)]
 fftmag   = 20*np.log10(np.abs(fftout))
 
-fig,axa = plt.subplots(2,2)
 
-fig.text(0.70,0.965,"vout = gain * vin     or\nvout = gain * atan(offset + (level * vin))")
+
+fig.text(0.70,0.965,"vout = gain * (offset + level*vin)\nvout = gain * atan(bias*(offset + (level * vin)))")
 
 vin3plot, = axa[0,0].plot(t,vin3,label='%dHz'%freq3)
 vin2plot, = axa[0,0].plot(t,vin2,label='%dHz'%freq2)
@@ -109,8 +122,8 @@ axa[0,0].set_ylim(-2.0,2.0)
 handles, labels = axa[0,0].get_legend_handles_labels()
 axa[0,0].legend(handles[::-1], labels[::-1])
 
-vinplot,  = axa[0,1].plot(t,vin,label='Vin')
-voutplot,  = axa[0,1].plot(t,vout,label='Vout')
+vinplot,  = axa[0,1].plot(t,(offset + level*vin),label='Vin')
+voutplot, = axa[0,1].plot(t,vout,label='Vout')
 axa[0,1].set_xlim(0,10.0/freq1)
 handles, labels = axa[0,1].get_legend_handles_labels()
 axa[0,1].legend(handles[::-1], labels[::-1])
@@ -121,7 +134,9 @@ axa[0,1].autoscale_view(True,True,True)
 transfervallplot,  = axa[1,0].plot(transferallvin,transferallvout,color='blue')
 transferplot,      = axa[1,0].plot(vin,vout,color='green',linewidth=3)
 axa[1,0].set_xlim(-transfermax,transfermax)
-axa[1,0].set_ylim(-100.0,100.0)
+#axa[1,0].set_ylim(-100.0,100.0)
+axa[1,0].relim()
+axa[1,0].autoscale_view(False,True,True)
 
 def play():
     import pyaudio
@@ -132,15 +147,17 @@ def play():
     play_vin2 = ampl2*np.sin(2*np.pi*freq2*play_t+phase2)
     play_vin3 = ampl3*np.sin(2*np.pi*freq3*play_t+phase3)
     play_vin = play_vin1 + play_vin2 + play_vin3
-    if clean:
-        play_vout = gain*play_vin
-    else:
-        play_vout = gain*np.arctan(offset+level*play_vin)
+
+    if gaintype == 'linear':
+        play_vout = gain*(offset + level*play_vin)
+    if gaintype == 'clipped':
+        play_vout = np.clip(gain*(offset + level*play_vin),-clipping,clipping)
+    if gaintype == 'tube':
+        play_vout = gain*np.arctan(bias*(offset+level*play_vin))
 
     p = pyaudio.PyAudio()
     stream = p.open(format = pyaudio.paFloat32, channels = 1, rate = int(Fs), output = True)
     data = (play_vout/np.absolute(play_vout).max()).astype(np.float32)
-    # print np.absolute(play_vout).max(), data.max()
     stream.write(data)
     stream.stop_stream()
     stream.close()
@@ -169,6 +186,7 @@ axa[1,1].set_xlim(10,10000)
 axa[1,1].grid(True,'both')
 axa[1,1].set_ylabel('Vout dB')
 axa[1,1].set_ylim(-120,40)
+axa[1,1].relim()
 axa[1,1].autoscale_view(True,True,True)
 handles, labels = axa[1,1].get_legend_handles_labels()
 axa[1,1].legend(handles[::-1], labels[::-1])
@@ -176,13 +194,13 @@ updatefft()
 
 def updatevout():
     global vin,vout,gain,offset,level,voutplot,axa
-    # vout = gain*np.arctan(offset+level*vin)
     voutCalc()
     voutmean = vout.mean()
     vout = vout - voutmean + np.random.normal(0.0,0.1,Fs)/100.0
+    vinplot.set_ydata(offset + level*vin)
     voutplot.set_ydata(vout)
     axa[0,1].relim()
-    axa[0,1].autoscale_view(True,True,True)
+    axa[0,1].autoscale_view(False,True,True)
     updatetransfer()
     updatefft()
 
@@ -274,7 +292,7 @@ def updatephase3(val):
 
 
 axfreq1 = plt.axes([0.25, 0.1150, 0.65, 0.01])
-sfreq1  = Slider(axfreq1,  'Freq1', 10.0, 1000, valinit=freq1,valfmt='%1d')
+sfreq1  = Slider(axfreq1,  'Freq1', 10.0, 2000, valinit=freq1,valfmt='%1d')
 sfreq1.on_changed(updatefreq1)
 
 axampl1 = plt.axes([0.25, 0.1025, 0.65, 0.01])
@@ -286,7 +304,7 @@ sphase1  = Slider(axphase1, 'Phase1', -90, 90, valinit=0,valfmt='%1d')
 sphase1.on_changed(updatephase1)
 
 axfreq2 = plt.axes([0.25, 0.0750, 0.65, 0.01])
-sfreq2  = Slider(axfreq2,  'Freq2', 10.0, 1000, valinit=freq2,valfmt='%1d')
+sfreq2  = Slider(axfreq2,  'Freq2', 10.0, 2000, valinit=freq2,valfmt='%1d')
 sfreq2.on_changed(updatefreq2)
 
 axampl2  = plt.axes([0.25, 0.0625, 0.65, 0.01])
@@ -298,7 +316,7 @@ sphase2 = Slider(axphase2, 'Phase2', -90, 90, valinit=0,valfmt='%1d')
 sphase2.on_changed(updatephase2)
 
 axfreq3  = plt.axes([0.25, 0.0350, 0.65, 0.01])
-sfreq3  = Slider(axfreq3,  'Freq3', 10.0, 1000, valinit=freq3,valfmt='%1d')
+sfreq3  = Slider(axfreq3,  'Freq3', 10.0, 2000, valinit=freq3,valfmt='%1d')
 sfreq3.on_changed(updatefreq3)
 
 axampl3  = plt.axes([0.25, 0.0225, 0.65, 0.01])
@@ -352,11 +370,14 @@ for circ in freqradio.circles:
 freqradio.on_clicked(freqSet)
 
 def gainSet(label):
-    global clean
-    if label == '/ clean':
-        clean = True
+    global gaintype
+    if label == 'linear':
+        gaintype = 'linear'
     else:
-        clean = False
+        if label == 'clipped':
+            gaintype = 'clipped'
+        else:
+            gaintype = 'tube'
     gain,bias,offset,level = gtable[label]
     updategain(gain,False)
     updateoffset(offset,False)
@@ -368,7 +389,13 @@ def gainSet(label):
     fig.canvas.draw_idle()
 
 gainradiox = plt.axes([0.1, 0.02, 0.08, 0.015*len(gtable)])
-gainradio = RadioButtons(gainradiox,  sorted(gtable.keys()), active=0)
+tempgtable = gtable.copy()
+del tempgtable['linear']
+del tempgtable['clipped']
+tempgtable = sorted(tempgtable.keys())
+tempgtable.insert(0,"clipped")
+tempgtable.insert(0,"linear")
+gainradio = RadioButtons(gainradiox, tempgtable, active=0)
 for circ in gainradio.circles:
     circ.set_radius(0.002*len(gtable))
 gainradio.on_clicked(gainSet)
@@ -378,5 +405,6 @@ mng = plt.get_current_fig_manager()
 mng.resize(1920,1080)
 
 plt.tight_layout(rect=[0, 0.1, 1, 1])
+
 plt.show()
 
