@@ -1,5 +1,22 @@
 STM VIPER
 
+suppliers
+    tube socket pins
+    https://gd-parts.aliexpress.com/store/326582?spm=a2g0o.detail.1000061.1.1cf119faaxlTbu
+        octal
+            https://www.aliexpress.com/item/4000056312072.html?spm=2114.12010612.8148356.21.2e84334bEI5EP9
+            https://www.aliexpress.com/item/32815123065.html?spm=2114.12010612.8148356.3.2e84334bKN7n6r
+
+    https://vicaudio.aliexpress.com/store/1190697?spm=a2g0o.detail.1000002.2.54ce5297kZzIMS
+
+
+projects
+    http://www.popular-hifi.com/projects/nad_stereo/socket_converter/index.html
+    good one >> http://www.channelroadamps.com/articles/tube_analyzer_2/
+
+
+
+
 https://en.wikipedia.org/wiki/Current_mirror
 https://en.wikipedia.org/wiki/Widlar_current_source
 LT3092 - 200mA 2-Terminal Programmable Current Source
@@ -8,6 +25,9 @@ AD8479
 Very High Common-Mode Voltage Precision Difference Amplifier, 600V common mode
 http://www.analog.com/media/en/technical-documentation/data-sheets/AD8479.PDF
     common mode halves when run from single supply
+
+high voltage difference amplifier
+    INA149
 
 power mosfet linear mode
 https://www.youtube.com/watch?v=1qRWBkrcnAM
@@ -35,6 +55,8 @@ FCP104N60   300V@1250mA,    600V@600ma to-220
 use this for dac driven n-ch, AOD1N60, 500V@60mA
     alt                       STD1NK60, 1000V@60mA
     BSS127H6327XTSA2
+
+    also look at DACx0508
 
 here's another family of high-voltage FETs in SOT-223 package
     https://www.infineon.com/cms/en/product/channel.html?channel=5546d462525dbac40153141e97d0618f
@@ -73,8 +95,17 @@ measuring high voltages
     http://www.edn.com/design/analog/4400220/Standalone-digital-voltmeter-uses-a-multichannel-ADC
 
 possible adc
+    pn              ch  res sim bw      $@25
+    AD7761          8   16  y   110k    15.51
+
+
+
+    
+    ADS8588H        8-ch    16  500k - new design  no bandwidth
+    ADS8598H        8-ch    18  500k - new design
+
     MAX11060GUU+    4-ch    16  64k     ~3V     $7
-    MAX1302         8-ch    16  115k    4.096   11.56   tssop24 not a lot of avail
+    MAX1302         8-ch    16  115k    4.096   11.56   tssop24 not a lot of avail  not-simulataneous
     MAX1303         4-ch    16  115k    4.096   11.56   tssop24 not a lot of avail
 
     LTC2344-16      4-ch    16  400k    2.048   17.86   sim qfn
@@ -83,6 +114,7 @@ possible adc
     ADS130E08       8-ch, PGA, 16bit,  8kS/s
     LTC2345-16      8-ch, 16-Bit, 200ksps
     MAX1032         8-ch, 14-bit, 115ksps
+
 
     see also, http://www.ti.com/product/ADS8578S
 
@@ -119,13 +151,16 @@ possible dac
         http://www.vishay.com/docs/70598/70598.pdf
     
 
-high voltage opamp for gate drive
+high voltage opamp for grid drive
     OPA454 High Voltage (100V), High-Current (50mA) 
     LTC6090 140V CMOS Rail-to-Rail Output, Picoamp Input Current Op Amp
         http://www.linear.com/product/LTC6090
+    should drive the opamp with 2 dacs, one for offset and one for sin wave maybe
 
 power supplies
     Kaihui K04-UP300, 380V@0.8A
+    Meanwell PD-25 +/-5V@2.5A or +/-15V@0.8A 
+        https://www.mouser.com/ds/2/260/r330_3-4354.pdf
 
 add e-stop switch that connects outputs to ground using relays
 
@@ -133,6 +168,9 @@ linear regulator
     TL783 3-Pin, 750-mA, 125-V, Adjustable Positive Voltage Regulator
     negative regulator LM337IMPX/NOPB, IC REG LINEAR ADJ 1A SOT223-4
     positive regulator LM317EMPX/NOPB, IC REG LINEAR ADJ 1A SOT223-4
+
+voltage reference
+    https://www.digikey.com/products/en/integrated-circuits-ics/pmic-voltage-reference/693?k=voltage+reference&k=&pkeyword=voltage+reference&pv3=370&pv3=120&pv3=93&pv3=95&pv3=115&pv3=42&pv3=96&pv3=109&pv3=377&pv3=46&pv3=98&pv3=355&pv3=129&pv3=444&pv3=100&pv3=373&pv3=1&FV=1140003%2Cffe002b5%2C1bcc002b&mnonly=0&ColumnSort=1000011&page=1&stock=1&quantity=25&ptm=0&fid=0&pageSize=25
 
 cabling
     http://www.ebay.com/itm/Flat-Cable-40-Pin-Wires-Ribbon-50mm-wide-12-Ft-Long-with-10-sets-IDC-Connector-/272268622112
@@ -198,9 +236,111 @@ or opa725
 creepage
     http://www.pcbtechguide.com/2009/02/creepage-vs-clearance.html#.WTcqh8grIlI
 
-
-
 software
     PyQtGraph
     matplotlib live data
         https://www.youtube.com/watch?v=ZmYPzESC5YY
+
+current sensor
+    ACS71240KEXBLT-010B3
+    ACS70331EESATR-2P5U3
+
+
+    ACS710KLATR-6BB-T   151mV/A 870V 120kHz     60k at dk but not for new designs
+    HV7800K1-G  High Side Current Monitor, 8.0 to 450V vin fixed gain
+        HV7802 $0.70 programmable gain
+    IXCP10M90S 900V current regulator 100mA
+
+    see 482-DVK91208
+    
+    AMC1300x Precision, ±250-mV Input, Reinforced  Isolated Amplifier datasheet
+
+    Simple Micro Ampere Meter Circuit
+        https://www.electroschematics.com/6537/simple-microampere-meter-circuit/
+        http://circuitcellar.com/cc-blog/tips-for-measuring-small-currents/
+        http://www.techni-tool.com/site/ARTICLE_LIBRARY/Keithley-Low%20Current%20Measurements.pdf
+        https://www.youtube.com/watch?v=Q-AZpagmtCw
+
+
+candidate design - has issues with stray mag field
+    current sense
+        ACS723 400mV/A, +5VCC 400mV/A
+            may need to tweek +5V vreg output up to account for external magnetic fields,  
+            see xLLCTR-5AB performance characteristics table note 1
+            looks like a show stopper if the opt leakage is audio freq dependent
+        AN431 vref- on ADC current input 
+        also ACS722 +3.3VCC 264mV/A
+
+    look at MLX91208, with multiple turns under part for low current, adjust output voltage with R selection
+        MLX91208LDC-CAL-000-SP
+
+    adc
+        AD7761
+
+-------------------------------------------------------------------------------------------------
+    
+isolated design q100-dk
+
+adc
+    ADS8866IDGSR 16 100K single $2.49 TI price
+    ADS8864IDGSR 16 400K single $5.04 TI price
+
+    alt microchip MCP33151         14
+                  MCP33141-05-E/MS 12 bit
+                  MCP3461T-E/NC    16 bit @ 153k
+
+vref
+    MCP1501T-25E/CHY 2.5V 0.1% $0.59
+
+cpu
+    CY8C5468AXI-LP106
+    CY8C5888AXI-LP096
+
+fet array
+    NTZD3152P Dual P-Channel with ESD Protection, SOT-563
+    NTJD4152PT1G MOSFET 2P-CH 20V 0.88A SOT-363
+    BSD223PH6327XTSA1 MOSFET 2P-CH 20V 0.39A SOT363
+    BSL308PEH6327XTSA1 MOSFET 2P-CH 30V 2A 6TSOP 
+
+serial ram
+    IC FLASH 32M SPI 104MHZ 8SOIC, Adesto AT25SF321-SSHD-T, 8-SOIC, $0.93
+        262K samples of 16-bit data 
+
+dc/dc isolated 
+    recom RFM-0505S $1.36 through
+    look at this one 
+        R1SX-3.33.3-R SMT  $2.68 3.3 to 3.3 300mA
+    see https://www.mouser.com/murata-nmr-dc-converters/
+    NMR100PC 5-5V 1W $3.5 THRU
+    NXE1S0505MC 5-5V 200mA SMT $3.0 - not a lot of stock
+
+digital isolator (opto using rf)
+    need 3 over and 2 back
+        ISO7731FDWR need 2 $2.46/100
+    Si8652 3 send, 2 return
+    look at 3/1 ADUM1401 lcsc $1.08/100
+
+op amps
+TL072 low-noise JFET-input operation amplifier
+LF353D
+    see http://sound.whsites.net/articles/high-z.html
+
+board to central unit
+    sata 
+        7 connection 1.5A https://www.digikey.com/short/p0mvqm 
+
+
++/- supply from +5V
+https://www.electronics-lab.com/create-12v-split-rail-5v-bias/
+
+
+
+HV PS
+https://www.changpuak.ch/electronics/High_Voltage_Power_Supply_MC34063.php
+
+
+
+--------------------
+sensor MLX91207 - MLX91207LDC-CAA-005-TU
+toroid coil B64290P0037X830
+
