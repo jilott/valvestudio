@@ -1471,6 +1471,7 @@ grid 5.0 mm, diameter 10.0 mm</description>
 <sheets>
 <sheet>
 <plain>
+<text x="68.58" y="50.8" size="1.016" layer="97">Rp</text>
 </plain>
 <instances>
 <instance part="V2" gate="G$1" x="68.58" y="25.4"/>
