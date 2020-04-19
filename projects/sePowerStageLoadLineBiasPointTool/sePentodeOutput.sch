@@ -1465,40 +1465,61 @@ grid 5.0 mm, diameter 10.0 mm</description>
 <part name="GND1" library="holla" deviceset="GND" device=""/>
 <part name="RC" library="holla" deviceset="R" device="-THRU-H-0.4"/>
 <part name="RS" library="holla" deviceset="R" device="-THRU-H-0.4"/>
-<part name="C1" library="holla" deviceset="C-POLARIZED" device="-E-3"/>
+<part name="CS" library="holla" deviceset="C-POLARIZED" device="-E-3"/>
 <part name="GND2" library="holla" deviceset="GND" device=""/>
+<part name="ROPTP" library="holla" deviceset="R" device="-THRU-H-0.4"/>
+<part name="RPS" library="holla" deviceset="R" device="-THRU-H-0.4"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="68.58" y="50.8" size="1.016" layer="97">Rp</text>
+<text x="77.978" y="66.548" size="1.016" layer="97">Rectifier
+Field Coil
+Eq Resistance</text>
+<text x="65.532" y="50.292" size="1.016" layer="97" align="bottom-right">OPT Coil
+Resistance</text>
 </plain>
 <instances>
 <instance part="V2" gate="G$1" x="68.58" y="25.4"/>
-<instance part="T" gate="T1" x="73.66" y="50.8" smashed="yes">
-<attribute name="VALUE" x="73.66" y="42.418" size="1.27" layer="96" align="bottom-center"/>
+<instance part="T" gate="T1" x="76.2" y="50.8" smashed="yes">
+<attribute name="VALUE" x="76.2" y="42.418" size="1.27" layer="96" align="bottom-center"/>
 </instance>
-<instance part="S" gate="G$1" x="81.28" y="50.8" smashed="yes"/>
+<instance part="S" gate="G$1" x="83.82" y="50.8" smashed="yes"/>
 <instance part="GND1" gate="1" x="73.66" y="10.16"/>
 <instance part="RC" gate="G$1" x="73.66" y="12.7" rot="R270"/>
 <instance part="RS" gate="G$1" x="86.36" y="35.56" rot="R270"/>
-<instance part="C1" gate="G$1" x="86.36" y="15.24"/>
+<instance part="CS" gate="G$1" x="86.36" y="15.24"/>
 <instance part="GND2" gate="1" x="86.36" y="10.16"/>
+<instance part="ROPTP" gate="G$1" x="68.58" y="50.8" smashed="yes" rot="R270">
+<attribute name="NAME" x="66.294" y="48.514" size="1.27" layer="95" rot="R270" align="bottom-right"/>
+<attribute name="VALUE" x="68.834" y="49.53" size="1.27" layer="96" rot="R270"/>
+</instance>
+<instance part="RPS" gate="G$1" x="76.2" y="68.58" smashed="yes" rot="R270">
+<attribute name="NAME" x="73.66" y="67.31" size="1.27" layer="95" rot="R270" align="bottom-right"/>
+<attribute name="VALUE" x="76.454" y="67.31" size="1.27" layer="96" rot="R270"/>
+</instance>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="B+" class="0">
 <segment>
-<pinref part="T" gate="T1" pin="P1"/>
-<wire x1="68.58" y1="55.88" x2="68.58" y2="60.96" width="0.1524" layer="91"/>
-<label x="76.2" y="66.04" size="1.016" layer="95" xref="yes"/>
 <wire x1="68.58" y1="60.96" x2="76.2" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="RS" gate="G$1" pin="1"/>
 <wire x1="76.2" y1="60.96" x2="86.36" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="60.96" x2="86.36" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="66.04" x2="76.2" y2="60.96" width="0.1524" layer="91"/>
 <junction x="76.2" y="60.96"/>
+<pinref part="ROPTP" gate="G$1" pin="1"/>
+<wire x1="68.58" y1="60.96" x2="68.58" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="T" gate="T1" pin="P1"/>
+<wire x1="68.58" y1="55.88" x2="68.58" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="55.88" x2="71.12" y2="55.88" width="0.1524" layer="91" style="shortdash"/>
+<pinref part="RPS" gate="G$1" pin="2"/>
+<wire x1="76.2" y1="66.04" x2="76.2" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="63.5" x2="76.2" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="63.5" x2="78.74" y2="63.5" width="0.1524" layer="91"/>
+<label x="78.74" y="63.5" size="1.016" layer="95" xref="yes"/>
+<junction x="76.2" y="63.5"/>
 </segment>
 </net>
 <net name="GRID" class="0">
@@ -1512,27 +1533,30 @@ grid 5.0 mm, diameter 10.0 mm</description>
 <segment>
 <pinref part="T" gate="T1" pin="S1"/>
 <pinref part="S" gate="G$1" pin="P"/>
-<wire x1="78.74" y1="55.88" x2="81.28" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="81.28" y1="55.88" x2="81.28" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="55.88" x2="83.82" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="55.88" x2="83.82" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
 <segment>
 <pinref part="T" gate="T1" pin="S2"/>
 <pinref part="S" gate="G$1" pin="M"/>
-<wire x1="78.74" y1="45.72" x2="81.28" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="81.28" y1="45.72" x2="81.28" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="45.72" x2="83.82" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="45.72" x2="83.82" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="PLATE" class="0">
 <segment>
 <pinref part="V2" gate="G$1" pin="PA"/>
-<pinref part="T" gate="T1" pin="P2"/>
 <wire x1="68.58" y1="38.1" x2="68.58" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="40.64" x2="68.58" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="40.64" x2="71.12" y2="40.64" width="0.1524" layer="91"/>
 <label x="71.12" y="40.64" size="1.016" layer="95" xref="yes"/>
 <junction x="68.58" y="40.64"/>
+<pinref part="ROPTP" gate="G$1" pin="2"/>
+<wire x1="68.58" y1="48.26" x2="68.58" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="T" gate="T1" pin="P2"/>
+<wire x1="68.58" y1="45.72" x2="68.58" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="45.72" x2="71.12" y2="45.72" width="0.1524" layer="91" style="shortdash"/>
 </segment>
 </net>
 <net name="SCREEN" class="0">
@@ -1544,7 +1568,7 @@ grid 5.0 mm, diameter 10.0 mm</description>
 <wire x1="86.36" y1="25.4" x2="88.9" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="33.02" x2="86.36" y2="25.4" width="0.1524" layer="91"/>
 <junction x="86.36" y="25.4"/>
-<pinref part="C1" gate="G$1" pin="+"/>
+<pinref part="CS" gate="G$1" pin="+"/>
 <wire x1="86.36" y1="25.4" x2="86.36" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -1560,9 +1584,17 @@ grid 5.0 mm, diameter 10.0 mm</description>
 <pinref part="GND1" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="C1" gate="G$1" pin="-"/>
+<pinref part="CS" gate="G$1" pin="-"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="86.36" y1="12.7" x2="86.36" y2="10.16" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="PS" class="0">
+<segment>
+<pinref part="RPS" gate="G$1" pin="1"/>
+<wire x1="76.2" y1="71.12" x2="76.2" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="73.66" x2="78.74" y2="73.66" width="0.1524" layer="91"/>
+<label x="78.74" y="73.66" size="1.016" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
@@ -1570,4 +1602,10 @@ grid 5.0 mm, diameter 10.0 mm</description>
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
