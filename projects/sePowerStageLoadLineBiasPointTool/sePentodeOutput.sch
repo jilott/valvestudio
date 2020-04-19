@@ -1478,6 +1478,10 @@ Field Coil
 Eq Resistance</text>
 <text x="65.532" y="50.292" size="1.016" layer="97" align="bottom-right">OPT Coil
 Resistance</text>
+<text x="57.658" y="66.548" size="1.016" layer="97">Kamico
+PS 418V
+Recifier 2000
+Field Coil 1000</text>
 </plain>
 <instances>
 <instance part="V2" gate="G$1" x="68.58" y="25.4"/>
